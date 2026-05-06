@@ -44,6 +44,27 @@
 .case-takeaway{margin-top:18px;padding-top:18px;border-top:1px solid #e8e2d5;font-size:.94rem;color:#2a2620;line-height:1.65}
 .case-takeaway strong{color:#17161a}
 .case-takeaway em{color:#b8372a;font-style:italic;font-weight:600}
+/* Cross-examination block (shared with pages 04 / 21) */
+.cross-exam{margin:24px 0 16px;padding:30px 34px;background:linear-gradient(to bottom right,#fdf6e6,#faf0d8);border:1px solid #e8d599;border-radius:12px;border-left:4px solid #c08815}
+@media (max-width:600px){.cross-exam{padding:22px 20px}}
+.cross-exam h3{font-size:1.18rem;font-weight:700;color:#5e4414;margin-bottom:6px;display:flex;align-items:center;gap:12px;letter-spacing:-.01em}
+.cross-exam h3::before{content:"⚖";font-size:1.3rem;color:#c08815}
+.cross-exam .ce-lead{font-size:.93rem;color:#5e4414;margin-bottom:18px;line-height:1.6;font-style:italic}
+.cross-exam .ce-side{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7a5a1c;font-weight:700;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid #f0d99e}
+.cross-exam .ce-side:first-of-type{margin-top:0}
+.strain-list{display:grid;gap:12px;counter-reset:strain-counter}
+.strain{background:#fff;border:1px solid #f0d99e;border-radius:8px;padding:18px 22px;position:relative}
+.strain h4{font-size:.98rem;font-weight:700;color:#17161a;margin-bottom:10px;padding-left:36px;position:relative;letter-spacing:-.005em;line-height:1.4}
+.strain h4::before{counter-increment:strain-counter;content:counter(strain-counter);position:absolute;left:0;top:-2px;width:26px;height:26px;background:#c08815;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+.strain p{font-size:.9rem;color:#3a3630;line-height:1.6;margin-bottom:8px}
+.strain p:last-child{margin-bottom:0}
+.strain p strong{color:#17161a;font-weight:700}
+.strain p em{color:#b8372a;font-style:italic;font-weight:600}
+.strain .strain-claim{padding-bottom:10px;border-bottom:1px dashed #f0d99e;margin-bottom:10px}
+.strain .strain-claim::before{content:"Claim: ";font-weight:700;color:#7a5a1c;font-size:.78rem;letter-spacing:.04em}
+.strain .strain-expose::before{content:"Where it strains: ";font-weight:700;color:#c08815;font-size:.78rem;letter-spacing:.04em}
+.steelman-disclosure{margin-top:14px;padding:14px 18px;background:#f5f1e6;border-radius:8px;font-size:.84rem;color:#555047;line-height:1.55;border-left:3px solid #c9c0ad}
+.steelman-disclosure strong{color:#17161a}
 </style>
 </head>
 <body>
@@ -86,6 +107,74 @@
     <p>The liberal-democratic settlement does not deny that humans are constituted by relationships, duties, and traditions. Communitarian critics from MacIntyre to Sandel made that point against thin-Lockean liberalism a generation ago and most contemporary liberals concede it. What the settlement insists is narrower: that no relationship, duty, or tradition can be <em>coercively enforced by the state or the community</em> against the conscience of the individual subject to it.</p>
     <p>The strongest version freely admits that the autonomous-individual frame produces atomization, weakened communal bonds, and other costs the communitarian critics describe correctly. <strong>It claims only that those costs are worth paying compared to the alternative — communities authorized to compel members' belief and behavior — and points to the long history of religious communities exercising precisely that authority badly</strong> when given it. The point is not the metaphysics; it is the constraint on coercion.</p>
   </div>
+</div>
+
+<div class="steelman-disclosure">
+  <strong>Method note.</strong> The two cards above present each position in its strongest defensible form, in the language and on the premises its own proponents actually use, without smoothing. The next section stress-tests both. A steelman that cannot survive its own internal cross-examination is propaganda for the position, not an honest reading of it.
+</div>
+
+<h2 class="section-title">Where the argument strains</h2>
+<p class="section-sub">A steelman is not a verdict. The arguments above are presented uncensored; below they are stress-tested against the standards a serious interlocutor would actually apply. <em>Both</em> sides — because intellectual honesty requires it.</p>
+
+<div class="cross-exam">
+  <h3>Cross-examination</h3>
+  <p class="ce-lead">This fault line has the cleanest empirical anchor of any on the site — named ex-Muslims, named fatwa-targets, a body count. The conservative-Islamist articulation has nowhere to retreat that the case study does not follow it.</p>
+
+  <div class="ce-side">Testing the conservative-Islamist articulation</div>
+
+  <div class="strain-list">
+
+    <div class="strain">
+      <h4>The "duties enrich, not constrain" framing</h4>
+      <p class="strain-claim">The umma-constituted-believer picture concedes substantial individual freedom in private taste, vocation, friendship, and family life — and presents the duty-structure as a relational anthropology that <em>enriches</em> the believer rather than coercing them. Rights are derived from duties; the language of "constraint" is a Western projection that misreads a fundamentally different human picture.</p>
+      <p class="strain-expose">The picture is presentable in the seminar room. It cannot survive its own page's case study. <strong>Hamed Abdel-Samad has lived under 24-hour Berlin police protection since 2013; Salman Rushdie was stabbed 15 times in 2022 in fulfilment of a 1989 fatwa; Imad Iddine Habib was sentenced in absentia to seven years' imprisonment for founding the Council of Ex-Muslims of Morocco; Maryam Namazie was attacked at Goldsmiths.</strong> Whatever "enrichment" the duty-structure offers those who accept its premises, what it visibly offers those who reject them is named, organised, lethal pressure. A relational anthropology whose answer to "I no longer believe" is a fatwa is not a richer human picture than the autonomy frame; it is the autonomy frame's primary historical adversary, with current operating capacity. The picture has to account for what it does to its dissenters, not for what it offers its conformists.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The "shunning is a private community matter" distinction</h4>
+      <p class="strain-claim">The page's own US friction card concedes that ex-Muslims in The West face <em>community</em>-imposed consequences — shunning, family rupture, threats — but not <em>state</em> penalty. The position can argue that this leaves liberal individual-rights protection structurally intact: the state does not punish, the community freely associates and disassociates, and that is itself a form of communal autonomy a liberal order should respect.</p>
+      <p class="strain-expose">The distinction holds formally and falls apart operationally. <strong>If the community can credibly threaten total social annihilation — loss of family, marriage, custody, employment within communal economic networks, physical safety in some cases — for a doctrinal choice, then "the state does not punish" describes the legal architecture but not the lived constraint on conscience.</strong> The page's open-questions section names this honestly as one of the genuinely unresolved problems in liberal political theory. The position cannot have it both ways: either the communal-enforcement mechanism is real and operationally compelling (in which case "private community matter" is a euphemism for non-state coercion), or it is not real (in which case the EXMNA / CEMB / Zentralrat helpline caseload is fictive). The case-study record forecloses the second answer.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The "Western individualism is decadent" tu-quoque</h4>
+      <p class="strain-claim">The autonomous-individual frame produces atomization, loneliness, family breakdown, declining birth rates, and a measurable mental-health crisis among the young. The Islamic relational anthropology is, on these axes, healthier; the West has no standing to lecture about a frame whose own outcomes are visibly degenerative.</p>
+      <p class="strain-expose">Half-correct on premise, irrelevant to the comparison. Western liberal societies do show the costs the position names — and the communitarian critique inside Western political philosophy (MacIntyre, Sandel, Taylor) has made the same observations from inside the tradition. <em>None of that bears on the question of whether communities should be authorised to coerce belief.</em> A relational anthropology can be defended as preferable on flourishing grounds without the coercive enforcement apparatus; the position's own reformist current (Akyol, the Mu'tazilite tradition Akyol revives) does precisely this. The tu-quoque collapses the distinction between (a) believing the West has overshot autonomy at the expense of community and (b) endorsing the operational fatwa surface the case-study documents. The first is a defensible position widely held inside Western thought; the second is what Abdel-Samad lives under police protection because of.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The "apostasy is statistically rare so it's a non-issue" gambit</h4>
+      <p class="strain-claim">The cases the page names — Rushdie, Abdel-Samad, Habib, the Goldsmiths disruption, the Western ex-Muslim infrastructure — are a vanishingly small fraction of the global Muslim population. To organise the religion-state question around them is to let the most marginal currents define the centre.</p>
+      <p class="strain-expose">The gambit confuses incidence with structural meaning. <strong>The doctrinal apparatus that licenses fatwa, apostasy execution, and communal enforcement is not the practice of most contemporary Muslims; it is, however, the operative law of multiple states (Iran, Saudi Arabia, Pakistan, Mauritania, Afghanistan) and the operative position of multiple internationally-organised currents (the Iranian state-fatwa apparatus, Tehreek-e-Labbaik, ISIS).</strong> The relevant measure is not "what fraction of Muslims act on it" but "what fraction of the doctrinal mainstream condemns the apparatus categorically and publicly." The Pew 2013 conditional-question result — 88% Egypt, 79% Afghanistan, 76% Pakistan supporting state apostasy penalty among sharia-as-state-law respondents — is the answer the position needs to address rather than minimise. The case-study people are not statistically representative because they are the survivors and dissenters; statistical representativeness is a property of the regime, not of those it targets.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The "rights derived from duties" metaphysical move</h4>
+      <p class="strain-claim">The strongest theological version retreats to the position that rights are not prior to duties but derived from them — a coherent picture on its own metaphysical premises about the human creature's relationship to God and umma, and one liberal critique applies premises the position does not share.</p>
+      <p class="strain-expose">Coherent on premises and trivial as defence. <em>Every system is internally coherent on premises that license it.</em> The substantive question is whether the premises are defensible — whether the theological case for treating individual conscience as derivative of communal duty (rather than merely traditionally so treated) survives examination, particularly given that the same scriptural tradition contains the explicit verse <em>"there is no compulsion in religion"</em> (Quran 2:256) which the reformist current (An-Na'im, Akyol) reads as foundational rather than abrogated. The position cannot make its case without circular appeal to the same scriptural authority that establishes the conclusion, and it cannot do so without contradicting an explicit textual constraint its own canon includes. Coherence-on-premises is the floor of an argument; on this fault line, even the floor is contested inside the tradition.</p>
+    </div>
+
+  </div>
+
+  <div class="ce-side">Testing the liberal-democratic articulation</div>
+
+  <div class="strain-list" style="counter-reset:strain-counter 5;">
+
+    <div class="strain">
+      <h4>The recency-of-individual-conscience objection</h4>
+      <p class="strain-claim">The liberal-individual-conscience frame is a 17th-century post-Westphalian achievement, established only after Europe exhausted itself on confessional war. Treating it as a universal human anthropology rather than a contingent settlement is itself a parochialism — the very move the position accuses the conservative-Islamist side of making in reverse.</p>
+      <p class="strain-expose">Recency is not refutation, but the position should not pretend it is absent. The honest answer is that <em>individual conscience as a state-protected right</em> is recent, post-Westphalian, and worked out under specific historical pressure — and that the discovery is no less binding for being late, the way the abolition of slavery is no less binding for being a 19th-century achievement. The defensible move is to defend the principle on its merits, not its provenance, and to acknowledge that the deeper claim — that humans have a capacity for conscience that should not be coerced — is consistent with a wide range of metaphysical pictures (Christian, Mu'tazilite Islamic, secular humanist, Buddhist) and does not require the specific Lockean apparatus to support it. <strong>What the position cannot defend is the claim that individual conscience is a uniquely Western contribution to the species' self-understanding</strong>; reformist Muslims, ex-Muslims, and the Quran 2:256 tradition are all available counter-evidence inside the tradition the position is supposed to be foreign to.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The shunning question the page itself flags</h4>
+      <p class="strain-claim">The page's own open-questions section names a genuine unresolved problem: if the state may not punish apostasy but the community may shun the apostate to social annihilation, has the individual-rights baseline really been protected? The liberal frame has no fully satisfying answer; it relies on the assumption that exit from a coercive community is feasible, which the case-study record shows is precisely the question.</p>
+      <p class="strain-expose">The honest reply is that the frame is incomplete here, and that the existing institutional architecture (asylum, public-funded police protection for fatwa targets, ex-Muslim organisations as alternative-community infrastructure, anti-discrimination law extended to apostasy-based discrimination) is the operational answer being assembled in real time and is itself partial. <em>The defensible liberal position is not that the question is solved; it is that the framework is the only one in which the question can be openly named, debated, and partially answered without the questioner risking prosecution.</em> A regime that punishes the asking of the question (most of the page's case-study source jurisdictions) has not solved the problem either — it has only foreclosed inquiry. The asymmetry is the entire substantive case for preferring the incomplete answer to the foreclosed one.</p>
+    </div>
+
+  </div>
+
+  <div style="margin-top:20px;padding-top:18px;border-top:1px dashed #e8d599;font-size:.9rem;color:#5e4414;line-height:1.6;font-style:italic;">The cross-examination is the methodological commitment of this whole project: <strong>steelman, then expose</strong>. On this fault line the asymmetry is sharpest — one side has named, organised, currently-operating coercion against dissenters; the other side has an incomplete framework that nonetheless lets the question be asked. The honest reading is not that both sides are equivalently flawed. It is that the people who took the risk of leaving — and in some cases died for it — are the ones who get to define what an honest answer looks like.</div>
 </div>
 
 <h2 class="section-title">The friction in The West</h2>
