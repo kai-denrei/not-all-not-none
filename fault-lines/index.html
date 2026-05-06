@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fault Lines — 20 Deep Dives · Nuance Is Not a Dirty Word</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", sans-serif;
+    background: #faf9f6;
+    color: #17161a;
+    line-height: 1.6;
+    padding: 48px 20px 96px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1120px; margin: 0 auto; }
+
+  .breadcrumb {
+    font-size: 0.78rem;
+    color: #8a8680;
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+  }
+  .breadcrumb a {
+    color: #4a7bb8;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 8px; color: #c9c0ad; }
+
+  header { margin-bottom: 48px; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8a8680;
+    margin-bottom: 16px;
+    padding: 6px 14px;
+    border: 1px solid #e3dfd6;
+    border-radius: 999px;
+    background: #fff;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    color: #555047;
+    max-width: 820px;
+    margin-bottom: 16px;
+    line-height: 1.55;
+  }
+  .meta {
+    font-size: 0.82rem;
+    color: #8a8680;
+    margin-bottom: 24px;
+  }
+
+  /* Group headers */
+  .group {
+    margin-top: 56px;
+  }
+  .group:first-of-type { margin-top: 36px; }
+  .group-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8a8680;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e8e2d5;
+  }
+
+  /* Card grid (matches hub .europe-grid / .vector pattern) */
+  .fl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .fl-card {
+    background: #fff;
+    border: 1px solid #e8e2d5;
+    border-radius: 10px;
+    padding: 22px 24px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    position: relative;
+  }
+  .fl-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border-color: #c9c0ad;
+  }
+
+  .fl-num {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8a8680;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .fl-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #17161a;
+    margin-bottom: 8px;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+  }
+  .fl-tag {
+    font-size: 0.85rem;
+    color: #555047;
+    line-height: 1.5;
+    flex: 1;
+    margin-bottom: 14px;
+  }
+  .fl-status {
+    font-size: 0.7rem;
+    color: #7a5a1c;
+    background: #fef6e1;
+    border: 1px solid #f0d99e;
+    border-radius: 999px;
+    padding: 3px 10px;
+    align-self: flex-start;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .fl-status::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: #d4a03a;
+    border-radius: 50%;
+  }
+  .fl-card.canonical .fl-status {
+    background: #ecf6e8;
+    color: #2e7d4f;
+    border-color: #c4e2b6;
+  }
+  .fl-card.canonical .fl-status::before { background: #4cb56c; }
+
+  .caveat {
+    margin-top: 56px;
+    padding: 22px 28px;
+    background: #f5f1e6;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    color: #555047;
+    line-height: 1.6;
+  }
+  .caveat strong { color: #17161a; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid #e8e2d5;
+    font-size: 0.82rem;
+    color: #8a8680;
+    text-align: center;
+    line-height: 1.6;
+  }
+  footer a { color: #4a7bb8; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="../nuance-2026.html">Nuance Is Not a Dirty Word</a>
+    <span class="sep">›</span>
+    <span>Fault lines</span>
+  </div>
+
+  <header>
+    <span class="eyebrow">Phase 1 · scaffold</span>
+    <h1>Fault lines: twenty deep dives</h1>
+    <p class="subtitle">Twenty specific places where extremist-Islamist ideologies and Western liberal-democratic norms collide. Each page steelmans both positions, cites real cases in the EU, US, and Japan, names inside-Muslim critics worth reading, and gathers 4–8 sources for a future Phase-2 deep dive. Phase 1 is the citation-bearing skeleton; Phase 2 will be the long-form prose.</p>
+    <p class="meta">20 pages · Phase 1 status: scaffold · 1 canonical (#01) · 19 standard scaffolds</p>
+  </header>
+
+  <!-- Political-philosophical group -->
+  <section class="group">
+    <div class="group-label">Political-philosophical · 1 → 10</div>
+    <div class="fl-grid">
+
+      <a class="fl-card canonical" href="01-political-authority.html">
+        <div class="fl-num">Fault Line · 01</div>
+        <div class="fl-title">Political authority</div>
+        <div class="fl-tag">Popular sovereignty vs. divine sovereignty (hakimiyya).</div>
+        <span class="fl-status">canonical · sources gathered</span>
+      </a>
+
+      <a class="fl-card" href="02-religion-and-state.html">
+        <div class="fl-num">Fault Line · 02</div>
+        <div class="fl-title">Religion and state</div>
+        <div class="fl-tag">Secularism / laïcité vs. sharia governance.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="03-individual-vs-duties.html">
+        <div class="fl-num">Fault Line · 03</div>
+        <div class="fl-title">Individual rights vs. religious duties</div>
+        <div class="fl-tag">Autonomy vs. communal conformity.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="04-gender-equality.html">
+        <div class="fl-num">Fault Line · 04</div>
+        <div class="fl-title">Gender equality</div>
+        <div class="fl-tag">Equal citizenship vs. complementarian hierarchy.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="05-religious-pluralism.html">
+        <div class="fl-num">Fault Line · 05</div>
+        <div class="fl-title">Religious pluralism</div>
+        <div class="fl-tag">Coexistence vs. dhimmi / apostasy frameworks.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="06-blasphemy-expression.html">
+        <div class="fl-num">Fault Line · 06</div>
+        <div class="fl-title">Blasphemy &amp; free expression</div>
+        <div class="fl-tag">Protected satire vs. punishable insult.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="07-violence-political-change.html">
+        <div class="fl-num">Fault Line · 07</div>
+        <div class="fl-title">Violence and political change</div>
+        <div class="fl-tag">Ballots vs. jihadist strands.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="08-universalism-particularism.html">
+        <div class="fl-num">Fault Line · 08</div>
+        <div class="fl-title">Universalism vs. particularism</div>
+        <div class="fl-tag">Universal human rights vs. religious-civilizational frame.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="09-education.html">
+        <div class="fl-num">Fault Line · 09</div>
+        <div class="fl-title">Education</div>
+        <div class="fl-tag">Critical inquiry vs. orthodox transmission.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="10-nation-vs-ummah.html">
+        <div class="fl-num">Fault Line · 10</div>
+        <div class="fl-title">National identity vs. ummah</div>
+        <div class="fl-tag">Civic citizenship vs. transnational religious community.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Cosmological / body / dietary group -->
+  <section class="group">
+    <div class="group-label">Cosmological · body · dietary · 11 → 13</div>
+    <div class="fl-grid">
+
+      <a class="fl-card" href="11-eschatology.html">
+        <div class="fl-num">Fault Line · 11</div>
+        <div class="fl-title">Eschatology</div>
+        <div class="fl-tag">Afterlife logic, martyrdom calculus, end-times reasoning.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="12-burial-body.html">
+        <div class="fl-num">Fault Line · 12</div>
+        <div class="fl-title">Burial &amp; body disposition</div>
+        <div class="fl-tag">Cremation forbidden, autopsy resisted, organ donation contested.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="13-dietary-shared-life.html">
+        <div class="fl-num">Fault Line · 13</div>
+        <div class="fl-title">Dietary law &amp; shared public life</div>
+        <div class="fl-tag">The "ramen problem": halal/pork in cafeterias, mess halls, hospitals.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Practical-friction group -->
+  <section class="group">
+    <div class="group-label">Practical-friction · 14 → 20</div>
+    <div class="fl-grid">
+
+      <a class="fl-card" href="14-family-law.html">
+        <div class="fl-num">Fault Line · 14</div>
+        <div class="fl-title">Family law</div>
+        <div class="fl-tag">Polygamy, inheritance asymmetry, child marriage, divorce asymmetry.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="15-legal-pluralism.html">
+        <div class="fl-num">Fault Line · 15</div>
+        <div class="fl-title">Legal pluralism</div>
+        <div class="fl-tag">UK sharia councils, parallel arbitration, FGM &amp; honor cases.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="16-banking-finance.html">
+        <div class="fl-num">Fault Line · 16</div>
+        <div class="fl-title">Banking and finance</div>
+        <div class="fl-tag">Riba prohibition, parallel financial institutions, sukuk.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="17-dress-bodily-display.html">
+        <div class="fl-num">Fault Line · 17</div>
+        <div class="fl-title">Public dress &amp; bodily display</div>
+        <div class="fl-tag">Hijab, niqab, burkini, mixed swimming, school PE.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="18-calendar-time.html">
+        <div class="fl-num">Fault Line · 18</div>
+        <div class="fl-title">Calendar and time</div>
+        <div class="fl-tag">Friday prayer, Ramadan in workplaces and schools, prayer breaks.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="19-hygiene-purity.html">
+        <div class="fl-num">Fault Line · 19</div>
+        <div class="fl-title">Hygiene and ritual purity</div>
+        <div class="fl-tag">Wudu, gender-separated facilities, dog contact (police, guide dogs).</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+      <a class="fl-card" href="20-music-image-depiction.html">
+        <div class="fl-num">Fault Line · 20</div>
+        <div class="fl-title">Music, image, depiction</div>
+        <div class="fl-tag">Figurative art, music in public, mosque architecture restrictions.</div>
+        <span class="fl-status">scaffold</span>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="caveat">
+    <strong>How to read these pages.</strong> Phase 1 is the structural skeleton: each page steelmans both extremist-Islamist and liberal-democratic positions on the fault line, cites real friction cases in the EU, US, and Japan, names Muslim reformers and inside-critics worth reading on the specific issue, and gathers 4–8 credible sources. Where source-finding still has gaps, pages flag them with HTML comments rather than fabricating citations. Phase 2 will deepen each page into long-form prose with primary-source close readings and policy analysis. The hub essay (linked above) is the manifesto these pages develop in detail.
+  </div>
+
+  <footer>
+    <p><a href="../nuance-2026.html">← back to hub</a> · 20 fault lines · Phase 1 scaffold · revised May 2026</p>
+  </footer>
+
+</div>
+</body>
+</html>
