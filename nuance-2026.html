@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuance Is Not a Dirty Word — 2026 Revision</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", sans-serif;
+    background: #faf9f6;
+    color: #17161a;
+    line-height: 1.6;
+    padding: 48px 20px 96px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1120px; margin: 0 auto; }
+
+  header { text-align: center; margin-bottom: 72px; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8a8680;
+    margin-bottom: 16px;
+    padding: 6px 14px;
+    border: 1px solid #e3dfd6;
+    border-radius: 999px;
+    background: #fff;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    color: #555047;
+    max-width: 820px;
+    margin: 0 auto 24px;
+  }
+  .dateline {
+    font-size: 0.8rem;
+    color: #999383;
+    letter-spacing: 0.04em;
+  }
+
+  /* Band sections */
+  .band-section {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 820px) {
+    .band-section { grid-template-columns: 1fr; gap: 20px; }
+  }
+  .band-label h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    color: #17161a;
+  }
+  .band-label .tagline {
+    font-style: italic;
+    color: #6d675c;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .band-label .traits {
+    font-size: 0.88rem;
+    color: #555047;
+    padding-top: 14px;
+    border-top: 1px solid #e8e2d5;
+  }
+  .band-label .traits strong { color: #17161a; }
+
+  .band-wrap { position: relative; padding: 6px 0; }
+  .band {
+    height: 84px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.25s ease, filter 0.25s ease;
+    filter: url(#watercolor-edge);
+  }
+  .band:hover {
+    transform: translateY(-2px);
+  }
+  .band-black {
+    background:
+      repeating-linear-gradient(88deg,
+        #0a0a0a 0, #0a0a0a 3px, #1c1c1c 3px, #1c1c1c 7px,
+        #0a0a0a 7px, #0a0a0a 12px);
+  }
+  .band-blue {
+    background: linear-gradient(90deg, #4ea2d0, #7ab8db, #4ea2d0);
+    background-size: 200% 100%;
+    animation: flow 14s linear infinite;
+  }
+  @keyframes flow { to { background-position: -200% 0; } }
+  .band-rainbow {
+    /* Now ends in a near-black sliver: the violent fringe is real, small, and has to be named.
+       Refusing to acknowledge the dark tail is the blue-band error that fuels the black-band reaction. */
+    background: linear-gradient(90deg,
+      #2a6db3 0%,
+      #3aa0c7 16%,
+      #4cb56c 36%,
+      #d8c445 56%,
+      #e0893a 74%,
+      #b8372a 91%,
+      #1a1a1a 100%);
+  }
+  /* Steelmanned extremes: what each position actually claims at its most defensible.
+     Each compresses the non-dominant segments of the distribution into a thin sliver,
+     treating them as too small to matter for policy. */
+  .band-warmonger {
+    background: linear-gradient(90deg,
+      #2a6db3 0%,         /* sliver of blue — the moderates they acknowledge exist */
+      #4cb56c 1.6%,
+      #d8c445 3.0%,
+      #e0893a 4.2%,
+      #b8372a 5%,
+      #4a1108 8%,
+      #1a1a1a 14%,
+      #0a0a0a 100%);      /* dominant perception: threat */
+  }
+  .band-denialist {
+    /* Mirror of band-warmonger: 86% dominant blue, 9% transition, 5% compressed spectrum.
+       The "problems they acknowledge" (green → yellow → orange → red → black) are all
+       squeezed into the final sliver, just as the warmonger compresses the moderate
+       spectrum into the opening sliver. */
+    background: linear-gradient(90deg,
+      #1e5a9a 0%,          /* dominant blue, slightly deeper at the far edge */
+      #2a6db3 86%,         /* end of dominant region */
+      #3aa0c7 89%,         /* transition — lighter blue */
+      #5bafc1 92%,         /* teal */
+      #7ebf5c 94%,         /* light-green */
+      #4cb56c 95%,         /* compressed spectrum starts — green */
+      #d8c445 96.8%,       /* yellow */
+      #e0893a 98%,         /* orange */
+      #b8372a 99%,         /* red */
+      #1a1a1a 100%);       /* black tip — the violent fringe, conceded and dismissed */
+  }
+  .spectrum-labels {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #555047;
+  }
+  .spectrum-labels span { text-align: center; }
+  .spectrum-labels span:nth-child(1) { color: #2a6db3; }
+  .spectrum-labels span:nth-child(2) { color: #4cb56c; }
+  .spectrum-labels span:nth-child(3) { color: #e0893a; }
+  .spectrum-labels span:nth-child(4) { color: #b8372a; }
+
+  .band-detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid transparent;
+  }
+  .band-detail.open {
+    max-height: 500px;
+    margin-top: 14px;
+    padding: 18px 22px;
+    border-color: #e8e2d5;
+  }
+  .band-detail p { font-size: 0.9rem; color: #3a3630; }
+
+  /* Thesis block */
+  .thesis {
+    margin: 72px 0;
+    padding: 36px 40px;
+    background: #fff;
+    border-left: 4px solid #b8372a;
+    border-radius: 0 8px 8px 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #2a2620;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .thesis p + p { margin-top: 14px; }
+
+  /* Section titles */
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin: 80px 0 8px;
+  }
+  .section-sub {
+    color: #6d675c;
+    margin-bottom: 28px;
+    max-width: 780px;
+  }
+
+  /* Layered ecosystem */
+  .layers {
+    display: grid;
+    gap: 0;
+    margin: 24px 0 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e8e2d5;
+    background: #fff;
+  }
+  .layer {
+    display: grid;
+    grid-template-columns: 140px 1fr 240px;
+    gap: 0;
+    padding: 0;
+    border-bottom: 1px solid #f0ece2;
+    transition: background 0.15s;
+  }
+  .layer:last-child { border-bottom: none; }
+  .layer:hover { background: #faf7ef; }
+  @media (max-width: 760px) {
+    .layer { grid-template-columns: 1fr; }
+  }
+
+  .layer-bar {
+    background: var(--layer-color);
+    color: #fff;
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .layer-bar .pct {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .layer-bar .pct-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+  .layer-body {
+    padding: 20px 22px;
+  }
+  .layer-body .layer-name {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: #17161a;
+  }
+  .layer-body .layer-desc {
+    font-size: 0.88rem;
+    color: #3a3630;
+    line-height: 1.55;
+  }
+  .layer-side {
+    padding: 20px 22px;
+    background: #fbfaf5;
+    font-size: 0.78rem;
+    color: #6d675c;
+    border-left: 1px solid #f0ece2;
+    display: flex;
+    align-items: center;
+  }
+  @media (max-width: 760px) {
+    .layer-side { border-left: none; border-top: 1px solid #f0ece2; }
+    .layer-bar { flex-direction: row; align-items: baseline; gap: 12px; }
+    .layer-bar .pct-label { margin-top: 0; }
+  }
+
+  /* Country variation */
+  .country-table {
+    background: #fff;
+    border: 1px solid #e8e2d5;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .country-table-head {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    padding: 14px 20px;
+    background: #f5f1e6;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #555047;
+    font-weight: 600;
+  }
+  .country-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    padding: 12px 20px;
+    border-top: 1px solid #f0ece2;
+    align-items: center;
+    font-size: 0.92rem;
+  }
+  .country-row:hover { background: #faf7ef; }
+  .cr-name { font-weight: 600; }
+  .cr-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cr-bar {
+    flex: 1;
+    height: 8px;
+    background: #f0ece2;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .cr-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4cb56c, #d8c445, #e0893a, #b8372a);
+  }
+  .cr-val {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    min-width: 42px;
+    text-align: right;
+  }
+
+  /* Europe section */
+  .europe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .europe-card {
+    background: #fff;
+    border: 1px solid #e8e2d5;
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .europe-card .ec-stat {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #b8372a;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .europe-card .ec-label {
+    font-size: 0.88rem;
+    color: #3a3630;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .europe-card .ec-source {
+    font-size: 0.72rem;
+    color: #8a8680;
+    padding-top: 10px;
+    border-top: 1px dashed #e8e2d5;
+    line-height: 1.4;
+  }
+  .europe-card .ec-source a { color: #4a7bb8; text-decoration: none; }
+
+  /* Vectors */
+  .vectors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .vector {
+    background: #fff;
+    border: 1px solid #e8e2d5;
+    border-radius: 10px;
+    padding: 22px;
+  }
+  .vector h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #17161a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .vector h4::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #b8372a;
+  }
+  .vector p { font-size: 0.88rem; color: #3a3630; line-height: 1.55; }
+
+  /* Caveat */
+  .caveat {
+    margin-top: 48px;
+    padding: 22px 28px;
+    background: #f5f1e6;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    color: #555047;
+    line-height: 1.6;
+  }
+  .caveat strong { color: #17161a; }
+
+  footer {
+    margin-top: 72px;
+    padding-top: 32px;
+    border-top: 1px solid #e8e2d5;
+    font-size: 0.82rem;
+    color: #8a8680;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* Cherry-picking jar visual */
+  .jar-section {
+    margin: 16px 0 24px;
+    padding: 28px;
+    background: #fff;
+    border: 1px solid #e8e2d5;
+    border-radius: 12px;
+  }
+  .jar-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .jar-layout { grid-template-columns: 1fr; }
+  }
+  .jar-col { text-align: center; }
+  .jar-col h4 {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .jar-col.left h4 { color: #1a1a1a; }
+  .jar-col.center h4 { color: #4cb56c; }
+  .jar-col.right h4 { color: #2a6db3; }
+  .jar-svg {
+    width: 100%;
+    max-width: 240px;
+    height: 240px;
+    display: block;
+    margin: 0 auto;
+  }
+  .jar-conclusion {
+    margin-top: 14px;
+    font-size: 0.86rem;
+    font-style: italic;
+    color: #555047;
+    min-height: 4em;
+    line-height: 1.45;
+    padding: 0 4px;
+  }
+  .jar-col.left .jar-conclusion { color: #1a1a1a; }
+  .jar-col.right .jar-conclusion { color: #2a6db3; }
+  .jar-btn {
+    margin-top: 12px;
+    padding: 8px 16px;
+    border: 1px solid #c9c0ad;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .jar-btn:hover { background: #f5f1e6; }
+
+  /* Problem-is-real section */
+  .problem-real {
+    margin: 40px 0;
+    padding: 36px 40px;
+    background: linear-gradient(to bottom right, #fff, #faf7ef);
+    border: 1px solid #e8e2d5;
+    border-radius: 12px;
+    border-left: 4px solid #e0893a;
+  }
+  @media (max-width: 600px) {
+    .problem-real { padding: 24px 22px; }
+  }
+  .problem-real h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    color: #17161a;
+  }
+  .problem-real .lead {
+    font-size: 1rem;
+    color: #3a3630;
+    margin-bottom: 12px;
+    line-height: 1.65;
+  }
+  .problem-real .lead em { color: #b8372a; font-style: italic; font-weight: 600; }
+  .mb-box {
+    margin-top: 24px;
+    padding: 24px 26px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e8e2d5;
+  }
+  .mb-box h4 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #17161a;
+  }
+  .mb-box .mb-meta {
+    font-size: 0.76rem;
+    color: #8a8680;
+    margin-bottom: 18px;
+    letter-spacing: 0.01em;
+  }
+  .mb-box ul { list-style: none; padding: 0; margin: 0; }
+  .mb-box li {
+    padding: 12px 0;
+    border-top: 1px solid #f0ece2;
+    font-size: 0.9rem;
+    color: #3a3630;
+    line-height: 1.55;
+  }
+  .mb-box li:first-child { border-top: none; padding-top: 0; }
+  .mb-box li strong { color: #17161a; }
+  .mb-quote {
+    margin: 18px 0 4px;
+    padding: 16px 22px;
+    border-left: 3px solid #e0893a;
+    font-style: italic;
+    color: #3a3630;
+    background: #fbfaf5;
+    font-size: 0.92rem;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.55;
+  }
+  .mb-source {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed #e8e2d5;
+    font-size: 0.78rem;
+    color: #8a8680;
+    line-height: 1.7;
+  }
+  .mb-source a { color: #4a7bb8; text-decoration: none; }
+  .mb-source a:hover { text-decoration: underline; }
+
+  /* Rehabilitating discrimination section */
+  .rehab-section {
+    margin: 32px 0;
+    padding: 36px 40px;
+    background: linear-gradient(to bottom right, #faf7ef, #fff 55%);
+    border: 1px solid #e8e2d5;
+    border-radius: 12px;
+  }
+  @media (max-width: 600px) { .rehab-section { padding: 26px 22px; } }
+  .rehab-lead {
+    font-size: 1rem;
+    color: #3a3630;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+  .rehab-lead strong { color: #17161a; }
+  .rehab-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 28px;
+    counter-reset: rehab-counter;
+  }
+  @media (max-width: 780px) { .rehab-grid { grid-template-columns: 1fr; } }
+  .rehab-card {
+    background: #fff;
+    border: 1px solid #e8e2d5;
+    border-radius: 10px;
+    padding: 24px 26px;
+  }
+  .rehab-card h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #17161a;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: -0.005em;
+  }
+  .rehab-card h4::before {
+    counter-increment: rehab-counter;
+    content: counter(rehab-counter);
+    width: 26px;
+    height: 26px;
+    background: #e0893a;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .rehab-card p {
+    font-size: 0.9rem;
+    color: #3a3630;
+    line-height: 1.62;
+    margin-bottom: 12px;
+  }
+  .rehab-card p:last-child { margin-bottom: 0; }
+  .rehab-card em { color: #555047; }
+  .rehab-card strong { color: #17161a; }
+
+  .reformer-names {
+    font-size: 0.84rem;
+    line-height: 1.85;
+    color: #3a3630;
+    margin: 14px 0;
+    padding: 16px 18px;
+    background: #faf7ef;
+    border-radius: 8px;
+    border: 1px solid #f0ece2;
+  }
+  .reformer-names strong { color: #17161a; font-weight: 700; }
+
+  .trust-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin: 18px 0 6px;
+    padding: 16px;
+    background: #faf7ef;
+    border-radius: 8px;
+  }
+  .trust-demo-col { text-align: center; }
+  .trust-demo-label {
+    font-weight: 700;
+    color: #555047;
+    margin-bottom: 8px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .trust-demo-bar {
+    height: 22px;
+    background: #f0ece2;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+  }
+  .trust-demo-fill-good { background: #4cb56c; height: 100%; }
+  .trust-demo-fill-bad { background: #e0893a; height: 100%; }
+  .trust-demo-num {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.72rem;
+    color: #6d675c;
+    margin-top: 6px;
+  }
+
+  .policy-box {
+    margin-top: 32px;
+    padding: 30px 34px;
+    background: linear-gradient(140deg, #17161a, #2a2620);
+    color: #f0ece2;
+    border-radius: 12px;
+  }
+  @media (max-width: 600px) { .policy-box { padding: 24px 22px; } }
+  .policy-box h4 {
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
+  .policy-box ul { list-style: none; padding: 0; margin: 0; }
+  .policy-box li {
+    padding: 13px 0 13px 0;
+    border-top: 1px solid rgba(255,255,255,0.09);
+    font-size: 0.92rem;
+    line-height: 1.58;
+    color: #e8e2d5;
+    display: flex;
+    gap: 10px;
+  }
+  .policy-box li:first-child { border-top: none; padding-top: 0; }
+  .policy-box li::before {
+    content: "→";
+    color: #e0893a;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .policy-box li strong { color: #fff; font-weight: 700; }
+  .policy-box .closer {
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    font-size: 0.94rem;
+    color: #fff;
+    line-height: 1.6;
+  }
+  .policy-box .closer em { color: #e0893a; font-style: normal; font-weight: 600; }
+
+  /* Evidence tabs — the "importation is not values-neutral" backing */
+  .evidence-section {
+    margin: 40px 0;
+    padding: 36px 40px;
+    background: #fff;
+    border: 1px solid #e8e2d5;
+    border-radius: 12px;
+  }
+  @media (max-width: 600px) { .evidence-section { padding: 24px 20px; } }
+
+  .tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 5px;
+    background: #f5f1e6;
+    border-radius: 10px;
+    margin-bottom: 24px;
+  }
+  .tab-btn {
+    padding: 10px 14px;
+    border: none;
+    background: transparent;
+    border-radius: 7px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: #555047;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+  .tab-btn:hover { background: rgba(255, 255, 255, 0.6); color: #17161a; }
+  .tab-btn.active {
+    background: #fff;
+    color: #17161a;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
+    font-weight: 600;
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; animation: evFade 0.3s ease; }
+  @keyframes evFade {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .ev-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 780px) { .ev-grid { grid-template-columns: 1fr; } }
+
+  .ev-card {
+    background: #faf7ef;
+    border: 1px solid #e8e2d5;
+    border-radius: 10px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .ev-card.ev-counter {
+    background: #f1f7ed;
+    border-color: #d5e4c7;
+  }
+  .ev-header { margin-bottom: 14px; }
+  .ev-number {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #b8372a;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .ev-card.ev-counter .ev-number { color: #2e7d4f; }
+  .ev-claim {
+    font-size: 0.96rem;
+    font-weight: 700;
+    color: #17161a;
+    line-height: 1.4;
+  }
+  .ev-source {
+    font-size: 0.78rem;
+    color: #6d675c;
+    padding: 10px 0;
+    margin-bottom: 12px;
+    border-top: 1px solid #e8e2d5;
+    border-bottom: 1px solid #e8e2d5;
+    line-height: 1.55;
+  }
+  .ev-source strong { color: #17161a; }
+  .ev-method { font-style: italic; display: block; margin-top: 4px; }
+  .ev-body {
+    font-size: 0.88rem;
+    color: #3a3630;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    flex: 1;
+  }
+  .ev-body strong { color: #17161a; }
+  .ev-body em { color: #555047; }
+  .ev-caveat {
+    font-size: 0.78rem;
+    color: #7a5a1c;
+    background: #fef6e1;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    border-left: 3px solid #d4a03a;
+    line-height: 1.5;
+  }
+  .ev-caveat strong { color: #5e4414; }
+  .ev-link {
+    font-size: 0.78rem;
+    padding-top: 10px;
+    border-top: 1px dashed #e8e2d5;
+  }
+  .ev-link a {
+    color: #4a7bb8;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .ev-link a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- SVG filter: watercolor/splatter edge for the three bands.
+     Evokes the original hand-drawn diagram's messy boundaries:
+     the world isn't uniform, borders between categories are fuzzy,
+     every unhappy family is unhappy in its own way. -->
+<svg aria-hidden="true" focusable="false" style="position:absolute; width:0; height:0; overflow:hidden;">
+  <defs>
+    <filter id="watercolor-edge" x="-6%" y="-40%" width="112%" height="180%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022 0.08" numOctaves="3" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="container">
+
+  <header>
+    <span class="eyebrow">Revision · April 2026</span>
+    <h1>Nuance Is Not a Dirty Word</h1>
+    <p class="subtitle">A decade-later revisit. The bands haven't moved. What's changed is that "it's only a tiny fringe" and "a quarter of a billion people share significant pieces of the ideological endpoint" are <em>both</em> true, and a serious frame has to hold them at the same time.</p>
+    <div class="dateline">Originally sketched ~2015 · Revised April 2026</div>
+  </header>
+
+  <!-- Band 1 -->
+  <section class="band-section">
+    <div class="band-label">
+      <h2>1. Binary worldview</h2>
+      <div class="tagline">"All Muslims = Terrorists."<br>"No Refugees! Bomb!"</div>
+      <div class="traits"><strong>warmongering</strong>, primal, tribal, uneducated · <strong>destructive</strong></div>
+    </div>
+    <div class="band-wrap">
+      <div class="band band-black" data-band="black"></div>
+      <div class="band-detail" id="detail-black">
+        <p>The reductionist frame collapses 2 billion people into the actions of a fringe. Wrong on the facts, and destructive as policy — it hands extremist recruiters their best argument: "they hate all of us."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Band 2 -->
+  <section class="band-section">
+    <div class="band-label">
+      <h2>2. False dichotomy</h2>
+      <div class="tagline">"ISIS has <em>nothing</em> to do with Islam."<br>"Love is the only answer."</div>
+      <div class="traits"><strong>denial</strong>, utopian, disingenuous, "paved with good intentions" · <strong>not constructive</strong></div>
+    </div>
+    <div class="band-wrap">
+      <div class="band band-blue" data-band="blue"></div>
+      <div class="band-detail" id="detail-blue">
+        <p>The denialist frame refuses to engage with what extremists themselves say motivates them, and dodges survey data showing that sizeable populations share pieces of the ideological endpoint without endorsing the violence. Treats acknowledgement of a religious dimension as equivalent to bigotry — a category error that cedes honest analysis to band 1.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Band 3 -->
+  <section class="band-section">
+    <div class="band-label">
+      <h2>3. The nuanced continuum</h2>
+      <div class="tagline">The population isn't a single dot. It's a distribution.</div>
+      <div class="traits"><strong>descriptive</strong>, realistic, complex, layered — <strong>constructive</strong></div>
+    </div>
+    <div class="band-wrap">
+      <div class="band band-rainbow" data-band="rainbow"></div>
+      <div class="spectrum-labels">
+        <span>support</span>
+        <span>educate</span>
+        <span>contain</span>
+        <span>eradicate</span>
+      </div>
+      <div class="band-detail" id="detail-rainbow">
+        <p>Different segments of the distribution warrant different responses. Most of the mass sits on the left — the serious work of counter-extremism is keeping it there.</p>
+        <p>"Eradicate" on this spectrum means eradicating the <em>ideology</em> — defunding it, refusing to subsidize it, declining to treat illiberal theology as a protected identity. The dark sliver at the very end is not rhetorical: it's the fraction that has already chosen violence, and for that fraction, lawful police and military response is the right tool. <strong>Refusing to admit the dark tail exists is the blue-band error; mistaking its size for the whole jar is the black-band error.</strong></p>
+        <p>And the unit of judgment is always the individual. No collective guilt, no collective punishment. Even inside Reserve Police Battalion 101 and the SS, individuals chose differently — some refused orders, some resisted. The distribution is real; the person in front of you is still a person.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEELMAN SECTION: pre-empt the strawman charge -->
+  <h2 class="section-title" style="margin-top: 56px;">Steelmanning the extremes</h2>
+  <p class="section-sub">A fair objection to the first three bands is that they caricature. Nobody actually says "100% of Muslims are terrorists" or "100% of Muslims are saints." The thoughtful versions of each position <em>do</em> acknowledge variation — they simply believe the distribution is so overwhelmingly dominated by one color that only one policy response is rational, and the rest is rounding error. Here is what each position actually claims at its most defensible, placed next to the distribution the data produces.</p>
+
+  <section class="band-section">
+    <div class="band-label">
+      <h2>Warmonger, steelmanned</h2>
+      <div class="tagline">"Of course there's variation. It just doesn't matter for policy."</div>
+      <div class="traits">Concedes a moderate tail exists. <strong>Compresses it into a thin sliver.</strong> The dominant color dictates the response; false negatives of inaction outweigh false positives of restriction.</div>
+    </div>
+    <div class="band-wrap">
+      <div class="band band-warmonger" data-band="warmonger"></div>
+      <div class="band-detail" id="detail-warmonger">
+        <p>The thoughtful version of the position the original black band caricatured. It says: <em>"We're not claiming every Muslim is a terrorist. We're saying the ideological mass aligned against Western liberal norms is so large, the determined fringe is so motivated, and the institutional-capture project is so systematic, that a policy calibrated to the moderate tail is a policy that will keep paying the predictable costs of the dominant one."</em></p>
+        <p>The failure mode isn't ignorance of the left tail — it's the decision to treat the compressed 5% as inconsequential. That 5% contains the reformers named earlier in this page, the natural allies of any serious counter-extremism effort, the future moderate majority, and the civilian population any blanket policy will actually land on. Compressing them out isn't rigor. It's a choice about whose existence gets to matter.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-section">
+    <div class="band-label">
+      <h2>Denialist, steelmanned</h2>
+      <div class="tagline">"Of course there's a fringe. It just isn't worth the policy cost."</div>
+      <div class="traits">Concedes a violent tail exists. <strong>Compresses it into a thin sliver.</strong> Response cost — alienation, radicalization, civil-liberties damage — treated as exceeding threat cost.</div>
+    </div>
+    <div class="band-wrap">
+      <div class="band band-denialist" data-band="denialist"></div>
+      <div class="band-detail" id="detail-denialist">
+        <p>The thoughtful version of the position the original blue band caricatured. It says: <em>"We're not pretending violence doesn't exist. We're saying the 0.0025% fringe is a policing problem best handled by targeted law enforcement, that survey data on illiberal attitudes is cherry-picked and context-stripped, and that every harsh counter-extremism measure produces more radicalization than it prevents."</em></p>
+        <p>The failure mode isn't ignorance of the right tail — it's the decision to compress the entire <em>middle</em> of the distribution, the illiberal-but-peaceful layer, into the same "tiny fringe" bucket as the violent core, and then decline to see either. The French Muslim Brotherhood report documents precisely the layer this compression renders invisible: the organized, non-violent, institutional-capture project that the denialist steelman has no category for, because acknowledging it would require admitting the middle exists.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-section">
+    <div class="band-label">
+      <h2>Actual distribution</h2>
+      <div class="tagline">The shape the data actually produces.</div>
+      <div class="traits">Wide moderate left, meaningful illiberal middle, small sympathetic band, tiny violent tail at the near-black end. <strong>No segment compresses out without distorting the policy conversation.</strong></div>
+    </div>
+    <div class="band-wrap">
+      <div class="band band-rainbow" data-band="actual"></div>
+      <div class="band-detail" id="detail-actual">
+        <p>The same gradient as band 3 above — redrawn here next to the two steelmanned extremes so the compression is visible at a glance. Both steelmen share a structural move: <em>calling the non-dominant segments of a real distribution negligible, and then legislating as if they were.</em> Being thoughtful about which segments you compress does not fix the fact that compression is happening.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="caveat" style="margin-top: 12px;">
+    <strong>Why the steelmen still fail.</strong> Both defensible versions collapse a multi-segment distribution into a one-dimensional policy verdict by calling the non-dominant layers "rounding error." The warmonger's steelman writes off the moderate mass. The denialist's steelman writes off the illiberal middle <em>and</em> the violent tail. Each is choosing which real people — reformers, moderate majorities, illiberal-but-peaceful neighbors, victims of the violent fringe, the fringe itself — to erase in the service of a clean conclusion. The rainbow band is not "centrism" or "both-sides-ism." It's the refusal to erase any layer, because the data forbids it and the consequences of erasure always land on someone who didn't get consulted.
+  </div>
+
+  <!-- CHERRY-PICK VISUAL -->
+  <h2 class="section-title" style="margin-top: 56px;">The shared fallacy, in one picture</h2>
+  <p class="section-sub">Both extremes do the same thing. They reach into the same jar, pull out the one dot that flatters their conclusion, and hold it up as if it were the whole jar. Click a button.</p>
+
+  <div class="jar-section">
+    <div class="jar-layout">
+
+      <div class="jar-col left">
+        <h4>Band 1 Cherry-pick</h4>
+        <svg class="jar-svg" viewBox="0 0 240 240" aria-label="Jar of dots, band-1 cherry-pick view">
+          <path d="M 40 60 L 40 220 Q 40 232, 52 232 L 188 232 Q 200 232, 200 220 L 200 60 Z"
+                fill="#f9f6ed" stroke="#c9c0ad" stroke-width="1.5"/>
+          <rect x="32" y="48" width="176" height="14" rx="3" fill="#b7ad97" />
+          <g id="dots-left"></g>
+        </svg>
+        <div class="jar-conclusion" id="conclusion-left">"Some imams preach hatred and most top terror orgs are Islamist — therefore a Muslim background is incompatible with the West."</div>
+        <button class="jar-btn" onclick="cherryPick('left')">Cherry-pick the dark dot</button>
+      </div>
+
+      <div class="jar-col center">
+        <h4>The actual jar</h4>
+        <svg class="jar-svg" viewBox="0 0 240 240" aria-label="Jar of dots, full distribution">
+          <path d="M 40 60 L 40 220 Q 40 232, 52 232 L 188 232 Q 200 232, 200 220 L 200 60 Z"
+                fill="#f9f6ed" stroke="#c9c0ad" stroke-width="1.5"/>
+          <rect x="32" y="48" width="176" height="14" rx="3" fill="#b7ad97" />
+          <g id="dots-center"></g>
+        </svg>
+        <div class="jar-conclusion">A distribution. Mostly moderate, a band of illiberal-but-peaceful, a small ring of active sympathy, a fringe of violence. <strong>None of the dots vanish when you acknowledge the others.</strong></div>
+      </div>
+
+      <div class="jar-col right">
+        <h4>Band 2 Cherry-pick</h4>
+        <svg class="jar-svg" viewBox="0 0 240 240" aria-label="Jar of dots, band-2 cherry-pick view">
+          <path d="M 40 60 L 40 220 Q 40 232, 52 232 L 188 232 Q 200 232, 200 220 L 200 60 Z"
+                fill="#f9f6ed" stroke="#c9c0ad" stroke-width="1.5"/>
+          <rect x="32" y="48" width="176" height="14" rx="3" fill="#b7ad97" />
+          <g id="dots-right"></g>
+        </svg>
+        <div class="jar-conclusion" id="conclusion-right">"The Qur'an speaks of mercy and the violent fringe is 0.0025% — therefore there is no ideological problem, and Muslim immigrants are categorically beneficial."</div>
+        <button class="jar-btn" onclick="cherryPick('right')">Cherry-pick the friendly dot</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="caveat" style="margin-top: 12px;">
+    <strong>The shared error has a name.</strong> <em>Suppressed evidence → hasty generalization → essentialism → motivated conclusion.</em> The premises are selected; the conclusion is pre-chosen; group membership is treated as if it implied a uniform property. The two extremes are structurally identical. They differ only in which dot they plucked out, and in which tribe their conclusion flatters.
+  </div>
+
+  <div class="thesis">
+    <p>The violent fringe is a rounding error on the global Muslim population. That much is true.</p>
+    <p>It's also true that the <em>ideological endpoint</em> the fringe is fighting for — sharia as the law of the land, death for apostasy, criminalization of blasphemy, gender and religious hierarchy enforced by the state — commands agreement from tens or hundreds of millions of people who would never pick up a gun. The non-violent majority of that population is not the problem of terrorism. It is the problem of what kind of society gets built where they're the median voter.</p>
+    <p>A frame that can hold only one of these facts is a bad frame. The blue band holds the first and buries the second. The black band does the reverse. The rainbow is the distribution.</p>
+  </div>
+
+  <!-- THE LAYERED ECOSYSTEM -->
+  <h2 class="section-title">The ecosystem, in layers</h2>
+  <p class="section-sub">Global order-of-magnitude estimates. The ranges are wide because the reality is wide — country-by-country variation is enormous and the next section shows it.</p>
+
+  <div class="layers">
+    <div class="layer" style="--layer-color:#b8372a">
+      <div class="layer-bar">
+        <div class="pct">~0.0025%</div>
+        <div class="pct-label">~50K people</div>
+      </div>
+      <div class="layer-body">
+        <div class="layer-name">Active violent core</div>
+        <div class="layer-desc">Fighters in ISIS affiliates, JNIM, Al-Shabaab, ISWAP/Boko Haram, AQ affiliates, ISIS-K. Aggregate estimate; UN Monitoring Team and ACLED figures vary.</div>
+      </div>
+      <div class="layer-side">The tip of the iceberg. Kills thousands per year, shapes global perception of 2 billion.</div>
+    </div>
+
+    <div class="layer" style="--layer-color:#e0893a">
+      <div class="layer-bar">
+        <div class="pct">~1–8%</div>
+        <div class="pct-label">20M–160M</div>
+      </div>
+      <div class="layer-body">
+        <div class="layer-name">Active sympathizers with violent jihadism</div>
+        <div class="layer-desc">Think suicide bombing against civilians is "sometimes" or "often" justified, or hold favorable views of ISIS/AQ in survey data. Range reflects huge country-to-country variation — under 5% in Indonesia, Turkey, Tunisia; 30–40% in Afghanistan and Palestinian territories.</div>
+      </div>
+      <div class="layer-side">Pew 2013 "The World's Muslims"; Arab Barometer follow-ups.</div>
+    </div>
+
+    <div class="layer" style="--layer-color:#d8c445; color:#3a3630">
+      <div class="layer-bar" style="color:#3a3630">
+        <div class="pct">~20–50%</div>
+        <div class="pct-label">400M–1B</div>
+      </div>
+      <div class="layer-body">
+        <div class="layer-name">Shared illiberal ideological endpoint (peaceful)</div>
+        <div class="layer-desc">Support sharia as law of the land, death for apostasy, criminalization of blasphemy, or say "Western society can never be compatible with Islam" — without endorsing terrorism. This is the layer most obscured by the "80% condemn violence" framing. The endpoint overlaps with what jihadists say they're fighting for; the method does not.</div>
+      </div>
+      <div class="layer-side">Pew 2013; Policy Exchange (UK); IFOP (France); Arab Barometer.</div>
+    </div>
+
+    <div class="layer" style="--layer-color:#4cb56c">
+      <div class="layer-bar">
+        <div class="pct">~50–80%</div>
+        <div class="pct-label">~1–1.6B</div>
+      </div>
+      <div class="layer-body">
+        <div class="layer-name">Moderate / pluralism-compatible majority</div>
+        <div class="layer-desc">Reject violence against civilians, hold views broadly compatible with liberal-democratic norms, or actively oppose theocratic governance. Largest in aggregate, varies most by country and cohort — closer to 90%+ in Kazakhstan, Azerbaijan, secular Turkey; closer to 50% in some Gulf and South Asian populations.</div>
+      </div>
+      <div class="layer-side">The rest of the distribution. What policy should be trying not to alienate.</div>
+    </div>
+  </div>
+
+  <div class="caveat" style="margin-top:0;">
+    <strong>Why the ranges are wide.</strong> The layers aren't cleanly separated — the same person may endorse one illiberal provision and reject another. "Support for sharia" means very different things in Indonesia (family law courts) versus Afghanistan (full criminal code, hudud punishments). The estimates are meant to show the shape, not the precise edges.
+  </div>
+
+  <!-- COUNTRY VARIATION -->
+  <h2 class="section-title">"80% condemn" hides the variance</h2>
+  <p class="section-sub">Pew's 2013 survey of Muslims across 11 countries on whether suicide bombing against civilians can be justified "sometimes" or "often" in defense of Islam. The global average is a statistical fiction — these are the distributions it averages.</p>
+
+  <div class="country-table">
+    <div class="country-table-head">
+      <div>Country</div>
+      <div>% saying suicide bombing sometimes/often justified</div>
+      <div></div>
+    </div>
+    <div id="country-rows"></div>
+  </div>
+  <div style="font-size:0.78rem; color:#8a8680; margin-bottom:24px;">
+    Source: Pew Research Center, <em>The World's Muslims: Religion, Politics and Society</em> (April 2013). Palestinian territories figure from Pew 2011. These are survey responses, not incidence of behavior.
+  </div>
+
+  <!-- EUROPE -->
+  <h2 class="section-title">Western Europe, specifically</h2>
+  <p class="section-sub">The claim "numbers are higher in Western Europe" is partially true and partially not. European-born Muslims are on some measures <em>more</em> integrated than populations in origin countries; on other measures — especially among young men, and especially around specific provocations like depictions of Muhammad — the numbers are uncomfortable. The "re-Islamization of the second generation" is a documented phenomenon in France and the UK.</p>
+
+  <div class="europe-grid">
+    <div class="europe-card">
+      <div class="ec-stat">27%</div>
+      <div class="ec-label">UK Muslims with "some sympathy" for the motives of the Charlie Hebdo attackers</div>
+      <div class="ec-source"><a href="https://www.telegraph.co.uk/news/religion/11433776/" target="_blank">Telegraph / ComRes, Feb 2015</a> — the survey cited in the original diagram</div>
+    </div>
+    <div class="europe-card">
+      <div class="ec-stat">20%</div>
+      <div class="ec-label">UK Muslims agreeing "Western society can never be compatible with Islam"</div>
+      <div class="ec-source"><a href="https://www.telegraph.co.uk/news/religion/11433776/" target="_blank">Telegraph / ComRes, Feb 2015</a></div>
+    </div>
+    <div class="europe-card">
+      <div class="ec-stat">11%</div>
+      <div class="ec-label">UK Muslims agreeing organisations publishing images of Muhammad "deserve to be attacked"</div>
+      <div class="ec-source"><a href="https://www.telegraph.co.uk/news/religion/11433776/" target="_blank">Telegraph / ComRes, Feb 2015</a></div>
+    </div>
+    <div class="europe-card">
+      <div class="ec-stat">~37%</div>
+      <div class="ec-label">UK Muslims aged 16–24 who said they'd prefer to live under sharia rather than British law</div>
+      <div class="ec-source"><a href="https://policyexchange.org.uk/publication/living-apart-together-british-muslims-and-the-paradox-of-multiculturalism/" target="_blank">Policy Exchange, <em>Living Apart Together</em> (2007)</a> — often cited, methodology debated</div>
+    </div>
+    <div class="europe-card">
+      <div class="ec-stat">~50%</div>
+      <div class="ec-label">French Muslims under 25 saying sharia should be more important than French law</div>
+      <div class="ec-source">Institut Montaigne / IFOP, <em>Un islam français est possible</em> (Sept 2016). Overall figure across all ages: 29%.</div>
+    </div>
+    <div class="europe-card">
+      <div class="ec-stat">~52%</div>
+      <div class="ec-label">UK Muslims saying homosexuality should be illegal</div>
+      <div class="ec-source">ICM / Channel 4 survey, <em>What British Muslims Really Think</em> (April 2016)</div>
+    </div>
+  </div>
+
+  <div class="caveat" style="margin-top:8px;">
+    <strong>What cuts the other way.</strong> The same surveys generally find overwhelming majorities of European Muslims reject violence, identify with their country of residence, and condemn terrorism specifically. The illiberal-attitude numbers above are real and not a reporting artifact — but they coexist with a much larger moderate majority. Both halves of the picture are required.
+  </div>
+
+  <!-- RADICALIZATION VECTORS -->
+  <h2 class="section-title">Where radicalization actually happens</h2>
+  <p class="section-sub">Not everywhere, not uniformly. Specific pathways are well-documented by European intelligence services and academic researchers. Others — like the blanket claim that mainstream Islamic schools radicalize youth — are mostly not supported by evidence and deserve pushback in both directions.</p>
+
+  <div class="vectors">
+    <div class="vector">
+      <h4>Prisons</h4>
+      <p>Well-documented pathway, especially in France. The Kouachi brothers (Charlie Hebdo) and Amedy Coulibaly (Hyper Cacher) were all radicalized in the Fleury-Mérogis and Fresnes prison systems. France identified ~500–1,500 radicalized inmates at various points in the 2010s. The UK and Belgium face similar issues, with specific high-security wings now segregating identified recruiters.</p>
+    </div>
+    <div class="vector">
+      <h4>Online ecosystems</h4>
+      <p>The single largest vector for first-contact radicalization in Europe and North America since ~2014. Telegram channels, encrypted messaging, and platform migration after mainstream takedowns. Documented in virtually every European intelligence assessment.</p>
+    </div>
+    <div class="vector">
+      <h4>Specific funded networks</h4>
+      <p>Saudi, Qatari, and Turkish (Diyanet) state-adjacent funding of mosques, imams, and Islamic centers has been the target of restrictive legislation in France (2021 anti-separatism law), Austria (Islam Law 2015), and Germany. The claim is not that all such institutions radicalize — it's that foreign-state-funded theological imports are a distinct and legitimate policy target.</p>
+    </div>
+    <div class="vector">
+      <h4>A handful of identified schools</h4>
+      <p>The UK "Trojan Horse" affair (Birmingham, 2014) involved a small set of state schools, not a sector-wide pattern. France has closed a small number of specific out-of-contract Islamic schools. The broader claim that "Islamic schools radicalize youth" is not supported — most madrasas and Islamic schools don't — but specific institutions do, and identifying them is a legitimate regulatory function.</p>
+    </div>
+    <div class="vector">
+      <h4>Family and peer networks</h4>
+      <p>For second-generation European Muslims, peer-group radicalization in specific neighborhoods (Molenbeek in Brussels, banlieues around Paris, parts of Bradford and Birmingham) shows up consistently in case studies. Not a property of "the community" — a property of specific concentrated subcultures, often combined with other risk factors.</p>
+    </div>
+    <div class="vector">
+      <h4>What mostly doesn't radicalize</h4>
+      <p>Worth stating explicitly to keep the frame honest: mainstream mosque attendance, Sufi orders, most madrasas outside conflict zones, most Muslim family environments, and religious observance in general are not radicalization pathways. Treating them as if they were is the black-band error and produces its own harms.</p>
+    </div>
+  </div>
+
+  <!-- THE SEPARATE POINT: real problem -->
+  <h2 class="section-title">A separate point that must not get lost</h2>
+  <p class="section-sub">The shared fallacy of the two extremes is a real fallacy. But debunking it does <em>not</em> debunk the actual problem underneath. There is a third error — call it <em>both-sides centrism</em>, or the <em>horseshoe excuse</em> — which reasons: "the loudest voices on either end are reasoning badly, therefore no serious problem exists to address." That conclusion does not follow, and treating it as if it did is itself a form of the blue-band move dressed up as sophistication.</p>
+
+  <div class="problem-real">
+    <h3>Yes, the problem is real. It just isn't what either extreme describes.</h3>
+    <p class="lead">An ideology explicitly opposed to Enlightenment foundations — separation of religious and state authority, individual rights over communal obligations, equal citizenship regardless of religion, freedom to leave one's religion, equality of the sexes before the law — is allowed to organize, fundraise, educate, and <em>progressively capture institutions</em> in the West under the protective cover of "religious freedom" and "diversity."</p>
+    <p class="lead">This is not the same as the violent fringe, and the difference is the point: the violent fringe is a policing problem, the institutional-capture project is a constitutional one. A democratic society is entitled to notice the second without being reduced to the first. <strong>Noticing is not Islamophobia. Refusing to notice is not tolerance.</strong></p>
+
+    <div class="mb-box">
+      <h4>Case in point: the French government's Muslim Brotherhood report (2025)</h4>
+      <div class="mb-meta">75 pages · commissioned by Emmanuel Macron, January 2024 · made public May 20, 2025 · Conseil de défense convened May 21</div>
+
+      <ul>
+        <li><strong>Thesis.</strong> The Muslim Brotherhood pursues a "long-term, non-violent strategy" — the report's own phrase — of embedding sympathisers within European institutions with the ultimate aim of shifting society toward Islamic law.</li>
+        <li><strong>The method has a name.</strong> <em>Entrisme</em> — entryism. Political Islamism spreads "from the bottom up" at the municipal level through schools, mosques, NGOs, sports clubs, educational associations, and local electoral politics — not through terrorism.</li>
+        <li><strong>Organizational map.</strong> In France the network centers on <em>Musulmans de France</em> (rebranded from UOIF in 2017), coordinated via European-level bodies including the Brussels-based Council of European Muslims (CEM) and the youth-student federation FEMYSO.</li>
+        <li><strong>Stated risk.</strong> "A risk of harm to the associative fabric and republican institutions, and more broadly to national cohesion." The report explicitly distinguishes this from a terrorism threat — and treats the non-violent vector as the more strategically serious one.</li>
+        <li><strong>Targeted sectors.</strong> Macron's defense council focused on three ministries identified as particularly exposed to entryism: National Education, Higher Education, and Sports.</li>
+        <li><strong>Policy response.</strong> Macron demanded concrete proposals within weeks and a new law by end of summer 2025. Political responses ranged from RN calls to formally ban the Brotherhood, to denunciations from parts of the left framing the report itself as Islamophobic — a reaction-pattern that perfectly exemplifies why the rainbow band matters.</li>
+      </ul>
+
+      <div class="mb-quote">"The reality of this threat, even if it rests on a long temporality and does not resort to violent action, carries the risk of harm to the associative fabric and republican institutions, and more broadly to national cohesion."<br>— <em>Frères musulmans et islamisme politique en France</em>, French Ministry of the Interior, May 2025</div>
+
+      <div class="mb-source">
+        <strong>Primary source:</strong> <a href="https://www.interieur.gouv.fr/actualites/dossiers-de-presse/publication-du-rapport-freres-musulmans-et-islamisme-politique-en-france" target="_blank" rel="noopener">Ministère de l'Intérieur — dossier de presse</a><br>
+        <strong>Coverage:</strong> <a href="https://www.france24.com/en/france/20250521-muslim-brotherhood-movement-poses-threat-to-national-cohesion-french-govt-report-says" target="_blank" rel="noopener">France 24 (EN)</a> · <a href="https://www.publicsenat.fr/actualites/politique/freres-musulmans-ce-que-revele-le-rapport-commande-par-lexecutif" target="_blank" rel="noopener">Public Sénat</a> · <a href="https://hyphenonline.com/2025/06/04/muslim-brotherhood-france-government-report-explainer/" target="_blank" rel="noopener">Hyphen (critical explainer)</a> · <a href="https://strategyinternational.org/2025/06/05/publication182/" target="_blank" rel="noopener">Strategy International (analysis)</a>
+      </div>
+    </div>
+
+    <p class="lead" style="margin-top: 28px;">The honest picture: neither "2 billion people are the enemy" nor "the violent fringe is a rounding error, so relax." What exists underneath both slogans is a documented, organized, well-funded, explicitly non-violent project to reshape Western institutions from within — and the appropriate response is neither bombs and travel bans nor denial and deflection, but the patient constitutional defense a liberal democracy owes itself: transparent funding rules, no foreign-state-funded theology in public life, no parallel legal systems, no subsidized illiberalism dressed up as diversity, and the willingness to name the project when you see it.</p>
+  </div>
+
+  <!-- REHABILITATING DISCRIMINATION -->
+  <h2 class="section-title">Rehabilitating "discrimination"</h2>
+  <p class="section-sub">The word collapsed during twentieth-century civil-rights debates for reasons that were good in their context and bad in their consequence. Taking it back — carefully, in the sense English had for five hundred years before 1960 — is the precondition for being able to have the policy conversation out loud.</p>
+
+  <div class="rehab-section">
+    <p class="rehab-lead">Discrimination has two meanings. The older one — <strong>discernment</strong>, the capacity to tell the edible mushroom from the poisonous one, the trustworthy partner from the exploiter, the competent hire from the incompetent — is morally neutral and indispensable for any functioning cognition. The newer one — <strong>invidious differentiation</strong> against individuals on morally irrelevant grounds — is the one civil-rights law was rightly built to prohibit. Both senses remain active in English. The blue band's operational move is to reach for the second meaning's moral weight every time someone tries to use the first meaning in a policy context. Refusing to let them make that move is the point of this section.</p>
+
+    <div class="rehab-grid">
+
+      <div class="rehab-card">
+        <h4>Values fit, not cultural fit</h4>
+        <p>"Cultural fit" is the phrase in common use; "values fit" is the phrase that survives scrutiny. The HR critique of cultural fit is actually correct — in practice it has sometimes been a euphemism for pattern-matching on class, race, gender, or accent. Values fit is cleaner because the criterion is explicit.</p>
+        <p>A bicycle company hiring someone who believes that tire manufacture is an assault on Mother Earth and must be stopped is not engaged in bigotry when it declines. It's correctly identifying that the candidate's values are incompatible with the institution's purpose. Nobody disputes this at the company level. The same logic applied at the country level becomes unspeakable — not because the logic is different, but because we have agreed to pretend it is.</p>
+      </div>
+
+      <div class="rehab-card">
+        <h4>The trust economy is real</h4>
+        <p>Fukuyama's <em>Trust</em> (1995) and Putnam's social-capital work establish what intuition already tells us: high-trust societies produce more cooperative output at lower transaction cost, sustain better public goods, and run more generous welfare states — <em>because</em> free-rider behavior is suppressed by dense reciprocal norms rather than by expensive enforcement.</p>
+        <p>Concrete illustration: in Italy, taxi drivers routinely offer cash discounts — the implicit deal is that the fare won't be reported and VAT won't be paid. In Japan, they don't. This isn't a difference in personal virtue; it's a difference in enforcement equilibrium and institutional trust. Import half the taxi labor force from the high-evasion equilibrium overnight and the aggregate compliance rate moves. Whether the host norm pulls upward or the entrant norm pulls downward depends on selection, integration, and whether the host has the cultural self-confidence to assert its norms. The blue-band pretense that population importation is values-neutral is empirically wrong.</p>
+        <div class="trust-demo" role="img" aria-label="Illustration of aggregate shift under mixing">
+          <div class="trust-demo-col">
+            <div class="trust-demo-label">Host norm</div>
+            <div class="trust-demo-bar"><div class="trust-demo-fill-good" style="width:95%"></div><div class="trust-demo-fill-bad" style="width:5%"></div></div>
+            <div class="trust-demo-num">95% compliant</div>
+          </div>
+          <div class="trust-demo-col">
+            <div class="trust-demo-label">Entrant norm</div>
+            <div class="trust-demo-bar"><div class="trust-demo-fill-good" style="width:55%"></div><div class="trust-demo-fill-bad" style="width:45%"></div></div>
+            <div class="trust-demo-num">55% compliant</div>
+          </div>
+          <div class="trust-demo-col">
+            <div class="trust-demo-label">50/50 blend</div>
+            <div class="trust-demo-bar"><div class="trust-demo-fill-good" style="width:75%"></div><div class="trust-demo-fill-bad" style="width:25%"></div></div>
+            <div class="trust-demo-num">75% compliant</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rehab-card">
+        <h4>The inside critics</h4>
+        <p>The sharpest critics of illiberal currents within Muslim-majority societies are overwhelmingly from those societies. Not Western outsiders claiming cultural superiority — natives of the distributions describing what they saw, often at enormous personal cost.</p>
+        <div class="reformer-names">
+          <strong>Ayaan Hirsi Ali</strong> (Somali, survivor of FGM) · <strong>Maajid Nawaz</strong> (British-Pakistani, ex-Hizb ut-Tahrir) · <strong>Asra Nomani</strong> (Indian-American) · <strong>Irshad Manji</strong> (Ugandan-Canadian) · <strong>Masih Alinejad</strong> (Iranian, anti-compulsory-hijab) · <strong>Taslima Nasrin</strong> (Bangladeshi, in exile under fatwa) · <strong>Hamed Abdel-Samad</strong> (Egyptian-German, Muslim Brotherhood critic) · <strong>Salman Rushdie</strong> (nearly killed 2022 for a 1988 book) · <strong>Avijit Roy</strong> (Bangladeshi blogger, hacked to death 2015) · <strong>Sarah Haider</strong>, <strong>Ali A. Rizvi</strong> (ex-Muslim diaspora) · the Iranian women who removed hijabs publicly after Mahsa Amini's killing in 2022
+        </div>
+        <p>Their existence is evidence that the within-group variation is real, and its most eloquent spokespeople are risking their lives to describe it. A framing that makes their Western allies afraid to repeat what they are saying, for fear of being called racist, has failed these people specifically.</p>
+        <p><strong>Caveat they would insist on themselves:</strong> they are a self-selected tail, not the median. The immigrants most likely to criticize the illiberal currents of their origin culture are the same immigrants most likely to have emigrated <em>because</em> of those currents — the "good dots" willing to learn the language, integrate, and bring their cultures into the twenty-first century. The pattern is real. The sample is biased. Both things, at once.</p>
+      </div>
+
+      <div class="rehab-card">
+        <h4>Not all values are equivalent</h4>
+        <p>Strong cultural relativism — the view that all practices are equally valid and cross-cultural moral judgment is itself a form of imperialism — has a problem: its proponents never actually believe it at the limits. No serious person argues for the revival of Aztec child-sacrifice to <strong>Tlaloc</strong>, foot-binding, widow-burning, the European witch trials, chattel slavery, or the scalping of battlefield enemies. Every one of those was culturally coherent in context. Every one is now rightly understood as wrong.</p>
+        <p>The moral progress that lets us see them as wrong is not a provincial Western prejudice. It's moral progress, and pretending otherwise in order to avoid giving offense is not neutrality — it's cowardice dressed up as humility.</p>
+        <p>The serious form of moral pluralism distinguishes between practices that differ <em>without ranking</em> (cuisine, aesthetics, family structures, religious ritual) and practices that <em>violate widely-held moral intuitions once articulated</em>: coerced marriage, female genital mutilation, honor killing, blasphemy and apostasy executions, systematic state-enforced subordination of women to men. A policy framework is entitled to care about the second category.</p>
+      </div>
+
+    </div>
+
+    <div class="policy-box">
+      <h4>The defensible framework</h4>
+      <ul>
+        <li><span>Select on <strong>individual, integration-relevant attributes</strong>: language, civics knowledge, rule-of-law orientation, gender-equality baseline, rejection of political violence, economic self-sufficiency or skills.</span></li>
+        <li><span>The criteria themselves are <strong>values, not race, religion, or nationality</strong>. Meeting them is available to anyone willing to meet them — a Japanese applicant, an Afghan applicant, a Swedish applicant are judged on the same attributes.</span></li>
+        <li><span>Base-rate information from origin populations informs <strong>how much screening is warranted</strong>, not who is admitted or rejected at the individual level. Statistics guide the <em>process</em>; the decision remains per-person.</span></li>
+        <li><span>Integration is a <strong>contract, not an assumption</strong>. The host society provides real opportunity; the entrant accepts constitutional norms as the floor — and keeps the right to critique those norms through legitimate democratic means as the ceiling.</span></li>
+        <li><span>The framework is <strong>openly defensible in public</strong>. If an argument for it can't be made out loud without resorting to either caricature, it's the wrong argument.</span></li>
+      </ul>
+      <div class="closer">This is not a nationality ban. It is not religious profiling. It is not racism. It is the kind of <em>discernment</em> every sovereign polity has exercised since sovereignty was invented — finally articulated honestly enough that the argument can be defended in public without resorting to either caricature.</div>
+    </div>
+  </div>
+
+  <!-- EVIDENCE TABS: backing the "importation is not values-neutral" claim -->
+  <h2 class="section-title">The evidence: population importation is not values-neutral</h2>
+  <p class="section-sub">The strongest single claim elsewhere on this page — that the blue-band pretense of values-neutrality in migration is empirically wrong — deserves to stand on data rather than assertion. Below is the literature, tab by tab. Methodological caveats are flagged where they apply, and partial-convergence evidence is included explicitly to keep the section from being cherry-picked.</p>
+
+  <div class="evidence-section">
+    <div class="tab-nav" role="tablist">
+      <button class="tab-btn active" data-tab="generations" role="tab">Across generations</button>
+      <button class="tab-btn" data-tab="attitudes" role="tab">European Muslim attitudes</button>
+      <button class="tab-btn" data-tab="trust" role="tab">Trust &amp; diversity</button>
+      <button class="tab-btn" data-tab="welfare" role="tab">Welfare state</button>
+      <button class="tab-btn" data-tab="crime" role="tab">Crime &amp; origin</button>
+      <button class="tab-btn" data-tab="policy" role="tab">Policy effects</button>
+      <button class="tab-btn" data-tab="practices" role="tab">Specific practices</button>
+    </div>
+
+    <!-- TAB: across generations -->
+    <div class="tab-content active" id="tab-generations" role="tabpanel">
+      <div class="ev-grid">
+
+        <div class="ev-card">
+          <div class="ev-header">
+            <div class="ev-number">Culture transmits</div>
+            <div class="ev-claim">Second-generation female immigrants' work and fertility choices are predicted by their ancestral homeland's norms — holding host-country institutions constant.</div>
+          </div>
+          <div class="ev-source">
+            <strong>Fernández &amp; Fogli (2009)</strong>, <em>Culture: An Empirical Investigation of Beliefs, Work and Fertility</em>, NBER.
+            <span class="ev-method">Method: Epidemiological approach — daughters of immigrants raised in the US, same laws, same schools, same labor market; different ancestral origins isolate the cultural variable.</span>
+          </div>
+          <div class="ev-body">The central finding of the epidemiological-approach literature: culture is not a residual that washes out in one generation. The ancestral-country norm operates as an independent variable on second- and third-generation outcomes. Effect weakens substantially by the fourth generation but is strongly present before then — which in policy terms is precisely the window that matters.</div>
+          <div class="ev-link"><a href="https://www.nber.org/system/files/working_papers/w16277/w16277.pdf" target="_blank" rel="noopener">NBER working paper →</a></div>
+        </div>
+
+        <div class="ev-card">
+          <div class="ev-header">
+            <div class="ev-number">Re-Islamization</div>
+            <div class="ev-claim">Second- and third-generation European Muslims often show <em>more</em> religious fundamentalism than their parents — not less.</div>
+          </div>
+          <div class="ev-source">
+            <strong>Olivier Roy (2004)</strong>, <em>Globalized Islam: The Search for a New Ummah</em>, Columbia University Press.
+            <span class="ev-method">Method: Decades of sociological fieldwork and ethnography across France and Western Europe.</span>
+          </div>
+          <div class="ev-body">Roy's central thesis: Islamic revival in the West is a <em>consequence</em> of Westernization, not a backlash against it. Rootless, deculturated youth reach for a purified, globalized Islam to resolve an identity crisis that the host society did not help them solve. His later formulation of radicalization as "Islamization of radicalism" (not "radicalization of Islam") inverts the intuitive causal story and is now the dominant framework in French and European security sociology.</div>
+          <div class="ev-link"><a href="https://cup.columbia.edu/book/globalized-islam/9780231134996/" target="_blank" rel="noopener">Columbia University Press →</a></div>
+        </div>
+
+        <div class="ev-card ev-counter">
+          <div class="ev-header">
+            <div class="ev-number">Partial convergence</div>
+            <div class="ev-claim">Gender-equality attitudes <em>do</em> adapt toward host-country norms in the second generation — but origin-country inequality leaves a lasting imprint.</div>
+          </div>
+          <div class="ev-source">
+            <strong>Multi-country study, Tandfonline (2023)</strong> + <strong>Norway second-generation studies</strong>.
+            <span class="ev-method">Method: Cross-European cohort comparison, first vs. second vs. third generation.</span>
+          </div>
+          <div class="ev-body">Immigrant-origin youth in Europe <em>do</em> adapt gender attitudes toward the host-country norm — the destination context matters. But the level of gender inequality in the parents' country of origin exerts a lasting effect on the children's attitudes, and daughters converge faster than sons. Evidence for <strong>partial</strong>, not automatic, convergence. Included here specifically to keep the section honest: not every finding goes the same direction, and the convergence evidence is real.</div>
+          <div class="ev-link"><a href="https://www.tandfonline.com/doi/full/10.1080/1369183X.2023.2287404" target="_blank" rel="noopener">Tandfonline (2023) →</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB: European Muslim attitudes -->
+    <div class="tab-content" id="tab-attitudes" role="tabpanel">
+      <div class="ev-grid">
+
+        <div class="ev-card">
+          <div class="ev-header">
+            <div class="ev-number">66%</div>
+            <div class="ev-claim">European Muslims saying religious rules matter more than the laws of the country they live in (vs. 13% of local Christians).</div>
+          </div>
+          <div class="ev-source">
+            <strong>Ruud Koopmans (2015)</strong>, <em>Religious Fundamentalism and Hostility against Out-groups</em>, Journal of Ethnic and Migration Studies.
+            <span class="ev-method">Method: 9,000 phone interviews across Germany, France, Netherlands, Austria, Belgium, Sweden. Turkish- and Moroccan-origin Muslims vs. native-Christian controls.</span>
+          </div>
+          <div class="ev-body">Other findings from the same survey: <strong>75%</strong> said there is only one legitimate interpretation of the Qur'an (vs. 20% of Christians on the Bible); <strong>60%</strong> rejected homosexuals as friends (vs. 13% of Christians); <strong>45%</strong> said Jews cannot be trusted (vs. 9% of Christians openly antisemitic); <strong>54%</strong> said the West is out to destroy Islam. Fundamentalist attitudes correlated strongly with out-group hostility across all measured dimensions. The cleanest piece of evidence in the literature that the values gap is not a marginal-fringe phenomenon.</div>
+          <div class="ev-caveat"><strong>Methodological pushback:</strong> Critics argued Koopmans' "fundamentalism" index conflated strict religiosity with political illiberalism. Koopmans responded in follow-up work; the out-group-hostility correlations survived the scrutiny. The methodological debate is real and worth acknowledging.</div>
+          <div class="ev-link"><a href="https://www.tandfonline.com/doi/abs/10.1080/1369183X.2014.935307" target="_blank" rel="noopener">JEMS (2015) →</a></div>
+        </div>
+
+        <div class="ev-card">
+          <div class="ev-header">
+            <div class="ev-number">41%</div>
+            <div class="ev-claim">British Muslims supporting particular aspects of sharia law <em>instead of</em> British law (16% strongly, 25% tend-to).</div>
+          </div>
+          <div class="ev-source">
+            <strong>Policy Exchange / ICM (2016)</strong>, <em>Unsettled Belonging: A Survey of Britain's Muslim Communities</em>.
+            <span class="ev-method">Method: 3,000+ UK Muslim respondents; largest UK Muslim-opinion study at time of publication.</span>
+          </div>
+          <div class="ev-body">Same year, separate ICM / Channel 4 survey: <strong>52%</strong> of UK Muslims said homosexuality should be illegal; <strong>39%</strong> said wives should always obey their husbands. Earlier Policy Exchange work (<em>Living Apart Together</em>, 2007) found <strong>37%</strong> of UK Muslims aged 16–24 said they would prefer to live under sharia rather than British law — a younger-cohort figure consistent with the re-Islamization pattern.</div>
+          <div class="ev-caveat"><strong>Caveat:</strong> ICM methodology was debated at publication — critics argued it over-represented religiously engaged respondents. Core findings have been broadly replicated in subsequent surveys, but the exact numbers should be read as indicative rather than precise.</div>
+          <div class="ev-link"><a href="https://policyexchange.org.uk/publication/unsettled-belonging-a-survey-of-britains-muslim-communities/" target="_blank" rel="noopener">Policy Exchange (2016) →</a></div>
+        </div>
+
+        <div class="ev-card">
+          <div class="ev-header">
+            <div class="ev-number">29% → 50%</div>
+            <div class="ev-claim">French Muslims saying sharia should matter more than French law — overall 29%, rising to ~50% among under-25s.</div>
+          </div>
+          <div class="ev-source">
+            <strong>Institut Montaigne / IFOP (2016)</strong>, <em>Un islam français est possible</em>.
+            <span class="ev-method">Method: Large-scale IFOP survey of Muslims resident in France, multiple age cohorts.</span>
+          </div>
+          <div class="ev-body">The generational split — younger cohorts more conservative-religious than older ones — is the Olivier Roy "re-Islamization of the second generation" pattern showing up in survey data. A later IFOP survey put support for "Muslim law" as the reference framework at <strong>46%</strong>, with apostasy-rights attitudes moving from 48% (1989) to <strong>73%</strong> more recently — one of the clearer positive trends in the French data.</div>
+          <div class="ev-caveat"><strong>Caveat:</strong> IFOP's question wording on "sharia" vs. "Muslim law" has been criticized as interpretively ambiguous; some versions never use the word "sharia" but respondents may hear it differently. The 29% / 50% figures are robust; the 46% "Muslim law" figure has sparked more interpretive debate.</div>
+          <div class="ev-link"><a href="https://www.institutmontaigne.org/" target="_blank" rel="noopener">Institut Montaigne →</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB: trust & diversity -->
+    <div class="tab-content" id="tab-trust" role="tabpanel">
+      <div class="ev-grid">
+
+        <div class="ev-card">
+          <div class="ev-header">
+            <div class="ev-number">29,000 / 41</div>
+            <div class="ev-claim">In ethnically diverse US neighborhoods, residents of all races "hunker down" — trust falls (including of one's own group), civic engagement drops, friendships decline.</div>
+          </div>
+          <div class="ev-source">
+            <strong>Robert Putnam (2007)</strong>, <em>E Pluribus Unum: Diversity and Community in the Twenty-first Century</em>, 2006 Johan Skytte Prize Lecture, Scandinavian Political Studies.
+            <span class="ev-method">Method: 29,000 respondents across 41 US communities, Social Capital Community Benchmark Survey (2000).</span>
+          </div>
+          <div class="ev-body">Putnam's "constrict" thesis: higher short-term neighborhood diversity correlates with lower generalized trust, fewer friends, weaker community cooperation, lower altruism. Putnam was explicit that in the <em>long</em> run, successful immigrant societies build new cross-cutting identities that restore social capital — but the short-to-medium-run constriction effect is empirically robust and shows up even within one's own ethnic group. Putnam famously sat on the data for several years before publishing because he foresaw how it would be used on either end of the political spectrum.</div>
+          <div class="ev-caveat"><strong>Caveat:</strong> Subsequent meta-analyses show roughly a 48/52 split — about half of follow-up studies confirm the constriction effect, half don't. The US-based finding is strong; cross-national replication (especially in Europe) is mixed. Defensible, but not settled science.</div>
+          <div class="ev-link"><a href="https://www.puttingourdifferencestowork.com/pdf/j.1467-9477.2007.00176%20Putnam%20Diversity.pdf" target="_blank" rel="noopener">Full PDF →</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB: welfare state -->
+    <div class="tab-content" id="tab-welfare" role="tabpanel">
+      <div class="ev-grid">
+
+        <div class="ev-card">
+          <div class="ev-header">
+            <div class="ev-number">~50%</div>
+            <div class="ev-claim">Share of the US–Europe welfare-state generosity gap explained by racial-ethnic fractionalization, per Alesina and Glaeser.</div>
+          </div>
+          <div class="ev-source">
+            <strong>Alesina &amp; Glaeser (2004)</strong>, <em>Fighting Poverty in the US and Europe: A World of Difference</em>, Oxford.
+            <span class="ev-method">Method: Cross-country econometric analysis, US vs. Western Europe.</span>
+          </div>
+          <div class="ev-body">Countries with greater ethnic-racial diversity redistribute significantly less as a share of GDP. Proposed mechanism: in-group / out-group identification erodes the cross-class solidarity that generous welfare states depend on. Extended by <strong>Alesina, Baqir &amp; Easterly (1999)</strong>: US metropolitan areas with higher racial heterogeneity provide fewer productive public goods (schools, parks, roads). Luttmer (2001) adds the individual-level finding: support for redistribution rises when one's own ethnic group is over-represented among welfare recipients.</div>
+          <div class="ev-caveat"><strong>Caveat:</strong> Empirical support is mixed in developed democracies. Homogeneous democracies redistribute more on average, but diverse democracies show high variation — Canada and several Nordic-with-immigration cases complicate the pure Alesina-Glaeser story. The <em>directional</em> claim is well-supported; the <strong>magnitude</strong> is debated.</div>
+          <div class="ev-link"><a href="https://academic.oup.com/book/1371" target="_blank" rel="noopener">Oxford Academic →</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB: crime & origin -->
+    <div class="tab-content" id="tab-crime" role="tabpanel">
+      <div class="ev-grid">
+
+        <div class="ev-card">
+          <div class="ev-header">
+            <div class="ev-number">3–4×</div>
+            <div class="ev-claim">Conviction rate of non-Western immigrants and descendants in Denmark vs. ethnic Danes — after adjusting for age and socioeconomic status.</div>
+          </div>
+          <div class="ev-source">
+            <strong>Danmarks Statistik (ongoing)</strong>, official Convicted Persons data by origin.
+            <span class="ev-method">Method: Full-population register data, Danish national statistical agency, published annually.</span>
+          </div>
+          <div class="ev-body">Denmark's willingness to publish origin-disaggregated conviction data makes it one of the few European countries where this claim is directly checkable. The gap is significant across property, violent, and total penal-code offenses, and persists after standard socioeconomic controls — meaning it is not fully explained away by income, education, or age differences. A striking natural experiment because the welfare state, schooling, healthcare, and legal system are held constant across origin groups.</div>
+          <div class="ev-link"><a href="https://www.dst.dk/en/Statistik/emner/sociale-forhold/kriminalitet/doemte-personer" target="_blank" rel="noopener">Statistics Denmark →</a></div>
+        </div>
+
+        <div class="ev-card">
+          <div class="ev-header">
+            <div class="ev-number">"Non-Western" hides it</div>
+            <div class="ev-claim">Within the Danish "non-Western" category, Asian-origin immigrants are statistically indistinguishable from ethnic Danes; Middle Eastern origin drives nearly all of the elevated figure.</div>
+          </div>
+          <div class="ev-source">
+            <strong>Rockwool Fund &amp; academic disaggregation studies</strong> of the Danish registers.
+            <span class="ev-method">Method: Origin-group-level disaggregation of the official "non-Western" category.</span>
+          </div>
+          <div class="ev-body">Male immigrants and descendants from Asian countries show no significant deviation from the majority population in most offense categories. Middle Eastern-origin populations show significantly elevated prevalence and frequency across all four offense categories. <strong>This is the "geography matters" point from earlier on the page, rendered quantitatively:</strong> "non-Western" compresses populations with wildly different outcomes into a single misleading aggregate, and any policy built on the aggregate will misfire in both directions.</div>
+          <div class="ev-link"><a href="https://rockwoolfonden.s3.eu-central-1.amazonaws.com/wp-content/uploads/2022/07/Newsletter-January-2012.pdf" target="_blank" rel="noopener">Rockwool Fund newsletter →</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB: policy effects -->
+    <div class="tab-content" id="tab-policy" role="tabpanel">
+      <div class="ev-grid">
+
+        <div class="ev-card">
+          <div class="ev-header">
+            <div class="ev-number">~2/3</div>
+            <div class="ev-claim">Reduction in the Danish immigrant–native employment gap after the 2002 policy reforms.</div>
+          </div>
+          <div class="ev-source">
+            <strong>Scandinavian comparative labor-market studies</strong> (PMC, register-based).
+            <span class="ev-method">Method: Longitudinal comparison across Denmark, Sweden, Norway using national register data.</span>
+          </div>
+          <div class="ev-body">After Denmark's 2002 reforms — tighter family reunification (the "24-year rule" on spouse age), reduced social-assistance benefits for immigrants, stricter labor-market integration requirements — the Danish employment gap narrowed to roughly a third of its previous size. Danish outcomes converged with Norwegian ones and pulled substantially ahead of Swedish. Same region, broadly similar welfare-state architecture, different selection and integration policies → measurably different outcomes. This is the empirical answer to "selection doesn't matter, integration will just happen on its own."</div>
+          <div class="ev-link"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6497698/" target="_blank" rel="noopener">Comparative study (PMC) →</a></div>
+        </div>
+
+        <div class="ev-card">
+          <div class="ev-header">
+            <div class="ev-number">864 / year</div>
+            <div class="ev-claim">Danish asylum grants in 2024 — a historic non-pandemic low, reflecting sustained policy tightening vs. Swedish openness through 2015.</div>
+          </div>
+          <div class="ev-source">
+            <strong>Christian Science Monitor (2025)</strong> — comparative Nordic reporting.
+            <span class="ev-method">Method: National-agency asylum statistics, policy-reform chronology.</span>
+          </div>
+          <div class="ev-body">The two Nordic trajectories diverged sharply after the 2015 refugee crisis. Denmark progressively tightened; Sweden kept the door wide open before partially retrenching. Denmark's integration indicators — employment, labor-market participation, welfare dependency — improved noticeably over the following decade; Sweden's stagnated or worsened in specific urban areas (the <em>utanförskapsområden</em>, "areas of exclusion"). Causation is contested; the correlation and the policy-reform timeline are not.</div>
+          <div class="ev-link"><a href="https://www.csmonitor.com/World/Europe/2025/1020/immigration-muslim-europe-denmark-sweden" target="_blank" rel="noopener">CSMonitor (2025) →</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB: specific practices -->
+    <div class="tab-content" id="tab-practices" role="tabpanel">
+      <div class="ev-grid">
+
+        <div class="ev-card">
+          <div class="ev-header">
+            <div class="ev-number">Documented vectors</div>
+            <div class="ev-claim">Honor-based violence, forced marriage, and FGM are documented policy concerns across UK, France, Netherlands, Germany — concentrated in specific diaspora communities.</div>
+          </div>
+          <div class="ev-source">
+            <strong>European Parliament briefings (2025); UK HBA data; EIGE; national anti-discrimination agencies</strong>.
+            <span class="ev-method">Method: Case registries, statutory-agency reporting, survivor interviews, EU-level synthesis.</span>
+          </div>
+          <div class="ev-body">UK's national HBA data, France's <em>cellule dédiée</em>, Germany's Federal Anti-Discrimination Office, Dutch shelter networks all track these practices as distinct categories. Affected diaspora groups identified across the literature: Turkish, Kurdish, South Asian (Pakistani/Bangladeshi/Afghan), North African, Middle Eastern, Somali, and some South-Eastern European communities. FGM worldwide: an estimated <strong>100–140 million</strong> affected women; in Europe concentrated in diaspora communities whose origin countries practice it.</div>
+          <div class="ev-caveat"><strong>Caveat — weakest evidence on this page:</strong> The quantitative data here is the softest of any tab. Figures are case counts or policy-agency estimates, not population-rate comparisons with control groups. The practices are well-documented; the statistics are systematically underreported because the practices are themselves concealed. Include as <em>vector</em> evidence — what is happening — not as quantitative proof of relative prevalence.</div>
+          <div class="ev-link"><a href="https://www.europarl.europa.eu/RegData/etudes/BRIE/2025/772921/EPRS_BRI(2025)772921_EN.pdf" target="_blank" rel="noopener">European Parliament briefing (2025) →</a></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="caveat" style="margin-top: 12px;">
+    <strong>How to read this section.</strong> No single tab proves the claim that importation is not values-neutral. Collectively — Koopmans on attitudes, Fernández–Fogli on cross-generational persistence, Roy on re-Islamization, Putnam on trust, Alesina–Glaeser on redistribution, Danish register data on crime, the Denmark–Sweden policy comparison — the literature converges on a single conclusion: populations bring values with them, those values do not automatically converge, and the host-society outcomes are measurably sensitive to both the selection at entry and the integration regime after. The partial-convergence gender-attitudes evidence is the one significant counter-current and deserves weight. Taken together, the picture is "importation is not values-neutral, <em>and</em> the direction and size of the drift is policy-tractable." That is the rainbow-band position rendered in data.
+  </div>
+
+  <h2 class="section-title">What this changes about the original diagram</h2>
+  <p class="section-sub">Not the three bands. The bands are still right. What the 10-year update changes is the specificity of what "the rainbow band" is describing.</p>
+
+  <div class="insights" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+    <div class="europe-card">
+      <div style="font-weight:700; color:#17161a; margin-bottom:8px; font-size:0.98rem;">The rainbow band is layered, not smooth</div>
+      <p style="font-size:0.88rem; color:#3a3630; line-height:1.55;">The original gradient implied a continuum. The reality is closer to distinct clusters — violent core, active sympathizers, peaceful illiberal mainstream, moderate majority — with very different policy handles.</p>
+    </div>
+    <div class="europe-card">
+      <div style="font-weight:700; color:#17161a; margin-bottom:8px; font-size:0.98rem;">Geography matters more than a global average</div>
+      <p style="font-size:0.88rem; color:#3a3630; line-height:1.55;">The single-number framings ("80% condemn violence") are less useful than country-level distributions. The same question gets wildly different answers in Kazakhstan versus Palestinian territories versus Birmingham UK.</p>
+    </div>
+    <div class="europe-card">
+      <div style="font-weight:700; color:#17161a; margin-bottom:8px; font-size:0.98rem;">The blue band is the bigger problem now</div>
+      <p style="font-size:0.88rem; color:#3a3630; line-height:1.55;">In 2015 the black band had more cultural traction. In 2026, "never acknowledge any ideological dimension" has become the default institutional posture across much of Western media and policy, and the resulting credibility deficit fuels the black band more than the reverse.</p>
+    </div>
+  </div>
+
+  <div class="caveat">
+    <strong>On the numbers, again.</strong> The percentages here are from published survey work (Pew, Policy Exchange, IFOP, ICM, Arab Barometer, UN Monitoring Team) but they are order-of-magnitude indicators, not precision measurements. Different polls using different question wording produce different numbers. The <em>shape</em> — a tiny violent core, a larger band of active sympathy, a much larger band of shared illiberal endpoint without violence, a moderate majority above all of that — is robust across the literature. The exact percentages in any given row are not.
+  </div>
+
+  <footer>
+    <p>Original diagram concept © Gerald, ~2015. Revised April 2026.<br>
+    Survey sources: Pew Research Center, Policy Exchange, Institut Montaigne / IFOP, ICM/Channel 4, Arab Barometer, ComRes/Telegraph.<br>
+    Conflict data: ACLED, Institute for Economics & Peace (Global Terrorism Index), UN Analytical Support and Sanctions Monitoring Team.</p>
+  </footer>
+</div>
+
+<script>
+  // Country data (Pew 2013, suicide bombing sometimes/often justified in defense of Islam)
+  const COUNTRIES = [
+    { name: "Afghanistan", val: 39 },
+    { name: "Palestinian territories", val: 40 },
+    { name: "Egypt", val: 29 },
+    { name: "Bangladesh", val: 26 },
+    { name: "Malaysia", val: 18 },
+    { name: "Turkey", val: 15 },
+    { name: "Pakistan", val: 13 },
+    { name: "Iraq", val: 7 },
+    { name: "Indonesia", val: 7 },
+    { name: "Tunisia", val: 5 },
+    { name: "Morocco", val: 3 },
+    { name: "Kazakhstan", val: 2 },
+    { name: "Azerbaijan", val: 1 }
+  ];
+  const rowsHost = document.getElementById("country-rows");
+  rowsHost.innerHTML = COUNTRIES.map(c => `
+    <div class="country-row">
+      <div class="cr-name">${c.name}</div>
+      <div class="cr-bar-wrap">
+        <div class="cr-bar"><div class="cr-bar-fill" style="width:${Math.min(c.val * 2, 100)}%"></div></div>
+      </div>
+      <div class="cr-val">${c.val}%</div>
+    </div>
+  `).join("");
+
+  // Band expand
+  document.querySelectorAll(".band").forEach(band => {
+    band.addEventListener("click", () => {
+      const d = document.getElementById("detail-" + band.dataset.band);
+      if (d) d.classList.toggle("open");
+    });
+  });
+
+  // --- Cherry-picking jar visual -----------------------------------------
+  // Color distribution maps loosely onto the four layers of the ecosystem.
+  const COLOR_DIST = [
+    ["#4cb56c", 0.18], // moderate green
+    ["#7ebf5c", 0.16], // yellow-green
+    ["#b5c14a", 0.14], // olive
+    ["#d8c445", 0.12], // yellow
+    ["#3a8fc7", 0.09], // moderate blue
+    ["#2a6db3", 0.08], // traditional blue
+    ["#e0b03c", 0.07], // amber
+    ["#e0893a", 0.08], // orange (illiberal)
+    ["#cd5b32", 0.04], // red-orange (sympathy)
+    ["#b8372a", 0.03], // red
+    ["#1a1a1a", 0.01]  // black (violent fringe)
+  ];
+
+  // Seeded RNG so the jar looks the same on reload.
+  function mkRand(seed) {
+    let s = seed;
+    return () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+  }
+
+  function buildDots(seed) {
+    const rand = mkRand(seed);
+    const positions = [];
+    for (let r = 0; r < 11; r++) {
+      for (let c = 0; c < 10; c++) {
+        const x = 54 + c * 13 + (rand() - 0.5) * 7;
+        const y = 76 + r * 13 + (rand() - 0.5) * 7;
+        if (y > 222 || y < 72) continue;
+        if (x < 50 || x > 196) continue;
+        positions.push({ x, y });
+      }
+    }
+    const dots = positions.map(p => {
+      const r = rand();
+      let color = "#4cb56c", acc = 0;
+      for (const [c, prob] of COLOR_DIST) {
+        acc += prob;
+        if (r < acc) { color = c; break; }
+      }
+      return { ...p, color };
+    });
+    // Guarantee at least one black dot and one green dot for cherry-picking.
+    if (!dots.some(d => d.color === "#1a1a1a")) dots[Math.floor(dots.length * 0.6)].color = "#1a1a1a";
+    if (!dots.some(d => d.color === "#4cb56c")) dots[Math.floor(dots.length * 0.2)].color = "#4cb56c";
+    return dots;
+  }
+
+  const THE_DOTS = buildDots(73);
+
+  function renderDots(hostId) {
+    const host = document.getElementById(hostId);
+    if (!host) return;
+    host.innerHTML = "";
+    THE_DOTS.forEach((d, i) => {
+      const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      c.setAttribute("cx", d.x);
+      c.setAttribute("cy", d.y);
+      c.setAttribute("r", 4.5);
+      c.setAttribute("fill", d.color);
+      c.setAttribute("data-color", d.color);
+      c.style.transition = "all 0.55s cubic-bezier(0.2, 0.8, 0.2, 1)";
+      host.appendChild(c);
+    });
+  }
+
+  renderDots("dots-left");
+  renderDots("dots-center");
+  renderDots("dots-right");
+
+  function cherryPick(which) {
+    const hostId = "dots-" + which;
+    const host = document.getElementById(hostId);
+    if (!host) return;
+    const circles = [...host.querySelectorAll("circle")];
+    const target = which === "left" ? "#1a1a1a" : "#4cb56c";
+    const match = circles.find(c => c.getAttribute("data-color") === target) || circles[0];
+
+    circles.forEach(c => {
+      if (c === match) {
+        c.setAttribute("r", 11);
+        c.setAttribute("stroke", "#17161a");
+        c.setAttribute("stroke-width", "2");
+        c.style.filter = "drop-shadow(0 2px 6px rgba(0,0,0,0.35))";
+      } else {
+        c.style.opacity = "0.07";
+      }
+    });
+
+    setTimeout(() => {
+      circles.forEach(c => {
+        c.setAttribute("r", 4.5);
+        c.removeAttribute("stroke");
+        c.removeAttribute("stroke-width");
+        c.style.filter = "";
+        c.style.opacity = "1";
+      });
+    }, 3500);
+  }
+  window.cherryPick = cherryPick;
+
+  // --- Evidence tabs ------------------------------------------------------
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tab = btn.dataset.tab;
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.toggle("active", b === btn));
+      document.querySelectorAll(".tab-content").forEach(c => {
+        c.classList.toggle("active", c.id === "tab-" + tab);
+      });
+    });
+  });
+</script>
+</body>
+</html>
