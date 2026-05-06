@@ -44,6 +44,27 @@
 .case-takeaway{margin-top:18px;padding-top:18px;border-top:1px solid #e8e2d5;font-size:.94rem;color:#2a2620;line-height:1.65}
 .case-takeaway strong{color:#17161a}
 .case-takeaway em{color:#b8372a;font-style:italic;font-weight:600}
+/* Cross-examination block (shared with page 21) */
+.cross-exam{margin:24px 0 16px;padding:30px 34px;background:linear-gradient(to bottom right,#fdf6e6,#faf0d8);border:1px solid #e8d599;border-radius:12px;border-left:4px solid #c08815}
+@media (max-width:600px){.cross-exam{padding:22px 20px}}
+.cross-exam h3{font-size:1.18rem;font-weight:700;color:#5e4414;margin-bottom:6px;display:flex;align-items:center;gap:12px;letter-spacing:-.01em}
+.cross-exam h3::before{content:"⚖";font-size:1.3rem;color:#c08815}
+.cross-exam .ce-lead{font-size:.93rem;color:#5e4414;margin-bottom:18px;line-height:1.6;font-style:italic}
+.cross-exam .ce-side{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7a5a1c;font-weight:700;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid #f0d99e}
+.cross-exam .ce-side:first-of-type{margin-top:0}
+.strain-list{display:grid;gap:12px;counter-reset:strain-counter}
+.strain{background:#fff;border:1px solid #f0d99e;border-radius:8px;padding:18px 22px;position:relative}
+.strain h4{font-size:.98rem;font-weight:700;color:#17161a;margin-bottom:10px;padding-left:36px;position:relative;letter-spacing:-.005em;line-height:1.4}
+.strain h4::before{counter-increment:strain-counter;content:counter(strain-counter);position:absolute;left:0;top:-2px;width:26px;height:26px;background:#c08815;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+.strain p{font-size:.9rem;color:#3a3630;line-height:1.6;margin-bottom:8px}
+.strain p:last-child{margin-bottom:0}
+.strain p strong{color:#17161a;font-weight:700}
+.strain p em{color:#b8372a;font-style:italic;font-weight:600}
+.strain .strain-claim{padding-bottom:10px;border-bottom:1px dashed #f0d99e;margin-bottom:10px}
+.strain .strain-claim::before{content:"Claim: ";font-weight:700;color:#7a5a1c;font-size:.78rem;letter-spacing:.04em}
+.strain .strain-expose::before{content:"Where it strains: ";font-weight:700;color:#c08815;font-size:.78rem;letter-spacing:.04em}
+.steelman-disclosure{margin-top:14px;padding:14px 18px;background:#f5f1e6;border-radius:8px;font-size:.84rem;color:#555047;line-height:1.55;border-left:3px solid #c9c0ad}
+.steelman-disclosure strong{color:#17161a}
 </style>
 </head>
 <body>
@@ -80,6 +101,74 @@
     <p>The liberal-democratic position is not that men and women are biologically identical — almost no one defends that view — but that <em>legal status</em> is not where biological differences should land. A wife's testimony in court counts as much as a husband's; a daughter inherits as much as a son; a woman initiates divorce on the same terms as a man; a mother retains custody on the same standard. The asymmetric package the Islamist position calls "complementary" looks, when actually litigated, asymmetric in one direction.</p>
     <p>The strongest version concedes the historical record: Western legal systems achieved formal sex equality only in the 20th century and informal equality is still incomplete. <strong>The defensible claim is not that the West got there first or honestly — it is that revisable equal-status law is the only stable settlement compatible with women being citizens rather than wards</strong>, and the empirical record of complementarian regimes (Saudi Arabia, Iran, Afghanistan) is the case for it.</p>
   </div>
+</div>
+
+<div class="steelman-disclosure">
+  <strong>Method note.</strong> The two cards above present each position in its strongest defensible form, in the language and on the premises its own proponents actually use, without smoothing. The next section stress-tests both. A steelman that cannot survive its own internal cross-examination is propaganda for the position, not an honest reading of it.
+</div>
+
+<h2 class="section-title">Where the argument strains</h2>
+<p class="section-sub">A steelman is not a verdict. The arguments above are presented uncensored; below they are stress-tested against the standards a serious interlocutor would actually apply. <em>Both</em> sides — because intellectual honesty requires it.</p>
+
+<div class="cross-exam">
+  <h3>Cross-examination</h3>
+  <p class="ce-lead">The arguments above, tested. The conservative-Islamist articulation is probed first because that is where the steelman has historically done the most laundering work; the liberal-democratic articulation is then probed in turn.</p>
+
+  <div class="ce-side">Testing the conservative-Islamist articulation</div>
+
+  <div class="strain-list">
+
+    <div class="strain">
+      <h4>The "if implemented correctly" move</h4>
+      <p class="strain-claim">The package is doctrinally coherent and produces women's flourishing — when the male obligations (<em>nafaqa</em>, <em>mahr</em> protection, custody fairness) are <em>actually enforced</em> as the classical scheme designed them.</p>
+      <p class="strain-expose">After fourteen centuries, the position cannot point to a single contemporary or historical Muslim-majority polity where the package has been implemented in a way that produces women's flourishing on metrics women themselves identify (life expectancy, education access, divorce parity, freedom of movement, freedom of marriage choice). The "if implemented correctly" move is <em>unfalsifiable</em>: every empirical record can be dismissed as miscalibration. A doctrinal claim that has had fourteen hundred years and dozens of attempts to demonstrate itself, and has not, has lost the right to keep deferring its empirical case to "next time, properly."</p>
+    </div>
+
+    <div class="strain">
+      <h4>The "implementation problem" framing</h4>
+      <p class="strain-claim">Where the package produces subordination, the failure is in implementation (corrupt courts, weak enforcement of <em>nafaqa</em>, patriarchal local custom contaminating the doctrine), not in the package's design.</p>
+      <p class="strain-expose">If a system has produced subordinating outcomes everywhere it has been implemented, across centuries and across radically different political conditions — Saudi Arabia, Iran, Afghanistan, Pakistan, classical Andalusia, the Ottoman millet system, contemporary informal sharia councils in Birmingham — the system's design is part of the answer, not an external variable. Calling this an "implementation problem" treats the empirical record as separable from the doctrinal framework — a separation the system's own theology rejects when it claims the framework is divinely revealed and complete.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The metaphysical-premise dodge</h4>
+      <p class="strain-claim">The doctrine is internally coherent on its own metaphysical premises — namely that men and women are divinely ordained to complementary roles with distinct legal capacities — and liberal critique applies premises the position does not share.</p>
+      <p class="strain-expose">True and trivial. Every system is internally coherent on premises that license it. The substantive question is whether <em>those premises</em> are defensible — whether the theological case for treating men and women as ontologically different in legal capacity (rather than merely traditionally so treated) survives examination. The position cannot make that case without circular appeal to the same scriptural authority that establishes the conclusion. <strong>Coherence-on-premises is the floor of an argument, not its ceiling.</strong></p>
+    </div>
+
+    <div class="strain">
+      <h4>The exit-cost asymmetry</h4>
+      <p class="strain-claim">Women within the regime have legitimate paths of redress — <em>khul'</em> divorce, mahr enforcement, work permission, the qadi's discretion — and are not without recourse.</p>
+      <p class="strain-expose"><em>Khul'</em> in most jurisdictions requires the husband's cooperation or compensation; mahr enforcement varies by court; work permission depends on his consent in several Gulf and South Asian implementations; and exit from Islam altogether — the position's logical-final exit — carries apostasy consequences in many implementations. The doctrinal scheme provides no provision for a Muslim woman who concludes that the gender-anthropology premise is simply wrong, and who wishes to live by a different premise without religious or legal sanction. <strong>A defense of a system that requires its female subjects to accept its gender metaphysics on pain of legal or social cost is not a defense — it is a description of the coercion problem.</strong></p>
+    </div>
+
+    <div class="strain">
+      <h4>The Western-women-too tu-quoque</h4>
+      <p class="strain-claim">Western legal equality conceals informal subordination — the second shift, the wage gap, the invisible labor of motherhood, sexualized commodification, declining family stability. The Islamic settlement is at least <em>honest</em> about role asymmetry.</p>
+      <p class="strain-expose">True about Western informal asymmetry, irrelevant to the comparison. The question is which framework, as enforced, produces better measurable outcomes for women on metrics women themselves identify (life expectancy, education access, divorce parity, custody parity, freedom of movement, freedom of marriage choice, protection from honor-based violence). The empirical record across these metrics is not even close — the WEF Global Gender Gap, the UNDP Gender Inequality Index, life-expectancy gaps, female-labor-force-participation, age-at-first-marriage, all run sharply in one direction. <em>The tu-quoque hides the comparison rather than answering it</em>, and the position's serious advocates know this — which is why it is the lay-defense form of the argument, not the scholarly one.</p>
+    </div>
+
+  </div>
+
+  <div class="ce-side">Testing the liberal-democratic articulation</div>
+
+  <div class="strain-list" style="counter-reset:strain-counter 5;">
+
+    <div class="strain">
+      <h4>The recency objection</h4>
+      <p class="strain-claim">Western formal sex equality is a 20th-century achievement (US 19th Amendment 1920, Married Women's Property Acts 1870–1882, marital rape recognized as crime only in the 1970s–1990s in most US states); informal equality is incomplete and contested. The conservative position can press: if the equal-citizenship framework is universal-and-self-evident, why did the West only discover it recently?</p>
+      <p class="strain-expose">Recency is not refutation, but the position should not pretend it isn't there. The honest answer is: <em>we were wrong before</em> — the same way the West was wrong about slavery, religious tolerance, racial segregation, and child labor. The right reply to "why didn't you have this view in 1850?" is "because we had not yet worked out the implications of premises we already held," not "we held a different view that was equally valid." The position requires defending the current settlement on its merits, not its provenance — and acknowledging that liberal-democratic norms continue to evolve and are not always self-consistent.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The "wrong, not different" claim</h4>
+      <p class="strain-claim">Some doctrinal positions on gender (death penalty for adultery, child marriage, half-share testimony in financial matters, polygamy without consent) are <em>wrong</em>, not merely "another tradition." This is a substantive cross-civilizational moral claim with imperial echoes.</p>
+      <p class="strain-expose">The claim is defensible only if the relevant insiders can make it without Western mediation. <strong>They can</strong> — Ayaan Hirsi Ali, Masih Alinejad, Asra Nomani, Irshad Manji, Mona Eltahawy, Taslima Nasrin, the Iranian women on the streets after Mahsa Amini, the diaspora honour-killing victims' surviving sisters and friends, Musawah and the Sisters in Islam reformist tradition. The argument has to be defended <em>through</em> these voices, not over them. It is dishonest to pretend the universalist framing has no civilizational asymmetry baked in; the honest move is to acknowledge the asymmetry, defend the substantive claim on the merits, and refuse the relativist deflection that would silence Muslim women's voices in the name of respecting Muslim-majority cultures.</p>
+    </div>
+
+  </div>
+
+  <div style="margin-top:20px;padding-top:18px;border-top:1px dashed #e8d599;font-size:.9rem;color:#5e4414;line-height:1.6;font-style:italic;">The cross-examination above is the methodological commitment of the project: <strong>steelman, then expose</strong>. A position whose strongest form cannot withstand its own implications has not been refuted by hostile caricature — it has been refuted by honest engagement, which is what its serious advocates would themselves consider the only refutation worth answering.</div>
 </div>
 
 <h2 class="section-title">The friction in The West</h2>
