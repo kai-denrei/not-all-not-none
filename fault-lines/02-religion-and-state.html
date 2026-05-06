@@ -79,6 +79,44 @@
   footer a:hover { text-decoration: underline; }
   .caveat { margin-top: 24px; padding: 18px 24px; background: #f5f1e6; border-radius: 10px; font-size: 0.86rem; color: #555047; line-height: 1.6; }
   .caveat strong { color: #17161a; }
+  /* Case study (shared with page 20) */
+  .case-study{margin:32px 0 16px;padding:32px 36px;background:linear-gradient(to bottom right,#fff,#faf7ef);border:1px solid #e8e2d5;border-radius:12px;border-left:4px solid #b8372a}
+  @media (max-width:600px){.case-study{padding:24px 22px}}
+  .case-study h3{font-size:1.3rem;font-weight:700;letter-spacing:-.01em;margin-bottom:6px;color:#17161a}
+  .case-study h4{font-size:1.05rem;font-weight:700;margin:24px 0 4px;color:#17161a;letter-spacing:-.005em}
+  .case-meta{font-size:.76rem;color:#8a8680;margin-bottom:18px;letter-spacing:.01em}
+  .case-lead{font-size:.98rem;color:#3a3630;line-height:1.65;margin-bottom:18px}
+  .case-lead em{color:#b8372a;font-style:italic;font-weight:600}
+  .case-lead strong{color:#17161a}
+  .casualty-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:18px 0 8px;padding:18px 20px;background:#17161a;color:#f0ece2;border-radius:10px}
+  .casualty-cell{text-align:center}
+  .casualty-num{font-size:1.7rem;font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1.1;font-variant-numeric:tabular-nums}
+  .casualty-label{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#c9c0ad;margin-top:4px}
+  .attack-timeline{margin:18px 0;padding:0;list-style:none}
+  .attack-event{padding:14px 0 14px 26px;border-top:1px solid #f0ece2;font-size:.9rem;color:#3a3630;line-height:1.55;position:relative}
+  .attack-event:first-child{border-top:none;padding-top:8px}
+  .attack-event::before{content:"";position:absolute;left:0;top:20px;width:10px;height:10px;background:#b8372a;border-radius:50%}
+  .attack-event:first-child::before{top:14px}
+  .attack-event .ae-date{font-weight:700;color:#17161a;display:inline-block;margin-right:8px;font-variant-numeric:tabular-nums}
+  .attack-event strong{color:#17161a}
+  .attack-event em{color:#b8372a;font-style:italic;font-weight:600}
+  .poll-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+  @media (max-width:780px){.poll-grid{grid-template-columns:1fr}}
+  .poll-card{background:#fff;border:1px solid #e8e2d5;border-radius:8px;padding:18px 20px}
+  .poll-card .pl-meta{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#8a8680;margin-bottom:8px;font-weight:600}
+  .poll-card h5{font-size:.95rem;font-weight:700;margin-bottom:10px;color:#17161a;line-height:1.4}
+  .poll-card ul{list-style:none;padding:0;margin:8px 0}
+  .poll-card li{padding:8px 0;border-top:1px dashed #f0ece2;font-size:.85rem;color:#3a3630;line-height:1.5;display:flex;gap:10px}
+  .poll-card li:first-child{border-top:none;padding-top:4px}
+  .poll-card .pl-pct{font-weight:700;color:#b8372a;font-variant-numeric:tabular-nums;min-width:42px;flex-shrink:0}
+  .poll-card .pl-pct.good{color:#2e7d4f}
+  .poll-card .pl-source{font-size:.7rem;color:#8a8680;padding-top:10px;border-top:1px dashed #e8e2d5;margin-top:10px;line-height:1.4}
+  .poll-card .pl-source a{color:#4a7bb8;text-decoration:none}
+  .poll-card .pl-source a:hover{text-decoration:underline}
+  .poll-quote{margin:18px 0;padding:14px 20px;border-left:3px solid #e0893a;font-style:italic;color:#3a3630;background:#fbfaf5;font-size:.9rem;border-radius:0 6px 6px 0;line-height:1.55}
+  .case-takeaway{margin-top:18px;padding-top:18px;border-top:1px solid #e8e2d5;font-size:.94rem;color:#2a2620;line-height:1.65}
+  .case-takeaway strong{color:#17161a}
+  .case-takeaway em{color:#b8372a;font-style:italic;font-weight:600}
 </style>
 </head>
 <body>
@@ -163,6 +201,96 @@
 
   </div>
 
+  <h2 class="section-title">Case study: France's laïcité stress-test, 1989–2025</h2>
+  <p class="section-sub">No European state has spent more political capital — across left and right governments alike — testing the religion-state separation against an actual large Muslim minority than France has across the past three and a half decades. The arc runs from a single 1989 schoolgirl-headscarf affair in Creil to a 2025 Conseil de défense on the Muslim Brotherhood, by way of seven major laws, two Conseil d'État reversals, and a steady-state IFOP polling series that lets us see what French Muslims actually think as the legal architecture is built around them. The case is here because it is the most-documented working laboratory in The West for what happens when laïcité stops being abstract.</p>
+
+  <div class="case-study">
+    <h3>From Creil 1989 to the 2021 separatism law and beyond</h3>
+    <div class="case-meta">October 1989 – May 2025 · seven major laws &amp; two Conseil d'État rulings · ~5–6 million French Muslims · the legal architecture vs. the polling distribution it was built around</div>
+
+    <p class="case-lead">The French state's response to the visibility of Islam in public life has been a thirty-six-year sequence of incremental legislation, each round tightening the perimeter that the 1905 law established against Catholic clerical power. The 2021 <em>loi confortant le respect des principes de la République</em> — known politically as the <strong>"loi séparatisme"</strong> — is the watershed: for the first time the legislator named not a garment or a venue but a <em>project</em>, "le séparatisme islamiste," that the Republic was authorising itself to disrupt. As Macron put it at Les Mureaux on 2 October 2020: <em>"a conscious, theorised, political-religious project materialising through repeated deviations from the Republic's values, often reflected by the formation of a counter-society."</em> Three and a half years of enforcement later — 741 establishments closed, more than 40 mosques shuttered since 2017, the CFCM dissolved and FORIF launched — the question is no longer whether the architecture exists. It is whether the polling distribution it sits on top of can support it.</p>
+
+    <div class="casualty-row">
+      <div class="casualty-cell"><div class="casualty-num">741</div><div class="casualty-label">establishments closed since 2021 (Élysée, 2024)</div></div>
+      <div class="casualty-cell"><div class="casualty-num">~40+</div><div class="casualty-label">mosques / prayer halls closed since 2017</div></div>
+      <div class="casualty-cell"><div class="casualty-num">~30</div><div class="casualty-label">associations dissolved by decree</div></div>
+      <div class="casualty-cell"><div class="casualty-num">38%</div><div class="casualty-label">French Muslims: religious rule &gt; Republic law (IFOP 2020)</div></div>
+    </div>
+
+    <ul class="attack-timeline">
+      <li class="attack-event"><span class="ae-date">3 Oct 1989</span> The "Creil affair." Three middle-school pupils — Leïla, Fatima, and Samira — are excluded from Collège Gabriel-Havez in Creil (Oise) for refusing to remove their headscarves. The Conseil d'État issues an opinion on 27 November 1989 holding that the wearing of religious symbols is not by itself incompatible with laïcité. The episode opens the question that will run for thirty-five years: where is the line between private religious freedom and the school as a neutral space?</li>
+      <li class="attack-event"><span class="ae-date">15 Mar 2004</span> <strong>Loi 2004-228</strong> bans the wearing of "conspicuous" religious symbols (large crosses, kippas, headscarves, turbans) in public primary and secondary schools. Drafted under the Stasi Commission. The European Court of Human Rights upholds the law against challenges (<em>Dogru v. France</em>, 4 December 2008; <em>Kervanci v. France</em>, same date).</li>
+      <li class="attack-event"><span class="ae-date">11 Oct 2010</span> <strong>Loi 2010-1192</strong> bans the concealment of the face in public space — the so-called "burqa ban." Upheld by the Constitutional Council (decision 2010-613 DC) and by the European Court of Human Rights Grand Chamber in <em>S.A.S. v. France</em> (1 July 2014) on the basis of "vivre ensemble."</li>
+      <li class="attack-event"><span class="ae-date">26 Aug 2016</span> <strong>Conseil d'État, Villeneuve-Loubet</strong> (no. 402742). The administrative supreme court suspends mayor Lionnel Luca's burkini-on-beach ordinance, holding that without a proven public-order risk, "the emotion and anxiety resulting from terrorist attacks, and notably the one committed in Nice on July 14, could not justify the prohibition." The ruling becomes the textbook case for what laïcité <em>cannot</em> do — a constraint Macron will later describe as the wrong direction of constraint.</li>
+      <li class="attack-event"><span class="ae-date">2 Oct 2020</span> Macron's <strong>Mureaux speech</strong> announces a forthcoming law against "le séparatisme islamiste." Two weeks later (16 October), Samuel Paty is beheaded in Conflans-Sainte-Honorine after showing Charlie Hebdo cartoons in a class on freedom of expression — accelerating the bill's passage.</li>
+      <li class="attack-event"><span class="ae-date">24 Aug 2021</span> <strong>Loi 2021-1109 — "loi confortant le respect des principes de la République"</strong> — promulgated. Strengthens administrative closure of places of worship, restricts homeschooling, requires associations receiving public subsidies to sign a "contrat d'engagement républicain," and tightens controls on foreign funding of cults. The Conseil constitutionnel (decision 2021-823 DC, 13 August 2021) validates the bulk of the text and censures only two narrow provisions on association dissolution and residence permits.</li>
+      <li class="attack-event"><span class="ae-date">5 Feb 2022</span> The <strong>Conseil français du culte musulman (CFCM)</strong>, created by Sarkozy in 2003, is effectively wound down after the Interior Ministry refuses further dialogue with it citing foreign-state influence. Replaced by the <strong>Forum de l'Islam de France (FORIF)</strong>, with members directly selected by prefects rather than elected by federations.</li>
+      <li class="attack-event"><span class="ae-date">27 Aug 2023</span> Education minister Gabriel Attal announces by ministerial memorandum that the abaya constitutes a "conspicuous manifestation of religious affiliation" under the 2004 law and is therefore prohibited in public schools from the September rentrée. The Conseil d'État rejects two summary appeals (7 September 2023 and a second, October 2023) and confirms the ban on the merits in 2024.</li>
+      <li class="attack-event"><span class="ae-date">13 Oct 2023</span> Teacher Dominique Bernard is murdered at the Collège-Lycée Gambetta in <strong>Arras</strong> by a former pupil radicalised online. The IFOP/Elmaniya survey six weeks later finds that <em>16% of French Muslims, and 31% of Muslim secondary/higher students,</em> stop short of total condemnation of the attacker — vs. 5% nationally.</li>
+      <li class="attack-event"><span class="ae-date">9 Apr 2024</span> Senate information report <em>"Tout reste à faire"</em> on the application of the 2021 law: 741 establishments closed temporarily or definitively, but the Senate concludes the administrative architecture is under-resourced relative to the project of "entrisme" the law was designed to disrupt.</li>
+      <li class="attack-event"><span class="ae-date">21 May 2025</span> Macron convenes a <strong>Conseil de défense</strong> on the Muslim Brotherhood the day after the Interior Ministry publishes its 75-page report <em>"Frères musulmans et islamisme politique en France."</em> The report names <em>Musulmans de France</em> (rebranded UOIF) and the Brussels-based Council of European Muslims as the institutional spine of an explicitly non-violent, long-term entryism strategy. New legislation promised by end of summer 2025.</li>
+    </ul>
+
+    <div class="poll-quote">"Ce à quoi nous devons nous attaquer, c'est le séparatisme islamiste… une volonté revendiquée d'afficher une organisation méthodique pour contrevenir aux lois de la République." — Emmanuel Macron, Les Mureaux, 2 October 2020. Two weeks later, Samuel Paty was murdered. The bill the speech previewed was rushed through the National Assembly and Senate in the eight months that followed.</div>
+
+    <h4>Sentiment polls: what laïcité is being built on top of</h4>
+    <p style="font-size:.92rem;color:#3a3630;line-height:1.6;margin-bottom:8px;">The IFOP series for the Comité Laïcité République, the Fondation Jean-Jaurès, and Elmaniya runs from 2016 through 2023 with a consistent methodology: national French sample plus a Muslim oversample of ~500–1,000, online or face-to-face. The findings below are the empirical answer to the question every laïcité debate begs and few participants ask: <em>what does the constituency on the receiving end of these laws actually think?</em> The rainbow-band reading is unavoidable. There is no single "Muslim opinion" — there is a distribution, with substantial intra-Muslim majorities supporting the 1905 baseline, and substantial minorities (in some cases solid majorities of younger respondents) holding positions explicitly incompatible with the post-2004 stack.</p>
+
+    <div class="poll-grid">
+      <div class="poll-card">
+        <div class="pl-meta">France · IFOP / CLR / Fondation Jean-Jaurès · Oct–Nov 2020</div>
+        <h5>Religious rules vs. Republic laws</h5>
+        <ul>
+          <li><span class="pl-pct">38%</span><span>of French Muslims: religious rules should take precedence over Republic laws</span></li>
+          <li><span class="pl-pct">57%</span><span>of French Muslims aged 15–24 say the same — younger cohort more religious-prioritising, not less (+10pts since 2016)</span></li>
+          <li><span class="pl-pct good">79%</span><span>of French Muslims support the 1905 separation law itself (similar to Catholics &amp; non-believers)</span></li>
+          <li><span class="pl-pct">66%</span><span>of French Muslims oppose teachers showing religious caricatures in class (vs. 25% nationally)</span></li>
+        </ul>
+        <div class="pl-source">N=2,034 national sample (20–22 Oct 2020) + N=515 Muslim sample (6–17 Aug 2020) · IFOP for Comité Laïcité République &amp; Fondation Jean-Jaurès. <a href="https://www.jean-jaures.org/publication/le-rapport-des-francais-a-la-laicite/" target="_blank" rel="noopener">Fondation Jean-Jaurès report (FR)</a></div>
+      </div>
+
+      <div class="poll-card">
+        <div class="pl-meta">France · IFOP / Elmaniya · Nov–Dec 2023 · post-Arras &amp; abaya</div>
+        <h5>Laïcité as discriminatory; Arras condemnation</h5>
+        <ul>
+          <li><span class="pl-pct">78%</span><span>of French Muslims say laïcité as currently applied is discriminatory toward Muslims</span></li>
+          <li><span class="pl-pct">28%</span><span>of French Muslims approve the abaya ban (vs. 81% nationally)</span></li>
+          <li><span class="pl-pct">16%</span><span>of French Muslims do <em>not</em> totally condemn the Arras attacker (vs. 5% nationally)</span></li>
+          <li><span class="pl-pct">31%</span><span>of currently-enrolled Muslim secondary/higher students do not totally condemn the Arras attacker</span></li>
+        </ul>
+        <div class="pl-source">N=1,002 self-identifying French Muslims aged 15+ · fieldwork 21–29 Nov 2023 · IFOP for Elmaniya.tv. <a href="https://www.ifop.com/publication/abayas-burqa-attentat-darras-enquete-aupres-des-musulmans-sur-la-laicite-et-la-place-des-religions-a-lecole-et-dans-la-societe/" target="_blank" rel="noopener">IFOP report (FR)</a></div>
+      </div>
+
+      <div class="poll-card">
+        <div class="pl-meta">France · IFOP / Institut Montaigne · Sept 2016</div>
+        <h5>"Un islam français est possible" — the baseline</h5>
+        <ul>
+          <li><span class="pl-pct good">46%</span><span>of French Muslims describe themselves as "completely secularised" or "in the process of integrating" with French laïcité norms</span></li>
+          <li><span class="pl-pct">28%</span><span>cluster identified as holding values "clearly opposed to" laïcité — the rejectionist tail</span></li>
+          <li><span class="pl-pct">25%</span><span>"proud to be Muslim" middle group ambivalent on the niqab and on sharia in private dispute resolution</span></li>
+          <li><span class="pl-pct">29%</span><span>of Muslims under 25 in the rejectionist cluster (vs. 20% over 40) — the generational tilt confirmed in later waves</span></li>
+        </ul>
+        <div class="pl-source">N=1,029 self-identifying French Muslims · fieldwork April–May 2016 · IFOP for Institut Montaigne, <em>Un islam français est possible</em>. <a href="https://www.institutmontaigne.org/en/publications/french-islam-possibility" target="_blank" rel="noopener">Institut Montaigne report (EN summary)</a></div>
+      </div>
+
+      <div class="poll-card">
+        <div class="pl-meta">Global · Pew Research Center · 2013</div>
+        <h5>Sharia as official law: country-level dispersion</h5>
+        <ul>
+          <li><span class="pl-pct">99%</span><span>support sharia as official law in Afghanistan (top of distribution)</span></li>
+          <li><span class="pl-pct">74%</span><span>in Egypt; 71% in Nigeria's Muslim population; 56% in Tunisia</span></li>
+          <li><span class="pl-pct good">12%</span><span>in Turkey; 8% in Azerbaijan (bottom of distribution)</span></li>
+          <li><span class="pl-pct">~ —</span><span>Western European Muslims not surveyed in this wave; the relevant Pew finding for The West is the country-of-origin distribution being imported, with emigration partially self-selecting against the highest-support tail</span></li>
+        </ul>
+        <div class="pl-source">N≈38,000 face-to-face interviews across 39 Muslim-majority &amp; significant-Muslim-minority countries · 2008–2012 fieldwork · Pew Research Center. <a href="https://www.pewresearch.org/religion/2013/04/30/the-worlds-muslims-religion-politics-society-beliefs-about-sharia/" target="_blank" rel="noopener">Pew chapter on sharia</a></div>
+      </div>
+    </div>
+
+    <div class="case-takeaway">
+      <strong>What the arc shows about this fault line.</strong> The French sequence is not a story about a state cracking down on a religion. It is a story about a state discovering, law by law, that the 1905 settlement — drafted against a Catholic Church that had already lost the argument with modernity — does not automatically work against a religious tradition that has not. <em>The 2021 law is the moment the legislator stopped pretending laïcité was neutral and started naming what it was for.</em> The IFOP series tells you why. The 79% French-Muslim support for the 1905 law and the 46% IFOP/Montaigne "secularised or integrating" cluster are the rainbow's left mass — the constituency for whom French laïcité is a livable settlement and whose existence makes the entire enterprise defensible. The 38% saying religious rules trump Republic laws (57% under 25), the 78% calling current laïcité discriminatory, the 66% opposing caricatures in class, the 16–31% post-Arras condemnation gap — these are the illiberal-but-overwhelmingly-peaceful middle the hub describes. They are <em>not</em> the terrorism problem. They are the constitutional one. And the Brotherhood-report defendants, the dissolved associations, the ~40 closed mosques sit on the violent-or-violence-adjacent right tail the 2021 law was actually built to reach. <strong>A laïcité worth defending has to be calibrated against all three layers at once</strong> — strict enough to disrupt the entryism project the 2025 report names, generous enough not to alienate the 79% who already accept the 1905 baseline, and honest enough to admit the middle is large, growing among the young, and won't be talked out of its position by a Conseil d'État ruling. The French laboratory has produced a lot of evidence. It has not yet produced consensus, even inside France, about what the evidence means.
+    </div>
+  </div>
+
   <h2 class="section-title">Inside critics &amp; reformers worth naming</h2>
 
   <div class="reformer-names">
@@ -226,6 +354,35 @@
       <div class="src-cite"><strong>Pew Research Center</strong>, "100th Anniversary of Secularism in France" (2005).</div>
       <div class="src-method">Method: Historical-comparative essay placing French laïcité against US Establishment-Clause doctrine and German cooperative-secularism (Staatskirchenrecht). Useful for showing that "secularism" is not one settlement but a family of them.</div>
       <div class="src-link"><a href="https://www.pewresearch.org/religion/2005/12/09/100th-anniversary-of-secularism-in-france/" target="_blank" rel="noopener">Pew Research</a></div>
+    </div>
+
+    <div class="source-item">
+      <span class="src-type">Primary law · 2021 separatism law</span>
+      <div class="src-cite"><strong>République française</strong>, Loi n° 2021-1109 du 24 août 2021 confortant le respect des principes de la République ("loi séparatisme").</div>
+      <div class="src-method">Method: Primary legislation. Strengthens administrative closure of places of worship (Articles 44–48), restricts homeschooling (Article 49), requires associations receiving public subsidies to sign a "contrat d'engagement républicain," and tightens controls on foreign funding of cults. The Constitutional Council (decision 2021-823 DC, 13 August 2021) validated the bulk of the text and censured only two narrow provisions on association dissolution and residence permits.</div>
+      <div class="src-link"><a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000043964778" target="_blank" rel="noopener">Légifrance — full text</a> · <a href="https://www.conseil-constitutionnel.fr/decision/2021/2021823DC.htm" target="_blank" rel="noopener">Conseil constitutionnel 2021-823 DC</a> · <a href="https://www.vie-publique.fr/loi/277621-loi-separatisme-respect-des-principes-de-la-republique-24-aout-2021" target="_blank" rel="noopener">vie-publique.fr summary</a></div>
+    </div>
+
+    <div class="source-item">
+      <span class="src-type">Court ruling · Conseil d'État · burkini</span>
+      <div class="src-cite"><strong>Conseil d'État</strong>, juge des référés, ord. 26 août 2016, n° 402742, <em>Ligue des droits de l'homme et autres c. commune de Villeneuve-Loubet</em>.</div>
+      <div class="src-method">Method: Administrative-supreme-court reference ruling on the limits of mayoral police powers vis-à-vis religious dress in public space. The court held that without a proven public-order risk, "the emotion and anxiety resulting from terrorist attacks" cannot justify a blanket prohibition. The textbook case for what laïcité <em>cannot</em> do under existing law — and one of the doctrinal pressures that produced the 2021 statute.</div>
+      <div class="src-link"><a href="https://www.legifrance.gouv.fr/ceta/id/CETATEXT000033070536/" target="_blank" rel="noopener">Légifrance — ordonnance</a> · <a href="https://lawandreligionuk.com/2016/08/29/the-conseil-detat-and-the-burkini-ban/" target="_blank" rel="noopener">Law &amp; Religion UK commentary</a></div>
+    </div>
+
+    <div class="source-item">
+      <span class="src-type">Survey · French Muslims &amp; laïcité</span>
+      <div class="src-cite"><strong>IFOP</strong>, <em>Le rapport des Français à la laïcité</em>, for Comité Laïcité République &amp; Fondation Jean-Jaurès, November 2020 — paired with the IFOP/Elmaniya 2023 wave <em>Abayas, burqa, attentat d'Arras… Enquête auprès des musulmans</em>.</div>
+      <div class="src-method">Method: National French sample (N=2,034, 20–22 Oct 2020) plus dedicated Muslim oversample (N=515, 6–17 Aug 2020); IFOP/Elmaniya 2023 wave N=1,002 self-identifying French Muslims aged 15+ (21–29 Nov 2023). The pair gives both a cross-religious comparison and a Muslim-only deep dive over a three-year span that includes the Paty murder, the 2021 law, the abaya ban, and the Arras murder.</div>
+      <div class="src-caveat"><strong>Caveat:</strong> "Sharia," "religious rules," and "laïcité" are loaded terms in French. Question wording matters; cross-wave comparisons should be read as indicative rather than precise. The 38% / 57%-under-25 figure has been contested in <em>The Conversation</em> and elsewhere on sample-construction grounds, but no IFOP wave since 2016 has produced numbers materially incompatible with that finding.</div>
+      <div class="src-link"><a href="https://www.jean-jaures.org/publication/le-rapport-des-francais-a-la-laicite/" target="_blank" rel="noopener">Fondation Jean-Jaurès report</a> · <a href="https://www.ifop.com/publication/abayas-burqa-attentat-darras-enquete-aupres-des-musulmans-sur-la-laicite-et-la-place-des-religions-a-lecole-et-dans-la-societe/" target="_blank" rel="noopener">IFOP/Elmaniya 2023 wave</a> · <a href="https://www.ifop.com/article/le-rapport-a-la-laicite-a-lheure-de-la-lutte-contre-lislamisme-et-le-projet-de-loi-contre-les-separatismes/" target="_blank" rel="noopener">IFOP write-up</a></div>
+    </div>
+
+    <div class="source-item">
+      <span class="src-type">Senate report · 2021 law bilan</span>
+      <div class="src-cite"><strong>Sénat (France)</strong>, rapport d'information <em>Loi du 24 août 2021 confortant le respect des principes de la République : tout reste à faire</em>, no. 383 (2023–2024), April 2024.</div>
+      <div class="src-method">Method: Parliamentary information report assessing three years of enforcement of the 2021 law. Provides the 741-establishments-closed figure cited by the Élysée and the Senate's own conclusion that "tout reste à faire" — administrative resourcing has not matched the scope of the entryism the law was designed to disrupt.</div>
+      <div class="src-link"><a href="https://www.senat.fr/rap/r23-383/r23-3830.html" target="_blank" rel="noopener">Sénat — rapport (FR)</a> · <a href="https://www.franceinfo.fr/societe/religion/religion-laicite/loi-sur-le-separatisme-741-etablissements-ont-ete-fermes-de-maniere-temporaire-ou-definitive-depuis-2021_7261734.html" target="_blank" rel="noopener">FranceInfo coverage</a></div>
     </div>
 
   </div>
