@@ -44,6 +44,25 @@
 .case-takeaway{margin-top:18px;padding-top:18px;border-top:1px solid #e8e2d5;font-size:.94rem;color:#2a2620;line-height:1.65}
 .case-takeaway strong{color:#17161a}
 .case-takeaway em{color:#b8372a;font-style:italic;font-weight:600}
+/* Cross-examination block (copied verbatim from fault-line 21) */
+.cross-exam{margin:24px 0 16px;padding:30px 34px;background:linear-gradient(to bottom right,#fdf6e6,#faf0d8);border:1px solid #e8d599;border-radius:12px;border-left:4px solid #c08815}
+@media (max-width:600px){.cross-exam{padding:22px 20px}}
+.cross-exam h3{font-size:1.18rem;font-weight:700;color:#5e4414;margin-bottom:6px;display:flex;align-items:center;gap:12px;letter-spacing:-.01em}
+.cross-exam h3::before{content:"⚖";font-size:1.3rem;color:#c08815}
+.cross-exam .ce-lead{font-size:.93rem;color:#5e4414;margin-bottom:18px;line-height:1.6;font-style:italic}
+.cross-exam .ce-side{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7a5a1c;font-weight:700;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid #f0d99e}
+.cross-exam .ce-side:first-of-type{margin-top:0}
+.strain-list{display:grid;gap:12px;counter-reset:strain-counter}
+.strain{background:#fff;border:1px solid #f0d99e;border-radius:8px;padding:18px 22px;position:relative}
+.strain h4{font-size:.98rem;font-weight:700;color:#17161a;margin-bottom:10px;padding-left:36px;position:relative;letter-spacing:-.005em;line-height:1.4}
+.strain h4::before{counter-increment:strain-counter;content:counter(strain-counter);position:absolute;left:0;top:-2px;width:26px;height:26px;background:#c08815;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+.strain p{font-size:.9rem;color:#3a3630;line-height:1.6;margin-bottom:8px}
+.strain p:last-child{margin-bottom:0}
+.strain p strong{color:#17161a;font-weight:700}
+.strain p em{color:#b8372a;font-style:italic;font-weight:600}
+.strain .strain-claim{padding-bottom:10px;border-bottom:1px dashed #f0d99e;margin-bottom:10px}
+.strain .strain-claim::before{content:"Claim: ";font-weight:700;color:#7a5a1c;font-size:.78rem;letter-spacing:.04em}
+.strain .strain-expose::before{content:"Where it strains: ";font-weight:700;color:#c08815;font-size:.78rem;letter-spacing:.04em}
 </style>
 </head>
 <body>
@@ -75,6 +94,70 @@
     <h3>Aesthetic-religious accommodation yes, public-cultural restriction no</h3>
     <p>The liberal-democratic position is sympathetic on the religious-private-choice baseline: a mosque designed without figurative ornament is a religious aesthetic choice no different from a Quaker meeting-house designed without elaborate decoration. The strongest version draws limits where strict-aniconism demands move into restriction of public-cultural practice — calls for removal of public statuary, restriction of public music performance, restriction of figurative-art education in mixed-population schools.</p><p>The strongest version concedes that the iconoclastic-destruction cases are extreme and not representative of mainstream European Muslim opinion; they are the case for the principle, not its everyday application. <strong>The defensible settlement is religious-aesthetic choice in religious contexts as freely accommodated, public-cultural practice as default-permitted with the same protections that apply to free expression more generally — and the iconoclastic-destruction position categorically rejected as a legitimate religious-practice claim in Western context, while recognized as the minority strict-Salafi position it is.</strong></p>
   </div>
+</div>
+
+<h2 class="section-title">Where the argument strains</h2>
+<p class="section-sub">A steelman is not a verdict. The arguments above are presented uncensored; below they are stress-tested. <em>Both</em> sides — because intellectual honesty requires it, and because the rainbow band on this fault line runs from the cartoonist's drafting table to rue Nicolas-Appert and the schoolyard in Conflans, and every position on it should clear the same evidentiary bar.</p>
+
+<div class="cross-exam">
+  <h3>Cross-examination</h3>
+  <p class="ce-lead">The depiction-and-music debate, tested against the standards a serious interlocutor would actually apply — and against the body count the previous decade put on the table.</p>
+
+  <div class="ce-side">Testing the conservative-Islamist articulation</div>
+
+  <div class="strain-list">
+
+    <div class="strain">
+      <h4>The "moderation" bait-and-switch</h4>
+      <p class="strain-claim">The version offered to Western audiences emphasizes that strict aniconism is one current among several, that Persian miniatures and Mughal portraiture and Iranian cinema are recognized inside the tradition, and that mosque-architecture preferences are merely a private religious-aesthetic choice no different from a Quaker meeting-house.</p>
+      <p class="strain-expose">The IFOP / Fondation Jean-Jaurès 2020 data on the same page tells the harder story: <strong>69% of French Muslims rated Charlie Hebdo's republication "unnecessary provocation," 38% said religious rules should take precedence over Republic laws (57% in the 15–24 cohort), and 18% declined to condemn the 2015 attackers — twice the national rate.</strong> The diaspora-moderate framing collapses against polling of the diaspora itself; what is presented as a private aesthetic choice is, in the constituency where the position is held, a substantial illiberal-but-peaceful majority's view about what others may be allowed to publish. The "private religious choice" framing does not survive contact with the page's own friction data.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The unfalsifiable-consensus claim on taswir and music</h4>
+      <p class="strain-claim">The strict position presents the prohibition on <em>taswir</em> (image-making of living beings) and the categorization of music as <em>lahw al-hadith</em> (idle talk) as established consensus rooted in canonical Hadith — most prominently the Bukhari narrations on image-makers being "the most severely punished" on the Day of Judgement, and the Bukhari 5590 chain on stringed instruments.</p>
+      <p class="strain-expose">Jonathan Brown's <em>Hadith: Muhammad's Legacy in the Medieval and Modern World</em> (Oneworld, 2009) and his <em>Misquoting Muhammad</em> (2014) document that the relevant musical-prohibition chains are weakly transmitted by the Hadith-criticism standards the same school applies elsewhere; G. R. Hawting's <em>The Idea of Idolatry and the Emergence of Islam</em> (Cambridge, 1999) shows the image-aversion emerged in a specific late-antique polemical context against pagan cultic image-use, not as a free-standing aesthetic ban. <strong>Yusuf al-Qaradawi himself — in his <em>al-Halal wal-Haram fi'l-Islam</em> chapter on music — concedes the permissibility of unaccompanied vocal music and of stringed instruments at weddings, contradicting the strict-Salafi reading from inside the conservative-Sunni mainstream.</strong> The "consensus" is one school's preferred reconstruction, not a textual fact; the position must defend the choice on its merits.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The privacy-not-punishment retreat</h4>
+      <p class="strain-claim">The contemporary apologetic version argues that aniconism is about personal piety and mosque interiors — that the position counsels Muslims to avoid figurative art and music in their own observance, not to impose those preferences on the public square or on non-Muslim cultural production.</p>
+      <p class="strain-expose">This concedes the structure of the blasphemy regime while denying its existence. <strong>If the cartoons should "never have been published," if Samuel Paty should not have shown them to a class on freedom of expression, if Charlie Hebdo's editor required permanent police protection from 2011 until his murder in 2015 — then the position is not asking for personal accommodation; it is asking that the public square be configured around the same prohibition the strict reading imposes privately.</strong> The Munir al-Qattan / Conseil européen pour la fatwa et la recherche line that "freedom of expression cannot extend to insult of the Prophet" is the operative content; the privacy framing is the export presentation. The 69% "unnecessary provocation" figure is what the privacy framing looks like once it has been translated into a constituency demand.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The metaphysical-premise dodge</h4>
+      <p class="strain-claim">When pressed on the textual case for a categorical depiction or music ban, the position retreats to coherence on its own metaphysical premises — that depiction of the Prophet, or of living beings generally, is ontologically a different category of act than the secular-aesthetic frame can recognize, and that liberal critique applies premises the position does not share.</p>
+      <p class="strain-expose">This is true and trivial. Faisal Devji's <em>Landscapes of the Jihad</em> (Cornell, 2005) and <em>The Terrorist in Search of Humanity</em> (Columbia, 2008) make the parallel observation that contemporary Salafi-jihadist iconoclasm — Bamiyan 2001, Mosul 2014, Palmyra 2015 — relies on exactly this premise-internal coherence to license destruction of objects the rest of humanity reads as cultural patrimony. <em>Coherence-on-premises is the floor of an argument, not its ceiling.</em> The substantive question is whether the premises survive examination outside the system that licenses them — and the position cannot answer that question without circular appeal to the same scriptural authority that establishes the conclusion.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The "offence-is-violence" equivocation</h4>
+      <p class="strain-claim">The position's most charitable contemporary form holds that depiction of the Prophet is experienced as a form of violence against the believing community — and that the believing community is therefore entitled to a corresponding restraint from non-believers as a matter of basic civility, not as a religious-law imposition.</p>
+      <p class="strain-expose">The Charlie Hebdo cluster — Kouachi brothers Jan 2015 (12 dead at the offices, 17 across three days), Mahmoud Sept 2020 (two near-fatal cleaver wounds at the former-offices address), Anzorov Oct 2020 (Samuel Paty beheaded for showing the cartoons in class) — is the empirical answer to the equivocation. <strong>Offence and violence are different categories. The cartoonists were murdered; Salman Rushdie remained under fatwa for thirty-three years before being stabbed fifteen times in Chautauqua in 2022, losing an eye and the use of one hand.</strong> The exit-cost asymmetry is not symmetric at all: those who depict bear the lethal risk in perpetuity; those offended bear, at most, the cost of looking away. A position that frames its own grievance in the vocabulary of violence while its violent fringe acts on that framing has not earned the equivocation; it has to choose between the framing and the disavowal.</p>
+    </div>
+
+  </div>
+
+  <div class="ce-side">Testing the liberal-democratic articulation</div>
+
+  <div class="strain-list" style="counter-reset:strain-counter 5;">
+
+    <div class="strain">
+      <h4>The recency objection on blasphemy law</h4>
+      <p class="strain-claim">Western jurisdictions decriminalized blasphemy only recently — England and Wales in 2008, Ireland in 2018 (constitutional referendum), Denmark in 2017, Scotland in 2021. The conservative position can press: if the Western settlement on satirical treatment of religious figures is universal-and-self-evident, why did Western law itself protect Christianity from blasphemy within living memory?</p>
+      <p class="strain-expose">Recency is not refutation, but the position should not pretend it isn't there. The honest liberal answer is: <em>we changed our mind</em> — the same way the West revised its positions on slavery, women's suffrage, and religious tolerance. The right answer to "why did your own grandparents' law protect Christianity from blasphemy?" is "because we had not yet worked out the implications of premises we already held," not "we held a different view that was equally valid." The position requires acknowledging that the liberal-democratic settlement on speech-and-the-sacred continues to evolve — and defending the current settlement on its merits, not on its provenance.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The selective-courage problem</h4>
+      <p class="strain-claim">Charlie Hebdo and the broader free-speech-on-Islam coalition defended the right to caricature Muhammad on principle. The same principle, applied evenly, requires the same defence of provocations against other faiths and groups — and the conservative critic can press that the same outlets and constituencies have often been markedly less robust on antisemitic provocation, on caricature of observant Christians, or on cartoon attacks on Hindu or Sikh religious figures.</p>
+      <p class="strain-expose">The asymmetry exists and is documented (cf. the Maurice Sinet / Siné firing from Charlie Hebdo in 2008 over an antisemitism allegation; the European debates on prosecution of Holocaust denial vs. Muhammad caricature; the differential newsroom treatment of Christian-mocking and Muslim-mocking content). The honest liberal answer is not that the asymmetry doesn't exist; it is that the cure is more even-handed defence of provocative speech across the board, not less defence in the cases where the violent reply has been most lethal. <strong>The principle has to be defended where it costs most, or it isn't the principle being defended — but the defence is weaker if it is rationed by the courage of the satirist's targets.</strong></p>
+    </div>
+
+  </div>
+
+  <div style="margin-top:20px;padding-top:18px;border-top:1px dashed #e8d599;font-size:.9rem;color:#5e4414;line-height:1.6;font-style:italic;">The cross-examination above is the methodological commitment of this whole project: <strong>steelman, then expose</strong>. A position whose strongest form cannot withstand its own implications has not been refuted by hostile caricature — it has been refuted by honest engagement, which is what its serious advocates would themselves consider the only refutation worth answering.</div>
 </div>
 
 <h2 class="section-title">The friction in The West</h2>
