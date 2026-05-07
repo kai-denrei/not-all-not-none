@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity &amp; Diversity / 結束と多様性 — When heterogeneity becomes strength, when it becomes fragmentation</title>
+<style>
+:root{color-scheme:light}*{box-sizing:border-box;margin:0;padding:0}html,body{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Helvetica Neue",sans-serif;background:#faf9f6;color:#17161a;line-height:1.6;padding:48px 20px 96px;-webkit-font-smoothing:antialiased}.container{max-width:1080px;margin:0 auto}.breadcrumb{font-size:.78rem;color:#8a8680;margin-bottom:28px;letter-spacing:.02em}.breadcrumb a{color:#4a7bb8;text-decoration:none}.breadcrumb a:hover{text-decoration:underline}.breadcrumb .sep{margin:0 8px;color:#c9c0ad}header{margin-bottom:56px}.eyebrow{display:inline-block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#8a8680;margin-bottom:16px;padding:6px 14px;border:1px solid #e3dfd6;border-radius:999px;background:#fff}h1{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:700;letter-spacing:-.025em;line-height:1.12;margin-bottom:18px}.subtitle{font-size:clamp(1rem,1.5vw,1.12rem);color:#555047;max-width:820px;margin-bottom:22px;line-height:1.55}.status-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:.78rem;color:#8a8680}.status-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:#e8f4ec;color:#1f5f3c;border:1px solid #b8d9c2;border-radius:999px;font-weight:600;letter-spacing:.02em}.status-badge::before{content:"";width:7px;height:7px;background:#2e7d4f;border-radius:50%}.section-title{font-size:1.45rem;font-weight:700;letter-spacing:-.015em;margin:64px 0 8px}.section-sub{color:#6d675c;margin-bottom:24px;max-width:780px;font-size:.96rem}.one-sentence{margin:36px 0 16px;padding:28px 32px;background:#fff;border-left:4px solid #b8372a;border-radius:0 8px 8px 0;font-size:1.06rem;line-height:1.65;color:#2a2620;box-shadow:0 1px 3px rgba(0,0,0,.04)}.one-sentence strong{color:#17161a}.one-sentence em{color:#b8372a;font-style:italic;font-weight:600}.steelman-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px}@media (max-width:820px){.steelman-grid{grid-template-columns:1fr}}.steelman-card{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:28px 30px}.steelman-card.extremist{border-top:4px solid #1a1a1a}.steelman-card.liberal{border-top:4px solid #2a6db3}.steelman-card .sm-eyebrow{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#8a8680;margin-bottom:8px;font-weight:600}.steelman-card.extremist .sm-eyebrow{color:#555047}.steelman-card.liberal .sm-eyebrow{color:#2a6db3}.steelman-card h3{font-size:1.12rem;font-weight:700;margin-bottom:12px;color:#17161a;letter-spacing:-.01em}.steelman-card p{font-size:.92rem;color:#3a3630;line-height:1.62;margin-bottom:12px}.steelman-card p:last-child{margin-bottom:0}.steelman-card em{color:#555047;font-style:italic}.steelman-card strong{color:#17161a}.steelman-disclosure{margin-top:14px;padding:14px 18px;background:#f5f1e6;border-radius:8px;font-size:.84rem;color:#555047;line-height:1.55;border-left:3px solid #c9c0ad}.steelman-disclosure strong{color:#17161a}
+.cross-exam{margin:24px 0 16px;padding:30px 34px;background:linear-gradient(to bottom right,#fdf6e6,#faf0d8);border:1px solid #e8d599;border-radius:12px;border-left:4px solid #c08815}@media (max-width:600px){.cross-exam{padding:22px 20px}}.cross-exam h3{font-size:1.18rem;font-weight:700;color:#5e4414;margin-bottom:6px;display:flex;align-items:center;gap:12px;letter-spacing:-.01em}.cross-exam h3::before{content:"⚖";font-size:1.3rem;color:#c08815}.cross-exam .ce-lead{font-size:.93rem;color:#5e4414;margin-bottom:18px;line-height:1.6;font-style:italic}.cross-exam .ce-side{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7a5a1c;font-weight:700;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid #f0d99e}.cross-exam .ce-side:first-of-type{margin-top:0}.strain-list{display:grid;gap:12px;counter-reset:strain-counter}.strain{background:#fff;border:1px solid #f0d99e;border-radius:8px;padding:18px 22px;position:relative}.strain h4{font-size:.98rem;font-weight:700;color:#17161a;margin-bottom:10px;padding-left:36px;position:relative;letter-spacing:-.005em;line-height:1.4}.strain h4::before{counter-increment:strain-counter;content:counter(strain-counter);position:absolute;left:0;top:-2px;width:26px;height:26px;background:#c08815;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}.strain p{font-size:.9rem;color:#3a3630;line-height:1.6;margin-bottom:8px}.strain p:last-child{margin-bottom:0}.strain p strong{color:#17161a;font-weight:700}.strain p em{color:#b8372a;font-style:italic;font-weight:600}.strain .strain-claim{padding-bottom:10px;border-bottom:1px dashed #f0d99e;margin-bottom:10px}.strain .strain-claim::before{content:"Claim: ";font-weight:700;color:#7a5a1c;font-size:.78rem;letter-spacing:.04em}.strain .strain-expose::before{content:"Where it strains: ";font-weight:700;color:#c08815;font-size:.78rem;letter-spacing:.04em}
+.friction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}@media (max-width:880px){.friction-grid{grid-template-columns:1fr}}.friction-card{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:22px 24px}.friction-card .fr-flag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:4px 10px;border-radius:4px;margin-bottom:12px}.friction-card.eu .fr-flag{background:#2a6db3}.friction-card.us .fr-flag{background:#b8372a}.friction-card.jp .fr-flag{background:#4cb56c}.friction-card h4{font-size:1rem;font-weight:700;margin-bottom:10px;color:#17161a;line-height:1.35}.friction-card p{font-size:.88rem;color:#3a3630;line-height:1.58;margin-bottom:10px}.friction-card .fr-source{font-size:.72rem;color:#8a8680;padding-top:10px;border-top:1px dashed #e8e2d5;line-height:1.45}.friction-card .fr-source a{color:#4a7bb8;text-decoration:none}.friction-card .fr-source a:hover{text-decoration:underline}.friction-card .fr-honest{font-style:italic;color:#6d675c;font-size:.86rem;line-height:1.55}
+.case-study{margin:32px 0 16px;padding:32px 36px;background:linear-gradient(to bottom right,#fff,#faf7ef);border:1px solid #e8e2d5;border-radius:12px;border-left:4px solid #b8372a}@media (max-width:600px){.case-study{padding:24px 22px}}.case-study h3{font-size:1.3rem;font-weight:700;letter-spacing:-.01em;margin-bottom:6px;color:#17161a}.case-study h4{font-size:1.05rem;font-weight:700;margin:24px 0 4px;color:#17161a;letter-spacing:-.005em}.case-meta{font-size:.76rem;color:#8a8680;margin-bottom:18px;letter-spacing:.01em}.case-lead{font-size:.98rem;color:#3a3630;line-height:1.65;margin-bottom:18px}.case-lead em{color:#b8372a;font-style:italic;font-weight:600}.case-lead strong{color:#17161a}.casualty-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:18px 0 8px;padding:18px 20px;background:#17161a;color:#f0ece2;border-radius:10px}.casualty-cell{text-align:center}.casualty-num{font-size:1.7rem;font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1.1;font-variant-numeric:tabular-nums}.casualty-label{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#c9c0ad;margin-top:4px}.attack-timeline{margin:18px 0;padding:0;list-style:none}.attack-event{padding:14px 0 14px 26px;border-top:1px solid #f0ece2;font-size:.9rem;color:#3a3630;line-height:1.55;position:relative}.attack-event:first-child{border-top:none;padding-top:8px}.attack-event::before{content:"";position:absolute;left:0;top:20px;width:10px;height:10px;background:#b8372a;border-radius:50%}.attack-event:first-child::before{top:14px}.attack-event .ae-date{font-weight:700;color:#17161a;display:inline-block;margin-right:8px;font-variant-numeric:tabular-nums}.attack-event strong{color:#17161a}.attack-event em{color:#b8372a;font-style:italic;font-weight:600}.poll-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}@media (max-width:780px){.poll-grid{grid-template-columns:1fr}}.poll-card{background:#fff;border:1px solid #e8e2d5;border-radius:8px;padding:18px 20px}.poll-card .pl-meta{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#8a8680;margin-bottom:8px;font-weight:600}.poll-card h5{font-size:.95rem;font-weight:700;margin-bottom:10px;color:#17161a;line-height:1.4}.poll-card ul{list-style:none;padding:0;margin:8px 0}.poll-card li{padding:8px 0;border-top:1px dashed #f0ece2;font-size:.85rem;color:#3a3630;line-height:1.5;display:flex;gap:10px}.poll-card li:first-child{border-top:none;padding-top:4px}.poll-card .pl-pct{font-weight:700;color:#b8372a;font-variant-numeric:tabular-nums;min-width:42px;flex-shrink:0}.poll-card .pl-pct.good{color:#2e7d4f}.poll-card .pl-source{font-size:.7rem;color:#8a8680;padding-top:10px;border-top:1px dashed #e8e2d5;margin-top:10px;line-height:1.4}.poll-card .pl-source a{color:#4a7bb8;text-decoration:none}.poll-card .pl-source a:hover{text-decoration:underline}.poll-quote{margin:18px 0;padding:14px 20px;border-left:3px solid #e0893a;font-style:italic;color:#3a3630;background:#fbfaf5;font-size:.9rem;border-radius:0 6px 6px 0;line-height:1.55}.case-takeaway{margin-top:18px;padding-top:18px;border-top:1px solid #e8e2d5;font-size:.94rem;color:#2a2620;line-height:1.65}.case-takeaway strong{color:#17161a}.case-takeaway em{color:#b8372a;font-style:italic;font-weight:600}
+.reformer-names{font-size:.86rem;line-height:1.85;color:#3a3630;margin:14px 0;padding:18px 20px;background:#faf7ef;border-radius:8px;border:1px solid #f0ece2}.reformer-names strong{color:#17161a;font-weight:700}.reformer-names em{color:#555047;font-style:italic}.sources-list{display:grid;gap:14px;margin-bottom:16px}.source-item{background:#faf7ef;border:1px solid #e8e2d5;border-radius:10px;padding:20px 22px}.source-item .src-type{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a8680;margin-bottom:8px;padding:3px 9px;background:#fff;border-radius:4px;border:1px solid #e8e2d5}.source-item .src-cite{font-size:.92rem;color:#17161a;line-height:1.55;margin-bottom:8px}.source-item .src-cite strong{color:#17161a;font-weight:700}.source-item .src-cite em{color:#555047;font-style:italic}.source-item .src-method{font-size:.8rem;color:#6d675c;font-style:italic;margin-bottom:10px;line-height:1.5}.source-item .src-link{font-size:.8rem;padding-top:10px;border-top:1px dashed #e8e2d5}.source-item .src-link a{color:#4a7bb8;text-decoration:none;font-weight:500}.source-item .src-link a:hover{text-decoration:underline}.source-item .src-caveat{font-size:.78rem;color:#7a5a1c;background:#fef6e1;padding:10px 14px;border-radius:6px;margin-top:10px;border-left:3px solid #d4a03a;line-height:1.5}.source-item .src-caveat strong{color:#5e4414}.open-questions{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:26px 30px;margin-bottom:16px}.open-questions ul{list-style:none;padding:0;margin:0}.open-questions li{padding:12px 0 12px 28px;border-top:1px solid #f0ece2;font-size:.92rem;color:#3a3630;line-height:1.6;position:relative}.open-questions li:first-child{border-top:none;padding-top:0}.open-questions li::before{content:"?";position:absolute;left:0;top:12px;width:18px;height:18px;background:#e0893a;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700}.open-questions li:first-child::before{top:0}.open-questions li strong{color:#17161a}footer{margin-top:64px;padding-top:28px;border-top:1px solid #e8e2d5;font-size:.8rem;color:#8a8680;text-align:center;line-height:1.6}footer a{color:#4a7bb8;text-decoration:none}footer a:hover{text-decoration:underline}.caveat{margin-top:24px;padding:18px 24px;background:#f5f1e6;border-radius:10px;font-size:.86rem;color:#555047;line-height:1.6}.caveat strong{color:#17161a}
+/* Page-specific additions for the meta-frame layout */
+.steelman-grid.three{grid-template-columns:1fr 1fr 1fr}@media (max-width:1000px){.steelman-grid.three{grid-template-columns:1fr}}
+.steelman-card.synthesis{border-top:4px solid #2e7d4f;border-left:1px solid #b8d9c2;background:linear-gradient(to bottom right,#fff,#f3faf5)}.steelman-card.synthesis .sm-eyebrow{color:#1f5f3c}
+.findings-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}@media (max-width:780px){.findings-grid{grid-template-columns:1fr}}
+.finding-card{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:20px 22px;border-left:3px solid #4a7bb8}.finding-card h4{font-size:.98rem;font-weight:700;color:#17161a;margin-bottom:8px;letter-spacing:-.005em;line-height:1.35}.finding-card h4 .yr{font-weight:600;color:#6d675c;font-size:.85rem;margin-left:6px;font-variant-numeric:tabular-nums}.finding-card p{font-size:.88rem;color:#3a3630;line-height:1.58;margin-bottom:8px}.finding-card p:last-child{margin-bottom:0}.finding-card .fc-implication{font-size:.82rem;color:#555047;font-style:italic;padding-top:8px;border-top:1px dashed #e8e2d5;margin-top:10px;line-height:1.5}.finding-card strong{color:#17161a}
+.featured-insight{margin:32px 0 16px;padding:32px 36px;background:linear-gradient(to bottom right,#fff,#fbf4ec);border:1px solid #e8d599;border-left:5px solid #c08815;border-radius:12px}@media (max-width:600px){.featured-insight{padding:24px 22px}}.featured-insight .fi-tag{display:inline-block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#7a5a1c;font-weight:700;margin-bottom:10px;padding:3px 10px;background:#fef6e1;border-radius:4px}.featured-insight h3{font-size:1.3rem;font-weight:700;color:#17161a;margin-bottom:14px;letter-spacing:-.01em;line-height:1.25}.featured-insight p{font-size:.98rem;color:#3a3630;line-height:1.65;margin-bottom:12px}.featured-insight p:last-child{margin-bottom:0}.featured-insight strong{color:#17161a}.featured-insight em{color:#b8372a;font-style:italic;font-weight:600}
+.connect-list{margin:14px 0;padding:18px 22px;background:#faf7ef;border-radius:8px;border:1px solid #f0ece2;font-size:.9rem;line-height:1.85;color:#3a3630}.connect-list a{color:#4a7bb8;text-decoration:none;font-weight:500}.connect-list a:hover{text-decoration:underline}.connect-list strong{color:#17161a}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb"><a href="nuance-2026.html">Nuance Is Not a Dirty Word</a><span class="sep">›</span><span>Unity &amp; diversity (meta-frame)</span></div>
+
+<header>
+  <span class="eyebrow">Framework · Meta</span>
+  <h1>Unity &amp; diversity / 結束と多様性: when heterogeneity becomes strength, when it becomes fragmentation</h1>
+  <p class="subtitle">The discourse runs between two slogans — "diversity is strength" and "homogeneity is strength" — both of which mistake correlation for cause. The empirical record points at a third variable: institutional capacity to convert heterogeneity into coordinated cooperation, and the conditions under which that capacity holds or breaks.</p>
+  <div class="status-row"><span class="status-badge">meta-frame · Phase 1</span><span>Phase 1</span></div>
+</header>
+
+<h2 class="section-title">The frame, in one sentence</h2>
+<div class="one-sentence"><strong>Neither diversity nor unity is automatically strength. The variable that decides is <em>institutional capacity</em> — whether the rules, civic identity, integration mechanisms, and trust infrastructure can transform heterogeneity into coordinated cooperation, or whether they cannot. Pretending the question doesn't exist produces backlash; pretending one slogan answers it produces the policy errors of the last thirty years.</strong></div>
+
+<h2 class="section-title">Three positions, steelmanned</h2>
+<p class="section-sub">Each in the strongest form its own serious advocates would defend in writing — including the project's own commitment, which gets the same scrutiny as the other two. No euphemism, no smoothing, no concealing what the position actually says.</p>
+
+<div class="steelman-grid three">
+
+  <div class="steelman-card liberal">
+    <div class="sm-eyebrow">Position A · cosmopolitan-multicultural</div>
+    <h3>Diversity is strength</h3>
+    <p>The strongest form of the position is not the corporate slogan. It is the empirically defensible claim that <strong>heterogeneous teams in cognitively complex, high-information environments outperform homogeneous teams</strong> on idea generation, error-detection, and adaptive capacity. The literature is real if narrow: Wallrich et al.'s 2024 registered-report meta-analysis finds small but reliably positive average effects, concentrated in cognitive/deep-level diversity and in complex tasks; Wang et al. on culturally diverse teams converges on the same conditional finding. Selected high-institution environments — Silicon Valley, NIH-funded research consortia, US military combat-arms task cohesion under common doctrine, Singapore's English-language meritocracy, Switzerland's federal multilingualism — measurably benefit from variety.</p>
+    <p>The position concedes what its serious advocates concede: these are <em>selected</em> high-institution cases with strong filters (immigration regimes, professional credentialing, common doctrine, shared language of work). It does not concede the generalization to mass unselected demographic change, and the careful version of the position never claimed it did. The slogan version — as deployed in McKinsey's "Why Diversity Matters" reports and in elite political rhetoric — is correlational evidence dressed up as causal demonstration. Alex Edmans's critique, that the McKinsey causal direction is not established, is not a fringe complaint; it is a methodological point the firm has not answered.</p>
+    <p>The defensible kernel is therefore narrower than the public version: <strong>complementary, skill-selected, institutionally-integrated variety can be productive in domains where idea-variation pays.</strong> That is not the same proposition as "diversity, in the abstract, makes any society better at any task." Treating those two claims as identical is the position's central public-relations problem and its central intellectual one.</p>
+  </div>
+
+  <div class="steelman-card extremist">
+    <div class="sm-eyebrow">Position B · assimilationist / civic-or-ethno-nationalist</div>
+    <h3>Homogeneity is strength</h3>
+    <p>The honest version of this position is empirical, not moral. <strong>Putnam 2007 ("E Pluribus Unum") found that short-run ethnic diversity correlates with reduced social trust — including in-group "hunkering down" — at the US neighborhood level.</strong> Alesina, Baqir, Easterly 1999 (QJE) found that more ethnically fractionalized US municipalities spend less on public goods (schools, parks, sewers); the mechanism is divergent group preferences and lower willingness to pay into pooled goods. Dinesen, Schaeffer, Sønderskov's meta-analysis of 1,001 estimates from 87 studies confirmed a statistically significant negative relationship between ethnic diversity and social trust, strongest for trust in neighbors and for local-scale measures. The Nordic welfare states and post-war Japan built their high-trust institutions under conditions of low ethnic fractionalization, shared civic memory, and dense repeated interaction. The argument is not that homogeneity is morally superior. <em>It is that high-trust equilibria are easier to maintain when coordination costs are low and when the population shares a long civic memory.</em></p>
+    <p>The position's serious advocates concede a great deal. They concede that this is descriptive, not normative — Putnam himself argues the long-run answer is to build new shared identities, not to close borders. They concede that the inference from "low fractionalization correlates with high trust" to "policy should engineer ethnic homogeneity" does not follow without further argument. They concede that "homogeneity" is a relative term — Sweden in 1970 had sharp class and religious cleavages; Japan today has substantial regional, generational, and class diversity that earlier Japan would have read as fragmentation. The descriptive finding is sturdy. The normative leap to ethno-nationalism is a separate move that has to be made on its own.</p>
+    <p>What the position legitimately refuses is the strategy of treating Putnam, Alesina, and the meta-analytic literature as taboo. The findings are part of the public record. A pluralist politics that cannot engage them <strong>cannot defend its own policy choices</strong>; it can only assert them and treat objection as bigotry. That stance does not survive contact with voters who have lived through rapid demographic change in their own neighborhoods.</p>
+  </div>
+
+  <div class="steelman-card synthesis">
+    <div class="sm-eyebrow">Position C · the project's commitment</div>
+    <h3>Institutions are the variable</h3>
+    <p>The synthesis the project commits to: <strong>the actual decision-variable is institutional machinery</strong> — civic identity, integration expectations, education, common language of public life, rule of law, anti-corruption capacity, service delivery to enclaves, geographic dispersion policies, second-generation pathways, expectations communicated honestly to newcomers and natives alike. Singapore's Ethnic Integration Policy (1989), Switzerland's federal multilingual constitutionalism, the US military's task-cohesion doctrine since 1948 — these have the machinery, and they convert heterogeneity into coordinated cooperation. Lebanon (frozen 1943 National Pact, sectarian-quota state), Yugoslavia (Tito's enforced unity over real ethnic salience), and Iraq (post-2003 de-Baathification plus sectarian constitution) either lacked the machinery or had it dismantled, and the same heterogeneity collapsed into civil war.</p>
+    <p>The diversity-vs-homogeneity slogans both make the same analytical error: <em>they look at societies that worked and attribute success to whatever demographic feature is salient to the speaker.</em> The cosmopolitan reads Singapore and credits diversity; the assimilationist reads Singapore and credits Lee Kuan Yew's authoritarian cultural management. Both are reading the institutional architecture and assigning credit to the wrong variable. Charron and Rothstein's work on European regions (Quality of Government Institute) found that institutional quality — impartial, non-corrupt public administration — predicts regional trust variation more strongly than ethnic heterogeneity once both are in the model. Alesina and Zhuravskaya found that ethnically segregated countries have substantially lower quality of government. <em>Place, mixing, fairness, and the impartiality of the state are doing the work the slogans are claiming.</em></p>
+    <p>The commitment is therefore: state capacity, impartial rules, low segregation, and a credible shared civic identity first; <strong>then</strong> diversity becomes an asset rather than a liability. Without those, heterogeneity amplifies whatever institutional weakness already exists. This is not a centrist split-the-difference; it is a substantive structural claim about what the variable actually is.</p>
+  </div>
+
+</div>
+
+<div class="steelman-disclosure">
+  <strong>Method note.</strong> The three cards above present each position in its strongest form, including the project's own. The next sections stress-test all three. Including the synthesis. <strong>A position whose strongest form cannot survive its own cross-examination is propaganda for itself, not an honest reading.</strong> The institutional model has real strain points — capacity limits, cultural-compatibility evasion, and the collective-will problem — and the page names them rather than concealing them.
+</div>
+
+<h2 class="section-title">The reverse-causality problem</h2>
+<p class="section-sub">The single most common analytical error in the discourse, made on both sides, named clearly and treated as a featured insight rather than a footnote.</p>
+
+<div class="featured-insight">
+  <span class="fi-tag">central analytical error</span>
+  <h3>The reverse-causality problem</h3>
+  <p>A successful society attracts immigration, absorbs diversity, and remains stable. Observers conclude diversity caused the success. <em>The actual sequence is reversed:</em> institutional strength enabled diversity to function. The Silicon Valley / Singapore / US-military examples in the diversity-is-strength canon are uniformly high-institution cases. They are evidence that <strong>institutions can absorb diversity</strong>, not that diversity produces success. They have nothing to say about what happens when the institutional infrastructure is weak, contested, or absent.</p>
+  <p>The error appears on both sides. The homogeneity-is-strength argument makes the same mistake in reverse, attributing the Nordic high-trust equilibrium to ethnic homogeneity when the institutional infrastructure — Lutheran civic continuity, post-WW2 social-democratic compact, low-corruption administration, comprehensive education, dense civil society — is doing the work. Drop the same population into Lebanon's institutional architecture and the trust evaporates within a generation; impose Lebanon's demographic mix on Switzerland's institutional architecture and outcomes still cluster around the Swiss baseline.</p>
+  <p>The <strong>Charron–Rothstein</strong> result on 206 European regions is the cleanest empirical statement of the correction: institutional quality predicts regional trust variation; ethnic heterogeneity falls out of significance once institutional quality is in the model. <strong>Alesina–Zhuravskaya</strong> on segregation and quality of government adds the corollary: spatial separation magnifies the coordination burden whether or not raw diversity is high. The slogan-form arguments survive only by refusing to control for the variable that is doing the work.</p>
+</div>
+
+<h2 class="section-title">What the empirical record actually shows</h2>
+<p class="section-sub">Cited by name. Real findings, real publications, real policy implications stated plainly.</p>
+
+<div class="findings-grid">
+
+  <div class="finding-card">
+    <h4>Putnam, "E Pluribus Unum" <span class="yr">2007</span></h4>
+    <p>Scandinavian Political Studies 30(2). The "hunkering down" finding: short-run ethnic diversity in US neighborhoods correlates with reduced social trust including <strong>in-group</strong> trust — diverse-neighborhood residents trust their own ethnic group less, not just the other groups. Effect detected at the neighborhood level; weaker at higher scales.</p>
+    <p class="fc-implication">Putnam's own policy reading: the long-run answer is constructing broader shared identities ("a more capacious sense of 'we'"), not closing borders. The finding is sturdy; the policy reading is contested by people on both sides who quote the empirical paper without quoting the policy section.</p>
+  </div>
+
+  <div class="finding-card">
+    <h4>Van der Meer &amp; Tolsma, review of 90 studies <span class="yr">2014</span></h4>
+    <p>Annual Review of Sociology 40. The most important meta-corrective. Putnam's effect is real but smaller than the original paper claimed and more conditional. It is most consistent for <strong>neighborhood-bounded cohesion</strong>, more common in US data than European, and does <em>not</em> generalize to interethnic cohesion as such.</p>
+    <p class="fc-implication">Implication: collapsing "diversity" into a single variable hides the mechanism. Local trust, generalized trust, civic participation, and interethnic attitudes are different things and the literature has stopped pretending they are the same.</p>
+  </div>
+
+  <div class="finding-card">
+    <h4>Alesina, Baqir &amp; Easterly, "Public Goods and Ethnic Divisions" <span class="yr">1999</span></h4>
+    <p>Quarterly Journal of Economics 114(4). US municipalities with higher ethnic fractionalization spend significantly less per capita on public goods — schools, parks, libraries, sewers, road maintenance. Mechanism: divergent group preferences over the bundle, plus reduced willingness to pay into pooled provision when other groups will benefit.</p>
+    <p class="fc-implication">Implication: pooled-goods provision is not automatic; it requires either preference convergence or institutional commitment that overrides preference divergence. The finding has been replicated cross-nationally.</p>
+  </div>
+
+  <div class="finding-card">
+    <h4>Dinesen, Schaeffer &amp; Sønderskov, meta-analysis <span class="yr">2020</span></h4>
+    <p>Annual Review of Political Science. 1,001 estimates from 87 studies. Confirms the directional finding: ethnic diversity is statistically significantly associated with lower social trust on average, the effect is <strong>strongest at the local scale and for trust in neighbors</strong>, and the effect is more reliably found in some national contexts than others.</p>
+    <p class="fc-implication">Implication: the slogan-form pro-diversity claim and the slogan-form anti-diversity claim are both wrong. The honest reading is that local heterogeneity raises coordination costs, and that the question of whether those costs are absorbable is downstream of institutional design.</p>
+  </div>
+
+  <div class="finding-card">
+    <h4>Charron &amp; Rothstein, "Social Trust, Quality of Government and Ethnic Diversity" <span class="yr">2018</span></h4>
+    <p>Studies on 206 European regions. <strong>Institutional quality — defined as impartial, non-corrupt public administration — is the strongest predictor of regional trust variation.</strong> Once it is in the model, ethnic heterogeneity is no longer the principal driver. This is the empirical anchor for the institutional-model position.</p>
+    <p class="fc-implication">Implication: the policy lever is the impartiality and capacity of the state, not the demographic composition of the population. States that get the institutional quality right can absorb a wider range of demographic compositions; states that don't, can't.</p>
+  </div>
+
+  <div class="finding-card">
+    <h4>Koopmans on multiculturalist policy regimes <span class="yr">2010, 2015</span></h4>
+    <p>Journal of Ethnic and Migration Studies 36(1) and subsequent comparative work. Multiculturalist policy regimes (Netherlands pre-2002, Sweden pre-2015, UK pre-2011) produced <strong>worse labor-market integration</strong> for non-Western migrants than civic-integrationist regimes (France, Germany). The literature is contested, but the directional finding has held up across replication.</p>
+    <p class="fc-implication">Implication: integration outcomes are not a function of welcoming rhetoric. They are a function of language requirements, civic-integration expectations, labor-market entry pathways, and the absence of welfare-state arrangements that subsidize non-participation. The post-2002 European policy convergence is the empirical reply to multiculturalist orthodoxy.</p>
+  </div>
+
+  <div class="finding-card">
+    <h4>Alesina, Harnoss &amp; Rapoport, birthplace diversity <span class="yr">2016</span></h4>
+    <p>Journal of Economic Growth. Diversity of <em>skilled</em> immigration is positively related to per-capita income, total factor productivity, and patent intensity, controlling for many country-level variables. This is a different variable from ethnic fractionalization in the older literature — it is closer to skilled, complementary, economically integrated variety.</p>
+    <p class="fc-implication">Implication: the diversity-is-strength claim has empirical support in a narrower form than the slogan suggests. Skilled, complementary, integrated immigration is productive. Unmanaged communal pluralism with weak labor-market entry and no integration machinery is a different phenomenon, and the same paper does not endorse it.</p>
+  </div>
+
+  <div class="finding-card">
+    <h4>Goodhart, <em>The Road to Somewhere</em> <span class="yr">2017</span></h4>
+    <p>Hurst. The "Somewheres vs Anywheres" frame. Backlash politics in the UK, US, and continental Europe is partly driven by elite-managed demographic change without commensurate civic-integration work, conducted in a moral register that delegitimizes objection. The Brexit vote, the Trump elections, and the AfD/RN/PVV/SD rise are all read through this frame.</p>
+    <p class="fc-implication">Implication: pluralist polities depend on the consent of the natives as well as the integration of the newcomers. The cosmopolitan-elite mode of treating native objection as bigotry is not stable; it produces electoral revenge cycles that reduce the political space for any pluralism.</p>
+  </div>
+
+  <div class="finding-card">
+    <h4>Fukuyama, <em>Identity</em> <span class="yr">2018</span></h4>
+    <p>FSG. Identity politics and recognition demands as a structural feature of late-liberal democracy, not a temporary aberration. The recognition gap between formal equality and lived status sustains identitarian mobilization on both the left and right.</p>
+    <p class="fc-implication">Implication: institutional integration must work at the level of recognition — civic ritual, shared symbols, equal status before law as <em>experienced</em>, not just declared — or the formal architecture is hollow. Fukuyama's diagnosis is that late-liberal societies are losing this thread on both ends of the political distribution.</p>
+  </div>
+
+  <div class="finding-card">
+    <h4>OECD trust data + World Values Survey</h4>
+    <p>High-trust societies (Nordics, Japan, Switzerland, Netherlands) cluster on a small set of indicators: <strong>low corruption, strong civil-service capacity, low ethnic fractionalization, long civic history, comprehensive welfare and education provision, dense civil society.</strong> Low-trust societies cluster on the inverse. These five-or-six indicators are correlated; the literature has not cleanly disentangled which is doing the work.</p>
+    <p class="fc-implication">Implication: the honest move is to admit the confound is unresolved. The cleanest natural experiments — Charron–Rothstein on European regions, contact-experiment work in militaries — point at institutional quality as load-bearing, but the homogeneity confound has not been ruled out and the literature should not pretend otherwise.</p>
+  </div>
+
+  <div class="finding-card">
+    <h4>Finseraas et al., armed-forces field experiment <span class="yr">2019</span></h4>
+    <p>Norwegian armed forces. Soldiers randomly assigned to close contact with ethnic-minority roommates became <strong>more trusting toward generic immigrants</strong>. This is a rare causal-style finding in a literature dominated by observational neighborhood studies. It supports the contact hypothesis under structured, equal-status, mission-bound conditions.</p>
+    <p class="fc-implication">Implication: structured, repeated, equal-status interaction can convert out-groups into known teammates. The finding does not generalize to distant, segregated, politicized, or fear-mediated contact, which the residential-segregation literature documents has the opposite effect.</p>
+  </div>
+
+  <div class="finding-card">
+    <h4>RAND on military task cohesion (MacCoun, Kier, Hammond) <span class="yr">2006</span></h4>
+    <p>Armed Forces &amp; Society. The clearest finding in the cohesion-and-performance literature: <strong>task cohesion</strong> (members cooperating effectively toward shared objectives) predicts unit performance more strongly than <strong>social cohesion</strong> (members liking each other personally). Once task cohesion is controlled for, social-cohesion effects shrink or disappear.</p>
+    <p class="fc-implication">Implication: institutions integrate by enforcing common standards, common mission, and repeated cross-group cooperation under shared stakes. They do not require demographic sameness or interpersonal affection. This generalizes well beyond the military to schools, civil service, sports teams, and any institution that can compress status competition under common task.</p>
+  </div>
+
+</div>
+
+<h2 class="section-title">Three integration models, named honestly</h2>
+<p class="section-sub">No euphemism. Each model gets credit for what it does and the cost it imposes.</p>
+
+<div class="friction-grid">
+
+  <div class="friction-card us">
+    <span class="fr-flag">assimilationist</span>
+    <h4>One civic culture, expected adoption</h4>
+    <p>Newcomers adopt the dominant civic culture — language, public norms, civic ritual, school socialization — as the price of full membership. France's republican model, the early-twentieth-century US "melting pot" before its 1965-onwards revision, Singapore's English-medium meritocracy, post-Meiji Japan's nation-building project. <strong>Lower coordination costs, faster civic integration, but real cost in minority-alienation when the dominant culture is unwilling to be visibly altered by what newcomers bring.</strong></p>
+    <p class="fr-honest">Honest naming: the model works when it is offered as a real bargain — full membership in exchange for civic adoption, with elite signaling that the bargain will be honored. It fails when one side performs the assimilation but is not granted the membership (banlieue exclusion, US racial-segregation history), or when newcomer numbers exceed the absorptive capacity of the civic infrastructure.</p>
+    <p class="fr-source">Theoretical defenders: Christian Joppke, <em>Selecting by Origin</em> (Harvard 2005); the post-2010 European policy consensus around civic-integration testing.</p>
+  </div>
+
+  <div class="friction-card eu">
+    <span class="fr-flag">multicultural</span>
+    <h4>Multiple cultures coexist, identities retained</h4>
+    <p>Multiple cultural traditions coexist within a shared civic frame; group identities are recognized and protected; integration is not assumed to require cultural adoption. Canada (continuous since 1971), UK pre-2011 (Cameron's "muscular liberalism" speech marks the policy turn), Netherlands pre-2002 (Pim Fortuyn assassination as inflection), Belgium, Australia partially. <strong>Preserves heritage and recognizes group dignity; risks parallel societies under stress, particularly when group institutions diverge from civic-public norms on rights questions.</strong></p>
+    <p class="fr-honest">Honest naming: the model has worked best where it is layered on top of a strong common civic framework (Canadian citizenship regime, English-Canadian institutional continuity, selective immigration filter). It has worked worst where it has been used as a rhetorical substitute for civic-integration work, leaving second-generation populations in linguistic, educational, and labor-market separation. Koopmans's empirical work documents the cost.</p>
+    <p class="fr-source">Theoretical defenders: Will Kymlicka, <em>Multicultural Citizenship</em> (Oxford 1995); Tariq Modood (with caveats on his 2010s evolution).</p>
+  </div>
+
+  <div class="friction-card jp">
+    <span class="fr-flag">interculturalist · civic-integration</span>
+    <h4>Civic expectations + cultural recognition</h4>
+    <p>The post-multicultural-failure consensus that has emerged across much of Europe since 2002. Explicit civic-integration expectations (language testing, civic-knowledge testing, integration courses, anti-discrimination law, welfare-state conditionality) <strong>alongside</strong> recognition of cultural difference. Post-2002 Netherlands, post-2015 Denmark, Quebec's interculturalism, post-2011 UK Cameron-onwards policy, Germany's <em>Leitkultur</em> debates. The model retains the multicultural recognition of difference while restoring the civic expectation that was deferred under the older orthodoxy.</p>
+    <p class="fr-honest">Honest naming: the model is the project's working bet on which architecture is most plausible for late-liberal democracies that already have substantial demographic plurality and cannot wind it back. Whether it can carry the political will required is the open question — see strain point 12.</p>
+    <p class="fr-source">Empirical anchor: Koopmans's comparative-policy work; Joppke's <em>Veil</em> (Polity 2009) on French interculturalism; the 2002–2015 European policy convergence.</p>
+  </div>
+
+</div>
+
+<h2 class="section-title">Civic vs ethno-nationalism: why the distinction holds (and where it collapses)</h2>
+<p class="section-sub">Civic nationalism is the substantive engine of pluralist integration. Ethno-nationalism is what civic nationalism collapses back into when its civic infrastructure is hollowed out. Naming both honestly is the only way to defend the first against the second.</p>
+
+<div class="steelman-grid">
+
+  <div class="steelman-card liberal">
+    <div class="sm-eyebrow">civic nationalism</div>
+    <h3>Membership through laws, citizenship, civic ritual</h3>
+    <p>Membership is constituted by legal citizenship, adherence to a constitutional order, and participation in shared civic ritual — voting, jury duty, military or civil service, civic education, public holidays, common public language. The idealized US civic-creed tradition (Madison through Lincoln through King), French republicanism, Singapore's "regardless of race, language or religion" Pledge, post-1945 (West) German constitutional patriotism (Habermas's <em>Verfassungspatriotismus</em>) are the canonical statements.</p>
+    <p>The honest version names what the model requires to actually function: <strong>real civic education, not symbolic; shared rituals that elites participate in alongside ordinary citizens; integration enforcement that applies to all newcomers regardless of source country; and elite commitment to the project as a project</strong>, not as a cosmetic veneer over a private cosmopolitanism that doesn't take its own civic claims seriously. Without those, civic nationalism is a slogan with no operational content.</p>
+  </div>
+
+  <div class="steelman-card extremist">
+    <div class="sm-eyebrow">ethno-nationalism</div>
+    <h3>Membership through ancestry, ethnicity, religion</h3>
+    <p>Membership is constituted by descent, ethnic kinship, and / or religious-cultural inheritance. Imperial-era Japanese <em>kokutai</em>, the Israeli Law of Return's Jewish-descent provision, Hungary's Orbán-era cultural-nationalist program, the German <em>Volk</em> tradition before its post-1945 constitutional reset, Poland's PiS-era national-Catholic articulation, Russian "русский мир" (Russian-world) ideology, Turkey's AKP-era turn from Atatürk's civic Turkishness toward Sunni-Turkish identity. The position has logical coherence — many states explicitly maintain ancestral or religious citizenship preferences — but it cannot accommodate large-scale heterogeneity without producing second-class membership categories.</p>
+    <p>The honest move is to recognize that <em>civic nationalism without civic infrastructure collapses back into ethno-nationalism by default.</em> This is what is happening in much of Europe right now — civic-nationalist rhetoric on the surface (we are a nation of laws, citizens, equal participation), ethno-nationalist defaults underneath (the implicit national community remains the historical ethnic majority, and the integration machinery to make the civic claim real has been allowed to rust). The right and the left have different responses to this gap: the right says the civic claim was always a polite fiction and the ethno default is the truth; the cosmopolitan elite says the gap is small and objection to it is bigotry. <strong>Both responses give up on the civic project.</strong> The serious defense of pluralism is the rebuilding of the civic infrastructure that the slogan-form of civic nationalism has been allowed to substitute for.</p>
+  </div>
+
+</div>
+
+<h2 class="section-title">High-trust and low-trust societies: the empirical landscape</h2>
+<p class="section-sub">What the cross-national data shows, what it does not, and the unresolved confound at the center.</p>
+
+<div class="case-study">
+  <h3>The high-trust / low-trust map and the institutional-buffer thesis</h3>
+  <div class="case-meta">OECD trust data · World Values Survey · Charron–Rothstein European regions · 1981 — present</div>
+
+  <p class="case-lead">High-trust societies — Nordic countries, Japan, Switzerland, the Netherlands — cluster on a small set of indicators: <strong>low corruption, strong civil-service capacity, low ethnic fractionalization, long civic history, comprehensive education and welfare, dense civil society.</strong> Low-trust societies cluster on the inverse: high corruption, captured or absent civil service, weak civic continuity, sectarian or kleptocratic political settlements. Most of the post-Soviet space (Russia, Ukraine, Romania, Bulgaria), much of MENA (Egypt, Algeria, post-2011 Tunisia, Lebanon, Iraq), and several Sub-Saharan cases sit on the low-trust end. The Anglosphere democracies sit in a complicated middle: still relatively high-trust by global standards, but eroding on most measures since the 1970s.</p>
+
+  <h4>The institutional-buffer thesis</h4>
+  <p style="font-size:.93rem;color:#3a3630;line-height:1.62;margin-bottom:14px;">High-trust societies can absorb significant change because they have institutional momentum — administrative capacity, civic culture, and reservoirs of legitimacy that take generations to build and can absorb shocks that would break a weaker state. The Nordic countries during the 2014–2016 refugee wave, the Netherlands through the 2002–2015 multicultural-policy turn, post-9/11 Britain, Canada through its sustained high-immigration period — all exhibited institutional response capacity that low-trust states would not have had.</p>
+
+  <p style="font-size:.93rem;color:#3a3630;line-height:1.62;margin-bottom:14px;"><strong>The unresolved question is whether this is a stable equilibrium or a transient state.</strong> The high-trust societies were built under conditions — post-WW2 prosperity, Cold War civic discipline, low ethnic fractionalization, comparatively high social cohesion — that no longer obtain. Their institutional buffers are real but they are being drawn down faster than they are being replenished, and the literature has not resolved whether the institutional capacity will regenerate, plateau, or continue to erode. Christian Joppke and Ruud Koopmans have both argued that the European institutional infrastructure is operating on borrowed legitimacy.</p>
+
+  <div class="case-takeaway">
+    <strong>What the map shows.</strong> Institutional capacity and demographic homogeneity are correlated in the high-trust cluster, and the literature has not cleanly disentangled which is doing the work. The cleanest natural experiments — Charron–Rothstein on European regions, contact-field-experiment work, and the comparative-policy literature — point at institutional quality as load-bearing. The homogeneity confound has not been ruled out and the institutional-model position has to live with that. <em>What the map does not show is a society that has built and sustained high trust without strong institutional capacity, regardless of its demographic composition.</em>
+  </div>
+</div>
+
+<h2 class="section-title">Scale, velocity, and the institutional buffer</h2>
+<p class="section-sub">The same theoretical apparatus cannot honestly explain the 1965–2000 US immigration wave and the 2014–2016 European refugee wave with the same parameters. State plainly what the parameters are.</p>
+
+<p style="font-size:.96rem;color:#3a3630;line-height:1.7;max-width:780px;margin-bottom:14px;">Integration outcomes depend on a small set of measurable variables that the slogan-form arguments are committed to ignoring: <strong>scale</strong> (what fraction of the population is changing), <strong>velocity</strong> (how fast), <strong>housing</strong> (concentration vs dispersion), <strong>economic growth</strong> (whether the labor market can absorb the entrants), <strong>labor-market structure</strong> (whether the entry pathways exist for the skill profile of the entrants), <strong>cultural distance</strong> (how far the source-country civic norms are from the destination-country civic norms), <strong>geographic clustering</strong> (whether enclaves form and whether they are linked to mainstream institutions), <strong>educational integration</strong> (whether second-generation pathways exist), and <strong>elite signaling</strong> (whether the political class treats the integration project as a real obligation or as cosmetic public diplomacy).</p>
+
+<p style="font-size:.96rem;color:#3a3630;line-height:1.7;max-width:780px;margin-bottom:14px;">Rapid change produces different outcomes than gradual change over generations. The 1965–2000 US immigration wave (post-Hart-Celler) added ~33 million immigrants over 35 years against a population of ~200M growing to ~280M, in a labor market with strong demand and an institutional infrastructure that — for all its 1960s-era racial dysfunction — assumed civic-cultural integration as the default. The 2014–2016 European refugee wave added ~2 million asylum-seekers across the EU in two years, into labor markets with structural unemployment, into housing markets with no excess capacity, and into integration regimes that had been formally dismantled in favor of multicultural recognition without civic-integration enforcement. <strong>The same theoretical apparatus applied to both waves with the same parameters cannot explain either honestly.</strong></p>
+
+<p style="font-size:.96rem;color:#3a3630;line-height:1.7;max-width:780px;margin-bottom:14px;">The honest answer is that the theory has scale-and-velocity parameters and the data on the upper end of those parameters is not encouraging. What we do not yet know — and what the literature has not adequately worked out — is the upper-bound rate of demographic change that any institutional system can absorb without failure, and what determines that rate. Strain point 10 in the cross-examination names this gap as a real strain on the institutional-model position itself.</p>
+
+<h2 class="section-title">Digital-era migration: a structural shift the literature is still catching up with</h2>
+<p class="section-sub">Pre-2010 assimilation models assumed physical distance from homeland, limited communication, dominant-language media. Post-2010, those assumptions no longer hold. This is description, not moral judgment.</p>
+
+<p style="font-size:.96rem;color:#3a3630;line-height:1.7;max-width:780px;margin-bottom:14px;">The classical assimilation literature (Park, Gordon, the Chicago School through to Alba and Nee's <em>Remaking the American Mainstream</em>) was developed under a media regime where distance from homeland was real, communication was expensive and slow, and the dominant-language media of the destination country was the practical option for news, entertainment, and political socialization. <strong>Post-2010 that regime has ended.</strong> Homeland media is in your pocket via satellite TV, WhatsApp, YouTube, TikTok algorithms, and Telegram channels. Transnational politics is imported in real time — Erdoğan campaigns directly to the Turkish-German diaspora; Modi addresses the Indian-American diaspora at NYC stadium events; Iranian state media is consumed inside Iranian-diaspora communities; al-Manar broadcasts to Lebanese-diaspora households continuously.</p>
+
+<p style="font-size:.96rem;color:#3a3630;line-height:1.7;max-width:780px;margin-bottom:14px;">Linguistic enclaves are sustainable indefinitely without economic cost — a Turkish-speaker in Berlin or an Urdu-speaker in Bradford can run the entire informational, social, and political life of the household in the heritage language without ever engaging the destination-country public sphere. Second-generation alienation is amplified rather than resolved by algorithmic media that connect young diaspora populations to homeland or pan-religious identity networks faster than to local civic institutions. Olivier Roy's <em>Globalized Islam</em> documented the early form of this dynamic; Faisal Devji's work on the transnational umma extends it; the recent literature on diaspora media (Karim H. Karim, Roza Tsagarousianou) is still mapping the implications.</p>
+
+<p style="font-size:.96rem;color:#3a3630;line-height:1.7;max-width:780px;margin-bottom:14px;">The structural implication: <strong>this may reduce traditional assimilation pressures in a way no policy can undo.</strong> The assimilation engine of the twentieth century relied on ambient cultural exposure; that engine has been dismantled, not by any deliberate decision, but by the consumer-electronics revolution. The integration policy literature has only just begun to grapple with what this means. The honest statement is that the institutional-model position depends on integration mechanisms that were partly powered by a media regime that no longer exists, and the project owes itself an answer about what replaces them.</p>
+
+<h2 class="section-title">Case studies — institutional successes</h2>
+<p class="section-sub">Real dates, specific mechanisms, no romanticism. Each case is a high-institution case where the demographic mix would have produced fragmentation under different governance.</p>
+
+<div class="case-study">
+  <h3>Singapore — engineered cohesion under explicit policy choice</h3>
+  <div class="case-meta">75% Chinese · 14% Malay · 9% Indian · 3% other · GDP/cap ~US$85k · Total Defence doctrine since 1984 · Ethnic Integration Policy since 1989</div>
+
+  <p class="case-lead">Singapore is the canonical case for the institutional-model position because the government explicitly rejected both diversity-celebration and homogeneity-engineering. The state defines the country as a "small, multi-racial, multi-religious nation" and treats cohesion as <em>an active governing task, not a passive byproduct</em>. The policy stack: <strong>Ethnic Integration Policy (1989)</strong> imposes ethnic quotas on the Housing &amp; Development Board's public housing — ~80% of Singaporeans live in HDB flats and the EIP forces residential mixing; <strong>bilingualism policy</strong> mandates English as the common public language with the heritage language preserved as second-language schooling, a deliberate choice to neutralize linguistic faction; <strong>National Service</strong> conscripts every male citizen for 22–24 months, creating a forced cross-ethnic cohort experience; <strong>the Pledge of Allegiance</strong> ("regardless of race, language or religion") is recited in schools and at civic events; <strong>Total Defence</strong> doctrine ties civic behavior to national-security cohesion. The HDB EIP, the bilingualism rule, and the NS structure together do not assume integration — they engineer it.</p>
+
+  <p style="font-size:.93rem;color:#3a3630;line-height:1.62;">The honest caveats: Singapore is a city-state with strong border control and selective immigration, the People's Action Party has held continuous power since independence (a degree of political continuity unavailable to most democracies), and the model includes restrictions on speech and assembly that liberal-democratic constitutional orders would not accept. The institutional architecture is real; the political conditions that built it are not transferable wholesale. <em>What Singapore demonstrates is that demographic plurality can be made cohesive when the institutional design treats integration as the load-bearing variable.</em> It does not demonstrate that democracy alone can do this.</p>
+</div>
+
+<div class="case-study">
+  <h3>Switzerland — federal multilingual constitutionalism</h3>
+  <div class="case-meta">German 62% · French 22% · Italian 8% · Romansh 0.5% · 26 cantons · militia army · direct democracy</div>
+
+  <p class="case-lead">Switzerland's mechanism is different from Singapore's but shares the institutional-design principle. <strong>Federal structure with cantonal homogeneity layered into national civic identity:</strong> most cantons are linguistically homogeneous internally, but the federal level is rigorously multilingual. Federal law guarantees four national languages (German, French, Italian, Romansh), federal employment requires multilingualism, federal communication is published in all four official languages. <strong>The militia army</strong> historically conscripted men from all cantons into common service, producing the cross-linguistic cohort experience analogous to Singapore's NS. <strong>Direct democracy</strong> as a forcing function for civic literacy: roughly four federal referenda per year requires every voter to engage public-policy questions across linguistic lines.</p>
+
+  <p style="font-size:.93rem;color:#3a3630;line-height:1.62;">The honest caveats: Switzerland's diversity is intra-European linguistic diversity, not the cultural-distance question Singapore is solving; the canton-level homogeneity does much of the trust work, with the federal multilingualism layered on top; the country's high economic baseline and small population make institutional choices that would not scale to a 60-million-person state. The mechanism is real and the lesson generalizes: <em>nest linguistic / cultural particularism inside strong cross-cutting institutions, make multilingualism a state obligation rather than a private virtue, and design civic infrastructure to force repeated cross-group cooperation.</em></p>
+</div>
+
+<div class="case-study">
+  <h3>US military — task cohesion engineering since 1948</h3>
+  <div class="case-meta">Truman EO 9981 (1948) · UCMJ uniform jurisdiction · ~1.3M active-duty · racial integration ahead of civilian society · MacCoun &amp; Hix RAND review</div>
+
+  <p class="case-lead">The US military integrated racially in 1948 (Executive Order 9981, Truman) <strong>ahead of the civilian society that produced it</strong> — a society that would not desegregate schools until <em>Brown v. Board</em> (1954) and would not pass the Civil Rights Act until 1964. The institutional machinery carried the weight: the <strong>Uniform Code of Military Justice</strong> as common law applying identically across racial lines; <strong>basic training</strong> as a forced-mixing rite of passage; <strong>common mission</strong> compressing status competition under shared stakes; <strong>command structure</strong> enforcing integration top-down rather than waiting for cultural change to produce it. By the end of the Korean War, the National Archives record states, almost all of the military was integrated.</p>
+
+  <p style="font-size:.93rem;color:#3a3630;line-height:1.62;">RAND Arroyo Center work (MacCoun, Kier, Hammond 2006 in <em>Armed Forces &amp; Society</em>; the broader RAND cohesion literature) documents the mechanism: <strong>task cohesion</strong> — members cooperating effectively toward shared objectives — predicts unit performance more strongly than <strong>social cohesion</strong> — members liking each other personally. Integration succeeds because the institution channels identity toward mission and enforces fair contact regardless of demographic composition. The military's recurring lesson, restated through every demographic-integration episode (Truman 1948, women in 1970s–1990s, "Don't Ask Don't Tell" repeal 2011, ongoing transgender-policy debate), is that the institutional architecture can absorb diversity that the civilian society is still resisting, <em>provided the architecture is designed for the absorption.</em></p>
+</div>
+
+<h2 class="section-title">Case studies — institutional failures</h2>
+<p class="section-sub">The cases where the institutional architecture either lacked the integration machinery or had it dismantled. Real dates, specific mechanisms, no caricature.</p>
+
+<div class="case-study">
+  <h3>Lebanon — sectarian-quota state frozen in 1943</h3>
+  <div class="case-meta">National Pact 1943 · Taif Accord 1989 · 1975–1990 civil war · 2019–2024 economic collapse · Hezbollah parastatal authority since 1985</div>
+
+  <p class="case-lead">Lebanon is the most important institutional-failure case because it shows the failure mode under explicit consociational design. The <strong>1943 National Pact</strong> distributed political offices by confessional affiliation — Maronite Christian president, Sunni prime minister, Shia parliament speaker — based on the 1932 census, which has never been updated. The <strong>Taif Accord (1989)</strong>, ending the 1975–1990 civil war, did not dissolve the sectarian architecture; <em>it institutionalized it</em>. The result is a state where every senior appointment, every parliamentary seat, every senior civil-service post is allocated by sect, where political parties are ethnic-confessional patronage networks, and where the state's nominal monopoly on violence is shared with a Shia parastatal armed group (Hezbollah) that has equal-or-greater military capacity than the Lebanese Armed Forces.</p>
+
+  <p style="font-size:.93rem;color:#3a3630;line-height:1.62;">The 2019–2024 economic collapse — the World Bank rated it among the three worst in modern history — is the institutional consequence: a sect-allocated central bank ran a Ponzi scheme for two decades because no constituency had the cross-sectarian political authority to stop it. <em>The lesson is not that diversity cannot be governed; it is that institutional architectures that freeze ethnic identity into the operating system of politics produce permanent fragmentation, weak state capacity, and chronic vulnerability to elite capture.</em> Power-sharing can buy peace and simultaneously prevent statehood.</p>
+</div>
+
+<div class="case-study">
+  <h3>Yugoslavia — enforced unity collapsing in 1991</h3>
+  <div class="case-meta">SFRY 1945–1991 · Tito 1953–1980 · 1991–1999 wars · ~140,000 dead · Srebrenica 1995 · Kosovo 1999</div>
+
+  <p class="case-lead">Tito's Yugoslavia held seven nationalities (Serbs, Croats, Slovenes, Bosniaks, Macedonians, Montenegrins, Kosovar Albanians) inside a single federal state through enforced ideological unity, "brotherhood and unity" (<em>bratstvo i jedinstvo</em>) doctrine, the Yugoslav People's Army as cross-ethnic institution, and Tito's personal authority. <strong>The architecture worked while it had Tito; it began to crack at his death (1980) and collapsed under elite-driven nationalism in 1989–1991.</strong> Slobodan Milošević's reactivation of Serbian ethno-nationalism, Croatian Tuđman's parallel program, and the failure of the federal institutions to manage the dispute produced four wars (Slovenia 1991, Croatia 1991–1995, Bosnia 1992–1995, Kosovo 1998–1999), ~140,000 deaths, the Srebrenica genocide (July 1995), and the eventual NATO intervention.</p>
+
+  <p style="font-size:.93rem;color:#3a3630;line-height:1.62;">The honest read on Yugoslavia: demographic work shows that ethnic diversity actually <em>increased</em> across many regions between 1961 and 1991, and segregation <em>decreased</em> — the population was mixing more, not less, in the decades before collapse. The collapse cannot be reduced to demographic mechanics. What collapsed was institutional capacity: <strong>elite competition, the breakdown of the cross-ethnic federal architecture, and the politicization of identity by political entrepreneurs</strong> (Milošević above all) operating in the vacuum left by Yugoslav institutional failure. The case is a warning to both slogans: it does not show that diversity caused breakdown, and it does not show that homogeneity prevents it. It shows that institutional capacity, once dismantled, cannot be replaced by demographic facts alone.</p>
+</div>
+
+<div class="case-study">
+  <h3>Iraq — institutional collapse 2003 → ISIS 2014</h3>
+  <div class="case-meta">CPA Order 2 (de-Baathification) May 2003 · 2005 sectarian constitution · 2006–2008 civil war · Mosul falls to ISIS June 2014 · Mosul retaken Jul 2017</div>
+
+  <p class="case-lead">The post-2003 Iraq case is the cleanest example of institutional-machinery dismantling producing a fragmentation cascade. <strong>CPA Order 2 (May 2003)</strong> dissolved the Iraqi Army; <strong>CPA Order 1 (May 2003)</strong> de-Baathified the civil service and security apparatus, dismissing tens of thousands of mid-level Sunni administrators. The 2005 constitution allocated political authority on sectarian-ethnic lines (Shia Arab south, Sunni Arab center, Kurdish north). The result was an institutional vacuum filled by sectarian militias, foreign-backed factions, and eventually al-Qaeda-in-Iraq's evolution into ISIS, which captured Mosul in June 2014 from a Iraqi Army that had been re-built on sectarian-patronage lines and collapsed at first contact.</p>
+
+  <p style="font-size:.93rem;color:#3a3630;line-height:1.62;">The lesson is not that Iraq's diversity caused the collapse. Iraq under the Baath was a coercively unified state, and the post-2003 architecture inherited the same population. <em>What changed was institutional capacity:</em> the destruction of the security and civil-service infrastructure, the substitution of sectarian-quota architecture for impartial public administration, and the absence of any cross-sectarian political identity around which a successor state could organize. ISIS recruited from the de-Baathified Sunni administrative class. The case is a paradigm of the institutional-model claim: <strong>same population, different institutions, opposite outcomes.</strong></p>
+</div>
+
+<div class="case-study">
+  <h3>European urban enclaves — institutional-failure-meets-rapid-demographic-change</h3>
+  <div class="case-meta">Molenbeek (Brussels) · Birmingham wards · Paris banlieue · Malmö Rosengård · 2015 Paris attacks · 2017 Barcelona attack</div>
+
+  <p class="case-lead">Specific cases — Molenbeek (Brussels, identified as logistical hub for the November 2015 Paris attacks); certain Birmingham wards (the 2014 "Trojan Horse" affair, the 2019 "No Outsiders" curriculum protests at Anderton Park and Parkfield); the Paris banlieue, particularly Seine-Saint-Denis and the suburbs implicated in the 2005 riots and the 2015 attacks; Malmö Rosengård in Sweden's Million Programme housing stock — should not be read as a "Muslim problem" framing. <strong>They should be read as the institutional-failure-meets-rapid-demographic-change pattern.</strong></p>
+
+  <p style="font-size:.93rem;color:#3a3630;line-height:1.62;">The pattern: post-1960s housing concentration into peripheral high-rise estates with limited transport connection to the metropolitan economy; deindustrial collapse of the labor markets that had absorbed the first immigrant generation; multicultural-policy deferral of language requirements and civic-integration expectations; weak local civil-service capacity; non-state-actor service delivery (mosque networks, transnational religious-political organizations, gang networks) substituting for the state. France's INSEE documents that one quarter of people leaving a Grand Paris priority urban neighborhood move to another such neighborhood; a third of new arrivals live below the poverty threshold. Sweden's Boverket housing agency identifies the Million Programme estates as where socio-economic residential segregation is most pronounced. <em>The breakdowns are spatial, institutional, and policy-driven, not demographic in any simple mechanical sense.</em> Drop the same population into Singapore's HDB-and-NS architecture and the outcomes would be different. The cases do not exonerate the demographic and cultural questions — both remain real — but they refuse the simple-causation reading that produces both the cosmopolitan-denial and the ethno-nationalist responses.</p>
+</div>
+
+<h2 class="section-title">Cross-examination — testing all three positions</h2>
+<p class="section-sub">The methodological commitment of the project: steelman, then expose. Including the project's own commitment. A position whose strongest form cannot survive its own implications has not been refuted — it has been engaged honestly, which is what its serious advocates would themselves consider the only refutation worth answering.</p>
+
+<div class="cross-exam">
+  <h3>Cross-examination</h3>
+  <p class="ce-lead">Each position above, tested against the standards a serious interlocutor — drawn from inside and outside its own commitments — would actually apply.</p>
+
+  <div class="ce-side">Testing the diversity-is-strength position</div>
+
+  <div class="strain-list">
+
+    <div class="strain">
+      <h4>The reverse-causality slip</h4>
+      <p class="strain-claim">The diversity-is-strength canon points to Silicon Valley, NIH research consortia, US military combat units, Singapore, Switzerland, and Canadian metropolitan economies as cases where diversity has produced demonstrable success — and infers that diversity caused the success.</p>
+      <p class="strain-expose">The cases are uniformly <strong>high-institution</strong> cases. Successful institutions attract diversity, integrate it, and remain stable. The slogan reverses the causal arrow. <em>Charron and Rothstein's European-regions data is the cleanest empirical correction</em>: institutional quality predicts trust variation; ethnic heterogeneity falls out of significance once institutional quality is controlled for. The slogan survives only by refusing to control for the variable that is doing the work.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The selective-comparator move</h4>
+      <p class="strain-claim">The position's strongest empirical case is built on Silicon Valley, the US military's task-cohesion record, NIH research, Singapore's meritocracy, and Switzerland's federal multilingualism — and from these it concludes that diversity, in general, is an asset.</p>
+      <p class="strain-expose">Each of those cases is a <strong>selected, filtered, high-institution</strong> environment: H1B visa screening, military entrance standards and shared doctrine, peer-review and credential filtering, Singaporean civil-service assessment, Swiss multilingual-by-cantonal-design federal structure. The selection mechanism is doing the work the slogan attributes to "diversity." The honest version of the position would say <em>"complementary, skill-selected, institutionally-integrated variety can be productive in cognitively complex domains"</em>; the slogan version generalizes to mass unselected demographic change without doing the inferential work to support that generalization.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The domain-confusion error</h4>
+      <p class="strain-claim">The corporate / management-school version of the diversity-is-strength claim leans on team-performance studies — Wallrich et al.'s 2024 meta-analysis, Wang on culturally diverse teams — to argue that diverse teams generally outperform homogeneous teams.</p>
+      <p class="strain-expose">The same literature documents that the effect is <strong>conditional on task complexity, deep-level (cognitive) rather than surface-level diversity, and high task-interdependence under common standards</strong>. Wang's meta-analysis finds surface-level diversity can be <em>negative</em> for simple tasks. The McKinsey "Why Diversity Matters" reports rest on correlational data Alex Edmans and others have shown does not establish the causal direction the firm asserts. The narrow finding does not generalize from selected high-task-complexity teams to mass unselected demographic change in residential, civic, and political life — these are different domains and the data on the second domain is not encouraging in the same way.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The Putnam dodge</h4>
+      <p class="strain-claim">The cosmopolitan-elite version of the position has, in practice, treated the Putnam–Alesina–Dinesen empirical literature as <em>impolite</em> — out of scope for serious discussion, signal of bigotry if cited, professionally costly to engage in mainstream venues.</p>
+      <p class="strain-expose">The findings are part of the public record. <strong>Putnam 2007</strong> (Scandinavian Political Studies); <strong>Alesina, Baqir, Easterly 1999</strong> (QJE); <strong>Van der Meer &amp; Tolsma 2014</strong> (Annual Review of Sociology); <strong>Dinesen, Schaeffer, Sønderskov 2020</strong> (Annual Review of Political Science) — the most-cited empirical literature on the topic. A position that cannot defend itself against its own most-cited counter-evidence has not earned its slogan status. <em>The honest move is to engage the empirical findings and explain why they do not support the homogeneity-is-strength conclusion they appear to support — which is exactly what Putnam himself does in the original paper, and what Van der Meer and Tolsma do in the meta-corrective. The dodge is a political choice that has produced electoral revenge cycles.</em></p>
+    </div>
+
+    <div class="strain">
+      <h4>The scale-and-velocity erasure</h4>
+      <p class="strain-claim">The same theoretical framework — celebrate variety, integration is automatic, objection is bigotry — gets applied to a country experiencing 1% gradual demographic change over a generation and to a country experiencing 20% rapid demographic change in a decade.</p>
+      <p class="strain-expose">The honest answer is that the theory has <strong>scale-and-velocity parameters</strong> and the data on the upper end of those parameters is not encouraging. Goodhart's <em>The Road to Somewhere</em> is the political-science articulation; the European political record since 2015 is the electoral record. <em>Pluralist polities depend on the consent of the natives as well as the integration of the newcomers, and that consent has scale-and-velocity limits the slogan has been unwilling to name.</em> Pretending otherwise has produced the AfD, RN, PVV, and SD — the cosmopolitan-denial mode of treating native objection as bigotry has cost the cosmopolitan project more than any honest engagement would have.</p>
+    </div>
+
+  </div>
+
+  <div class="ce-side">Testing the homogeneity-is-strength position</div>
+
+  <div class="strain-list" style="counter-reset:strain-counter 5;">
+
+    <div class="strain">
+      <h4>Definitional gerrymandering</h4>
+      <p class="strain-claim">The position selects "homogeneous" cases — Japan, the Nordics, postwar Korea, mid-twentieth-century United States — and reads their high-trust outcomes as caused by ethnic homogeneity. The category is offered as if its boundaries were obvious.</p>
+      <p class="strain-expose">"Homogeneity" is selected post-hoc. <strong>Modern Japan has substantial regional, class, and generational diversity</strong>; pre-1960 Sweden had sharp class and religious cleavages and a labor-movement / employer split that came close to civil conflict in the 1930s; the 1950s United States was racially and regionally segregated to a degree that contemporary defenders of "homogeneous mid-century America" mostly do not name. <em>The cases are not as homogeneous as the argument requires</em>; the position is doing concept-work after the fact to fit its conclusion. Apply the same selection rigor in reverse and the homogeneity claim collapses.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The ethnic-essentialism slip</h4>
+      <p class="strain-claim">The position's serious advocates are careful: empirical correlation between low fractionalization and high trust does not entail moral claim about ethnic groups, and does not entail the policy claim that borders should close. The slogan-form of the position makes that slip without doing the inferential work.</p>
+      <p class="strain-expose">The move from <em>"low fractionalization correlates with high trust"</em> to <em>"homogeneity is good"</em> to <em>"close the borders / reverse demographic change"</em> is repeatedly made in popular versions without doing the philosophical or political-theoretical work to bridge the steps. <strong>Putnam himself explicitly refuses this slip.</strong> The position's serious advocates (Goodhart on civic-integration, Joppke on selectivity) explicitly refuse this slip. The slogan-form does not. A position whose careful advocates spend their published work refusing the conclusion the slogan-form draws has a problem.</p>
+    </div>
+
+    <div class="strain">
+      <h4>Time-arrow confusion</h4>
+      <p class="strain-claim">The position points to Japan and the Nordics today as evidence that homogeneity produces social cohesion — and simultaneously to Japan and the Nordics in 1950 as the homogeneous baseline whose preservation matters.</p>
+      <p class="strain-expose">Japan and the Nordics today are diverse compared to their 1950 selves on regional, class, generational, and partly ethnic dimensions. The policy stance flips between "<em>this worked then so don't change it</em>" (using the 1950 baseline) and "<em>this works now and shouldn't change</em>" (using the current state) depending on which direction the speaker prefers. The position cannot have it both ways. <strong>If diversity destroys cohesion, the increase in diversity since 1950 should have already destroyed it; if it has not, the position needs a different mechanism.</strong> The cleaner version — that institutional capacity is the variable, and these societies still have institutional capacity — is the position the data actually supports, and is the one the homogeneity-is-strength slogan refuses to adopt because it would dissolve into the institutional-model claim.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The state-capacity confound</h4>
+      <p class="strain-claim">The Nordic-and-Japan high-trust cluster is offered as evidence that ethnic homogeneity produces high trust.</p>
+      <p class="strain-expose">Homogeneity arguments and institutional arguments predict the <strong>same outcome</strong> in those cases. The data has not cleanly distinguished between "homogeneity caused the trust" and "shared institutional history caused the trust." Charron and Rothstein's European-regions work, controlling for both, finds institutional quality dominant. The Norwegian armed-forces field experiment (Finseraas et al.) finds structured contact increases trust. <em>The honest move is to admit the confound is unresolved and that the cleanest natural experiments point at institutional quality rather than demographic composition</em>. The homogeneity-is-strength position has not done this work and has refused to engage the literature that does.</p>
+    </div>
+
+  </div>
+
+  <div class="ce-side">Testing the institutional-model position — the project's own commitment</div>
+
+  <div class="strain-list" style="counter-reset:strain-counter 9;">
+
+    <div class="strain">
+      <h4>The capacity-limit problem</h4>
+      <p class="strain-claim">The institutional-model position holds that with the right design — civic identity, integration mechanisms, anti-corruption, fair courts, common public language — institutions can absorb significant demographic plurality and convert it into coordinated cooperation.</p>
+      <p class="strain-expose">The empirical record suggests there are <strong>scale-and-velocity limits</strong> beyond which any institution breaks. The position has not specified where those limits sit and the literature has not adequately worked them out. The 1965–2000 US wave was absorbable inside the existing institutional infrastructure; the 2014–2016 European wave overran the German, Swedish, and Italian integration capacity in ways those states are still managing. <em>An institutional-model position that does not name its capacity limits is not a serious model — it is a slogan in technocratic dress.</em> The honest version has to specify, even approximately, what the parameters are and what determines them. The project owes itself this work as Phase 2.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The cultural-compatibility evasion</h4>
+      <p class="strain-claim">The institutional-model position holds that institutions are the variable, and that the demographic and cultural composition of the population is downstream of institutional capacity.</p>
+      <p class="strain-expose">Institutions are <strong>not infinitely culture-neutral</strong>. The civic-nationalist machinery the position depends on has cultural inputs — a particular relationship to law, time, gender, authority, dissent, religion-state separation, individual rights — that are not universal and that some incoming cultural-religious traditions are in real tension with. <em>This is precisely what the 21 fault-line pages of this project document.</em> The institutional model can name this tension or it cannot. Pretending the tension does not exist is the same dishonesty the page is otherwise refusing — the cosmopolitan-denial mode that the project's hub essay catalogs as the blue-band failure. The honest version has to say: institutions can absorb cultural variance up to a point, the point depends on the cultural inputs the institutions presuppose, and where the input mismatch is large the integration project requires more work — civic-integration enforcement, language requirements, second-generation pathways, real engagement with the doctrinal questions — not less. The position cannot duck this without becoming a different position than the one it claims to be.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The collective-will problem</h4>
+      <p class="strain-claim">The institutional-model position requires civic education, shared rituals, integration enforcement, anti-corruption capacity, and elite commitment to the integration project as a real obligation rather than a cosmetic veneer.</p>
+      <p class="strain-expose">The honest question is whether late-liberal democracies <strong>still have the political will to do that work</strong>. The institutional model is policy-correct and politically optimistic in a way the current evidence does not support. Civic education has been hollowed out across most Western states; shared rituals have collapsed under cultural fragmentation; integration enforcement has been inconsistent and electorally punished when attempted; anti-corruption capacity has eroded in much of Europe and in the US; the elite-class signal that the integration project matters as a project has been weak for two generations. The institutional architecture the position depends on requires sustained civic discipline that the polities with the most demographic plurality are not currently producing. <em>A model that prescribes a regime its political class has shown no capacity to deliver is a normative position dressed as a positive one</em>. The project owes itself a clearer answer about whether the institutional model can be willed back into existence, or whether the path of least resistance is one of the slogan positions — which on current trajectory is ethno-nationalist closure with intermittent cosmopolitan-denial backlashes, neither of which produces the rainbow-band pluralism the project commits to.</p>
+    </div>
+
+  </div>
+
+  <div style="margin-top:20px;padding-top:18px;border-top:1px dashed #e8d599;font-size:.9rem;color:#5e4414;line-height:1.6;font-style:italic;">The cross-examination above is the methodological commitment of this whole project: <strong>steelman, then expose</strong>. A position whose strongest form cannot withstand its own implications has not been refuted by hostile caricature — it has been refuted by honest engagement, which is what its serious advocates would themselves consider the only refutation worth answering.</div>
+</div>
+
+<h2 class="section-title">How this connects to the 21 fault lines</h2>
+<p class="section-sub">What this page is doing in the project structure, and why the meta-frame matters.</p>
+
+<p style="font-size:.96rem;color:#3a3630;line-height:1.7;max-width:780px;margin-bottom:14px;">The <a href="fault-lines/index.html">21 fault lines</a> drill down into specific debates between conservative-Islamist articulations and liberal-democratic articulations: <a href="fault-lines/02-religion-and-state.html">religion-and-state</a>, <a href="fault-lines/04-gender-equality.html">gender equality</a>, <a href="fault-lines/06-blasphemy-expression.html">blasphemy and expression</a>, <a href="fault-lines/14-family-law.html">family law</a>, <a href="fault-lines/15-legal-pluralism.html">legal pluralism</a>, <a href="fault-lines/17-dress-bodily-display.html">dress and bodily display</a>, <a href="fault-lines/21-homosexuality.html">same-sex conduct</a>, and the others. Each is a real doctrinal-legal disagreement with real empirical content, real lived consequences, and real reformist counter-tradition inside the affected communities.</p>
+
+<p style="font-size:.96rem;color:#3a3630;line-height:1.7;max-width:780px;margin-bottom:14px;"><strong>Those 21 debates only matter at the level of social cohesion if the institutional system is trying to hold pluralism together.</strong> If the system is not — if the polity has settled into ethno-nationalist closure or has drifted into cosmopolitan-denial that refuses to acknowledge the doctrinal disagreements as real — the debates do not get worked through; they get either suppressed or denied, and the underlying disagreements continue to produce their consequences without the institutional engagement that could address them. This page is the meta-frame for the 21. It names the institutional question that determines whether the doctrinal questions get a hearing or get foreclosed.</p>
+
+<p style="font-size:.96rem;color:#3a3630;line-height:1.7;max-width:780px;margin-bottom:14px;">The structural risk: <em>if the institutional system breaks under the cumulative weight of unresolved fault lines plus rapid demographic change plus weakened civic-integration machinery, the rainbow-band pluralism the project commits to becomes politically unsustainable</em> and gets replaced by one of the two slogan positions — usually ethno-nationalist closure, occasionally cosmopolitan denial of the cumulative weight. Both replacements forfeit the project's commitment. The institutional-model position is not centrist hedging between the slogans; it is the substantive claim that the slogans are answering the wrong question and that the actual question is whether the institutional architecture can carry pluralism through the demographic transition the next thirty years contain.</p>
+
+<div class="connect-list">
+  Selected fault lines where the meta-frame is most load-bearing:
+  <strong>Page 02</strong> — <a href="fault-lines/02-religion-and-state.html">Religion and state</a> (the institutional-architecture question at the constitutional level) ·
+  <strong>Page 04</strong> — <a href="fault-lines/04-gender-equality.html">Gender equality</a> (where doctrinal-vs-civic conflict produces the most visible integration-friction) ·
+  <strong>Page 15</strong> — <a href="fault-lines/15-legal-pluralism.html">Legal pluralism</a> (the institutional question at the level of shared law) ·
+  <strong>Page 21</strong> — <a href="fault-lines/21-homosexuality.html">Same-sex conduct</a> (the gold-standard cross-examination model and the test case for the institutional-model claim that pluralist polities can carry doctrinal disagreement without forfeit).
+</div>
+
+<h2 class="section-title">Open questions</h2>
+<p class="section-sub">Real open questions, not rhetorical. Where Phase 2 work has to extend the analysis the empirical record does not yet settle.</p>
+
+<div class="open-questions">
+  <ul>
+    <li><strong>Can large heterogeneous late-liberal democracies remain high-trust under conditions of declining elite legitimacy and accelerating demographic change?</strong> The institutional-buffer thesis says yes within scale-and-velocity limits. The current evidence shows the buffers eroding and the political will to replenish them weak. The honest answer is that this is the central political question of the next thirty years and the data is not yet in.</li>
+    <li><strong>Is the institutional buffer a stable equilibrium or a transient state?</strong> The high-trust societies were built under conditions — post-WW2 prosperity, Cold War civic discipline, low ethnic fractionalization, dense civil society — that no longer obtain. Joppke and Koopmans have both argued the European institutional infrastructure is operating on borrowed legitimacy. The replication question is whether the next generation can rebuild what the current generation has been allowed to draw down.</li>
+    <li><strong>Can civic-nationalist machinery operate without an underlying ethno-nationalist default it implicitly rests on?</strong> Habermas's <em>Verfassungspatriotismus</em> assumes yes; Joppke's later work and Goodhart's "Somewheres vs Anywheres" frame question the assumption. The current European pattern of civic-nationalist rhetoric over ethno-nationalist defaults is unstable in either direction.</li>
+    <li><strong>Does the digital era structurally weaken assimilation pressures in a way no policy can undo?</strong> Roy and Devji on transnational umma; the broader diaspora-media literature still emerging. If the answer is yes, the institutional-model position needs a successor mechanism for what ambient cultural exposure used to do, and the literature does not yet have one.</li>
+    <li><strong>What is the upper-bound rate of demographic change that any institutional system can absorb without failure, and what determines it?</strong> The 1965–2000 US wave was absorbable; the 2014–2016 European wave was not, in the same theoretical apparatus. The parameters are real; the empirical work to specify them is incomplete. This is Phase 2 territory.</li>
+    <li><strong>Is the cultural-compatibility question — different cultural-religious traditions integrating differently into different institutional systems — answerable empirically, or is it irreducibly political?</strong> The 21 fault-line pages catalog the doctrinal differences. The integration-policy literature documents differential outcomes. Whether the gap can be addressed institutionally or whether it forecloses some integration-architecture options is open and the literature is not converging.</li>
+    <li><strong>Can elite legitimacy be rebuilt without the cosmopolitan elite first conceding that the cosmopolitan-denial mode of the last thirty years was a substantive error?</strong> The current pattern is that no concession is forthcoming and electoral revenge is escalating. Whether the institutional-model position requires an explicit elite reckoning before it can carry political weight is an open political-theory question.</li>
+  </ul>
+</div>
+
+<h2 class="section-title">Sources</h2>
+
+<div class="sources-list">
+
+  <div class="source-item">
+    <span class="src-type">Foundational empirical · trust</span>
+    <div class="src-cite"><strong>Putnam, Robert D.</strong>, "E Pluribus Unum: Diversity and Community in the Twenty-First Century — The 2006 Johan Skytte Prize Lecture", <em>Scandinavian Political Studies</em> 30(2), 2007.</div>
+    <div class="src-method">The "hunkering down" paper. Short-run ethnic diversity at the US neighborhood level associated with reduced social trust including in-group trust. Putnam's own policy reading is that the long-run answer is the construction of broader shared identity, not closure.</div>
+    <div class="src-link"><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9477.2007.00176.x" target="_blank" rel="noopener">Wiley Online Library — Scandinavian Political Studies 30(2)</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Meta-corrective · trust literature</span>
+    <div class="src-cite"><strong>Van der Meer, Tom &amp; Jochem Tolsma</strong>, "Ethnic Diversity and Its Effect on Social Cohesion", <em>Annual Review of Sociology</em> 40, 2014.</div>
+    <div class="src-method">Review of 90 studies. Confirms Putnam's effect is real but smaller and more conditional than the original paper claimed. Most consistent for neighborhood-bounded cohesion; more common in US than European data; does not generalize to interethnic cohesion as such.</div>
+    <div class="src-link"><a href="https://www.annualreviews.org/doi/10.1146/annurev-soc-071913-043309" target="_blank" rel="noopener">Annual Reviews — Sociology 40</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Foundational empirical · public goods</span>
+    <div class="src-cite"><strong>Alesina, Alberto, Reza Baqir &amp; William Easterly</strong>, "Public Goods and Ethnic Divisions", <em>Quarterly Journal of Economics</em> 114(4), 1999.</div>
+    <div class="src-method">US municipalities with higher ethnic fractionalization spend less per capita on public goods. Mechanism: divergent group preferences and lower willingness to pay into pooled provision. The most-cited paper in the field.</div>
+    <div class="src-link"><a href="https://academic.oup.com/qje/article-abstract/114/4/1243/1923948" target="_blank" rel="noopener">Oxford Academic — QJE 114(4)</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Meta-analysis · most recent</span>
+    <div class="src-cite"><strong>Dinesen, Peter Thisted, Merlin Schaeffer &amp; Kim Mannemar Sønderskov</strong>, "Ethnic Diversity and Social Trust: A Narrative and Meta-Analytical Review", <em>Annual Review of Political Science</em> 23, 2020.</div>
+    <div class="src-method">1,001 estimates from 87 studies. Statistically significant negative relationship between ethnic diversity and social trust on average; strongest at local scale and for trust in neighbors; substantial cross-national heterogeneity.</div>
+    <div class="src-link"><a href="https://www.annualreviews.org/doi/10.1146/annurev-polisci-052918-020708" target="_blank" rel="noopener">Annual Reviews — Political Science 23</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Empirical · institutions vs. demography</span>
+    <div class="src-cite"><strong>Charron, Nicholas &amp; Bo Rothstein</strong>, "Social Trust, Quality of Government and Ethnic Diversity: An Empirical Analysis of 206 Regions in Europe", <em>QoG Working Paper / European Political Science Review</em>, 2014–2018.</div>
+    <div class="src-method">European-regions analysis. Institutional quality (impartial, non-corrupt public sector) is the strongest predictor of regional trust variation; ethnic heterogeneity is not the principal driver once institutional quality is controlled. The clearest empirical anchor for the institutional-model position.</div>
+    <div class="src-link"><a href="https://www.gu.se/en/quality-government" target="_blank" rel="noopener">QoG Institute, University of Gothenburg</a> <!-- TODO Phase 2: verify exact URL for the working paper / EPSR version --></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Empirical · segregation</span>
+    <div class="src-cite"><strong>Alesina, Alberto &amp; Ekaterina Zhuravskaya</strong>, "Segregation and the Quality of Government in a Cross-Section of Countries", <em>American Economic Review</em> 101(5), 2011.</div>
+    <div class="src-method">More ethnically and linguistically segregated countries have substantially lower quality of government. Shifts the analytical attention from raw diversity to spatial separation as the operative variable.</div>
+    <div class="src-link"><a href="https://www.aeaweb.org/articles?id=10.1257/aer.101.5.1872" target="_blank" rel="noopener">AEA — American Economic Review 101(5)</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Empirical · birthplace diversity</span>
+    <div class="src-cite"><strong>Alesina, Alberto, Johann Harnoss &amp; Hillel Rapoport</strong>, "Birthplace Diversity and Economic Prosperity", <em>Journal of Economic Growth</em> 21, 2016.</div>
+    <div class="src-method">Diversity of skilled immigration is positively related to per-capita income, total factor productivity, and patent intensity. Different variable from ethnic fractionalization in the older literature; closer to skilled, complementary, integrated variety.</div>
+    <div class="src-link"><a href="https://link.springer.com/article/10.1007/s10887-016-9127-6" target="_blank" rel="noopener">Springer — Journal of Economic Growth 21</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Comparative-policy · multiculturalism</span>
+    <div class="src-cite"><strong>Koopmans, Ruud</strong>, "Trade-offs between Equality and Difference: Immigrant Integration, Multiculturalism and the Welfare State in Cross-National Perspective", <em>Journal of Ethnic and Migration Studies</em> 36(1), 2010.</div>
+    <div class="src-method">Multiculturalist policy regimes (Netherlands pre-2002, Sweden pre-2015, UK pre-2011) produced worse labor-market integration for non-Western migrants than civic-integrationist regimes (France, Germany). Directional finding has held up under replication; the literature is contested but the line on policy-effects is sturdy.</div>
+    <div class="src-link"><a href="https://www.tandfonline.com/doi/abs/10.1080/13691830903250881" target="_blank" rel="noopener">Taylor &amp; Francis — JEMS 36(1)</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Comparative · contested citizenship</span>
+    <div class="src-cite"><strong>Koopmans, Ruud, Paul Statham, Marco Giugni &amp; Florence Passy</strong>, <em>Contested Citizenship: Immigration and Cultural Diversity in Europe</em>, University of Minnesota Press, 2005.</div>
+    <div class="src-method">Five-country comparative study (Germany, France, Netherlands, UK, Switzerland) of citizenship regimes and the political claims-making patterns they produce. Foundational comparative work on how integration architecture shapes migrant political incorporation.</div>
+    <div class="src-link"><a href="https://www.upress.umn.edu/book-division/books/contested-citizenship" target="_blank" rel="noopener">University of Minnesota Press</a> <!-- TODO Phase 2: verify URL --></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Political-theory · Somewheres / Anywheres</span>
+    <div class="src-cite"><strong>Goodhart, David</strong>, <em>The Road to Somewhere: The Populist Revolt and the Future of Politics</em>, Hurst, 2017 (US edition: <em>The Road to Somewhere: The New Tribes Shaping British Politics</em>, Penguin / C. Hurst, 2017).</div>
+    <div class="src-method">The "Somewheres vs Anywheres" frame. Backlash politics in the UK, US, and continental Europe is partly driven by elite-managed demographic change without commensurate civic-integration work, in a moral register that delegitimizes objection. Influential beyond its empirical claims because of its diagnostic frame.</div>
+    <div class="src-link"><a href="https://www.hurstpublishers.com/book/the-road-to-somewhere/" target="_blank" rel="noopener">Hurst Publishers</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Political-theory · multicultural citizenship</span>
+    <div class="src-cite"><strong>Kymlicka, Will</strong>, <em>Multicultural Citizenship: A Liberal Theory of Minority Rights</em>, Oxford University Press, 1995.</div>
+    <div class="src-method">The canonical liberal-theoretical defense of multicultural-citizenship rights, with caveats and qualifications subsequent literature has made part of the basic frame. Read alongside Tariq Modood's UK-focused work and Christian Joppke's comparative-constitutional work.</div>
+    <div class="src-link"><a href="https://global.oup.com/academic/product/multicultural-citizenship-9780198290919" target="_blank" rel="noopener">Oxford University Press</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Comparative-legal</span>
+    <div class="src-cite"><strong>Joppke, Christian</strong>, <em>Selecting by Origin: Ethnic Migration in the Liberal State</em>, Harvard University Press, 2005; and <em>Veil: Mirror of Identity</em>, Polity, 2009.</div>
+    <div class="src-method">The two most-cited Joppke books. <em>Selecting by Origin</em> on the persistence of ethnic preference in liberal-state immigration regimes; <em>Veil</em> on the comparative-constitutional politics of religious-symbol regulation across France, Germany, UK, and beyond.</div>
+    <div class="src-link"><a href="https://www.hup.harvard.edu/catalog.php?isbn=9780674020245" target="_blank" rel="noopener">Harvard University Press — Selecting by Origin</a> <!-- TODO Phase 2: verify URL --></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Political-theory · identity politics</span>
+    <div class="src-cite"><strong>Fukuyama, Francis</strong>, <em>Identity: The Demand for Dignity and the Politics of Resentment</em>, Farrar, Straus &amp; Giroux, 2018.</div>
+    <div class="src-method">Identity politics and recognition demands as a structural feature of late-liberal democracy, not a temporary aberration. The recognition gap between formal equality and lived status sustains identitarian mobilization on both ends of the political distribution.</div>
+    <div class="src-link"><a href="https://us.macmillan.com/books/9780374129293/identity" target="_blank" rel="noopener">FSG — Macmillan</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Foundational · social capital</span>
+    <div class="src-cite"><strong>Putnam, Robert D.</strong>, <em>Bowling Alone: The Collapse and Revival of American Community</em>, Simon &amp; Schuster, 2000.</div>
+    <div class="src-method">The social-capital book that set the frame for the trust-and-civic-engagement literature. Read against Portes and Vickstrom's Annual Review of Sociology 2011 corrective on overly broad uses of "social capital."</div>
+    <div class="src-link"><a href="https://www.simonandschuster.com/books/Bowling-Alone/Robert-D-Putnam/9780743203043" target="_blank" rel="noopener">Simon &amp; Schuster</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Empirical · military cohesion</span>
+    <div class="src-cite"><strong>MacCoun, Robert J., Elizabeth Kier &amp; Aaron Belkin</strong>, "Does Social Cohesion Determine Motivation in Combat? An Old Question with an Old Answer", <em>Armed Forces &amp; Society</em> 32(4), 2006; and the broader RAND Arroyo Center cohesion-research series including <strong>RAND</strong>, <em>Sexual Orientation and U.S. Military Personnel Policy</em>, MG-1056-OSD, 2010.</div>
+    <div class="src-method">Task cohesion (members cooperating effectively toward shared objectives) predicts unit performance more strongly than social cohesion (members liking each other personally). Once task cohesion is controlled for, social-cohesion effects shrink or disappear. Foundational for the institutional-architecture-over-demographic-composition argument.</div>
+    <div class="src-link"><a href="https://www.rand.org/pubs/monographs/MG1056.html" target="_blank" rel="noopener">RAND — MG-1056-OSD</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Causal-style empirical · contact</span>
+    <div class="src-cite"><strong>Finseraas, Henning, Åshild A. Johnsen, Andreas Kotsadam &amp; Gaute Torsvik</strong>, "Trust, Ethnic Diversity, and Personal Contact: A Field Experiment", <em>Journal of Public Economics</em> 173, 2019.</div>
+    <div class="src-method">Norwegian armed-forces field experiment. Soldiers randomly assigned to close contact with ethnic-minority roommates became more trusting toward generic immigrants. Rare causal-style finding in a literature dominated by observational neighborhood studies.</div>
+    <div class="src-link"><a href="https://www.sciencedirect.com/science/article/pii/S0047272719300362" target="_blank" rel="noopener">Journal of Public Economics 173</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Reformist · transnational umma</span>
+    <div class="src-cite"><strong>Roy, Olivier</strong>, <em>Globalized Islam: The Search for a New Ummah</em>, Columbia University Press, 2004; and <strong>Devji, Faisal</strong>, <em>Landscapes of the Jihad</em>, Cornell, 2005, and subsequent work on transnational Muslim political imaginaries.</div>
+    <div class="src-method">The two most-cited contemporary analytical works on how digital-era globalization restructures Muslim political identity beyond the nation-state container. Foundational for the digital-era-migration section's claim that the assimilation engine of the twentieth century has been structurally altered.</div>
+    <div class="src-link"><a href="https://cup.columbia.edu/book/globalized-islam/9780231134996" target="_blank" rel="noopener">Columbia University Press — Globalized Islam</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Reformist · Euro-Islam</span>
+    <div class="src-cite"><strong>Tibi, Bassam</strong>, <em>Euro-Islam: The Quest of Islamic Migrants and Muslims in Europe to Become European</em> (translated as <em>Political Islam, World Politics and Europe</em>, Routledge 2008, and in earlier German-language editions).</div>
+    <div class="src-method">Tibi's "Euro-Islam" formulation: civic-pluralist Islamic engagement with European constitutional democracy from inside the Muslim-diaspora intellectual tradition. Often cited as the inside-Muslim-tradition statement of the civic-integrationist position.</div>
+    <div class="src-link"><a href="https://www.routledge.com/Political-Islam-World-Politics-and-Europe/Tibi/p/book/9780415437813" target="_blank" rel="noopener">Routledge — Tibi (Political Islam, World Politics and Europe)</a> <!-- TODO Phase 2: verify URL --></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Trust data · cross-national</span>
+    <div class="src-cite"><strong>OECD</strong>, <em>OECD Survey on Drivers of Trust in Public Institutions — 2024 Results</em>; and <strong>World Values Survey</strong> waves 1981–2022.</div>
+    <div class="src-method">The principal cross-national datasets on institutional trust, generalized trust, and civic-political confidence. The high-trust / low-trust map cited in the empirical-record section is built on these.</div>
+    <div class="src-link"><a href="https://www.oecd.org/en/publications/oecd-survey-on-drivers-of-trust-in-public-institutions-2024-results_9a20554b-en.html" target="_blank" rel="noopener">OECD Trust Survey 2024</a> · <a href="https://www.worldvaluessurvey.org/" target="_blank" rel="noopener">World Values Survey</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Singapore · institutional design</span>
+    <div class="src-cite"><strong>Singapore Housing &amp; Development Board</strong>, Ethnic Integration Policy (1989–present); <strong>Ministry of Defence (MINDEF)</strong>, Total Defence doctrine; <strong>Statistics Singapore</strong>, demographic data.</div>
+    <div class="src-method">Primary-source institutional documentation. The HDB EIP is the cleanest single example of state-engineered residential mixing as integration policy; the Total Defence framework is the cleanest single example of explicit shared-civic-identity engineering.</div>
+    <div class="src-link"><a href="https://www.hdb.gov.sg/residential/buying-a-flat/resale/plan-source-and-contract/ethnic-integration-policy-and-spr-quota" target="_blank" rel="noopener">HDB — Ethnic Integration Policy</a> · <a href="https://www.totaldefence.gov.sg/" target="_blank" rel="noopener">Total Defence (MINDEF)</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Switzerland · multilingual federalism</span>
+    <div class="src-cite"><strong>Federal Office of Culture (Switzerland)</strong>, language-policy materials; <strong>Federal Constitution of the Swiss Confederation</strong>, Articles 4 and 70 (national and official languages).</div>
+    <div class="src-method">Primary-source institutional documentation of how Swiss federal multilingualism is constitutionally codified rather than left informal. Together with the militia-army and direct-democracy structures, the institutional anchor for the Swiss case.</div>
+    <div class="src-link"><a href="https://www.bak.admin.ch/bak/en/home/cultural-diversity/multilingualism.html" target="_blank" rel="noopener">Federal Office of Culture — multilingualism</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">US military integration · primary</span>
+    <div class="src-cite"><strong>National Archives</strong>, Executive Order 9981 (Truman, 26 July 1948); and the National Archives ongoing series on the integration of the armed forces.</div>
+    <div class="src-method">Primary-source documentation of the 1948 desegregation order and its implementation through the Korean War. Anchor for the institutional-architecture-ahead-of-civilian-society claim.</div>
+    <div class="src-link"><a href="https://www.archives.gov/milestone-documents/executive-order-9981" target="_blank" rel="noopener">National Archives — EO 9981</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Lebanon · institutional failure</span>
+    <div class="src-cite"><strong>World Bank</strong>, Lebanon country reports on service-delivery failure and elite capture (2021–2024); and <strong>Stroschein, Sherrill</strong>, "Consociational Settlements and Reconstruction" and related work on consociational governance.</div>
+    <div class="src-method">Primary-source documentation on Lebanon's institutional architecture (1943 National Pact, 1989 Taif Accord) and the empirical record of consociational sectarian governance. Anchor for the Lebanon case study.</div>
+    <div class="src-link"><a href="https://www.worldbank.org/en/country/lebanon" target="_blank" rel="noopener">World Bank — Lebanon</a> <!-- TODO Phase 2: verify specific Lebanon service-delivery report --></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Iraq · post-2003 institutional collapse</span>
+    <div class="src-cite"><strong>World Bank</strong>, <em>Breaking Out of Fragility: A Country Economic Memorandum for Diversification and Growth in Iraq</em>, 2020; and the <strong>CPA Order 1</strong> (de-Baathification) and <strong>CPA Order 2</strong> (dissolution of Iraqi armed forces) primary documents (May 2003).</div>
+    <div class="src-method">Primary-source documentation of the institutional dismantling and the World Bank assessment of the resulting fragility trap. Anchor for the Iraq case study.</div>
+    <div class="src-link"><a href="https://www.worldbank.org/en/country/iraq/publication/breaking-out-of-fragility" target="_blank" rel="noopener">World Bank — Iraq Breaking Out of Fragility</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Contested · diversity-as-threat polemic</span>
+    <div class="src-cite"><strong>Caldwell, Christopher</strong>, <em>Reflections on the Revolution in Europe: Immigration, Islam, and the West</em>, Doubleday, 2009.</div>
+    <div class="src-method">Polemical, conservative, contested — but central to the political debate, frequently cited, and one of the books that articulated the homogeneity-is-strength position before its current political resurgence. Read against Goodhart, Joppke, and Koopmans for the more empirically anchored versions of the cultural-distance question.</div>
+    <div class="src-caveat"><strong>Caveat:</strong> Caldwell's book is contested on accuracy, framing, and selection. Citing it is not endorsement. The honest position requires engaging rather than ignoring the polemical-conservative literature, since pretending it is not part of the political record is the cosmopolitan-denial mode the page is otherwise refusing.</div>
+    <div class="src-link"><a href="https://www.penguinrandomhouse.com/books/89533/reflections-on-the-revolution-in-europe-by-christopher-caldwell/" target="_blank" rel="noopener">Penguin Random House</a> <!-- TODO Phase 2: verify URL --></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Sweden · housing segregation</span>
+    <div class="src-cite"><strong>Boverket</strong> (Swedish National Board of Housing, Building and Planning), reports on socio-economic residential segregation; and <strong>Brå</strong> (Swedish National Council for Crime Prevention), reports on children and youth in criminal networks.</div>
+    <div class="src-method">Primary-source Swedish-government documentation on the spatial-and-institutional pattern of residential segregation in Million Programme estates and the local-criminal-network recruitment dynamics. Empirical anchor for the European-enclave case-study reading.</div>
+    <div class="src-link"><a href="https://www.boverket.se/en/" target="_blank" rel="noopener">Boverket</a> · <a href="https://bra.se/bra-in-english.html" target="_blank" rel="noopener">Brå</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">France · priority-neighborhood data</span>
+    <div class="src-cite"><strong>INSEE</strong> (French National Institute of Statistics), analyses of priority urban neighborhoods (<em>quartiers prioritaires de la politique de la ville</em>) in Grand Paris and nationally.</div>
+    <div class="src-method">Primary-source French-government documentation of poverty concentration, intra-priority-neighborhood movement, and the structural pattern that French universalism has not by itself dissolved.</div>
+    <div class="src-link"><a href="https://www.insee.fr/" target="_blank" rel="noopener">INSEE</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Canada · multicultural-citizenship outcomes</span>
+    <div class="src-cite"><strong>Statistics Canada</strong>, immigrant sense-of-belonging data; and the broader Statistics Canada / Department of Canadian Heritage materials on multicultural-policy outcomes.</div>
+    <div class="src-method">Primary-source Canadian-government documentation of the strongest single set of indicators that multicultural policy combined with selective-immigration filtering and citizenship regime can produce strong civic attachment in immigrant populations.</div>
+    <div class="src-link"><a href="https://www.statcan.gc.ca/" target="_blank" rel="noopener">Statistics Canada</a></div>
+  </div>
+
+</div>
+
+<h2 class="section-title">Inside-perspective dissenting voices</h2>
+<p class="section-sub">The voices that have engaged this question from inside the constituencies most affected by it. Naming them is part of refusing the relativist deflection that would silence inside-the-tradition critique in the name of respecting the tradition's most conservative articulation.</p>
+
+<div class="reformer-names">
+  <strong>Bassam Tibi</strong> (Syrian-German political scientist, Göttingen) — "Euro-Islam" framework; civic-pluralist Islamic engagement with European constitutional democracy. ·
+  <strong>Tariq Modood</strong> (British-Pakistani sociologist, Bristol) — multiculturalism advocate from inside the British-Muslim experience, with caveats on his 2010s evolution. ·
+  <strong>Maajid Nawaz</strong> (British-Pakistani, ex-Hizb ut-Tahrir, founded Quilliam 2008) — counter-extremism plus civic-nationalist articulation; <em>caveats on his post-2020 trajectory.</em> ·
+  <strong>Ayaan Hirsi Ali</strong> (Somali-Dutch-American) — sharp assimilationist critique from inside ex-Muslim experience; <em>caveats on her Hoover Institution / conservative-political alignment.</em> ·
+  <strong>Sayeeda Warsi</strong> (UK Conservative Muslim peer, Baroness Warsi) — civic-integration-with-religious-accommodation framing; first Muslim woman to serve in a UK cabinet. ·
+  <strong>Mona Eltahawy</strong> (Egyptian-American journalist) — feminist critique of cultural-relativist frames inside and outside Muslim-majority contexts. ·
+  <strong>Khaled Abou El Fadl</strong> (UCLA, Egyptian-American Islamic-law scholar) — civic-Islamic compatibility from inside classical-jurisprudential expertise. ·
+  <strong>Mustafa Akyol</strong> (Turkish-American, Cato Institute) — reformist Islamic civic-pluralism; <em>Islam without Extremes</em> (W.W. Norton 2011). ·
+  <strong>Yahya Cholil Staquf</strong> (Indonesian, Nahdlatul Ulama general chairman 2022–) — Humanitarian Islam framework; the largest mass-Muslim organization in the world (~90M members) committed to civic-pluralist articulation. ·
+  <strong>Shadi Hamid</strong> (Brookings, then Washington Post) — on Islamism's compatibility, or not, with democratic politics; <em>Islamic Exceptionalism</em> (St. Martin's 2016). ·
+  <strong>Hassan Hassan</strong> (Syrian, New Lines Magazine) — jihadism-and-civic-pluralism scholarship; co-author <em>ISIS: Inside the Army of Terror</em>.
+</div>
+
+<div class="caveat">
+  <strong>How to read this page.</strong> The institutional-model position is the project's working bet, presented in its strongest form alongside the cosmopolitan and assimilationist positions and stress-tested against the same standards. The institutional-model position has real strain points — capacity limits, cultural-compatibility evasion, the collective-will gap — and the page names them rather than concealing them. <em>If the project's commitment cannot survive its own cross-examination, it is not the right commitment.</em> The methodological gamble is that honest engagement on all three sides identifies the real problem space — the institutional-capacity question, with scale-and-velocity parameters and cultural-compatibility inputs that the slogans erase — clearly enough that the actual problem can be worked on, rather than substituted by either of the two slogan responses that dominate the public debate.
+</div>
+
+<footer>
+  <p>Meta-frame · Phase 1 · <a href="nuance-2026.html">back to hub</a> · <a href="fault-lines/index.html">all 21 fault lines</a></p>
+</footer>
+
+</div>
+</body>
+</html>
