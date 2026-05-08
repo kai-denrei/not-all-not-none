@@ -63,10 +63,20 @@
 .strain .strain-claim{padding-bottom:10px;border-bottom:1px dashed #f0d99e;margin-bottom:10px}
 .strain .strain-claim::before{content:"Claim: ";font-weight:700;color:#7a5a1c;font-size:.78rem;letter-spacing:.04em}
 .strain .strain-expose::before{content:"Where it strains: ";font-weight:700;color:#c08815;font-size:.78rem;letter-spacing:.04em}
+
+/* Top navigation (cross-section tabs) */
+.top-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid #e8e2d5}
+.top-nav .nav-tab{display:inline-flex;align-items:center;padding:8px 16px;font-size:.84rem;font-weight:600;color:#6d675c;text-decoration:none;border-radius:6px;letter-spacing:.01em;transition:background .15s,color .15s,border-color .15s;border:1px solid transparent}
+.top-nav .nav-tab:hover{background:#f5f1e6;color:#17161a}
+.top-nav .nav-tab.active{background:#17161a;color:#fff}
+.top-nav .nav-tab.active:hover{background:#17161a;color:#fff}
+@media(max-width:600px){.top-nav .nav-tab{font-size:.78rem;padding:7px 12px}}
 </style>
 </head>
 <body>
 <div class="container">
+<nav class="top-nav"><a href="../nuance-2026.html" class="nav-tab">Nuance Hub</a><a href="../unity-and-diversity.html" class="nav-tab">Unity &amp; Diversity</a><a href="index.html" class="nav-tab active">Fault Lines</a></nav>
+
 
 <div class="breadcrumb"><a href="../nuance-2026.html">Nuance Is Not a Dirty Word</a><span class="sep">›</span><a href="index.html">Fault lines</a><span class="sep">›</span><span>20 · Music, image, depiction</span></div>
 
