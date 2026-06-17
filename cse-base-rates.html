@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSE base rates: read the denominator first / 基準率・分母を読む</title>
+<style>
+:root{color-scheme:light}*{box-sizing:border-box;margin:0;padding:0}html,body{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Helvetica Neue",sans-serif;background:#faf9f6;color:#17161a;line-height:1.6;padding:48px 20px 96px;-webkit-font-smoothing:antialiased}.container{max-width:1080px;margin:0 auto}
+.breadcrumb{font-size:.78rem;color:#8a8680;margin-bottom:28px;letter-spacing:.02em}.breadcrumb a{color:#4a7bb8;text-decoration:none}.breadcrumb a:hover{text-decoration:underline}.breadcrumb .sep{margin:0 8px;color:#c9c0ad}
+header{margin-bottom:56px}.eyebrow{display:inline-block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#8a8680;margin-bottom:16px;padding:6px 14px;border:1px solid #e3dfd6;border-radius:999px;background:#fff}
+h1{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:700;letter-spacing:-.025em;line-height:1.12;margin-bottom:18px}
+.subtitle{font-size:clamp(1rem,1.5vw,1.12rem);color:#555047;max-width:820px;margin-bottom:22px;line-height:1.55}
+.status-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:.78rem;color:#8a8680}
+.status-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:#e8f4ec;color:#1f5f3c;border:1px solid #b8d9c2;border-radius:999px;font-weight:600;letter-spacing:.02em}.status-badge::before{content:"";width:7px;height:7px;background:#2e7d4f;border-radius:50%}
+
+.section-title{font-size:1.45rem;font-weight:700;letter-spacing:-.015em;margin:64px 0 8px}
+.section-sub{color:#6d675c;margin-bottom:24px;max-width:820px;font-size:.96rem}
+
+.one-sentence{margin:36px 0 16px;padding:28px 32px;background:#fff;border-left:4px solid #b8372a;border-radius:0 8px 8px 0;font-size:1.06rem;line-height:1.65;color:#2a2620;box-shadow:0 1px 3px rgba(0,0,0,.04)}.one-sentence strong{color:#17161a}.one-sentence em{color:#b8372a;font-style:italic;font-weight:600}
+
+/* Country/feature cards */
+.friction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}@media (max-width:880px){.friction-grid{grid-template-columns:1fr}}
+.friction-card{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:22px 24px}.friction-card .fr-flag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:4px 10px;border-radius:4px;margin-bottom:12px;background:#5e2a3b}
+.friction-card h3{font-size:1rem;font-weight:700;margin-bottom:10px;color:#17161a;line-height:1.35}
+.friction-card p{font-size:.88rem;color:#3a3630;line-height:1.58;margin-bottom:10px}
+.friction-card .fr-source{font-size:.72rem;color:#8a8680;padding-top:10px;border-top:1px dashed #e8e2d5;line-height:1.45}.friction-card .fr-source a{color:#4a7bb8;text-decoration:none}.friction-card .fr-source a:hover{text-decoration:underline}
+
+/* Headline-stats row */
+.headline-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:18px 0 8px;padding:22px 24px;background:#17161a;color:#f0ece2;border-radius:10px}
+.headline-cell{text-align:center;padding:6px 4px}
+.headline-num{font-size:1.85rem;font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1.1;font-variant-numeric:tabular-nums}
+.headline-label{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#c9c0ad;margin-top:6px;line-height:1.4}
+
+/* Cross-exam block */
+.cross-exam{margin:24px 0 16px;padding:30px 34px;background:linear-gradient(to bottom right,#fdf6e6,#faf0d8);border:1px solid #e8d599;border-radius:12px;border-left:4px solid #c08815}@media (max-width:600px){.cross-exam{padding:22px 20px}}
+.cross-exam h3{font-size:1.18rem;font-weight:700;color:#5e4414;margin-bottom:6px;display:flex;align-items:center;gap:12px;letter-spacing:-.01em}.cross-exam h3::before{content:"⚖";font-size:1.3rem;color:#c08815}
+.cross-exam .ce-lead{font-size:.93rem;color:#5e4414;margin-bottom:18px;line-height:1.6;font-style:italic}
+.cross-exam .ce-side{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7a5a1c;font-weight:700;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid #f0d99e}.cross-exam .ce-side:first-of-type{margin-top:0}
+.strain-list{display:grid;gap:12px;counter-reset:strain-counter}
+.strain{background:#fff;border:1px solid #f0d99e;border-radius:8px;padding:18px 22px;position:relative}
+.strain h4{font-size:.98rem;font-weight:700;color:#17161a;margin-bottom:10px;padding-left:36px;position:relative;letter-spacing:-.005em;line-height:1.4}.strain h4::before{counter-increment:strain-counter;content:counter(strain-counter);position:absolute;left:0;top:-2px;width:26px;height:26px;background:#c08815;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+.strain p{font-size:.9rem;color:#3a3630;line-height:1.6;margin-bottom:8px}.strain p:last-child{margin-bottom:0}
+.strain p strong{color:#17161a;font-weight:700}.strain p em{color:#b8372a;font-style:italic;font-weight:600}
+.strain .strain-claim{padding-bottom:10px;border-bottom:1px dashed #f0d99e;margin-bottom:10px}.strain .strain-claim::before{content:"Claim: ";font-weight:700;color:#7a5a1c;font-size:.78rem;letter-spacing:.04em}
+.strain .strain-expose::before{content:"Where it strains: ";font-weight:700;color:#c08815;font-size:.78rem;letter-spacing:.04em}
+
+/* Caveats list */
+.caveat-list{display:grid;gap:12px;margin-bottom:16px}
+.caveat-item{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:18px 22px;border-left:3px solid #d4a03a}
+.caveat-item h4{font-size:.96rem;font-weight:700;color:#17161a;margin-bottom:8px;letter-spacing:-.005em}
+.caveat-item p{font-size:.88rem;color:#3a3630;line-height:1.58}
+.caveat-item p strong{color:#17161a}
+.caveat-item p em{color:#7a5a1c;font-style:italic;font-weight:600}
+
+/* Sources */
+.sources-list{display:grid;gap:14px;margin-bottom:16px}
+.source-item{background:#faf7ef;border:1px solid #e8e2d5;border-radius:10px;padding:20px 22px}
+.source-item .src-type{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a8680;margin-bottom:8px;padding:3px 9px;background:#fff;border-radius:4px;border:1px solid #e8e2d5}
+.source-item .src-cite{font-size:.92rem;color:#17161a;line-height:1.55;margin-bottom:8px}.source-item .src-cite strong{color:#17161a;font-weight:700}.source-item .src-cite em{color:#555047;font-style:italic}
+.source-item .src-method{font-size:.8rem;color:#6d675c;font-style:italic;margin-bottom:10px;line-height:1.5}
+.source-item .src-link{font-size:.8rem;padding-top:10px;border-top:1px dashed #e8e2d5}.source-item .src-link a{color:#4a7bb8;text-decoration:none;font-weight:500}.source-item .src-link a:hover{text-decoration:underline}
+.source-item .src-caveat{font-size:.78rem;color:#7a5a1c;background:#fef6e1;padding:10px 14px;border-radius:6px;margin-top:10px;border-left:3px solid #d4a03a;line-height:1.5}.source-item .src-caveat strong{color:#5e4414}
+
+footer{margin-top:64px;padding-top:28px;border-top:1px solid #e8e2d5;font-size:.8rem;color:#8a8680;text-align:center;line-height:1.6}footer a{color:#4a7bb8;text-decoration:none}footer a:hover{text-decoration:underline}
+
+.method-box{margin-top:14px;padding:18px 24px;background:#f5f1e6;border-radius:10px;font-size:.86rem;color:#555047;line-height:1.6;border-left:3px solid #c9c0ad}.method-box strong{color:#17161a}
+
+/* Table inventory */
+.tbl-inventory{width:100%;border-collapse:collapse;font-size:.84rem;margin-bottom:16px;background:#fff;border:1px solid #e8e2d5;border-radius:10px;overflow:hidden}
+.tbl-inventory th{background:#faf7ef;color:#17161a;font-weight:700;padding:12px 14px;text-align:left;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid #e8e2d5}
+.tbl-inventory td{padding:11px 14px;border-bottom:1px solid #f0ece2;color:#3a3630;vertical-align:top}
+.tbl-inventory tr:last-child td{border-bottom:none}
+.tbl-inventory td code{font-family:"SF Mono","Menlo","Consolas",monospace;font-size:.78rem;color:#b8372a;background:#fef6e1;padding:2px 6px;border-radius:3px}
+.tbl-inventory td.num{font-variant-numeric:tabular-nums;font-weight:600;color:#17161a;white-space:nowrap}
+.tbl-inventory td a{color:#4a7bb8;text-decoration:none}
+.tbl-inventory td a:hover{text-decoration:underline}
+
+/* Provenance tier grid (reused for the nesting categories) */
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 16px}@media(max-width:760px){.tier-grid{grid-template-columns:1fr}}
+.tier-card{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:20px 22px;border-top:4px solid #c9c0ad}
+.tier-card.t-a{border-top-color:#2a6db3}.tier-card.t-b{border-top-color:#d4a03a}.tier-card.t-c{border-top-color:#b8372a}
+.tier-card .tier-tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;padding:3px 9px;border-radius:4px}
+.tier-card.t-a .tier-tag{color:#1d4e7e;background:#e6f0fa}.tier-card.t-b .tier-tag{color:#7a5a1c;background:#fef6e1}.tier-card.t-c .tier-tag{color:#8a241a;background:#fbe9e6}
+.tier-card h3{font-size:.98rem;font-weight:700;color:#17161a;margin-bottom:4px;letter-spacing:-.005em}
+.tier-card>p{font-size:.84rem;color:#3a3630;margin-bottom:8px;line-height:1.5}
+.tier-card .tier-pg{color:#8a8680;font-size:.78rem;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* Horizontal labelled bars */
+.barset{display:grid;gap:9px;margin:18px 0 8px;background:#fff;border:1px solid #e8e2d5;border-radius:12px;padding:24px 26px}
+@media(max-width:600px){.barset{padding:18px 16px}}
+.barset h3{font-size:1.05rem;font-weight:700;color:#17161a;margin-bottom:4px;letter-spacing:-.005em}
+.barset .bs-sub{font-size:.84rem;color:#6d675c;margin-bottom:14px;line-height:1.5}
+.barrow{display:grid;grid-template-columns:172px 1fr 50px;gap:12px;align-items:center;font-size:.83rem}
+@media(max-width:600px){.barrow{grid-template-columns:104px 1fr 42px;gap:8px;font-size:.76rem}}
+.barrow .bl{color:#3a3630;font-weight:600;text-align:right;line-height:1.28}
+.barrow .bt{background:#f0ece2;border-radius:5px;height:22px;position:relative}
+.barrow .bf{height:100%;border-radius:5px;min-width:2px}
+.barrow .bf.w{background:#7aa6d3}.barrow .bf.wb{background:#9bbfe0}.barrow .bf.asian{background:#b8372a}.barrow .bf.pop{background:#c9c0ad}.barrow .bf.grp{background:#e0893a}
+.barrow .bv{color:#17161a;font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.bbase{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed #b8372a;z-index:2}
+.bbase::after{content:attr(data-label);position:absolute;top:-16px;left:4px;font-size:.62rem;color:#b8372a;font-weight:700;white-space:nowrap}
+.bar-note{font-size:.76rem;color:#8a8680;margin-top:12px;padding-top:10px;border-top:1px dashed #e8e2d5;line-height:1.5}.bar-note a{color:#4a7bb8;text-decoration:none}
+.bar-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:.76rem;color:#3a3630}
+.bar-legend span{display:inline-flex;align-items:center;gap:6px}
+.bar-legend i{width:13px;height:13px;border-radius:3px;display:inline-block;flex-shrink:0}
+
+/* Funnel: nested category counts */
+.funnel{display:grid;gap:6px;margin:18px 0 8px;background:#17161a;border-radius:12px;padding:22px 26px}
+@media(max-width:600px){.funnel{padding:18px 16px}}
+.funnel .fr{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid #2c2a26}
+.funnel .fr:last-child{border-bottom:none}
+.funnel .fn-cat{color:#f0ece2;font-size:.9rem;line-height:1.4}.funnel .fn-cat b{color:#fff;font-weight:700}.funnel .fn-cat small{display:block;color:#9b958a;font-size:.74rem;margin-top:3px}
+.funnel .fn-num{color:#fff;font-weight:700;font-size:1.5rem;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}.funnel .fn-num small{display:block;color:#c9c0ad;font-size:.68rem;font-weight:600;letter-spacing:.04em;margin-top:2px}
+.funnel.indent .fr:nth-child(2){padding-left:22px}.funnel.indent .fr:nth-child(3){padding-left:44px}
+
+/* Open questions */
+.open-questions{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:26px 30px;margin-bottom:16px}
+.open-questions ul{list-style:none;padding:0;margin:0}
+.open-questions li{padding:12px 0 12px 28px;border-top:1px solid #f0ece2;font-size:.92rem;color:#3a3630;line-height:1.6;position:relative}.open-questions li:first-child{border-top:none;padding-top:0}
+.open-questions li::before{content:"?";position:absolute;left:0;top:12px;width:18px;height:18px;background:#e0893a;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700}.open-questions li:first-child::before{top:0}
+.open-questions li strong{color:#17161a}
+
+/* Top navigation */
+.top-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid #e8e2d5}
+.top-nav .nav-tab{display:inline-flex;align-items:center;padding:8px 16px;font-size:.84rem;font-weight:600;color:#6d675c;text-decoration:none;border-radius:6px;letter-spacing:.01em;transition:background .15s,color .15s,border-color .15s;border:1px solid transparent}
+.top-nav .nav-tab:hover{background:#f5f1e6;color:#17161a}
+.top-nav .nav-tab.active{background:#17161a;color:#fff}
+.top-nav .nav-tab.active:hover{background:#17161a;color:#fff}
+@media(max-width:600px){.top-nav .nav-tab{font-size:.78rem;padding:7px 12px}}
+</style>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav"><a href="nuance-2026.html" class="nav-tab">Nuance Hub</a><a href="unity-and-diversity.html" class="nav-tab">Unity &amp; Diversity</a><a href="fault-lines/index.html" class="nav-tab">Fault Lines</a><a href="denmark-data.html" class="nav-tab">Denmark · Honest Data</a><a href="grooming-gangs.html" class="nav-tab">UK Grooming Gangs · Cross-Examined</a><a href="cse-base-rates.html" class="nav-tab active">CSE Base Rates · Read the Denominator</a></nav>
+
+<div class="breadcrumb"><a href="nuance-2026.html">Nuance Is Not a Dirty Word</a><span class="sep">›</span><span>CSE base rates: read the denominator</span></div>
+
+<header>
+  <span class="eyebrow">Methodology · base rates</span>
+  <h1>CSE base rates: read the denominator first / 基準率・分母を読む</h1>
+  <p class="subtitle">"Most child-abuse offenders are white British" is true, and on its own it is nearly empty. England and Wales is about 82% white; a white majority of offenders is arithmetic, not propensity. The sentence that carries information is a rate: a group's share of offenders divided by its share of the population. This page does that division. It shows where the disproportion vanishes, and the one place it does not.</p>
+  <div class="status-row"><span class="status-badge">methodology · base rates · Phase 1</span><span>2026-06-17</span></div>
+</header>
+
+<div class="one-sentence">
+  <strong>Most offenders everywhere belong to the majority; that is a fact about who lives in the country, not about who offends. Only a per-capita rate says otherwise. Divide all child sexual abuse by the population and the disproportion is gone; <em>divide group-based exploitation in the few places it is recorded properly, and it is not.</em></strong>
+</div>
+
+<h2 class="section-title" id="why-this-exists">Why this page exists</h2>
+<p class="section-sub">Two answers to the same question, the panic and its rebuttal, fail in the same place: neither divides by the denominator.</p>
+
+<p>The grooming-gangs debate has a stock rebuttal. Confronted with Rotherham, Rochdale, Telford, a common reply is that <a href="grooming-gangs.html#cross-exam-numbers">there are just as many white offenders, so the ethnic pattern is a myth</a>; the court and prosecution data do show roughly 85 to 90% of recorded child-abuse defendants are white. The reply is arithmetically fine and analytically empty. England and Wales is about 82% white (2021 Census); a white majority of offenders is what pure composition predicts before any propensity enters. "Most offenders are white" describes who lives here, not who offends.</p>
+
+<p>The panic and the rebuttal both skip the same step. Each quotes a raw count and stops, one to indict a community, the other to acquit it, and neither divides the count by the group's share of the population. Do the division and the picture splits in two. Across all child sexual abuse the white share is base-rate-explained; the disproportion vanishes. In the narrow subset of group-based exploitation, in the few forces that record it well, it does not: Greater Manchester Police found 52 to 54% of group-based CSE suspects of Asian heritage against a 20.9% Asian local population, after the base-rate correction. The aggregate finding and the subset finding are about two different phenomena, and both survive.</p>
+
+<div class="method-box"><strong>Method.</strong> Three categories are held apart and never swapped: all child sexual abuse, child sexual exploitation, and group-based "grooming-gang" exploitation. Every number is divided by the population base rate before it is read, because a raw count of offenders mostly reproduces who lives in the country. Both findings are carried without a thumb on the scale; ethnicity is unrecorded for roughly two-thirds of group-based perpetrators nationally (Home Office 2020; Casey 2025; IICSA), and every proportion here describes recorded or reported cases, not all abuse.</div>
+
+<h2 class="section-title" id="the-distinction">The one distinction everything rests on</h2>
+<p class="section-sub">Three things are constantly swapped: all child sexual abuse, child sexual exploitation, and group-based "grooming gang" CSE. They are nested, one inside the next, and they sit at opposite ends of the same funnel. A figure for one is not a figure for another; most public argument about grooming gangs runs on quietly substituting one for another.</p>
+
+<div class="tier-grid">
+<div class="tier-card t-a">
+<span class="tier-tag">(a)</span>
+<h3>All child sexual abuse</h3>
+<p>Every form of sexual abuse of under-18s: intra-familial, online, lone opportunistic, institutional, peer-on-peer, with CSE sitting inside it. The widest box. Prevalence dwarfs anything the police record; about 500,000 children a year experience sexual abuse of some kind, an estimate, not a crime count.</p>
+<span class="tier-pg">~500,000 children/year (prevalence) · Casey 2025, p.6</span>
+</div>
+<div class="tier-card t-b">
+<span class="tier-tag">(b)</span>
+<h3>Child sexual exploitation</h3>
+<p>The subset of CSA involving exchange or coercion: status, gifts, drugs, money. In police data CSE is a flag laid on a CSA offence, not a standalone crime. Roughly 15% of contact CSA carries it.</p>
+<span class="tier-pg">~17,100 CSE-flagged contact crimes, y/e Mar 2024 · Casey 2025, pp.56-58</span>
+</div>
+<div class="tier-card t-c">
+<span class="tier-tag">(c)</span>
+<h3>Group-based "grooming gang" CSE</h3>
+<p>The subset of CSE with two or more connected offenders grooming and exploiting children. This is the category in dispute. About 700 recorded offences in 2023; well under 1% of recorded CSA, and the data owners call even that an undercount.</p>
+<span class="tier-pg">~700 recorded, 2023 · Casey 2025, pp.56-58</span>
+</div>
+</div>
+
+<div class="funnel indent">
+<div class="fr"><span class="fn-cat"><b>(a) All child sexual abuse</b><small>every form: intra-familial, online, lone, institutional, peer-on-peer</small></span><span class="fn-num">~100,000<small>RECORDED OFFENCES, 2024</small></span></div>
+<div class="fr"><span class="fn-cat"><b>(b) Child sexual exploitation</b><small>the CSA subset involving exchange or coercion; a flag, not an offence</small></span><span class="fn-num">~17,100<small>CSE-FLAGGED CONTACT CRIMES, Y/E MAR 2024</small></span></div>
+<div class="fr"><span class="fn-cat"><b>(c) Group-based "grooming gang" CSE</b><small>two or more connected offenders; the category in dispute</small></span><span class="fn-num">~700<small>RECORDED 2023 · WELL UNDER 1% OF CSA</small></span></div>
+</div>
+<p class="bar-note">Nested: (c) within (b) within (a). Prevalence dwarfs recorded crime: about 500,000 children a year experience sexual abuse of some kind, and only about 7% of victims tell police at the time. The ~700 is a manual snapshot the data owners call an undercount; the true figure is higher. Source: Casey, <em>National Audit on Group-based CSEA</em>, June 2025, pp.6, 56-58.</p>
+
+<p class="one-sentence"><strong>Quote an ethnicity finding about (c) as though it answered (a), or read the aggregate of (a) back onto (c), and you have committed <em>the single error this page exists to stop</em>.</strong></p>
+
+<p class="section-sub">One caveat sits above every number below. CSA is largely a hidden crime; the CSA Centre puts it at roughly 1 in 10 children, and Casey notes that for the vast majority "their abuse is not identified," with only about 7% of victims telling police at the time. Every proportion on this page therefore describes recorded, reported, or surveyed cases, never all abuse.</p>
+
+<h2 class="section-title" id="base-rate-principle">The base-rate principle</h2>
+<p class="section-sub">In any country the majority population commits the majority of most crimes, automatically, by composition. "Most offenders are [majority group]" is a fact about who lives there, not about how any group behaves; it describes the denominator, never the numerator.</p>
+
+<div class="one-sentence">
+  <strong>Only one number carries propensity information: a group's <em>per-capita rate</em>, its share of offenders divided by its share of the population. Until you do that division, you have said nothing about whether any group offends more or less than expected.</strong>
+</div>
+
+<p class="section-sub">England and Wales was 81.7% white at the 2021 Census, so a white plurality of offenders in almost any common offence is near-automatic before propensity enters at all. The converse holds with equal force: a group can be a small share of all offenders, a small count drawn from a small denominator, and still be over-represented in a specific subset, where its rate runs above its population share. Both can be true at once; the raw share and the rate answer different questions.</p>
+
+<div class="headline-row">
+  <div class="headline-cell">
+    <div class="headline-num">Share of offenders</div>
+    <div class="headline-label">"Most are white" · raw count · fixed by the population · uninformative on its own</div>
+  </div>
+  <div class="headline-cell">
+    <div class="headline-num">Rate vs population</div>
+    <div class="headline-label">Offender share ÷ 81.7% white base rate · the only figure that signals propensity</div>
+  </div>
+</div>
+
+<h2 class="section-title" id="the-denominator">The denominator: who lives here, over time</h2>
+<p class="section-sub">A white plurality of offenders is mostly the population reappearing in the offender column. To see whether any group offends more or less than expected, you first need the share a pure random draw would give you; that share is not fixed. It falls decade on decade, and it falls further for the young.</p>
+
+<div class="barset">
+<h3>White share of England &amp; Wales, by census</h3>
+<p class="bs-sub">Draw offenders at random from the population and this is the white share you would expect. The "White British" tick-box exists only from 2001; the 1991 figure is the single "White" category, Great Britain.</p>
+<div class="barrow"><span class="bl">1991 · White</span><span class="bt"><span class="bf w" style="width:94.5%"></span></span><span class="bv">94.5%</span></div>
+<div class="barrow"><span class="bl">2001 · White British</span><span class="bt"><span class="bf wb" style="width:87.5%"></span></span><span class="bv">87.5%</span></div>
+<div class="barrow"><span class="bl">2011 · White British</span><span class="bt"><span class="bf wb" style="width:80.5%"></span></span><span class="bv">80.5%</span></div>
+<div class="barrow"><span class="bl">2021 · White British</span><span class="bt"><span class="bf wb" style="width:74.4%"></span></span><span class="bv">74.4%</span></div>
+<div class="barrow"><span class="bl">School pupils 2024/25 · White British</span><span class="bt"><span class="bf grp" style="width:60.3%"></span></span><span class="bv">60.3%</span></div>
+<div class="bar-legend"><span><i style="background:#7aa6d3"></i>White, total</span><span><i style="background:#9bbfe0"></i>White British</span><span><i style="background:#e0893a"></i>school-age cohort</span></div>
+<p class="bar-note">1981 carries no figure: the census had no ethnicity question until 1991. The 1991 number is Great Britain (England alone 93.8% white). Offending concentrates in younger ages, which are less white than the stock: school pupils are ~60% White British, not 74%. Sources: ONS / GOV.UK Ethnicity facts and figures; DfE School Census 2024/25.</p>
+</div>
+
+<p class="section-sub">The ethnic-group question did not exist before 1991, and the "White British" tick-box did not exist before 2001; the early eras carry only a single "White" total, so a White-British comparison cannot be run against them. Here are the exact counts behind these percentages.</p>
+
+<table class="tbl-inventory">
+<thead><tr><th>Census</th><th>White total</th><th>White British</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>1991 (GB)</td><td class="num">94.5%</td><td class="num">no British tick-box</td><td><a href="https://dwowen.warwick.ac.uk/tab2.htm">1991 Census LBS (Crown Copyright)</a></td></tr>
+<tr><td>2001 (E&amp;W)</td><td class="num">91.3%</td><td class="num">87.5%</td><td><a href="https://www.ethnicity-facts-figures.service.gov.uk/uk-population-by-ethnicity/national-and-regional-populations/population-of-england-and-wales/latest/">ONS / GOV.UK Ethnicity Facts &amp; Figures</a></td></tr>
+<tr><td>2011 (E&amp;W)</td><td class="num">86.0%</td><td class="num">80.5%</td><td><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/articles/ethnicityandnationalidentityinenglandandwales/2012-12-11">ONS Census 2011</a></td></tr>
+<tr><td>2021 (E&amp;W)</td><td class="num">81.7%</td><td class="num">74.4%</td><td><a href="https://www.ethnicity-facts-figures.service.gov.uk/uk-population-by-ethnicity/national-and-regional-populations/population-of-england-and-wales/latest/">ONS / GOV.UK Ethnicity Facts &amp; Figures</a></td></tr>
+</tbody>
+</table>
+
+<p class="section-sub">So the base-rate expectation moves with the era you are asking about. A random draw in the early 1990s predicts ~94 to 95% white offenders, a single White category, Great Britain. By 2021 it predicts 74.4% White British. For a young cohort it predicts lower still: state-school pupils are ~60.3% White British (DfE, 2024/25), because the white group has the oldest age structure of any (2021 Census median age 43) and offending concentrates in younger bands.</p>
+
+<div class="one-sentence">
+  <strong>Group-based CSE suspects skew young, so the 74.4% population <em>stock</em> figure overstates the White-British share you would expect among recent young offenders; for a young-cohort comparison the right denominator is the ~60.3% school-age figure, not 74.4%.</strong>
+</div>
+
+<p class="section-sub">Two flags travel with the early columns and must stay attached. 1981 has no measured figure at all; the census carried no ethnic-group question until 1991, so any pre-1991 minority count is an estimate from country-of-birth, not a count. And the 1991 figure is Great Britain, not England and Wales (England alone was 93.8% white); the geography differs from every later row, though the direction holds while the value barely moves.</p>
+
+<div class="method-box"><strong>Verification flag.</strong> The DfE 2024/25 release highlights only the 38.0% minority-ethnic headline; the exact 60.3% White-British cell sits in the data table and did not re-render in our pass (the live permalink resolved to 2020/21 = 64.9%). The downward trend is firm; treat the precise current cell as primary-but-unverified-in-pass.</div>
+
+<h2 class="section-title" id="what-85-is">What "85% white" actually measures</h2>
+<p class="section-sub">The headline number is real, solid, and narrower than how it travels. It describes one category only: all child sexual abuse, and within that, the prosecuted defendants whose ethnicity a court bothered to record. Three caveats ride with it everywhere it goes.</p>
+
+<div class="one-sentence">
+  <strong>"~85 to 90% white" is a finding about <em>all CSA, recorded defendants only</em>; it tracks the population almost exactly, so it carries no propensity information; and it is not a measured figure for group-based grooming-gang CSE. Carrying it across that line is the error this page exists to stop.</strong>
+</div>
+
+<div class="headline-row">
+  <div class="headline-cell"><div class="headline-num">69%</div><div class="headline-label">of CSA defendants had ethnicity recorded · MoJ 2023</div></div>
+  <div class="headline-cell"><div class="headline-num">6,356</div><div class="headline-label">recorded defendants · the real denominator</div></div>
+  <div class="headline-cell"><div class="headline-num">90%</div><div class="headline-label">of those were white · 5,731 people</div></div>
+  <div class="headline-cell"><div class="headline-num">31%</div><div class="headline-label">had no ethnicity recorded · excluded</div></div>
+</div>
+
+<p class="section-sub">CSA Centre, <em>Child sexual abuse in 2023/24: Trends in official data</em> (March 2025), reading Ministry of Justice court data for England and Wales. Ethnicity was recorded in 69% (6,356) of cases; of those, nine-tenths were white (5,731). Set that beside the 2021 Census and the white share of defendants sits where the white share of the country sits. No over-representation in CSA as a whole; the offender column is mostly the population column wearing a different label.</p>
+
+<table class="tbl-inventory">
+  <thead>
+    <tr><th>Ethnicity</th><th>CSA defendants 2023 <small>(recorded only)</small></th><th>E&amp;W population 10+ <small>(2021 Census)</small></th></tr>
+  </thead>
+  <tbody>
+    <tr><td>White (total)</td><td class="num">90%</td><td class="num">83%</td></tr>
+    <tr><td>&nbsp;&nbsp;White British</td><td class="num">87%</td><td class="num">75%</td></tr>
+    <tr><td>Asian (total)</td><td class="num">5%</td><td class="num">9%</td></tr>
+    <tr><td>&nbsp;&nbsp;Pakistani</td><td class="num">2%</td><td class="num">2%</td></tr>
+    <tr><td>Black (total)</td><td class="num">2%</td><td class="num">4%</td></tr>
+    <tr><td>Mixed</td><td class="num">2%</td><td class="num">2%</td></tr>
+  </tbody>
+</table>
+
+<p class="section-sub">The rounder "~85 to 88%" reaches the same place by a different route. Full Fact, working CPS data on child-abuse-flagged sex-offence cases for 2015/16 (~6,200 defendants), records white 67%, Asian 4%, Black 3%, not recorded 24%; strip the 24% unrecorded and ~88% of the remainder is white (67 of 76). The "~85 to 88%" only appears once the unknowns leave the denominator. A 2017 cross-check on MoJ data points the same way: 11% of recorded-ethnicity CSA defendants were from minority-ethnic backgrounds against 14% in the 2011 Census, so if anything CSA defendants are slightly <em>less</em> minority-ethnic than the population, not more.</p>
+
+<div class="caveat-list">
+  <div class="caveat-item">
+    <h4>Caveat 1: the denominator</h4>
+    <p>The 90% is of the 69% with ethnicity recorded, not of all ~9,215 CSA defendants that year. The 31% where ethnicity went unrecorded is silently dropped before the percentage is taken. Every version of the headline (90% in 2023, 92% in 2019/20, ~88% of recorded CPS 2015/16) is a <strong>recorded-only</strong> figure; the unknowns are never small.</p>
+  </div>
+  <div class="caveat-item">
+    <h4>Caveat 2: who is caught, not who offends</h4>
+    <p>The CSA Centre attributes part of the white majority to <em>under-identification</em>: CSA is under-reported in minority-ethnic communities, so the prosecuted population reflects <strong>who is caught and prosecuted, not necessarily who offends</strong>. The figure measures the output of the reporting-and-conviction pipeline, with all the pipeline's blind spots.</p>
+  </div>
+  <div class="caveat-item">
+    <h4>Caveat 3: it is not a grooming-gang number</h4>
+    <p>This is a measurement of <strong>all CSA</strong>. It is <em>not</em> a measured figure for group-based CSE, where ethnicity is unrecorded for roughly two-thirds of perpetrators nationally (Home Office 2020; Casey 2025; IICSA). Lifting "85% white" out of the all-CSA box and dropping it into the grooming-gang box answers a question the data never asked.</p>
+  </div>
+</div>
+
+<div class="method-box"><strong>Verification flag.</strong> The CSA Centre 2023/24 PDF is image-based and did not text-extract in our pass. The 90% / 69% / 31% headline is internally consistent and matches the centre's public framing; treat the sub-rows (87% White British, 2% Pakistani, and so on) as primary-but-unverified-in-pass. The 2017 "11% vs 14%" cross-check did render and is independently legible.</div>
+
+<div class="sources-list">
+  <div class="source-item">
+    <div class="src-type">Primary · official court data</div>
+    <div class="src-cite">CSA Centre, <strong><em>Child sexual abuse in 2023/24: Trends in official data</em></strong> (March 2025), citing Ministry of Justice 2023 court data, England and Wales.</div>
+    <div class="src-method">Ethnicity recorded in 69% (6,356) of CSA prosecutions; of those, 90% white (5,731), ~87% White British, 2% Pakistani. Category: all CSA, recorded defendants only.</div>
+    <div class="src-link"><a href="https://www.csacentre.org.uk/app/uploads/2025/03/Child-sexual-abuse-in-2023-24-Trends-in-official-data.pdf">csacentre.org.uk · Trends in official data 2023/24 (PDF)</a></div>
+    <div class="src-caveat"><strong>Image-PDF; primary-but-unverified-in-pass.</strong> Headline internally consistent; sub-rows not independently re-rendered in our pass.</div>
+  </div>
+  <div class="source-item">
+    <div class="src-type">Corroboration · CPS FOI + 2017 cross-check</div>
+    <div class="src-cite">Full Fact, documenting CPS data (child-abuse-flagged sex offences 2015/16, ~6,200 defendants) and the CSA Centre's 2017 MoJ cross-check.</div>
+    <div class="src-method">CPS 2015/16: white 67%, not recorded 24%; ~88% of the recorded-only denominator white. 2017 MoJ: 11% minority-ethnic CSA defendants vs 14% Census minority-ethnic; no over-representation in CSA generally.</div>
+    <div class="src-link"><a href="https://fullfact.org/crime/what-do-we-know-about-ethnicity-people-involved-sexual-offences-against-children/">fullfact.org · ethnicity of people involved in sexual offences against children</a></div>
+  </div>
+</div>
+
+<h2 class="section-title" id="who-abuses">Who actually abuses children</h2>
+<p class="section-sub">The abuser is almost always someone the child already knows. Most recorded abuse happens inside the family environment or online, by a lone adult, increasingly by another child. Group-based exploitation is the rare exception on every axis at once; that is exactly what makes it distinctive, and why a figure about it cannot be read off the bulk.</p>
+
+<div class="one-sentence">
+  <strong>Stranger abuse is the minority everywhere it is measured. The dominant pattern is a single perpetrator the child trusts, inside the home; group-based CSE inverts almost every feature of that pattern, which is the point.</strong>
+</div>
+
+<div class="headline-row">
+  <div class="headline-cell"><div class="headline-num">&gt;90%</div><div class="headline-label">contact abuse by someone known to the child (NSPCC / Radford 2011)</div></div>
+  <div class="headline-cell"><div class="headline-num">~50%</div><div class="headline-label">recorded CSA inside the family environment (NPCC 2023)</div></div>
+  <div class="headline-cell"><div class="headline-num">~40%</div><div class="headline-label">of recorded sexual-abuse crime is now online (Casey 2025)</div></div>
+  <div class="headline-cell"><div class="headline-num">24</div><div class="headline-label">average recorded CSAE offender age (VKPP 2023)</div></div>
+</div>
+
+<p class="section-sub">NSPCC / Radford 2011, drawing on 6,196 UK interviews, found over 90% of children who suffered contact sexual abuse were abused by someone they knew; roughly 1 in 10 by a stranger. The Crime Survey for England and Wales, year ending March 2019, asks adults abused before 16 and lets them tick more than one perpetrator, so its categories overlap and do not sum to 100: friend or acquaintance 37%, stranger 30%, a family member somewhere between a quarter and a third. The two surveys use different methods and define "stranger" differently, so the 30% and the 10% are not a clean contradiction; both land on the same finding. Known perpetrators dominate, and no tidy three-way split exists.</p>
+
+<p class="section-sub">The National Police Chiefs' Council put it at scale in 2023: abuse in the family environment is almost half of all CSA reported to police in England and Wales. The other shift is the screen. Online offending is now about 40% of recorded sexual-abuse crime; of roughly 100,000 CSA and CSE offences in 2024, about 60% were contact and 40% online (Casey 2025). That growth, with more child-on-child offending, has pulled the recorded offender age down: VKPP 2023 gives an average CSAE offender age of 24, and in the COCAD 2023 data 57% of suspects were under 18.</p>
+
+<p class="section-sub">Against that bulk, group-based "grooming-gang" CSE is small in the recorded numbers. The funnel ends at roughly 700 recorded group-based-CSE offences in 2023, well under 1% of recorded CSA, and the data-owners call even that a snapshot undercount.</p>
+
+<div class="funnel indent">
+  <div class="fr"><div class="fn-cat"><b>All CSA / CSE offences recorded</b><small>2024, England &amp; Wales; ~60% contact, ~40% online (Casey 2025, p.6, p.55)</small></div><div class="fn-num">~100,000</div></div>
+  <div class="fr"><div class="fn-cat"><b>CSE-flagged crimes</b><small>year to March 2024; ~15% of contact CSA (Casey 2025)</small></div><div class="fn-num">~17,100</div></div>
+  <div class="fr"><div class="fn-cat"><b>Group-based CSE specifically</b><small>2023; well under 1% of recorded CSA; admitted undercount (Casey 2025, pp.56-58)</small></div><div class="fn-num">~700<small>RECORDED, A FLOOR</small></div></div>
+</div>
+
+<p class="section-sub">Rare in count does not mean indistinct in kind. Where group-based CSE is recorded, it differs from the dominant intra-familial and online patterns on several axes at once. These features, not the headcount, are what make it a separate phenomenon.</p>
+
+<div class="friction-grid">
+  <div class="friction-card">
+    <span class="fr-flag">Multiple offenders</span>
+    <h3>Connected men, not one trusted adult</h3>
+    <p>Two or more offenders acting together, with what the Home Office calls a "disinhibiting effect" of the group. This is the inverse of the overwhelmingly single-perpetrator familial abuse that makes up most recorded CSA.</p>
+    <div class="fr-source">Home Office (2020), <a href="https://www.gov.uk/government/publications/group-based-child-sexual-exploitation-characteristics-of-offending/group-based-child-sexual-exploitation-characteristics-of-offending-accessible-version">Characteristics of Offending</a></div>
+  </div>
+  <div class="friction-card">
+    <span class="fr-flag">Relative strangers</span>
+    <h3>Targeted in a shared area, not at home</h3>
+    <p>Victims are picked out by men who are relative strangers operating in a shared local area; the opposite of the dominant trusted-perpetrator pattern. Targets are often the most vulnerable: children in care, children with disabilities.</p>
+    <div class="fr-source">Home Office (2020); Casey (2025), <a href="https://assets.publishing.service.gov.uk/media/685559d05225e4ed0bf3ce54/National_Audit_on_Group-based_Child_Sexual_Exploitation_and_Abuse.pdf">National Audit</a></div>
+  </div>
+  <div class="friction-card">
+    <span class="fr-flag">Distinctive MO</span>
+    <h3>The "boyfriend" model and peer recruitment</h3>
+    <p>A recognisable method: the "boyfriend" hook, parties with drugs and alcohol to lower resistance, victims passed between men, and coerced into introducing peers so the abuse self-propagates. None of this describes the lone familial abuser.</p>
+    <div class="fr-source">Home Office (2020); Casey (2025), <a href="https://assets.publishing.service.gov.uk/media/685559d05225e4ed0bf3ce54/National_Audit_on_Group-based_Child_Sexual_Exploitation_and_Abuse.pdf">pp.56-58</a></div>
+  </div>
+  <div class="friction-card">
+    <span class="fr-flag">Homogeneous groups</span>
+    <h3>Shared background, victims "othered"</h3>
+    <p>Groups described as "broadly homogenous in age, ethnic background and socioeconomic status," with misogyny and an "othering" of victims that lets perpetrators disregard them. This shared-background structure has no parallel in scattered intra-familial offending.</p>
+    <div class="fr-source">Home Office (2020), <a href="https://assets.publishing.service.gov.uk/media/5fd87e348fa8f54d5733f532/Group-based_CSE_Paper.pdf">Group-based CSE Paper</a></div>
+  </div>
+</div>
+
+<div class="method-box">
+  <strong>The recording trap, by design.</strong> Ethnicity is poorly recorded for CSA generally; national police data captures perpetrator ethnicity for only about 31% (VKPP) to 34% (COCAD) of suspects, so none of the relationship base rates above carry a reliable ethnicity breakdown. The largest CSA volumes, intra-familial at about half and online at about 40%, have <strong>worse or absent</strong> ethnicity recording than group-based CSE. No comparison of ethnicity <em>between abuse types</em> is possible on national data; anyone offering one is filling the gap, not reading it. <a href="https://www.iicsa.org.uk/reports-recommendations/publications/investigation/cs-organised-networks/part-b-nature-and-scale-child-sexual-exploitation-networks/b5-ethnicity-data-collection.html">IICSA §B.5</a>; <a href="https://www.vkpp.org.uk/vkpp-work/analytical-capability/national-analysis-of-police-recorded-child-sexual-abuse-and-exploitation-crimes-report-2/">VKPP 2023</a>; Casey (2025).
+</div>
+
+<h2 class="section-title" id="pakistan-mirror">The Pakistan mirror / パキスタンの鏡</h2>
+<p class="section-sub">Run the same sentence in a country that is almost one group and its emptiness shows on its face. This is logic, not a claim about Pakistan; the country is the cleanest available demonstration of what a denominator does to a count.</p>
+
+<div class="one-sentence">
+  <strong>Pakistan's foreign-born population is about <em>1.5%</em> (UN/IOM, 2019), so roughly 98 to 99% of everyone there is a Pakistani national; it follows by arithmetic that about 98 to 99% of any category of offender there is Pakistani, child abusers included, and that sentence carries zero information about how anyone behaves.</strong>
+</div>
+
+<p class="section-sub">Pakistan's international migrant stock was roughly 3.26 million in 2019, about 1.5% of the population on the UN/IOM count, the band robust across UN DESA, IOM, and the World Bank even where the exact per-year decimal does not resolve; that stock is overwhelmingly Afghan refugees, around 1.3 to 1.5 million registered with UNHCR. Near-homogeneity does the rest. When 98 to 99% of a country is one group, 98 to 99% of its abusers belong to that group automatically, the same way a near-monopoly of plumbers, teachers, or bus drivers would. "Most UK CSE offenders are white British" is the same sentence wearing different clothes; the roughly 74 to 82% white population reappearing in the offender column. Neither sentence proves over-representation, and neither rules it out. Only a per-capita rate does that.</p>
+
+<p class="section-sub">What is known of Pakistani child sexual abuse comes mainly from Sahil, an Islamabad NGO whose <em>Cruel Numbers</em> compiles press-reported cases; a floor, not a prevalence rate. The 2023 edition records 4,213 cases, about 11 children a day, 53% girls and 47% boys, with perpetrators most often acquaintances or relatives. That is the same known-perpetrator pattern the UK data shows: abuse by someone the child knows, not by gangs of strangers.</p>
+
+<div class="friction-card">
+  <span class="fr-flag">Flag · missing by design</span>
+  <h3>Pakistan keeps no perpetrator-ethnicity statistic, and has no reason to</h3>
+  <p>In a country that is about 99% one group, "ethnicity of offender" is as empty as "nationality of offender"; the answer is fixed before any crime is counted. So the variable is simply not collected. The lesson runs back to the UK: where ethnicity recording is poor or absent, a recorded share is a recording artefact, not a propensity.</p>
+  <div class="fr-source">Sahil, <em>Cruel Numbers 2023</em> (4,213 cases) · <a href="https://sahil.org/cruel-numbers/">sahil.org/cruel-numbers</a> · <a href="https://www.dawn.com/news/1818148">Dawn report, 2023</a></div>
+</div>
+
+<table class="tbl-inventory">
+  <thead>
+    <tr><th>Figure</th><th>Value</th><th>Category / year</th><th>Source</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Pakistan migrant stock</td>
+      <td class="num">~1.5% (3.26m)</td>
+      <td>foreign-born share of population, 2019</td>
+      <td><a href="https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/files/documents/2021/Jan/undesa_pd_2020_international_migrant_stock_documentation.pdf">UN DESA / IOM</a>; <a href="https://data.worldbank.org/indicator/SM.POP.TOTL.ZS?locations=PK">World Bank</a></td>
+    </tr>
+    <tr>
+      <td>Registered Afghan refugees</td>
+      <td class="num">~1.3 to 1.5m</td>
+      <td>largest component of that stock</td>
+      <td><a href="https://www.unhcr.org/us/where-we-work/countries/pakistan">UNHCR Pakistan</a></td>
+    </tr>
+    <tr>
+      <td>Pakistani CSA cases</td>
+      <td class="num">4,213</td>
+      <td>press-reported cases, 2023 (a floor, not a rate); 53% girls / 47% boys</td>
+      <td><a href="https://sahil.org/cruel-numbers/">Sahil, <em>Cruel Numbers</em></a></td>
+    </tr>
+    <tr>
+      <td>Perpetrator ethnicity stat</td>
+      <td class="num">none</td>
+      <td>not collected; uninformative at ~99% homogeneity</td>
+      <td><code>n/a</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="section-sub">Pakistan and Denmark are the same axis from opposite ends. Pakistan makes raw counts self-evidently meaningless by homogeneity; nearly everyone is one group, so every count is that group, and no division is even possible. Denmark makes rate differences visible by standardising; it publishes the ancestry-by-crime cross-tab and an age- and socio-economically adjusted criminality index, doing the per-capita division that raw counts hide. Same principle, two extremes; one country where the denominator swallows everything, one where it is held to the light.</p>
+
+<div class="method-box"><strong>Where this points.</strong> The Pakistan mirror is a thought experiment with real numbers, not evidence about any group's propensity. It exists to make one habit automatic: before reading a "most offenders are X" sentence as information, ask what share of the population is already X. For the same question run on a country that does publish the rate, see <a href="denmark-data.html">Denmark · Honest Data</a>.</div>
+
+<h2 class="section-title" id="synthesis">Two findings, two phenomena, both true</h2>
+<p class="section-sub">The whole discipline is holding two true things at once: the aggregate is base-rate-explained, and the group-based subset is a separate, real over-representation. Drop either half and you are lying by omission.</p>
+
+<div class="cross-exam">
+<h3>Both true at once</h3>
+<p class="ce-lead">The aggregate and the subset answer different questions. "Most child abusers in Britain are white" and "grooming-gang suspects are disproportionately Asian" are not in conflict; they describe two different rows of the funnel. Holding both, without letting either erase the other, is the entire point.</p>
+
+<div class="ce-side">Half one: the aggregate is base-rate-explained</div>
+<div class="strain-list">
+<div class="strain">
+<p class="strain-claim">Across all CSA (a), "most offenders are white" is true.</p>
+<p class="strain-expose">And uninformative on its own. With England &amp; Wales ~82% White (2021), it is mostly the population reappearing in the offender column; the same structural fact as "~99% of Pakistan's abusers are Pakistani." A fact about who lives there, not about how anyone behaves.</p>
+</div>
+<div class="strain">
+<p class="strain-claim">The CSA-wide data confirms no over-representation.</p>
+<p class="strain-expose">The CSA Centre's 2017 cross-check: 11% of recorded-ethnicity CSA defendants were BAME, against 14% BAME in the 2011 Census. CSA-in-general tracks the population; no minority is over-represented in the aggregate.</p>
+</div>
+<div class="strain">
+<p class="strain-claim">Casey states the aggregate plainly.</p>
+<p class="strain-expose">"If you look at the data for child abuse, it is not disproportionate, it is white men." (Casey 2025.) Half the sentence. The other half is below, in the same breath.</p>
+</div>
+</div>
+
+<div class="ce-side">Half two: the group-based subset is a separate, real signal</div>
+<div class="strain-list">
+<div class="strain">
+<p class="strain-claim">Because the aggregate is base-rate-explained, it cannot answer the question about group-based CSE.</p>
+<p class="strain-expose">A figure for (a) is not a figure for (c). The aggregate dissolves into the denominator precisely so it can say nothing about the small, distinct subset nested inside it; you have to measure (c) directly.</p>
+</div>
+<div class="strain">
+<p class="strain-claim">The Home Office (2020) reached a two-part conclusion, not one.</p>
+<p class="strain-expose">Para 81 is an inference, not a measurement: with the group-based data unusable, it judged offender ethnicity "most likely... in line with CSA more generally... with the majority of offenders being White." Para 17 simultaneously recorded that studies "indicated an over-representation of Asian and Black offenders in group-based CSE," that the high-profile cases mainly involved men of Pakistani ethnicity, and that likely "no one community or culture is uniquely predisposed to offending." Both halves, one document.</p>
+</div>
+<div class="strain">
+<p class="strain-claim">Casey's matching line, same breath as the first.</p>
+<p class="strain-expose">"If you look at the data on child sexual exploitation, suspects and offenders, it is disproportionately Asian heritage." (Casey 2025.) Paired with the white-men line, this is the whole synthesis in two sentences.</p>
+</div>
+</div>
+</div>
+
+<div class="barset">
+<h3>Greater Manchester: one force, two different questions</h3>
+<p class="bs-sub">Asian share of suspects, against the local Asian population (the dashed line). The disproportion is specific to the group-based subset; across all child abuse the same force tracks its population.</p>
+<div class="barrow"><span class="bl">Group-based CSE suspects</span><span class="bt"><span class="bf asian" style="width:54%"></span><span class="bbase" data-label="local base rate 20.9%" style="left:20.9%"></span></span><span class="bv">54%</span></div>
+<div class="barrow"><span class="bl">GMP Asian population, 2021</span><span class="bt"><span class="bf pop" style="width:20.9%"></span></span><span class="bv">20.9%</span></div>
+<div class="barrow"><span class="bl">All-CSA suspects, same force</span><span class="bt"><span class="bf pop" style="width:7%"></span><span class="bbase" data-label="" style="left:20.9%"></span></span><span class="bv">7%</span></div>
+<p class="bar-note">35 group-based investigations, 243 known suspects, 54% Asian (131/243); the wider 269-suspect multi-victim set was 52%. Local Asian population 20.9%, so over twice as likely. The same force across all 781 CSA cases (908 suspects): 7% Asian, close to its population. Victims in the group-based set: 298 of 317 white, ~94%. Source: Casey 2025, pp.74-82.</p>
+</div>
+
+<p class="section-sub">One force settles the apparent contradiction. The over-representation is real where Greater Manchester records it well, and it is specific to the group-based subset; the same force, across all 781 of its CSA cases, tracks its own population. Two phenomena, visible side by side.</p>
+
+<p class="section-sub">Then the honesty number, in the other direction. Nationally, ethnicity is unrecorded for roughly two-thirds of group-based perpetrators; put the missing data back into the denominator and the published "88% white" inverts to only ~28% <em>recorded</em> white (Casey 2025). National data cannot conclude in either direction, which is exactly why recording offender ethnicity in CSA cases is being made a statutory requirement. The local picture is strong; the national one is too gap-ridden to carry any claim, for or against.</p>
+
+<div class="one-sentence">
+The aggregate finding and the subset finding are about <em>two different phenomena</em>, and both are true: across all child abuse the offender profile is base-rate-explained and broadly white, while in the group-based subset, where it can be measured, Asian and Pakistani-heritage men are over-represented even after base-rate correction. The full cross-examination of the group-based cases sits on the <a href="grooming-gangs.html">UK Grooming Gangs · Cross-Examined</a> page.
+</div>
+
+<h2 class="section-title" id="data-gaps">Where the data is missing, and other caveats</h2>
+<p class="section-sub">Every proportion on this page describes recorded, reported, or surveyed cases, not all abuse. Across the underlying data, perpetrator ethnicity is routinely absent. The honest reading is neither "we know it is white men" nor "we know it is one group"; it is that for two-thirds of group-based perpetrators nationally the ethnicity column is blank, and that the aggregate base-rate finding and the local subset signal both survive that gap.</p>
+
+<table class="tbl-inventory">
+  <thead>
+    <tr><th>Category</th><th>Year / source</th><th>Ethnicity unrecorded</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CSA defendants (court)</td>
+      <td>MoJ 2023, via <a href="https://www.csacentre.org.uk/app/uploads/2025/03/Child-sexual-abuse-in-2023-24-Trends-in-official-data.pdf">CSA Centre</a></td>
+      <td class="num">31%</td>
+    </tr>
+    <tr>
+      <td>CSA defendants (CPS)</td>
+      <td>2015/16, via <a href="https://fullfact.org/crime/what-do-we-know-about-ethnicity-people-involved-sexual-offences-against-children/">Full Fact</a></td>
+      <td class="num">24%</td>
+    </tr>
+    <tr>
+      <td>All CSAE perpetrators (national)</td>
+      <td>VKPP 2023, via <a href="https://www.vkpp.org.uk/vkpp-work/analytical-capability/national-analysis-of-police-recorded-child-sexual-abuse-and-exploitation-crimes-report-2/">VKPP</a></td>
+      <td class="num">69% <code>recorded 31%</code></td>
+    </tr>
+    <tr>
+      <td>Group-based CSE suspects</td>
+      <td>COCAD Nov 2024, via <a href="https://assets.publishing.service.gov.uk/media/685559d05225e4ed0bf3ce54/National_Audit_on_Group-based_Child_Sexual_Exploitation_and_Abuse.pdf">Casey 2025</a></td>
+      <td class="num">66% <code>recorded 34%</code></td>
+    </tr>
+    <tr>
+      <td>Group-based CSE perpetrators</td>
+      <td>Casey 2025</td>
+      <td class="num">~two-thirds</td>
+    </tr>
+    <tr>
+      <td>Older reviewed studies</td>
+      <td><a href="https://www.gov.uk/government/publications/group-based-child-sexual-exploitation-characteristics-of-offending/group-based-child-sexual-exploitation-characteristics-of-offending-accessible-version">Home Office 2020</a></td>
+      <td class="num">21% to 38% <code>plus "Asian" mis-assigned</code></td>
+    </tr>
+    <tr>
+      <td>Intra-familial and online CSA</td>
+      <td>NPCC / CSEW; the largest volumes</td>
+      <td class="num">worse or absent</td>
+    </tr>
+    <tr>
+      <td>Pakistan perpetrators</td>
+      <td>Sahil; no national perpetrator-ethnicity data</td>
+      <td class="num">no stat exists</td>
+    </tr>
+    <tr>
+      <td>ONS police-recorded crime</td>
+      <td>no routine national series</td>
+      <td class="num">not published</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="caveat-list">
+  <div class="caveat-item">
+    <h4>Prevalence is not recorded crime</h4>
+    <p>Casey notes only about <strong>7%</strong> of victims tell police at the time, and that for the vast majority their abuse is never identified. So each percentage describes <em>who is caught</em>, not who offends: the seven-in-a-hundred whose case enters the data, not the hundred.</p>
+  </div>
+  <div class="caveat-item">
+    <h4>Two key figures sit in image-only PDFs</h4>
+    <p>The CSA Centre's headline shares (90% white of recorded 2023 defendants; 92% in 2019/20) come from documents that are image-based and did not text-extract in our pass. They are internally consistent and match the centre's public framing; treat the sub-rows as <em>primary-but-unverified-in-pass</em> rather than independently re-rendered.</p>
+  </div>
+  <div class="caveat-item">
+    <h4>The ~700 group-based figure is an admitted undercount</h4>
+    <p>About <strong>700</strong> recorded group-based-CSE offences in 2023 is a manual quarterly snapshot across 43 forces with inconsistent systems. The data-owners say so: Casey calls it "highly unlikely that this accurately reflects the true scale" and "may be an undercount"; IICSA earlier logged over 70 live investigations with returns incomplete. The true number is higher than 700, not lower.</p>
+  </div>
+  <div class="caveat-item">
+    <h4>Casey rejects certainty in both directions</h4>
+    <p>The audit refuses two moves at once: using flawed national data to <em>dismiss</em> the over-representation claim, and asserting unevidenced certainty about it. Its verified wording is the milder "it is <strong>not possible to draw any conclusions</strong> on the representation of ethnic groups" from the published national set, paired with the reconfigured <strong>28%</strong>-recorded-white figure; not the "at best misleading" phrase that circulates in secondary press, which is not the audit's own. As of 2025, recording offender ethnicity in CSA cases is being made a statutory requirement, precisely because the gap was this wide. <a href="https://www.iicsa.org.uk/reports-recommendations/publications/investigation/cs-organised-networks/part-b-nature-and-scale-child-sexual-exploitation-networks/b5-ethnicity-data-collection.html">IICSA B.5</a> reaches the same verdict: poor or non-existent data collection makes it impossible to know whether any group is over-represented.</p>
+  </div>
+</div>
+
+<h2 class="section-title" id="sources">Sources</h2>
+<p class="section-sub">Every figure on this page resolves to one of these. Each card names the category it speaks to, all CSA, CSE, or group-based CSE; carries its denominator caveat; and links to the live document. Click through and check the page number.</p>
+
+<div class="sources-list">
+
+<div class="source-item">
+<span class="src-type">Government · group-based CSE</span>
+<p class="src-cite"><strong>Home Office (2020),</strong> <em>Group-based Child Sexual Exploitation: Characteristics of Offending.</em></p>
+<p class="src-method">Review of existing studies; para 81 infers group-based offender ethnicity is "in line with CSA more generally"; para 17 records reviewed-study over-representation of Asian and Black offenders. An inference, not a measurement.</p>
+<p class="src-link"><a href="https://www.gov.uk/government/publications/group-based-child-sexual-exploitation-characteristics-of-offending/group-based-child-sexual-exploitation-characteristics-of-offending-accessible-version" target="_blank" rel="noopener">gov.uk · accessible version</a></p>
+</div>
+
+<div class="source-item">
+<span class="src-type">Government · national audit · PDF</span>
+<p class="src-cite"><strong>Casey, L. (2025),</strong> <em>National Audit on Group-based Child Sexual Exploitation and Abuse.</em></p>
+<p class="src-method">Source for the ~500,000/year prevalence (p.6), the ~100,000 / 17,100 / ~700 funnel (pp.6, 56-58), the GMP worked example (pp.74-82), and the reconfigured 28%-recorded-White figure. The "white men" / "disproportionately Asian heritage" split is hers verbatim.</p>
+<p class="src-link"><a href="https://assets.publishing.service.gov.uk/media/685559d05225e4ed0bf3ce54/National_Audit_on_Group-based_Child_Sexual_Exploitation_and_Abuse.pdf" target="_blank" rel="noopener">assets.publishing.service.gov.uk · PDF</a></p>
+</div>
+
+<div class="source-item">
+<span class="src-type">Research centre · all CSA · court data</span>
+<p class="src-cite"><strong>CSA Centre (Mar 2025),</strong> <em>Child sexual abuse in 2023/24: Trends in official data.</em></p>
+<p class="src-method">Source of the "90% White of recorded defendants" headline (MoJ 2023 court data, ethnicity recorded in 69% of cases). Category (a), all CSA; recorded-only denominator.</p>
+<p class="src-link"><a href="https://www.csacentre.org.uk/app/uploads/2025/03/Child-sexual-abuse-in-2023-24-Trends-in-official-data.pdf" target="_blank" rel="noopener">csacentre.org.uk · PDF</a></p>
+<p class="src-caveat"><strong>Verification flag:</strong> image-based PDF; did not text-extract in the audit pass. The 90% / 69% headline is internally consistent and matches the centre's public framing; treat sub-rows as primary-but-not-independently-re-rendered.</p>
+</div>
+
+<div class="source-item">
+<span class="src-type">Research centre · prevalence</span>
+<p class="src-cite"><strong>CSA Centre,</strong> <em>Scale and nature of child sexual abuse.</em></p>
+<p class="src-method">Origin of the ~1-in-10-children prevalence estimate (≈15% of girls, ≈5% of boys before 16) and the "92% White defendants, 2019/20" corroborating figure.</p>
+<p class="src-link"><a href="https://www.csacentre.org.uk/research-resources/scale-and-nature/" target="_blank" rel="noopener">csacentre.org.uk · scale and nature</a></p>
+</div>
+
+<div class="source-item">
+<span class="src-type">Research centre · intra-familial CSA</span>
+<p class="src-cite"><strong>CSA Centre (2nd ed., 2023),</strong> <em>Key messages from research on intra-familial child sexual abuse.</em></p>
+<p class="src-method">Carries the NPCC "almost half of recorded CSA is within the family environment" figure and the ~quarter-of-cases-perpetrator-under-18 point.</p>
+<p class="src-link"><a href="https://www.csacentre.org.uk/app/uploads/2023/09/Key-messages-from-research-on-intra-familial-child-sexual-abuse-2nd-edition.pdf" target="_blank" rel="noopener">csacentre.org.uk · PDF</a></p>
+</div>
+
+<div class="source-item">
+<span class="src-type">ONS / GOV.UK · population</span>
+<p class="src-cite"><strong>ONS / GOV.UK Ethnicity Facts and Figures,</strong> <em>Population of England and Wales.</em></p>
+<p class="src-method">The base-rate denominator: White total 91.3% (2001), 86.0% (2011), 81.7% (2021); White British 74.4% in 2021. Verified live, exact counts.</p>
+<p class="src-link"><a href="https://www.ethnicity-facts-figures.service.gov.uk/uk-population-by-ethnicity/national-and-regional-populations/population-of-england-and-wales/latest/" target="_blank" rel="noopener">ethnicity-facts-figures.service.gov.uk</a></p>
+</div>
+
+<div class="source-item">
+<span class="src-type">ONS · Census 2021</span>
+<p class="src-cite"><strong>ONS,</strong> <em>Ethnic group, England and Wales: Census 2021.</em></p>
+<p class="src-method">Pakistani group 2.5% of E&W (1,662,286); total usual-resident population 59,597,542. The Pakistani population share against which the GMP subset is measured.</p>
+<p class="src-link"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021" target="_blank" rel="noopener">ons.gov.uk · Census 2021</a></p>
+</div>
+
+<div class="source-item">
+<span class="src-type">ONS · CSEW · relationship base rates</span>
+<p class="src-cite"><strong>ONS,</strong> <em>Child sexual abuse in England and Wales, year ending March 2019</em> (Crime Survey for England and Wales).</p>
+<p class="src-method">Adult retrospective recall: friend/acquaintance 37%, stranger 30%, family ~a quarter to a third (multi-select, so totals exceed 100%). Known perpetrators dominate.</p>
+<p class="src-link"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/articles/childsexualabuseinenglandandwales/yearendingmarch2019" target="_blank" rel="noopener">ons.gov.uk · CSEW y/e Mar 2019</a></p>
+</div>
+
+<div class="source-item">
+<span class="src-type">NSPCC · self-report survey</span>
+<p class="src-cite"><strong>NSPCC / Radford et al. (2011),</strong> <em>Child abuse and neglect in the UK today.</em></p>
+<p class="src-method">6,196 interviews: more than 90% of children sexually abused by contact were abused by someone they knew (~1 in 10 by a stranger).</p>
+<p class="src-link"><a href="https://learning.nspcc.org.uk/research-resources/statistics-briefings/child-sexual-abuse" target="_blank" rel="noopener">learning.nspcc.org.uk</a></p>
+</div>
+
+<div class="source-item">
+<span class="src-type">DfE · school census</span>
+<p class="src-cite"><strong>DfE,</strong> <em>Schools, pupils and their characteristics 2024/25</em> (School Census, England, Jan 2025).</p>
+<p class="src-method">38.0% of pupils minority ethnic (defined as any origin other than White British); reported White British ~60.3% (the residual 62% also holds White-non-British pupils, so the two do not subtract cleanly). The younger-cohort denominator for any young-offender comparison.</p>
+<p class="src-link"><a href="https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics/2024-25" target="_blank" rel="noopener">explore-education-statistics.service.gov.uk</a></p>
+<p class="src-caveat"><strong>Cell flag:</strong> the release highlights only the 38.0% minority-ethnic headline; the exact 60.3% White British cell did not re-render in the audit pass (the verified live permalink resolved to 2020/21 = 64.9%). Direction firm; precise current cell flagged.</p>
+</div>
+
+<div class="source-item">
+<span class="src-type">Police analysis · national CSAE</span>
+<p class="src-cite"><strong>VKPP,</strong> <em>National Analysis of Police-Recorded Child Sexual Abuse and Exploitation Crimes.</em></p>
+<p class="src-method">Average CSAE offender age 24; ethnicity recorded for only 31% of perpetrators, and of those 88% White, 5% Asian, 3% Black, 2% Mixed, 1% other.</p>
+<p class="src-link"><a href="https://www.vkpp.org.uk/vkpp-work/analytical-capability/national-analysis-of-police-recorded-child-sexual-abuse-and-exploitation-crimes-report-2/" target="_blank" rel="noopener">vkpp.org.uk · national analysis</a></p>
+</div>
+
+<div class="source-item">
+<span class="src-type">Inquiry · organised networks · §B.5</span>
+<p class="src-cite"><strong>IICSA (2022),</strong> <em>Child Sexual Exploitation by Organised Networks,</em> Part B.5: Ethnicity data collection.</p>
+<p class="src-method">"Poor or non-existent data collection makes it impossible to know whether any particular ethnic group is over-represented as perpetrators of CSE by networks."</p>
+<p class="src-link"><a href="https://www.iicsa.org.uk/reports-recommendations/publications/investigation/cs-organised-networks/part-b-nature-and-scale-child-sexual-exploitation-networks/b5-ethnicity-data-collection.html" target="_blank" rel="noopener">iicsa.org.uk · B.5</a></p>
+<p class="src-caveat"><strong>Access flag:</strong> the live IICSA HTML returned 403/405 in the audit pass; the headline conclusion is independently confirmed because Casey quotes it at p.76. Per-area missing-data percentages are second-hand via IICSA's own published material.</p>
+</div>
+
+<div class="source-item">
+<span class="src-type">Fact-check · CPS / CEOP</span>
+<p class="src-cite"><strong>Full Fact,</strong> <em>What do we know about the ethnicity of people involved in sexual offences against children?</em></p>
+<p class="src-method">Documents the CPS FOI 2015/16 (~6,200 defendants; 24% ethnicity not recorded; ~88% of recorded were White) behind the rounder "~85-88% white" figure; also CEOP 2011 and OCC 2012.</p>
+<p class="src-link"><a href="https://fullfact.org/crime/what-do-we-know-about-ethnicity-people-involved-sexual-offences-against-children/" target="_blank" rel="noopener">fullfact.org</a></p>
+</div>
+
+<div class="source-item">
+<span class="src-type">NGO · Pakistan mirror</span>
+<p class="src-cite"><strong>Sahil,</strong> <em>Cruel Numbers</em> (annual).</p>
+<p class="src-method">Press-reported Pakistani CSA cases (a floor, not a prevalence rate): 2023, 4,213 cases (~11 children/day), 53% girls / 47% boys, perpetrators most often acquaintances or relatives. No perpetrator-ethnicity statistic exists in Pakistan.</p>
+<p class="src-link"><a href="https://sahil.org/cruel-numbers/" target="_blank" rel="noopener">sahil.org · Cruel Numbers</a></p>
+</div>
+
+<div class="source-item">
+<span class="src-type">UN · migrant stock</span>
+<p class="src-cite"><strong>UN DESA,</strong> <em>International Migrant Stock 2020.</em></p>
+<p class="src-method">Pakistan's migrant stock ≈3.26 million in 2019 ≈1.52% of population, Afghan-dominated; so ~98-99% of any offender category in Pakistan is Pakistani by arithmetic alone.</p>
+<p class="src-link"><a href="https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/files/documents/2021/Jan/undesa_pd_2020_international_migrant_stock_documentation.pdf" target="_blank" rel="noopener">un.org · DESA · PDF</a></p>
+<p class="src-caveat"><strong>Precision flag:</strong> the ~1.5-2% band (Afghan-dominated) is robust across UN DESA / IOM / World Bank, anchored on the UN/IOM 1.52% (2019). Per-year decimals beyond that did not render and are not independently verified.</p>
+</div>
+
+<div class="source-item">
+<span class="src-type">National statistics · Denmark mirror</span>
+<p class="src-cite"><strong>Statistics Denmark,</strong> standardised criminality index (tables STRAFNA3-9 / STRFNA10-14).</p>
+<p class="src-method">The twin of the Pakistan mirror from the opposite end: the rare publisher of an ancestry × crime cross-tab with an age- and socio-economically standardised index, doing the per-capita division raw counts hide.</p>
+<p class="src-link"><a href="https://www.dst.dk/en/Statistik/emner/sociale-forhold/kriminalitet/doemte-personer" target="_blank" rel="noopener">dst.dk · convicted persons</a></p>
+</div>
+
+</div>
+
+<footer>
+  <p>Part of <a href="nuance-2026.html">Nuance Is Not a Dirty Word</a>; a study of integration, pluralism, and the moderate-vs-extremist distinction. Companion pages: <a href="grooming-gangs.html">UK Grooming Gangs · Cross-Examined</a> and <a href="denmark-data.html">Denmark · Honest Data</a>, the same base-rate question from the other extreme.</p>
+  <p>Every figure on this page carries a category, a year, a denominator, and a source. Where the data is missing, the page says so rather than filling the gap.</p>
+</footer>
+</div>
+</body>
+</html>
