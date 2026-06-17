@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grooming Gangs — the report, cross-examined / グルーミング・ギャング — 検証</title>
+<style>
+:root{color-scheme:light}*{box-sizing:border-box;margin:0;padding:0}html,body{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Helvetica Neue",sans-serif;background:#faf9f6;color:#17161a;line-height:1.6;padding:48px 20px 96px;-webkit-font-smoothing:antialiased}.container{max-width:1080px;margin:0 auto}
+.breadcrumb{font-size:.78rem;color:#8a8680;margin-bottom:28px;letter-spacing:.02em}.breadcrumb a{color:#4a7bb8;text-decoration:none}.breadcrumb a:hover{text-decoration:underline}.breadcrumb .sep{margin:0 8px;color:#c9c0ad}
+header{margin-bottom:56px}.eyebrow{display:inline-block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#8a8680;margin-bottom:16px;padding:6px 14px;border:1px solid #e3dfd6;border-radius:999px;background:#fff}
+h1{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:700;letter-spacing:-.025em;line-height:1.12;margin-bottom:18px}
+.subtitle{font-size:clamp(1rem,1.5vw,1.12rem);color:#555047;max-width:820px;margin-bottom:22px;line-height:1.55}
+.status-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:.78rem;color:#8a8680}
+.status-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:#e8f4ec;color:#1f5f3c;border:1px solid #b8d9c2;border-radius:999px;font-weight:600;letter-spacing:.02em}.status-badge::before{content:"";width:7px;height:7px;background:#2e7d4f;border-radius:50%}
+
+.section-title{font-size:1.45rem;font-weight:700;letter-spacing:-.015em;margin:64px 0 8px}
+.section-sub{color:#6d675c;margin-bottom:24px;max-width:820px;font-size:.96rem}
+
+.one-sentence{margin:36px 0 16px;padding:28px 32px;background:#fff;border-left:4px solid #b8372a;border-radius:0 8px 8px 0;font-size:1.06rem;line-height:1.65;color:#2a2620;box-shadow:0 1px 3px rgba(0,0,0,.04)}.one-sentence strong{color:#17161a}.one-sentence em{color:#b8372a;font-style:italic;font-weight:600}
+
+/* Country-comparison cards (re-uses friction-card pattern) */
+.friction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}@media (max-width:880px){.friction-grid{grid-template-columns:1fr}}
+.friction-card{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:22px 24px}.friction-card .fr-flag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:4px 10px;border-radius:4px;margin-bottom:12px}
+.friction-card.uk .fr-flag{background:#5e2a3b}
+.friction-card h3{font-size:1rem;font-weight:700;margin-bottom:10px;color:#17161a;line-height:1.35}
+.friction-card p{font-size:.88rem;color:#3a3630;line-height:1.58;margin-bottom:10px}
+.friction-card .fr-source{font-size:.72rem;color:#8a8680;padding-top:10px;border-top:1px dashed #e8e2d5;line-height:1.45}.friction-card .fr-source a{color:#4a7bb8;text-decoration:none}.friction-card .fr-source a:hover{text-decoration:underline}
+
+/* Headline-stats row */
+.headline-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:18px 0 8px;padding:22px 24px;background:#17161a;color:#f0ece2;border-radius:10px}
+.headline-cell{text-align:center;padding:6px 4px}
+.headline-num{font-size:1.85rem;font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1.1;font-variant-numeric:tabular-nums}
+.headline-label{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#c9c0ad;margin-top:6px;line-height:1.4}
+
+/* Cross-exam block */
+.cross-exam{margin:24px 0 16px;padding:30px 34px;background:linear-gradient(to bottom right,#fdf6e6,#faf0d8);border:1px solid #e8d599;border-radius:12px;border-left:4px solid #c08815}@media (max-width:600px){.cross-exam{padding:22px 20px}}
+.cross-exam h3{font-size:1.18rem;font-weight:700;color:#5e4414;margin-bottom:6px;display:flex;align-items:center;gap:12px;letter-spacing:-.01em}.cross-exam h3::before{content:"⚖";font-size:1.3rem;color:#c08815}
+.cross-exam .ce-lead{font-size:.93rem;color:#5e4414;margin-bottom:18px;line-height:1.6;font-style:italic}
+.cross-exam .ce-side{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7a5a1c;font-weight:700;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid #f0d99e}.cross-exam .ce-side:first-of-type{margin-top:0}
+.strain-list{display:grid;gap:12px;counter-reset:strain-counter}
+.strain{background:#fff;border:1px solid #f0d99e;border-radius:8px;padding:18px 22px;position:relative}
+.strain h4{font-size:.98rem;font-weight:700;color:#17161a;margin-bottom:10px;padding-left:36px;position:relative;letter-spacing:-.005em;line-height:1.4}.strain h4::before{counter-increment:strain-counter;content:counter(strain-counter);position:absolute;left:0;top:-2px;width:26px;height:26px;background:#c08815;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+.strain p{font-size:.9rem;color:#3a3630;line-height:1.6;margin-bottom:8px}.strain p:last-child{margin-bottom:0}
+.strain p strong{color:#17161a;font-weight:700}.strain p em{color:#b8372a;font-style:italic;font-weight:600}
+.strain .strain-claim{padding-bottom:10px;border-bottom:1px dashed #f0d99e;margin-bottom:10px}.strain .strain-claim::before{content:"Claim: ";font-weight:700;color:#7a5a1c;font-size:.78rem;letter-spacing:.04em}
+.strain .strain-expose::before{content:"Where it strains: ";font-weight:700;color:#c08815;font-size:.78rem;letter-spacing:.04em}
+
+/* Caveats list */
+.caveat-list{display:grid;gap:12px;margin-bottom:16px}
+.caveat-item{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:18px 22px;border-left:3px solid #d4a03a}
+.caveat-item h3{font-size:.96rem;font-weight:700;color:#17161a;margin-bottom:8px;letter-spacing:-.005em}
+.caveat-item p{font-size:.88rem;color:#3a3630;line-height:1.58}
+.caveat-item p strong{color:#17161a}
+.caveat-item p em{color:#7a5a1c;font-style:italic;font-weight:600}
+
+/* Sources */
+.sources-list{display:grid;gap:14px;margin-bottom:16px}
+.source-item{background:#faf7ef;border:1px solid #e8e2d5;border-radius:10px;padding:20px 22px}
+.source-item .src-type{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a8680;margin-bottom:8px;padding:3px 9px;background:#fff;border-radius:4px;border:1px solid #e8e2d5}
+.source-item .src-cite{font-size:.92rem;color:#17161a;line-height:1.55;margin-bottom:8px}.source-item .src-cite strong{color:#17161a;font-weight:700}.source-item .src-cite em{color:#555047;font-style:italic}
+.source-item .src-method{font-size:.8rem;color:#6d675c;font-style:italic;margin-bottom:10px;line-height:1.5}
+.source-item .src-link{font-size:.8rem;padding-top:10px;border-top:1px dashed #e8e2d5}.source-item .src-link a{color:#4a7bb8;text-decoration:none;font-weight:500}.source-item .src-link a:hover{text-decoration:underline}
+.source-item .src-caveat{font-size:.78rem;color:#7a5a1c;background:#fef6e1;padding:10px 14px;border-radius:6px;margin-top:10px;border-left:3px solid #d4a03a;line-height:1.5}.source-item .src-caveat strong{color:#5e4414}
+
+footer{margin-top:64px;padding-top:28px;border-top:1px solid #e8e2d5;font-size:.8rem;color:#8a8680;text-align:center;line-height:1.6}footer a{color:#4a7bb8;text-decoration:none}footer a:hover{text-decoration:underline}
+
+.method-box{margin-top:14px;padding:18px 24px;background:#f5f1e6;border-radius:10px;font-size:.86rem;color:#555047;line-height:1.6;border-left:3px solid #c9c0ad}.method-box strong{color:#17161a}
+
+/* Table inventory */
+.tbl-inventory{width:100%;border-collapse:collapse;font-size:.84rem;margin-bottom:16px;background:#fff;border:1px solid #e8e2d5;border-radius:10px;overflow:hidden}
+.tbl-inventory th{background:#faf7ef;color:#17161a;font-weight:700;padding:12px 14px;text-align:left;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid #e8e2d5}
+.tbl-inventory td{padding:11px 14px;border-bottom:1px solid #f0ece2;color:#3a3630;vertical-align:top}
+.tbl-inventory tr:last-child td{border-bottom:none}
+.tbl-inventory td code{font-family:"SF Mono","Menlo","Consolas",monospace;font-size:.78rem;color:#b8372a;background:#fef6e1;padding:2px 6px;border-radius:3px}
+.tbl-inventory td a{color:#4a7bb8;text-decoration:none}
+.tbl-inventory td a:hover{text-decoration:underline}
+
+/* ===== page-specific additions ===== */
+/* Survivor / testimony quote cards */
+.quote-card{background:#fff;border:1px solid #e8e2d5;border-left:4px solid #5e2a3b;border-radius:0 10px 10px 0;padding:22px 26px;margin:14px 0}
+.quote-card .qc-text{font-size:1.02rem;line-height:1.62;color:#2a2620;font-style:italic}
+.quote-card .qc-text::before{content:"\201C";color:#5e2a3b;font-weight:700}
+.quote-card .qc-text::after{content:"\201D";color:#5e2a3b;font-weight:700}
+.quote-card .qc-attrib{font-size:.8rem;color:#8a8680;margin-top:12px;padding-top:10px;border-top:1px dashed #e8e2d5;letter-spacing:.01em}.quote-card .qc-attrib strong{color:#17161a;font-weight:700}
+.qc-warn{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7a5a1c;background:#fef6e1;border:1px solid #e8d599;border-radius:4px;padding:2px 8px;margin-left:8px;vertical-align:middle}
+
+/* Provenance tier grid */
+.tier-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0 16px}@media(max-width:760px){.tier-grid{grid-template-columns:1fr}}
+.tier-card{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:20px 22px;border-top:4px solid #c9c0ad}
+.tier-card.t-statutory{border-top-color:#2e7d4f}
+.tier-card.t-extrapolation{border-top-color:#b8372a}
+.tier-card.t-name{border-top-color:#d4a03a}
+.tier-card.t-contested{border-top-color:#8a8680}
+.tier-card .tier-tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;padding:3px 9px;border-radius:4px}
+.tier-card.t-statutory .tier-tag{color:#1f5f3c;background:#e8f4ec}
+.tier-card.t-extrapolation .tier-tag{color:#8a241a;background:#fbe9e6}
+.tier-card.t-name .tier-tag{color:#7a5a1c;background:#fef6e1}
+.tier-card.t-contested .tier-tag{color:#555047;background:#f0ece2}
+.tier-card h3{font-size:.96rem;font-weight:700;color:#17161a;margin-bottom:4px;letter-spacing:-.005em}
+.tier-card>p{font-size:.82rem;color:#6d675c;margin-bottom:10px;line-height:1.5}
+.tier-card ul{list-style:none;padding:0;margin:0}
+.tier-card li{font-size:.85rem;color:#3a3630;line-height:1.5;padding:8px 0;border-top:1px solid #f0ece2}
+.tier-card li:first-child{border-top:none}
+.tier-card li strong{color:#17161a}
+.tier-card .tier-pg{color:#8a8680;font-size:.76rem;white-space:nowrap}
+
+/* Disambiguation table treatment (pairs with .tbl-inventory) */
+.disambig{margin:18px 0 16px}
+.disambig .tbl-inventory td:first-child{font-weight:600;color:#17161a;background:#faf7ef;width:150px}
+.disambig .tbl-inventory .col-official{color:#1f5f3c}
+.disambig .tbl-inventory .col-report{color:#8a241a}
+
+/* Open questions (closing) */
+.open-questions{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:26px 30px;margin-bottom:16px}
+.open-questions ul{list-style:none;padding:0;margin:0}
+.open-questions li{padding:12px 0 12px 28px;border-top:1px solid #f0ece2;font-size:.92rem;color:#3a3630;line-height:1.6;position:relative}.open-questions li:first-child{border-top:none;padding-top:0}
+.open-questions li::before{content:"?";position:absolute;left:0;top:12px;width:18px;height:18px;background:#e0893a;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700}.open-questions li:first-child::before{top:0}
+.open-questions li strong{color:#17161a}
+
+/* Top navigation */
+.top-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid #e8e2d5}
+.top-nav .nav-tab{display:inline-flex;align-items:center;padding:8px 16px;font-size:.84rem;font-weight:600;color:#6d675c;text-decoration:none;border-radius:6px;letter-spacing:.01em;transition:background .15s,color .15s,border-color .15s;border:1px solid transparent}
+.top-nav .nav-tab:hover{background:#f5f1e6;color:#17161a}
+.top-nav .nav-tab.active{background:#17161a;color:#fff}
+.top-nav .nav-tab.active:hover{background:#17161a;color:#fff}
+@media(max-width:600px){.top-nav .nav-tab{font-size:.78rem;padding:7px 12px}}
+</style>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav"><a href="nuance-2026.html" class="nav-tab">Nuance Hub</a><a href="unity-and-diversity.html" class="nav-tab">Unity &amp; Diversity</a><a href="fault-lines/index.html" class="nav-tab">Fault Lines</a><a href="denmark-data.html" class="nav-tab">Denmark · Honest Data</a><a href="grooming-gangs.html" class="nav-tab active">UK Grooming Gangs · Cross-Examined</a></nav>
+
+<div class="breadcrumb"><a href="nuance-2026.html">Nuance Is Not a Dirty Word</a><span class="sep">›</span><span>UK Grooming Gangs — the report, cross-examined</span></div>
+
+<header>
+  <span class="eyebrow">Empirical case · Cross-examination</span>
+  <h1>Grooming Gangs — the report, cross-examined / グルーミング・ギャング — 検証</h1>
+  <p class="subtitle">In June 2026 a privately-funded, non-statutory report — <em>The Rape Gang Inquiry Report</em>, chaired by Rupert Lowe MP — put a number on one of the most disfiguring failures in modern British public life: the organised rape and trafficking of girls, overwhelmingly white and working-class, across scores of English towns. It is not the official statutory inquiry. It mixes verified findings with extrapolations and a contested theory of cause. This page does what the site exists to do: present the report's case in full, then cross-examine it — on the numbers, and on what it claims those numbers mean for religion, culture, and integration.</p>
+  <div class="status-row"><span class="status-badge">empirical case · cross-examined · Phase 1</span><span>2026-06-17</span></div>
+</header>
+
+<div class="one-sentence">
+  <strong>The crimes are real, the cover-up is documented, and the over-representation is not an invention — and the same report inflates its headline count by extrapolation and collapses "Pakistani," "Asian," and "Muslim" into a single accusing noun. <em>Both of those are true at once. Refusing to hold them together is exactly the failure — in both directions — that let this happen.</em></strong>
+</div>
+
+<!-- ==== SECTION 1: what-this-is ==== -->
+<h2 class="section-title" id="what-this-is">What this document actually is</h2>
+<p class="section-sub">Two different things share the name "grooming gangs inquiry." Only one of them is the government's. This page is about the other one.</p>
+
+<p class="one-sentence">This page cross-examines <em>The Rape Gang Inquiry Report</em> — a privately crowdfunded, non-statutory document chaired by Rupert Lowe MP — and <em>not</em> the official statutory inquiry, which had not reported at the time of writing.</p>
+
+<div class="disambig">
+<table class="tbl-inventory">
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Official statutory inquiry</th>
+<th>The Rape Gang Inquiry Report</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chair</td>
+<td class="col-official">Baroness Anne Longfield CBE (Children's Commissioner for England, 2015–2021)</td>
+<td class="col-report">Rupert Lowe MP</td>
+</tr>
+<tr>
+<td>Statutory status</td>
+<td class="col-official">Full statutory powers under the Inquiries Act 2005 (can compel evidence)</td>
+<td class="col-report">"the Inquiry <code>lacked statutory powers</code>" (report, p.6)</td>
+</tr>
+<tr>
+<td>Funding</td>
+<td class="col-official">£65 million, government-funded</td>
+<td class="col-report">Privately crowdfunded — "over 20,000 British patriots" (report, p.3)</td>
+</tr>
+<tr>
+<td>Announced / released</td>
+<td class="col-official">Announced 9 December 2025</td>
+<td class="col-report">Released June 2026</td>
+</tr>
+<tr>
+<td>Status at time of writing</td>
+<td class="col-official">Formally commenced 13 April 2026; time-limited to ~3 years (reports ≈2029)</td>
+<td class="col-report">Published — this is the document examined here</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>The two bodies are easily conflated and must not be. The official <strong>Independent Inquiry into Grooming Gangs</strong>, chaired by Baroness Anne Longfield, was set up with statutory powers and a budget of £65 million after Baroness Casey's June 2025 <em>National Audit on Group-based Child Sexual Exploitation and Abuse</em> recommended one. It was announced on 9 December 2025 and formally commenced on 13 April 2026; at the time of writing it had begun work but <strong>had not reported</strong>. The document examined on this page is the other one: <em>The Rape Gang Inquiry Report</em>, led by Rupert Lowe MP, survivor-led and funded by around 20,000 public donors rather than the state. It is serious campaigning work — it gathered testimony the official process had not yet reached — but it is <strong>not</strong> the government inquiry, and it does not claim to be: it states plainly that "the Inquiry lacked statutory powers" (report, p.6).</p>
+
+<p>A note on the words. The report deliberately calls them <strong>rape gangs</strong>, not "grooming gangs," to refuse a euphemism it regards as softening the crime. That instinct runs parallel to Baroness Casey's June 2025 audit, which stressed that the victims were children being raped — not "wayward teenagers" — and that minimising language had failed them. This page uses <em>grooming gangs</em> as the term most readers will recognise, while preserving the report's own wording, "rape gang," wherever it is quoted. The choice of label is itself part of the argument, and is treated as such rather than silently smoothed over.</p>
+
+<div class="method-box">
+<p>The method on this page: present the report's case <strong>uncensored</strong> — its figures, its testimony, its conclusions in its own words — and then cross-examine it on two fronts: <strong>the numbers</strong> (how each headline figure was reached, and what it can and cannot bear) and <strong>the cause</strong> (what the report says drives the pattern, and where its own caveats pull against its strongest claims). Throughout, claims are anchored to the official record — Casey, Jay, Telford, ONS, Hansard — and <strong>every contested figure is attributed</strong>, never stated as established fact. Where the report folds "Pakistani," "Asian," and "Muslim" into one accusing noun, those categories are kept distinct — a conflation the report itself flags (p.108).</p>
+</div>
+
+<!-- ==== SECTION 2: the-case ==== -->
+<h2 class="section-title" id="the-case">The report's case, uncensored</h2>
+<p class="section-sub">This section states the report's argument in its own terms, as forcefully as the report states it. Nothing here is rebutted; the objections, caveats, and cross-examination come in the sections that follow.</p>
+
+<div class="headline-row">
+  <div class="headline-cell">
+    <div class="headline-num">250,000</div>
+    <div class="headline-label">white girls "at the very least," the report claims, subjected to repeated rape and trafficking over decades (report pp.7, 113)</div>
+  </div>
+  <div class="headline-cell">
+    <div class="headline-num">~87–95%</div>
+    <div class="headline-label">share the report attributes to Muslim perpetrators — ~87% bore "distinctively Muslim names," ~95% per its cited imam Dr Taj Hargey (report pp.7, 114)</div>
+  </div>
+  <div class="headline-cell">
+    <div class="headline-num">149</div>
+    <div class="headline-label">local-authority districts where the report says the crimes occurred — "close to 40% of all such districts" in the UK (report pp.8, 13, 14)</div>
+  </div>
+  <div class="headline-cell">
+    <div class="headline-num">1,400</div>
+    <div class="headline-label">girls abused in Rotherham 1997–2013, per the statutory Jay Report, which the report scales nationally (report p.12)</div>
+  </div>
+</div>
+
+<p class="one-sentence">The report's thesis is that an organised, multi-decade pattern of predominantly Pakistani-Muslim gangs targeted overwhelmingly white, working-class girls — and that <em>the British state looked away because it feared being called racist</em>.</p>
+
+<p>The report describes "the systematic targeting of vulnerable girls, overwhelmingly White British, by predominantly Muslim Pakistani gangs across towns and cities throughout the United Kingdom" (report p.7). It frames the crimes as neither isolated nor recent: "a coordinated, nationwide pattern of organised child sexual exploitation that repeated in town after town, city after city, from the far north to the south coast" (report p.12), with the first "specifically Pakistani" case dated to 1955 and the pattern escalating "especially following Tony Blair's 1997 victory and the start of orchestrated mass immigration" (report p.11). The method, it says, was consistent: girls "as young as 11" befriended, plied with alcohol and drugs, then "collected from school gates, care homes, and streets in taxis" and "raped repeatedly by groups of men, tortured, filmed for blackmail, and told they were 'white trash' or 'kuffar' who merited punishment" (report p.8).</p>
+
+<p>On scale, the report is explicit that its central figure is an extrapolation rather than a count, while insisting the true number is higher: "It has been previously established that, at the very least, 250,000 young white girls have been subjected to repeated rape, gang rape, trafficking, torture, pregnancy, forced Islamic conversion, and lifelong trauma. The true number is probably higher" (report p.7). The figure originates with Lord Pearson of Rannoch, whom the report quotes (report p.12), and the report argues it now "has greater support" once "the Rotherham/Telford scale is applied across the documented national distribution, and multiplied by the extreme under-reporting factor accepted by official reviews" (report p.13).</p>
+
+<p>On the ethnic and religious profile, the report says "around 87% of those convicted in these group-based child sexual exploitation ('CSE') cases bore distinctively Muslim names," and reports that "Dr. Taj Hargey, an imam with the Oxford Islamic Congregation, believes the true proportion of gang members who are Muslims to be around 95%" — "predominantly of Pakistani heritage, although smaller groups from Somali, Iranian, Syrian, Turkish, and other Muslim origins were also involved" (report p.7). The report sets this against population shares it gives as "Muslims approximately 6.5% and Pakistanis around 2.1%" (report p.114).</p>
+
+<p>The report's most contested move is its causal claim: that the pattern is driven not only by clannish immigrant sub-cultures but by religion. It argues "the possibility of an Islamic influence on these crimes cannot be dismissed. The available data strongly points toward it as a hypothesis that merits serious examination" (report p.117). Its model is a list of "at least eight theological aspects of Islam [that] may contribute to cultural patterns that enable or normalise the sexual abuse of non-Muslim girls": "(1) the doctrine of Muslim superiority, (2) the principle of loyalty and disavowal (<em>al-walāʾ wa-l-barāʾ</em>), (3) male dominance over women, (4) enforced seclusion and veiling of women, (5) forced marriage combined with the absence of a fixed minimum age of consent, (6) the perception of female sexuality as inherently dangerous or <em>fitna</em>, (7) the historical sharia institution of slavery, (8) and the system of <em>dhimmitude</em>" (report p.118). This eight-aspect model rests on the analysis of the report's expert contributor Dr Mark Durie and on the survivor testimony of Dr Ella Hill (report pp.108–110, 118–119), and the report itself carries the caveat that "the impact of any religion on individual behaviour is rarely direct and unmediated; it is heavily filtered through culture" (report p.117).</p>
+
+<div class="quote-card">
+  <p class="qc-text">Hundreds. Hundreds and hundreds and hundreds.</p>
+  <p class="qc-attrib"><strong>"Chloe"</strong>, survivor testimony to the Rape Gang Inquiry, p.29 — answering how many men abused her</p>
+</div>
+
+<div class="quote-card">
+  <p class="qc-text">98% of them were Pakistani Muslim. If not, they were Iraqi Muslim or Kurdish.</p>
+  <p class="qc-attrib"><strong>"Michelle"</strong>, survivor testimony to the Rape Gang Inquiry, p.35 — describing her abusers</p>
+  <span class="qc-warn">Michelle states she was "raped by between six and seven hundred different men over the course of three years"; the report relays her estimate as testimony, not as a verified count.</span>
+</div>
+
+<div class="quote-card">
+  <p class="qc-text">I was beaten regularly. I was drugged, filmed being raped, and the footage was distributed. I sustained broken bones, facial injuries and severe trauma. I was subjected to racial abuse in the community and blamed by families of perpetrators.</p>
+  <p class="qc-attrib"><strong>"Fiona"</strong>, survivor testimony to the Rape Gang Inquiry, p.33</p>
+</div>
+
+<div class="quote-card">
+  <p class="qc-text">Before they raped me, they would chant 'Bismillah Hir Rahman Nir Rahim'. <span style="opacity:.7">(Translation: In the name of Allah, the Most Gracious and the Most Merciful.)</span></p>
+  <p class="qc-attrib"><strong>"Taylor"</strong>, survivor testimony to the Rape Gang Inquiry, p.58</p>
+</div>
+
+<div class="quote-card">
+  <p class="qc-text">I was told that Muslim girls are good and pure, and stay virgins until marriage, but all white girls are slags, and they all sleep with hundreds of people. I was told white girls are trash. They are all whores… They don't obey Allah, so they deserve to be punished.</p>
+  <p class="qc-attrib"><strong>Dr Ella Hill</strong>, Rotherham survivor, statement incorporated into Associate Professor Lisa Oakley's evidence to the 2022 Jay Inquiry, quoted in the Rape Gang Inquiry report, pp.109–110</p>
+  <span class="qc-warn">Dr Hill's testimony is the experiential basis for the report's "Grooming Gang Ideology" and its eight-aspect causal model; the report presents it as one survivor's account of what her abusers told her.</span>
+</div>
+
+<!-- ==== SECTION 3: the-figures ==== -->
+<h2 class="section-title" id="the-figures">The figures, sorted by what they rest on</h2>
+<p class="section-sub">The honest first move is not to repeat a number but to rank it — to ask, of each figure the report carries, what kind of evidence stands behind it. Sorted this way, the numbers fall into four tiers, and the sorting is itself most of the argument.</p>
+
+<p class="one-sentence">A figure is only as strong as the record it rests on — and these rest on very different records.</p>
+
+<div class="tier-grid">
+
+  <div class="tier-card t-statutory">
+    <span class="tier-tag">Statutory / official record</span>
+    <h3>Counted by an inquiry or a national statistics body</h3>
+    <p>Numbers produced by a named statutory inquiry, audit, or the ONS — the firmest ground in the report.</p>
+    <ul>
+      <li>Rotherham: "at least 1,400 girls" abused 1997–2013 (Jay Report, 2014). <span class="tier-pg">report p.12</span></li>
+      <li>Telford: "more than 1,000 children (predominantly girls) over decades" (Telford Inquiry, 2022). <span class="tier-pg">report p.12</span></li>
+      <li>Baroness Casey National Audit (June 2025): the report says the audit states the scale "remain[s] impossible to quantify precisely due to inconsistent data collection and historical suppression." <span class="tier-pg">report p.13</span></li>
+      <li>ONS recorded rape, England &amp; Wales: ~8,593 (2000) rising to "over 70,000" (year ending March 2025). <span class="tier-pg">report pp.114–115</span></li>
+    </ul>
+  </div>
+
+  <div class="tier-card t-extrapolation">
+    <span class="tier-tag">Extrapolation</span>
+    <h3>Scaled up from local inquiries — not a count</h3>
+    <p>The headline number is a projection. The report says so in plain words.</p>
+    <ul>
+      <li>250,000 "young white girls" — originates from Lord Pearson of Rannoch, House of Lords, 14 May 2019, who himself called it "probably an underestimate." <span class="tier-pg">report pp.12–13</span></li>
+      <li>The report's own caveat: "The 250,000 figure is not a precise count. No such count exists because the British state has failed to record it. But we may regard it as a conservative estimate…" <span class="tier-pg">report p.113</span></li>
+    </ul>
+  </div>
+
+  <div class="tier-card t-name">
+    <span class="tier-tag">Name-analysis estimate</span>
+    <h3>Inferred from convicts' names, not recorded ethnicity</h3>
+    <p>These shares come from researchers reading names off published court records — religion <em>inferred</em>, not collected.</p>
+    <ul>
+      <li>~87% of grooming-gang convictions "bore distinctively Muslim names" (Peter McLoughlin, <em>Easy Meat</em>, 2016; convictions 1997–2018). <span class="tier-pg">report pp.106, 114</span></li>
+      <li>Conclusions restatement: "approximately 90% of those convicted… bore distinctively Muslim names – a stark contrast to the roughly 6% Muslim proportion." <span class="tier-pg">report p.154</span></li>
+      <li>Quilliam Foundation analysis: 264 convictions (2005–2017), "84% (222 offenders) were South Asian… Only 7% were white and 8% black." <span class="tier-pg">report p.114</span></li>
+    </ul>
+  </div>
+
+  <div class="tier-card t-contested">
+    <span class="tier-tag">Single-expert / contested causal</span>
+    <h3>One named source, or a disputed cause-and-effect model</h3>
+    <p>Numbers and claims resting on a single commentator's estimate, or on a contested theory of why the abuse happened.</p>
+    <ul>
+      <li>~95% of gang members Muslim — the personal estimate of Dr. Taj Hargey, imam of the Oxford Islamic Congregation; the report calls it "additional context from expert commentary." <span class="tier-pg">report p.114</span></li>
+      <li>"At least eight theological aspects of Islam <em>may</em> contribute" — a causal model built on Dr. Mark Durie's and Dr. Ella Hill's analyses, hedged by the report itself ("a hypothesis that merits serious examination"). <span class="tier-pg">report pp.117–118</span></li>
+      <li>13,000 "suspected rape gang members and paedophiles… let off with warning letters" — prefaced "it has been reported," sourced to a single <em>Daily Express</em> piece (22 Feb 2026). <span class="tier-pg">report p.147</span></li>
+    </ul>
+  </div>
+
+</div>
+
+<table class="tbl-inventory">
+  <thead>
+    <tr><th>Figure</th><th>What it measures</th><th>Rests on</th><th>Source</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>1,400</code></td><td>Children sexually exploited in Rotherham, 1997–2013</td><td>Statutory inquiry count</td><td>Jay Report 2014 (report p.12)</td></tr>
+    <tr><td><code>1,000+</code></td><td>Children exploited in Telford "over decades"</td><td>Statutory inquiry count</td><td>Telford Inquiry 2022 (report p.12)</td></tr>
+    <tr><td><code>~8,593</code></td><td>Recorded rape offences, England &amp; Wales, year 2000</td><td>Police recorded crime</td><td>ONS via report p.114</td></tr>
+    <tr><td><code>&gt;70,000</code></td><td>Recorded rape offences, year ending March 2025</td><td>Police recorded crime</td><td>ONS via report pp.114–115</td></tr>
+    <tr><td><code>250,000</code></td><td>Claimed total of "young white girls" raped this century</td><td>National extrapolation from local inquiries — "not a precise count"</td><td>Lord Pearson, House of Lords 14 May 2019 (report pp.12–13, 113)</td></tr>
+    <tr><td><code>~19,000</code></td><td>Children identified as CSE victims in England, one year</td><td>Press report of official figure</td><td><em>The Independent</em> via report p.13</td></tr>
+    <tr><td><code>~87%</code></td><td>Share of convicts with "distinctively Muslim names"</td><td>Name-analysis of court records</td><td>McLoughlin, <em>Easy Meat</em> (report pp.106, 114)</td></tr>
+    <tr><td><code>84%</code></td><td>Share of 264 convicts who were South Asian, 2005–2017</td><td>Analysis of conviction list</td><td>Quilliam 2017 (report p.114)</td></tr>
+    <tr><td><code>~95%</code></td><td>Estimated share of gang members who are Muslim</td><td>Single expert's estimate</td><td>Dr. Taj Hargey (report p.114)</td></tr>
+    <tr><td><code>13,000</code></td><td>Suspects allegedly "let off with warning letters"</td><td>"It has been reported" — single newspaper</td><td><em>Daily Express</em> 22 Feb 2026, via report p.147</td></tr>
+  </tbody>
+</table>
+
+<!-- ==== SECTION 4: cross-exam-numbers ==== -->
+<h2 class="section-title" id="cross-exam-numbers">Cross-examination Ⅰ — the numbers</h2>
+<p class="section-sub">Quantification, both blades. The corrective for a bad number is a better number — not a banned question, and not a banned answer.</p>
+
+<div class="cross-exam">
+  <h3>Where the numbers strain — both directions</h3>
+  <p class="ce-lead">A figure can be inflated and the thing it gestures at can still be real. Inflation and denial are not opposites that cancel; they are two ways of refusing to count carefully. Both fail under scrutiny, and they fail differently.</p>
+
+  <div class="ce-side">Where the report's quantification strains</div>
+  <div class="strain-list">
+    <div class="strain">
+      <p class="strain-claim">The headline <strong>250,000</strong> is presented as the scale of the harm — "the 250,000 threshold as a bare minimum" (report, p.13).</p>
+      <p class="strain-expose">It is an <em>extrapolation</em>, not a count: Lord Pearson's 2019 question that proposed scaling Rotherham, Telford and Oxford "nationally" (report, p.12). His own gloss — the number "is probably an underestimate" (report, p.12) — is rhetoric, not a confidence interval; you cannot tighten an estimate by asserting it is too low. The report itself concedes the point: "The 250,000 figure is not a precise count. No such count exists" (report, p.113). A number that scales one area's worst ratio across the country, then waves at under-reporting, is a hypothesis about magnitude, not a measurement of it.</p>
+    </div>
+    <div class="strain">
+      <p class="strain-claim">"Approximately 87% of those convicted bore distinctively Muslim names" (report, p.106), read as the share of offenders who were Muslim, and religiously motivated.</p>
+      <p class="strain-expose">Three inferences are stacked and each leaks. A <em>name</em> is not a creed: name-analysis infers religion from spelling. Being Muslim is not being <em>religiously motivated</em>: the report's own causal section concedes religion's effect "is rarely direct and unmediated; it is heavily filtered through culture" (report, p.117). And the report flags the very conflation it then leans on — "Asian", Pakistani and Muslim are not interchangeable, and it warns the broad "Asian" label "can be misleading" (report, p.108). Keep the three distinct and the 87% says less than it appears to.</p>
+    </div>
+    <div class="strain">
+      <p class="strain-claim">Conviction data — the Quilliam set of <strong>264</strong> convictions, "84% (222 offenders) … South Asian" (report, p.114) — is read as the ethnic profile of the offender population.</p>
+      <p class="strain-expose">Convictions are not offenders. The report states plainly that those convicted are "only … a small proportion of the men who carried out the crimes" (report, p.106). Which cases reach court is itself shaped by what police chose to investigate — and the same report documents forces that looked away precisely along ethnic lines. A sample selected by a <em>biased filter</em> cannot be treated as a random draw from the true population; it tells you about the convicted, not the uncounted.</p>
+    </div>
+    <div class="strain">
+      <p class="strain-claim">The upper estimate — "<strong>95%</strong> of those involved are of Muslim faith" (report, p.114) — sits beside the 87% as if corroborating it.</p>
+      <p class="strain-expose">It is one man's figure: Dr Taj Hargey, an Oxford imam, "estimating that 95%" (report, p.114). An <em>estimate</em> is not a dataset; a second opinion that points the same way is still a second opinion, not a second measurement. Two impressions aligned do not become evidence by addition.</p>
+    </div>
+  </div>
+
+  <div class="ce-side">Where the denial / "it's nothing" position strains</div>
+  <div class="strain-list">
+    <div class="strain">
+      <p class="strain-claim">"There are just as many white offenders" — so the ethnic pattern is a myth.</p>
+      <p class="strain-expose">This is a <em>category error</em>: it answers a question about base rates in <strong>all</strong> child sexual abuse with a claim about <strong>organised, group-based, cross-town gangs</strong> — the specific phenomenon the statutory inquiries named. Jay found "at least 1,400 children" in one town (Rotherham, Jay 2014); Telford "more than 1,000" (Crowther 2022); the convicted-group analysis the report cites is "84% … South Asian, with the vast majority Pakistani Muslim" (report, p.114). That solo, opportunistic abuse is demographically broad does not unsay anything about the multi-offender networks — it changes the subject.</p>
+    </div>
+    <div class="strain">
+      <p class="strain-claim">"There is no reliable ethnicity data, so responsible people should say nothing."</p>
+      <p class="strain-expose">The gap was <em>engineered</em>, not given. Baroness Casey's national audit found the scale "impossible to quantify precisely due to inconsistent data collection and historical suppression" (report, p.13; Casey, June 2025) — suppression is an act. A call handler told a mother she "can't describe them as Asian men because that's racist" (report, p.30): that is data being refused at the point of entry. <strong>Refusing to look is not neutrality</strong>; it is a finding about institutions, and it cannot be the alibi for never knowing.</p>
+    </div>
+    <div class="strain">
+      <p class="strain-claim">"There is no clean denominator and the numerator is selection-biased, so any 'X times more likely' multiplier is meaningless — refuse the comparison."</p>
+      <p class="strain-expose">This is the <em>strongest</em> version, and it is right about precision: name-analysis numerators and patchy ethnicity recording mean no exact multiplier is defensible. But "no exact ratio" is not "no signal." Bound it generously — take only court-proven group convictions against the report's own population benchmark of "Muslims approximately 6.5% and Pakistanis around 2.1%" (report, p.114) — and the convicted-group share (84% South Asian; Quilliam, report p.114), with the named statutory inquiries' findings, still sits many times above population share, and would under any plausible correction. The honest output is a <em>range</em>, not a point — and a range whose floor is still a real over-representation. Refusing to state any number because you cannot state an exact one hands the question to whoever will assert one.</p>
+    </div>
+  </div>
+
+  <p class="one-sentence">The corrective for a bad number is <em>a better number</em> — not a banned question, and not a banned answer.</p>
+</div>
+
+<!-- ==== SECTION 5: cross-exam-religion ==== -->
+<h2 class="section-title" id="cross-exam-religion">Cross-examination Ⅱ — religion, culture, integration</h2>
+<p class="section-sub">The hardest case for this site's whole method. The report names Islam as a cause; the opposite reflex says religion is irrelevant, don't look. Both claims are put under maximum pressure here — against the report's own pages and the survivors' own words.</p>
+
+<div class="cross-exam">
+<h3>Not all, not none — applied</h3>
+<p class="ce-lead">The report's core framing is "the systematic targeting of vulnerable girls, overwhelmingly White British, by predominantly Muslim Pakistani gangs" <span class="tier-pg">(report, p.5)</span>. The site's title claim — <strong>not all, not none</strong> — has to survive contact with this. So we press it from both directions: first against the report's "Islam as cause" claim, then against the "religion is irrelevant" reflex. Neither walks away intact; one walks away truer.</p>
+
+<div class="ce-side">Where the report's "Islam as cause" claim strains</div>
+<div class="strain-list">
+<div class="strain">
+<p class="strain-claim">The report repeatedly treats "Asian," "Pakistani," and "Muslim" as one overlapping mass of perpetrators.</p>
+<p class="strain-expose">Its <em>own</em> data refutes the monolith. The report concedes the "Asian" label "can be misleading," because Britain's "non-Muslim Asian populations, such as Hindus and Sikhs from India, Buddhists from Japan, and Christians from the Philippines and Vietnam" have "with only very rare exceptions, had no involvement in these offences" and "more often appeared as victims than as perpetrators" <span class="tier-pg">(report, p.108)</span>. So the axis the report itself draws is <strong>not</strong> "Asian" and <strong>not</strong> race — it is far narrower than the words it keeps reaching for.</p>
+</div>
+<div class="strain">
+<p class="strain-claim">The report argues Islam itself drives the crimes — listing "at least eight theological aspects of Islam" as causes <span class="tier-pg">(report, p.118)</span>.</p>
+<p class="strain-expose">Yet the report hedges its <em>own</em> causal arrow. It admits "the possibility of an Islamic influence on these crimes cannot be dismissed" only as "a hypothesis that merits serious examination," and that "the impact of any religion on individual behaviour is rarely direct and unmediated; it is heavily filtered through culture" <span class="tier-pg">(report, p.117)</span>. It then concedes "the foundational system is tribal rather than purely religious," with "Islamic elements provide[ing] ideological justification" <span class="tier-pg">(report, p.133)</span>. Religion as <em>cause</em> is contested inside the report itself; what it actually evidences is an ideology operating within a clan culture, not a faith of two billion people.</p>
+</div>
+<div class="strain">
+<p class="strain-claim">The framing slides toward indicting Muslims as such.</p>
+<p class="strain-expose">But one of the report's own headline condemners is a <em>Muslim imam</em> — Dr. Taj Hargey of the Oxford Islamic Congregation, cited estimating that ~95% of those involved were of Muslim faith <span class="tier-pg">(report, p.114)</span>. The moderate, the witness for the prosecution, stands <strong>inside</strong> the same religion. That is the tell: perpetrators are a criminal subset, not a creed — and members of the creed are among those naming them.</p>
+</div>
+<div class="strain">
+<p class="strain-claim">"Predominantly Muslim" is allowed to bleed into "Muslims."</p>
+<p class="strain-expose">The report's own figures place the Muslim population at "approximately 6.5%" and Pakistanis at "around 2.1%" <span class="tier-pg">(report, p.114)</span> — roughly four million people. Collapsing four million into the perpetrators is precisely the <em>all</em> error this site exists to reject. Overrepresentation in a convicted subset is a real finding; it is not a verdict on everyone who shares the subset's religion.</p>
+</div>
+</div>
+
+<div class="ce-side">Where the "religion is irrelevant / don't look" position strains</div>
+<div class="strain-list">
+<div class="strain">
+<p class="strain-claim">The opposite reflex says culture and religion were nothing here — pattern-talk is just bigotry.</p>
+<p class="strain-expose">The report's Sikh contrast cuts against that. "The same networks targeted Sikh girls until Sikh communities mobilised collective male protection and forced the gangs to withdraw" — and "British girls were not permitted such a defence" <span class="tier-pg">(report, pp.106, 116)</span>. The gangs <em>recalculated</em> by community and by who could retaliate. That is not nothing; ideology and culture shaped target selection.</p>
+</div>
+<div class="strain">
+<p class="strain-claim">Survivors' accounts of religious framing during the abuse can be waved away as inflammatory.</p>
+<p class="strain-expose">Waving it away <strong>disbelieves the victims</strong>. Dr. Ella Hill testified she was told "all white girls are slags... They don't obey Allah, so they deserve to be punished" <span class="tier-pg">(report, pp.109–110)</span>; Taylor said "before they raped me, they would chant 'Bismillah Hir Rahman Nir Rahim'" <span class="tier-pg">(report, p.58)</span>; Jen reported "'English pig dogs' came up a lot" <span class="tier-pg">(report, p.86)</span>. A method that listens to survivors cannot edit the religious framing out of their own words.</p>
+</div>
+<div class="strain">
+<p class="strain-claim">Recording ethnicity or naming any cultural or religious axis is itself racist — so the only safe, anti-racist move is to deny the axis exists.</p>
+<p class="strain-expose">Presented as safety, it was catastrophic, and it shielded only abusers. A call handler told a mother reporting abuse by "Asian men": "You can't describe them as Asian men because that's racist. You should just be glad your child is being taught a different culture" <span class="tier-pg">(report, p.30)</span> — data refused at the point of entry. But the corrective is not to flip into indicting a religion of four million; it is the <em>base-rate</em> discipline this site runs on. Naming a real over-representation in a convicted subset is not a claim about the rate of offending <em>among British Muslims</em>, which is low — the overwhelming majority had no part in this. This site maps the real seams on <a href="fault-lines/04-gender-equality.html">gender equality</a>, <a href="fault-lines/14-family-law.html">family law</a>, and <a href="fault-lines/15-legal-pluralism.html">legal pluralism</a> — exactly where an <em>extremist</em> reading of culture and religion licenses contempt for outsider women. Deny the axis and you protect abusers; indict the whole and you slander millions. <strong>Name the extremist subset precisely</strong>: that single move is both blades at once.</p>
+</div>
+</div>
+
+<p class="one-sentence"><em>Not all</em> — most Muslims, and every other group lumped under "Asian," had no part in this, and the report's own pages say so; <em>not none</em> — the pattern, the ideology operating within the subset, and the decades-long cover-up were real, and the survivors said so.</p>
+</div>
+
+<!-- ==== SECTION 6: institutional-failure ==== -->
+<h2 class="section-title" id="institutional-failure">The institutional failure — where the record is hardest to dispute</h2>
+<p class="section-sub">This is the most corroborated part of the report. On the ethnic and religious figures the report strains; on the institutional failure it converges with the statutory record — the Jay Inquiry into Rotherham (2014), the Telford Inquiry (2022), and Baroness Casey's National Audit (June 2025) describe the same pattern of agencies that recorded the abuse and did nothing. Read the friction cards below as the report's charges, then weigh them against those official findings.</p>
+
+<p class="one-sentence">The children were not invisible to the state: <em>they were seen, recorded, and handed back.</em></p>
+
+<div class="friction-grid">
+
+<div class="friction-card uk">
+<span class="fr-flag">POLICE</span>
+<h3>Reports ignored, victims criminalised</h3>
+<p>The report charges that forces ignored repeated reports, arrested the children for "drunk and disorderly behaviour that followed assaults by the gang members," called them "prostitutes," and charged some with perverting the course of justice. In one case police accepted a gang member as a girl's "appropriate adult" at the station so she could withdraw her statement, and the investigation was dropped (report, p.34). The appendix names "two-tier policing" that "operated openly" — forces that "surrendered to threats of disorder from certain communities, fabricated offences against critics, and allowed officers linked to the gangs to retire with pensions" (report, p.203).</p>
+<p class="fr-source">Report, pp.34, 203. The criminalisation of victims is corroborated by the Jay Inquiry (Rotherham, 2014).</p>
+</div>
+
+<div class="friction-card uk">
+<span class="fr-flag">SOCIAL CARE</span>
+<h3>Children's homes as "trafficking hubs"</h3>
+<p>The report states that "children's homes became trafficking hubs where staff failed to stop older men collecting girls at night," that local authorities "returned children to unsafe homes and placements despite repeated disclosures of grooming," and that care staff handed children to taxi drivers for exploitation and "covered it up" (report, pp.207, 210). In one council's units a whistleblower's disclosure was followed by confirmation that "records had been destroyed (shredders purchased at units)" (report, p.208); in another case records were "concealed for nearly 40 years" (report, p.210).</p>
+<p class="fr-source">Report, pp.207–210. Care-system failure is the core finding of both the Jay and Telford inquiries.</p>
+</div>
+
+<div class="friction-card uk">
+<span class="fr-flag">NHS</span>
+<h3>Injuries recorded, then discharged to the abuser</h3>
+<p>The report charges that NHS staff "recorded the evidence, treated the symptoms, and discharged the children back into the hands of their abusers without triggering safeguarding, making referrals or providing trauma care," and that this "was not occasional oversight" but "consistent practice across multiple regions" (report, pp.205–206). A sexual-health service is described treating a 13-year-old for gonorrhoea and chlamydia while making "no child protection referral" (report, p.206).</p>
+<p class="fr-source">Report, pp.205–207. The "professional curiosity" failure echoes findings across the statutory inquiries.</p>
+</div>
+
+<div class="friction-card uk">
+<span class="fr-flag">CPS / JUSTICE</span>
+<h3>No single offence; sentences at the low end</h3>
+<p>The report argues there is "no single statutory offence that fully captures the phenomenon of organised sexual exploitation as a distinctly structured form of criminality" (report, p.139), so prosecutors rely on "a constellation of offences." It states that sentences "remained at the lower end of the scale, often 4–12 years for men convicted of raping dozens of children over years," and that racial aggravation "as far as available public records are concerned… have never once been invoked against anti-white rape gangs, either by prosecutors or judges" (report, p.140) — a contrast it draws with the aggravation cited against Darren Osborne in 2018.</p>
+<p class="fr-source">Report, pp.137–140; the Darren Osborne contrast at p.140. The "single offence" gap is a structural point, not a contested one.</p>
+</div>
+
+<div class="friction-card uk">
+<span class="fr-flag">POLITICS</span>
+<h3>Fear of "racism" and "community cohesion"</h3>
+<p>The report's cross-cutting cause is that "authorities at every level… feared being labelled 'racist' or 'Islamophobic' more than they feared failing the girls to whom they owed a duty of care" (report, p.135), and that judges and defence counsel cited "cultural sensitivity" to avoid damaging "community cohesion" — "the very phrase used in the Casey Review to explain why cases were shelved pre-2012" (report, p.141). The report goes further and assigns the Labour Party "primary responsibility for the longest and most deliberate cover-up," citing electoral dependence on "Pakistani Muslim communities" (report, p.142). <strong>That apportionment of blame is the report's own charge, not an established finding</strong> — read it as advocacy, distinct from the operational failures above.</p>
+<p class="fr-source">Report, pp.134–148. The "community cohesion" framing is corroborated by the Casey National Audit (June 2025), <a href="https://www.gov.uk/government/publications/national-audit-on-group-based-child-sexual-exploitation-and-abuse">gov.uk</a>; the party-political apportionment is not.</p>
+</div>
+
+</div>
+
+<p>The thread running through every card is a single instruction. When a mother rang to report her daughter missing and named a history of abuse by Asian men, the report records the call handler's reply: "You can't describe them as Asian men because that's racist. You should just be glad your child is being taught a different culture." (report, p.30). The aim was to protect "community cohesion" by refusing to name a pattern. The result was the opposite: a pattern left unnamed could not be policed, prosecuted, or stopped, and the children paid for the silence. That is the integration lesson buried in the file — not that naming an ethnic or religious pattern is costless, but that refusing to name it has a cost too, and here it was paid by the most vulnerable.</p>
+
+<p>Of everything in this report, the institutional-failure findings are the part that stands on the firmest ground. They do not rest on name-analysis, on a single expert's estimate, or on an extrapolation from three towns. They restate, in harsher language, what three official bodies have already documented: the Jay Inquiry's finding that 1,400 children were failed in Rotherham (1997–2013), the Telford Inquiry's finding of more than 1,000 over decades, and Baroness Casey's 2025 conclusion that authorities "shied away from examining ethnicity and culture" and that the data was suppressed. On the question of who the perpetrators were, the report and the official record diverge. On the question of how the state let it happen, they agree.</p>
+
+<!-- ==== SECTION 7: caveats ==== -->
+<h2 class="section-title" id="caveats">Caveats &amp; coverage</h2>
+<p class="section-sub">What this page does and does not claim. The boundaries of the source, stated plainly, so the reader can weigh every figure above against what the report itself admits.</p>
+
+<p class="one-sentence">This page cross-examines an advocacy report — it does not ratify it, and the document's own caveats travel with every number it produces.</p>
+
+<div class="caveat-list">
+
+  <div class="caveat-item">
+    <h3>1 &middot; An advocacy report, not a statutory inquiry</h3>
+    <p>The Rape Gang Inquiry was privately crowdfunded and "lacked statutory powers" — it could not compel testimony, summon documents, or place witnesses under oath (report, p.6). The introduction states that "Misguided political correctness and cultural sensitivities played no part in the proceedings" and that the report "sets out findings and makes clear recommendations for how the problem of rape gangs can be eradicated" (report, pp.5&ndash;6): this is an explicitly campaigning document, written to persuade, not a neutral fact-finding tribunal. Read it as the strongest case one side can make, then check that case against the official sources cited throughout.</p>
+  </div>
+
+  <div class="caveat-item">
+    <h3>2 &middot; Headline figures are estimates the report itself flags as imprecise</h3>
+    <p>The report concedes of its own central number: "The 250,000 figure is not a precise count. No such count exists because the British state has failed to record it. But we may regard it as a conservative estimate" (report, p.113). It is an extrapolation originating with Lord Pearson, not a count. The "~87%" and "~90%" perpetrator shares are <em>name-analysis</em> estimates (the ~90% restated in the report's own Conclusions, p.154); the "~95%" is a single expert's figure (Dr Taj Hargey). None is a head-count from court records. Every such figure on this page is attributed to its source and carried with that source's stated limits.</p>
+  </div>
+
+  <div class="caveat-item">
+    <h3>3 &middot; Some survivor testimony is extreme and unverified; the appendix redacts individuals</h3>
+    <p>The most harrowing first-person estimates — the survivor "Michelle's" account of being "raped by between six and seven hundred different men" and her estimate that "98%&hellip; Pakistani Muslim" (report, pp.34&ndash;35) — are recollections of trauma, presented by the report as testimony, not as corroborated counts. Appendix III ("Institutional Failures") names institutions in full — West Midlands Police, Greater Manchester Police, West Yorkshire Police, Merseyside Police, Police Scotland, the Metropolitan Police, and others — but redacts the names of nearly all individual officers and parties behind black bars (report, pp.203&ndash;205). Specific allegations against named individuals therefore cannot be independently checked from the document alone.</p>
+  </div>
+
+  <div class="caveat-item">
+    <h3>4 &middot; The "eight theological aspects" model rests on two commentators, not consensus</h3>
+    <p>The report's causal claim — that "At least eight theological aspects of Islam may contribute to cultural patterns that enable or normalise the sexual abuse of non-Muslim girls" (report, p.118) — rests on the report's own reading of Islamic theology, drawing on the analysis of Dr Mark Durie (cited from <em>Christian Concern</em>, report p.112) and the testimony of Dr Ella Hill (report, pp.108&ndash;110). This is a contested interpretive framework advanced through two named commentators, <strong>not</strong> peer-reviewed scholarly consensus. The report's own hedge travels with it: religion's effect on behaviour "is rarely direct and unmediated; it is heavily filtered through culture" (report, p.117).</p>
+  </div>
+
+  <div class="caveat-item">
+    <h3>5 &middot; The official statutory inquiry has not reported</h3>
+    <p>The separate, statutory <strong>Independent Inquiry into Grooming Gangs</strong>, chaired by Baroness Anne Longfield and announced 9&nbsp;December&nbsp;2025 with a roughly &pound;65m budget and full statutory powers, is time-limited to about three years and is not expected to conclude until around 2029. It may confirm, revise, or contradict the figures on this page. Until it reports, the strongest <em>official</em> baseline remains Baroness Casey's National Audit (June&nbsp;2025), which the report renders as concluding that the scale, nature, and characteristics of group-based child sexual exploitation "remain impossible to quantify precisely" because of inconsistent data collection and historical suppression (report, p.13).</p>
+  </div>
+
+  <div class="caveat-item">
+    <h3>6 &middot; Attribution is not endorsement</h3>
+    <p>This page reproduces the report's contested figures only as claims attributed to their sources, and keeps "Asian," "Pakistani," and "Muslim" distinct — a conflation the report itself warns against (report, p.108). It takes <em>no</em> position on the report's policy recommendations: deportation of foreign-national convicts, repeal or disapplication of the Human Rights Act, mandatory ethnicity/religion recording, or any other measure it proposes. Documenting what a document argues is not agreeing with it.</p>
+  </div>
+
+</div>
+
+<!-- ==== SECTION 8: sources ==== -->
+<h2 class="section-title" id="sources">Sources</h2>
+<p class="section-sub">Every citation on this page is testable. The page cross-examines one document — a non-statutory, privately funded report — against the official record. Below: the primary report, then the official audits, statutory inquiries, statistics, and the Hansard origin of the contested "250,000" figure. Where no permanent, resolving URL exists, none is invented; the link is simply omitted.</p>
+
+<div class="sources-list">
+
+  <div class="source-item">
+    <span class="src-type">Primary — the report under examination</span>
+    <p class="src-cite"><strong>The Rape Gang Inquiry Report</strong>, chaired by Rupert Lowe MP; survivor-led team under Sammy Woodhouse; panel of MPs Esther McVey, Nick Timothy and Carla Lockhart; expert contributor Dr. Mark Durie. <em>June 2026.</em> 219 pp.</p>
+    <p class="src-method">The document this entire page cross-examines. Cited throughout by the report's own printed page numbers, e.g. "(report, p.113)". Every figure and quote on this page was reopened against the source PDF to confirm exact wording and numbers.</p>
+    <p class="src-caveat"><strong>Caveat:</strong> <em>Non-statutory</em> and <em>privately crowdfunded</em> — "Although the Inquiry lacked statutory powers, the response was overwhelming" (report, p.6), funded by "over 20,000 British patriots" (report, p.3). It is <em>not</em> the official government inquiry and carries no powers to compel evidence. No permanent government-hosted publication URL exists; none is given here rather than link to an unstable page.</p>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Official audit</span>
+    <p class="src-cite">Baroness Louise Casey of Blackstock, <em>National Audit on Group-based Child Sexual Exploitation and Abuse</em>. Commissioned by the UK Government; published <strong>16 June 2025</strong>.</p>
+    <p class="src-method">The official audit the report leans on for corroboration (report, p.13). Found perpetrator ethnicity <em>poorly and inconsistently recorded</em> — missing in a majority of cases — making firm national conclusions about ethnicity impossible from existing data; called for mandatory ethnicity recording. Made a series of recommendations accepted by Government, including a national statutory inquiry.</p>
+    <div class="src-link"><a href="https://www.gov.uk/government/publications/national-audit-on-group-based-child-sexual-exploitation-and-abuse">gov.uk/government/publications/national-audit-on-group-based-child-sexual-exploitation-and-abuse</a></div>
+    <p class="src-caveat"><strong>Caveat:</strong> The audit's own conclusion — that scale, nature and characteristics "remain impossible to quantify precisely due to inconsistent data collection and historical suppression" — cuts both ways, and the report quotes it (report, p.13).</p>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Statutory inquiry</span>
+    <p class="src-cite">Professor Alexis Jay, <em>Independent Inquiry into Child Sexual Exploitation in Rotherham (1997–2013)</em>. Published <strong>26 August 2014</strong>.</p>
+    <p class="src-method">The statutory source of the "at least 1,400 girls" figure (the report restates it as "1,400 girls" abused 1997–2013, pp.12, 144). A formal, powers-backed inquiry — distinct in standing from the report on this page.</p>
+    <div class="src-link"><a href="https://www.bbc.co.uk/news/uk-england-south-yorkshire-28939089">bbc.co.uk/news/uk-england-south-yorkshire-28939089</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Statutory inquiry</span>
+    <p class="src-cite">Tom Crowther QC, <em>Telford Child Sexual Exploitation Independent Inquiry</em>. Reported <strong>12 July 2022</strong>.</p>
+    <p class="src-method">Source of the "more than 1,000 children" figure over decades, cited by the report (report, p.12). Independent and locally commissioned, with no single canonical gov.uk URL; a stable summary is linked below.</p>
+    <div class="src-link"><a href="https://www.itv.com/news/central/2022-07-12/what-is-the-telford-sexual-exploitation-independent-inquiry-who-is-tom-crowther">itv.com/news/central/2022-07-12/what-is-the-telford-sexual-exploitation-independent-inquiry-who-is-tom-crowther</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Official statistics</span>
+    <p class="src-cite">Office for National Statistics, <em>Sexual offences in England and Wales overview: year ending March 2025</em>. Published <strong>4 November 2025</strong>.</p>
+    <p class="src-method">The official source behind the report's "over 70,000" recorded-rapes claim (report, p.114). The report reads the long-run rise — from "approximately 8,593 in the year 2000" to "over 70,000" by the year ending March 2025, "a rise exceeding 800%" (report, pp.114–115) — as evidence of scale. For the exact recorded-offence figures and the recording-practice context, read the ONS bulletin directly before treating recorded-crime rises as a measure of underlying prevalence.</p>
+    <div class="src-link"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/sexualoffencesinenglandandwalesoverview/yearendingmarch2025">ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/sexualoffencesinenglandandwalesoverview/yearendingmarch2025</a></div>
+    <p class="src-caveat"><strong>Caveat:</strong> The report rounds to "over 70,000" and treats the long-run rise as scale (report, pp.114–115); the ONS attributes much of the recent increase to changed recording practice and new offences, not necessarily to more underlying crime. The report's own "8,593 (2000)" baseline predates major recording-rule changes, so the 800% comparison spans a definitional break.</p>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Official inquiry — the separate, statutory body</span>
+    <p class="src-cite"><em>Independent Inquiry into Grooming Gangs</em>, chaired by Baroness Anne Longfield. Announced <strong>9 December 2025</strong>; statutory; multi-year remit.</p>
+    <p class="src-method">The actual official, statutory inquiry — <em>not</em> the report on this page. Provided so readers can verify the two bodies are distinct: this one holds statutory powers; the report does not. The report characterises this inquiry as a "containment exercise" (report, p.145) — that characterisation is the report's own opinion, attributed as such, not a finding.</p>
+    <div class="src-link"><a href="https://www.gov.uk/government/speeches/independent-inquiry-into-grooming-gangs">gov.uk/government/speeches/independent-inquiry-into-grooming-gangs</a></div>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Hansard — origin of the "250,000" figure</span>
+    <p class="src-cite">House of Lords, Hansard Vol. 797, debate "Grooming Gangs," <strong>14 May 2019</strong>. <strong>Lord Pearson of Rannoch</strong>, asking whether national extrapolation of the Jay, Telford and Oxford reports implied "upwards of 250,000 young white girls raped in this century."</p>
+    <p class="src-method">The traceable origin of the report's headline "250,000" claim (report, pp.7, 12, 13, 113). This is Lord Pearson's <em>extrapolation</em>, which he himself called "probably an underestimate" — not an official count. The report concedes the figure "is not a precise count. No such count exists because the British state has failed to record it" (report, p.113). Cite it as the origin of the claim, never as established fact.</p>
+    <div class="src-link"><a href="https://hansard.parliament.uk/lords/2019-05-14/debates/349FA275-CB65-45C0-87C7-EE16D1FD1B0A/GroomingGangs">hansard.parliament.uk/lords/2019-05-14/debates/349FA275-CB65-45C0-87C7-EE16D1FD1B0A/GroomingGangs</a></div>
+    <p class="src-caveat"><strong>Caveat:</strong> The canonical Hansard URL resolves in a browser but returns 403 to automated fetchers; the record is corroborated at parallelparliament.co.uk. The figure is a contested extrapolation, not a statistic.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>Part of <a href="nuance-2026.html">Nuance Is Not a Dirty Word</a> — a study of integration, pluralism, and the moderate-vs-extremist distinction. See also <a href="unity-and-diversity.html">Unity &amp; Diversity</a>, the <a href="fault-lines/index.html">Fault Lines</a>, and <a href="denmark-data.html">Denmark · Honest Data</a>.</p>
+  <p>The official statutory <a href="https://www.gov.uk/government/speeches/independent-inquiry-into-grooming-gangs">Independent Inquiry into Grooming Gangs</a> (Baroness Anne Longfield, chair) is a separate body from the report examined here, and had not reported at the time of writing.</p>
+</footer>
+</div>
+</body>
+</html>

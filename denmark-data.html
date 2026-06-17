@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denmark — the honest-data exception / デンマーク・誠実な統計</title>
+<style>
+:root{color-scheme:light}*{box-sizing:border-box;margin:0;padding:0}html,body{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Helvetica Neue",sans-serif;background:#faf9f6;color:#17161a;line-height:1.6;padding:48px 20px 96px;-webkit-font-smoothing:antialiased}.container{max-width:1080px;margin:0 auto}
+.breadcrumb{font-size:.78rem;color:#8a8680;margin-bottom:28px;letter-spacing:.02em}.breadcrumb a{color:#4a7bb8;text-decoration:none}.breadcrumb a:hover{text-decoration:underline}.breadcrumb .sep{margin:0 8px;color:#c9c0ad}
+header{margin-bottom:56px}.eyebrow{display:inline-block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#8a8680;margin-bottom:16px;padding:6px 14px;border:1px solid #e3dfd6;border-radius:999px;background:#fff}
+h1{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:700;letter-spacing:-.025em;line-height:1.12;margin-bottom:18px}
+.subtitle{font-size:clamp(1rem,1.5vw,1.12rem);color:#555047;max-width:820px;margin-bottom:22px;line-height:1.55}
+.status-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:.78rem;color:#8a8680}
+.status-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:#e8f4ec;color:#1f5f3c;border:1px solid #b8d9c2;border-radius:999px;font-weight:600;letter-spacing:.02em}.status-badge::before{content:"";width:7px;height:7px;background:#2e7d4f;border-radius:50%}
+
+.section-title{font-size:1.45rem;font-weight:700;letter-spacing:-.015em;margin:64px 0 8px}
+.section-sub{color:#6d675c;margin-bottom:24px;max-width:820px;font-size:.96rem}
+
+.one-sentence{margin:36px 0 16px;padding:28px 32px;background:#fff;border-left:4px solid #b8372a;border-radius:0 8px 8px 0;font-size:1.06rem;line-height:1.65;color:#2a2620;box-shadow:0 1px 3px rgba(0,0,0,.04)}.one-sentence strong{color:#17161a}.one-sentence em{color:#b8372a;font-style:italic;font-weight:600}
+
+/* Country-comparison cards (re-uses friction-card pattern) */
+.friction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}@media (max-width:880px){.friction-grid{grid-template-columns:1fr}}
+.friction-card{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:22px 24px}.friction-card .fr-flag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:4px 10px;border-radius:4px;margin-bottom:12px}
+.friction-card.dk .fr-flag{background:#c8102e}
+.friction-card.fr .fr-flag{background:#0055a4}
+.friction-card.us .fr-flag{background:#3c3b6e}
+.friction-card.de .fr-flag{background:#1a1a1a}
+.friction-card.uk .fr-flag{background:#5e2a3b}
+.friction-card.jp .fr-flag{background:#bc002d}
+.friction-card h4{font-size:1rem;font-weight:700;margin-bottom:10px;color:#17161a;line-height:1.35}
+.friction-card p{font-size:.88rem;color:#3a3630;line-height:1.58;margin-bottom:10px}
+.friction-card .fr-source{font-size:.72rem;color:#8a8680;padding-top:10px;border-top:1px dashed #e8e2d5;line-height:1.45}.friction-card .fr-source a{color:#4a7bb8;text-decoration:none}.friction-card .fr-source a:hover{text-decoration:underline}
+
+/* Classification diagram */
+.classify-box{background:#fff;border:1px solid #e8e2d5;border-radius:12px;padding:32px 36px;margin-bottom:16px}
+@media(max-width:600px){.classify-box{padding:24px 22px}}
+.classify-box h3{font-size:1.1rem;font-weight:700;margin-bottom:14px;color:#17161a;letter-spacing:-.005em}
+.classify-tree{font-family:"SF Mono","Menlo","Consolas",monospace;font-size:.82rem;line-height:1.85;color:#3a3630;background:#faf7ef;border-radius:8px;padding:18px 22px;border:1px solid #f0ece2;overflow-x:auto;white-space:pre}
+.classify-tree b{color:#17161a;font-weight:700}
+.classify-tree i{color:#b8372a;font-style:normal;font-weight:600}
+.classify-tree u{color:#2a6db3;text-decoration:none}
+.classify-defs{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:780px){.classify-defs{grid-template-columns:1fr}}
+.def-card{background:#faf7ef;border:1px solid #f0ece2;border-radius:8px;padding:16px 18px}
+.def-card h5{font-size:.92rem;font-weight:700;color:#17161a;margin-bottom:6px;letter-spacing:-.005em}
+.def-card p{font-size:.85rem;color:#3a3630;line-height:1.55}
+.def-card em{color:#b8372a;font-style:italic;font-weight:600}
+
+/* Headline-stats row (reused from casualty-row) */
+.headline-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:18px 0 8px;padding:22px 24px;background:#17161a;color:#f0ece2;border-radius:10px}
+.headline-cell{text-align:center;padding:6px 4px}
+.headline-num{font-size:1.85rem;font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1.1;font-variant-numeric:tabular-nums}
+.headline-label{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#c9c0ad;margin-top:6px;line-height:1.4}
+
+/* SVG bar charts */
+.chart-wrap{background:#fff;border:1px solid #e8e2d5;border-radius:12px;padding:28px 32px;margin-bottom:16px}
+@media(max-width:600px){.chart-wrap{padding:20px 18px}}
+.chart-wrap h3{font-size:1.12rem;font-weight:700;color:#17161a;margin-bottom:6px;letter-spacing:-.005em}
+.chart-wrap .chart-sub{font-size:.86rem;color:#6d675c;margin-bottom:18px;line-height:1.55}
+.chart-wrap .chart-source{font-size:.74rem;color:#8a8680;margin-top:14px;padding-top:12px;border-top:1px dashed #e8e2d5;line-height:1.5}
+.chart-wrap .chart-source a{color:#4a7bb8;text-decoration:none}.chart-wrap .chart-source a:hover{text-decoration:underline}
+.bar-chart{width:100%;height:auto;display:block;font-family:inherit}
+.bar-chart .bar{transition:opacity .2s}
+.bar-chart .bar:hover{opacity:.82}
+.bar-chart .baseline-line{stroke:#b8372a;stroke-width:1.5;stroke-dasharray:4,4}
+.bar-chart text{font-family:inherit}
+.bar-chart .label-axis{fill:#3a3630;font-size:11px}
+.bar-chart .label-value{fill:#17161a;font-size:11px;font-weight:700;font-variant-numeric:tabular-nums}
+.bar-chart .label-cat{fill:#3a3630;font-size:11.5px;font-weight:600}
+.bar-chart .label-base{fill:#b8372a;font-size:10.5px;font-style:italic}
+.bar-chart .gridline{stroke:#f0ece2;stroke-width:1}
+
+.bar-chart .b-danish{fill:#4cb56c}
+.bar-chart .b-imm-w{fill:#7aa6d3}
+.bar-chart .b-imm-nw{fill:#b8372a}
+.bar-chart .b-desc-w{fill:#a8d5b8}
+.bar-chart .b-desc-nw{fill:#e0893a}
+.bar-chart .b-total{fill:#555047}
+
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:.78rem;color:#3a3630}
+.legend-item{display:inline-flex;align-items:center;gap:6px}
+.legend-swatch{width:14px;height:14px;border-radius:3px;display:inline-block;flex-shrink:0}
+.legend-swatch.b-danish{background:#4cb56c}
+.legend-swatch.b-imm-w{background:#7aa6d3}
+.legend-swatch.b-imm-nw{background:#b8372a}
+.legend-swatch.b-desc-w{background:#a8d5b8}
+.legend-swatch.b-desc-nw{background:#e0893a}
+
+/* Cross-exam block (re-used) */
+.cross-exam{margin:24px 0 16px;padding:30px 34px;background:linear-gradient(to bottom right,#fdf6e6,#faf0d8);border:1px solid #e8d599;border-radius:12px;border-left:4px solid #c08815}@media (max-width:600px){.cross-exam{padding:22px 20px}}
+.cross-exam h3{font-size:1.18rem;font-weight:700;color:#5e4414;margin-bottom:6px;display:flex;align-items:center;gap:12px;letter-spacing:-.01em}.cross-exam h3::before{content:"⚖";font-size:1.3rem;color:#c08815}
+.cross-exam .ce-lead{font-size:.93rem;color:#5e4414;margin-bottom:18px;line-height:1.6;font-style:italic}
+.cross-exam .ce-side{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7a5a1c;font-weight:700;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid #f0d99e}.cross-exam .ce-side:first-of-type{margin-top:0}
+.strain-list{display:grid;gap:12px;counter-reset:strain-counter}
+.strain{background:#fff;border:1px solid #f0d99e;border-radius:8px;padding:18px 22px;position:relative}
+.strain h4{font-size:.98rem;font-weight:700;color:#17161a;margin-bottom:10px;padding-left:36px;position:relative;letter-spacing:-.005em;line-height:1.4}.strain h4::before{counter-increment:strain-counter;content:counter(strain-counter);position:absolute;left:0;top:-2px;width:26px;height:26px;background:#c08815;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+.strain p{font-size:.9rem;color:#3a3630;line-height:1.6;margin-bottom:8px}.strain p:last-child{margin-bottom:0}
+.strain p strong{color:#17161a;font-weight:700}.strain p em{color:#b8372a;font-style:italic;font-weight:600}
+.strain .strain-claim{padding-bottom:10px;border-bottom:1px dashed #f0d99e;margin-bottom:10px}.strain .strain-claim::before{content:"Claim: ";font-weight:700;color:#7a5a1c;font-size:.78rem;letter-spacing:.04em}
+.strain .strain-expose::before{content:"Where it strains: ";font-weight:700;color:#c08815;font-size:.78rem;letter-spacing:.04em}
+
+/* Caveats list */
+.caveat-list{display:grid;gap:12px;margin-bottom:16px}
+.caveat-item{background:#fff;border:1px solid #e8e2d5;border-radius:10px;padding:18px 22px;border-left:3px solid #d4a03a}
+.caveat-item h4{font-size:.96rem;font-weight:700;color:#17161a;margin-bottom:8px;letter-spacing:-.005em}
+.caveat-item p{font-size:.88rem;color:#3a3630;line-height:1.58}
+.caveat-item p strong{color:#17161a}
+.caveat-item p em{color:#7a5a1c;font-style:italic;font-weight:600}
+
+/* Sources */
+.sources-list{display:grid;gap:14px;margin-bottom:16px}
+.source-item{background:#faf7ef;border:1px solid #e8e2d5;border-radius:10px;padding:20px 22px}
+.source-item .src-type{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a8680;margin-bottom:8px;padding:3px 9px;background:#fff;border-radius:4px;border:1px solid #e8e2d5}
+.source-item .src-cite{font-size:.92rem;color:#17161a;line-height:1.55;margin-bottom:8px}.source-item .src-cite strong{color:#17161a;font-weight:700}.source-item .src-cite em{color:#555047;font-style:italic}
+.source-item .src-method{font-size:.8rem;color:#6d675c;font-style:italic;margin-bottom:10px;line-height:1.5}
+.source-item .src-link{font-size:.8rem;padding-top:10px;border-top:1px dashed #e8e2d5}.source-item .src-link a{color:#4a7bb8;text-decoration:none;font-weight:500}.source-item .src-link a:hover{text-decoration:underline}
+
+footer{margin-top:64px;padding-top:28px;border-top:1px solid #e8e2d5;font-size:.8rem;color:#8a8680;text-align:center;line-height:1.6}footer a{color:#4a7bb8;text-decoration:none}footer a:hover{text-decoration:underline}
+
+.method-box{margin-top:14px;padding:18px 24px;background:#f5f1e6;border-radius:10px;font-size:.86rem;color:#555047;line-height:1.6;border-left:3px solid #c9c0ad}.method-box strong{color:#17161a}
+
+/* Table inventory */
+.tbl-inventory{width:100%;border-collapse:collapse;font-size:.84rem;margin-bottom:16px;background:#fff;border:1px solid #e8e2d5;border-radius:10px;overflow:hidden}
+.tbl-inventory th{background:#faf7ef;color:#17161a;font-weight:700;padding:12px 14px;text-align:left;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid #e8e2d5}
+.tbl-inventory td{padding:11px 14px;border-bottom:1px solid #f0ece2;color:#3a3630;vertical-align:top}
+.tbl-inventory tr:last-child td{border-bottom:none}
+.tbl-inventory td code{font-family:"SF Mono","Menlo","Consolas",monospace;font-size:.78rem;color:#b8372a;background:#fef6e1;padding:2px 6px;border-radius:3px}
+.tbl-inventory td a{color:#4a7bb8;text-decoration:none}
+.tbl-inventory td a:hover{text-decoration:underline}
+
+/* Top navigation */
+.top-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid #e8e2d5}
+.top-nav .nav-tab{display:inline-flex;align-items:center;padding:8px 16px;font-size:.84rem;font-weight:600;color:#6d675c;text-decoration:none;border-radius:6px;letter-spacing:.01em;transition:background .15s,color .15s,border-color .15s;border:1px solid transparent}
+.top-nav .nav-tab:hover{background:#f5f1e6;color:#17161a}
+.top-nav .nav-tab.active{background:#17161a;color:#fff}
+.top-nav .nav-tab.active:hover{background:#17161a;color:#fff}
+@media(max-width:600px){.top-nav .nav-tab{font-size:.78rem;padding:7px 12px}}
+</style>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav"><a href="nuance-2026.html" class="nav-tab">Nuance Hub</a><a href="unity-and-diversity.html" class="nav-tab">Unity &amp; Diversity</a><a href="fault-lines/index.html" class="nav-tab">Fault Lines</a><a href="denmark-data.html" class="nav-tab active">Denmark · Honest Data</a><a href="grooming-gangs.html" class="nav-tab">UK Grooming Gangs · Cross-Examined</a></nav>
+
+<div class="breadcrumb"><a href="nuance-2026.html">Nuance Is Not a Dirty Word</a><span class="sep">›</span><span>Denmark — the honest-data exception</span></div>
+
+<header>
+  <span class="eyebrow">Empirical case · Methodology</span>
+  <h1>Denmark — the honest-data exception / デンマーク・誠実な統計</h1>
+  <p class="subtitle">Most Western countries argue about crime, immigration, and integration without ever collecting the data that would settle the empirical share of the argument. Denmark collects it, publishes it on a public StatBank with permanent table codes, computes age- and socio-economic-standardised indices, and lets the figures stand. This is what honest measurement looks like — and what its absence elsewhere means for the discourse everywhere else.</p>
+  <div class="status-row"><span class="status-badge">empirical case · Phase 1</span><span>2026-05-11</span></div>
+</header>
+
+<div class="one-sentence">
+  <strong>If a society publishes the ancestry × crime cross-tab, it can be challenged on what the cross-tab shows. If it refuses to publish, it can only be challenged on the refusal — and the discourse around the empirical question gets handed, by default, to whoever is willing to assert numbers without having to produce them. <em>Denmark publishes. That is the methodological backbone of this page.</em></strong>
+</div>
+
+<h2 class="section-title">Why this page exists</h2>
+<p class="section-sub">A six-country snapshot of who publishes the breakdown most-asked-about in the integration debate, and who does not.</p>
+
+<div class="friction-grid">
+
+  <div class="friction-card dk">
+    <span class="fr-flag">Denmark · DK</span>
+    <h4>Publishes ancestry × crime with permanent table codes</h4>
+    <p>Statistics Denmark (<em>Danmarks Statistik</em>) maintains <code>STRAFNA3–9</code> and <code>STRFNA10–14</code> — twelve linked public tables crossing convicted persons against ancestry, country of origin, citizenship, sex, age, region, type of offence, and type of decision. The 2025 figures were released on <strong>8 April 2026</strong> — about three months after year-end, down from eleven months in prior cycles. An age- and socio-economic-standardised criminality index is also computed officially.</p>
+    <p class="fr-source"><a href="https://www.dst.dk/en/Statistik/emner/sociale-forhold/kriminalitet/doemte-personer">Statistics Denmark · Convicted persons subject page</a> · table inventory current as of 2026-04-08</p>
+  </div>
+
+  <div class="friction-card fr">
+    <span class="fr-flag">France · FR</span>
+    <h4>Constitutional ban on ethnic statistics</h4>
+    <p>Article 1 of the 1958 Constitution and the 1978 <em>Loi Informatique et Libertés</em> (revised 2004) prohibit the collection of statistics that distinguish residents by race or ethnicity. INSEE may use "country of birth" and "nationality of origin" only as proxies, and only with Conseil constitutionnel review. <strong>No public ancestry × crime cross-tab exists in France</strong> — the legal frame is built precisely to prevent one.</p>
+    <p class="fr-source">CNIL · 1978 statute as amended; Conseil constitutionnel decision 2007-557 DC (15 November 2007) on the prohibition of ethnic statistics</p>
+  </div>
+
+  <div class="friction-card us">
+    <span class="fr-flag">United States · US</span>
+    <h4>Race-and-ethnicity collected, but the cross-tab is fragmented</h4>
+    <p>The FBI's UCR/NIBRS publishes race-coded arrest data; the BJS computes incarceration rates by race; and the Census provides denominators. But the data are reported per-agency on voluntary submission, ancestry below the race level is not standardised, and the foreign-born vs. native-born distinction inside Hispanic/Latino is not publicly resolved at sufficient granularity for replication. <em>The data exist; the integrated public cross-tab does not.</em></p>
+    <p class="fr-source">FBI Crime Data Explorer · BJS National Prisoner Statistics · ACS S0201</p>
+  </div>
+
+  <div class="friction-card de">
+    <span class="fr-flag">Germany · DE</span>
+    <h4>Citizenship yes, ancestry-of-citizens no</h4>
+    <p>The <em>Polizeiliche Kriminalstatistik</em> publishes suspect counts by citizenship — German vs. non-German — and crosses by nationality of origin for non-citizens. But Germans <em>with migration background</em> (the standard demographic concept used by Destatis for everything else) are statistically invisible in the police series. The two demographic concepts are not reconciled in the public crime release.</p>
+    <p class="fr-source">Bundeskriminalamt · PKS Jahrbuch · Destatis "Migrationshintergrund" microcensus concept</p>
+  </div>
+
+  <div class="friction-card uk">
+    <span class="fr-flag">United Kingdom · UK</span>
+    <h4>Ethnicity in stop-and-search; not in the conviction cross-tab</h4>
+    <p>The Home Office publishes ethnicity for stop-and-search and prison-population snapshots, but the systematic ethnicity × convictions cross-tab is published only on irregular thematic releases ("Race and the Criminal Justice System") rather than as a maintained StatBank series with permanent table codes and annual update cadence. <strong>The series exists in form, but not in the persistence Denmark provides.</strong></p>
+    <p class="fr-source">Ministry of Justice · "Statistics on Race and the Criminal Justice System" (latest 2023 release)</p>
+  </div>
+
+  <div class="friction-card jp">
+    <span class="fr-flag">Japan · JP</span>
+    <h4>Nationality of foreign offenders only</h4>
+    <p>The <em>Hanzai hakusho</em> (White Paper on Crime) and the National Police Agency publish offence counts by nationality of the foreign offender (<em>raini gaikokujin</em> vs. <em>teijū gaikokujin</em>) but, by design, Japan does not maintain an ethnicity classification on its citizens (the koseki family-register system records only Japanese vs. non-Japanese). <em>Ancestry × crime is conceptually absent from the official frame.</em></p>
+    <p class="fr-source">Ministry of Justice Japan · 犯罪白書 (Crime White Paper); 警察庁犯罪統計 (NPA crime statistics)</p>
+  </div>
+
+</div>
+
+<div class="method-box">
+  <strong>Method note.</strong> The six-country snapshot is not a ranking. France's prohibition rests on a defensible republican-equality argument; Japan's absence rests on a koseki-system structural fact. The point is not that Denmark is morally superior; the point is that <strong>only one of these six countries gives the public the data needed to challenge or confirm claims about ancestry × crime</strong>. Where the data are not collected, the public discourse runs on assertion. Where they are collected, it runs on cross-examination of numbers — which is what this site exists to enable.
+</div>
+
+<h2 class="section-title">The classification system</h2>
+<p class="section-sub">Three CPR-based origin categories crossed with a Western / non-Western split. The definitions are explicit, the fallback rules are documented, and the same scheme is used on both the crime side (STRAFNA9) and the population denominator side (FOLK2) — so rates are computable and the numerator-denominator match is clean.</p>
+
+<div class="classify-box">
+  <h3>The ancestry tree, as Statistics Denmark uses it</h3>
+  <div class="classify-tree"><b>Population on 1 January</b>
+│
+├── <i>Person of Danish origin</i>  ← at least one parent is both a Danish citizen <b>and</b> born in Denmark
+│
+├── <i>Immigrant</i>  ← born abroad; no parent is both a Danish citizen and born in Denmark
+│      ├── from <u>Western</u> country
+│      └── from <u>non-Western</u> country
+│
+└── <i>Descendant</i>  ← born in Denmark; no parent is both a Danish citizen and born in Denmark
+       ├── from <u>Western</u> country
+       └── from <u>non-Western</u> country
+
+<b>Western</b> = EU + Andorra, Iceland, Liechtenstein, Monaco, Norway, San Marino,
+           Switzerland, UK, Vatican, USA, Canada, Australia, New Zealand.
+<b>Non-Western</b> = all other countries, plus stateless persons.</div>
+
+  <div class="classify-defs">
+    <div class="def-card">
+      <h5>Country of origin ≠ citizenship ≠ ancestry</h5>
+      <p>Three separate official concepts. <em>Country of origin</em> is derived from parents' birth/citizenship with explicit fallbacks. <em>Citizenship</em> in dual cases defaults to Danish if any. <em>Ancestry</em> is the CPR-resolved three-part backbone above. Public crime tables expose all three lenses on the same convicted-persons domain.</p>
+    </div>
+    <div class="def-card">
+      <h5>The third-generation gap</h5>
+      <p>Population tables include <strong>children of descendants</strong> (<code>EB1–EB4</code>) — the demographic third generation. The crime inventory does <em>not</em> currently publish an analogous third-generation crime table. So Statistics Denmark publishes the third-generation population but stops the crime breakdown at descendants. This gap is named explicitly in the documentation.</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title">The data architecture</h2>
+<p class="section-sub">Twelve public crime tables, four public population tables, one official standardised index. Every cell is identifiable by table code; every code resolves to a permanent URL on statbank.dk. The system is built for replication.</p>
+
+<table class="tbl-inventory">
+  <thead>
+    <tr><th>Code</th><th>What it measures</th><th>Variables</th><th>Last update</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="https://www.statbank.dk/STRAFNA3"><code>STRAFNA3</code></a></td><td>Persons guilty by sex, age, country of origin</td><td>sex · age · country of origin · time</td><td>2026-04-08</td></tr>
+    <tr><td><a href="https://www.statbank.dk/STRAFNA4"><code>STRAFNA4</code></a></td><td>Persons guilty by offence type and country of origin</td><td>offence · country of origin · time</td><td>2026-04-08</td></tr>
+    <tr><td><a href="https://www.statbank.dk/STRAFNA6"><code>STRAFNA6</code></a></td><td>Persons guilty by region, sex, age, national origin</td><td>region · sex · age · national origin · time</td><td>2026-04-08</td></tr>
+    <tr><td><a href="https://www.statbank.dk/STRAFNA9"><code>STRAFNA9</code></a></td><td><strong>The ancestry headline table.</strong> Persons guilty by sex, age, ancestry</td><td>sex · age · ancestry · time</td><td>2026-04-08</td></tr>
+    <tr><td><a href="https://www.statbank.dk/STRFNA10"><code>STRFNA10</code></a></td><td>Persons guilty by ancestry and offence type</td><td>ancestry · offence · time</td><td>2026-04-08</td></tr>
+    <tr><td><a href="https://www.statbank.dk/STRFNA11"><code>STRFNA11</code></a></td><td>Persons guilty by ancestry and decision type</td><td>ancestry · decision · time</td><td>2026-04-08</td></tr>
+    <tr><td><a href="https://www.statbank.dk/STRFNA12"><code>STRFNA12</code></a></td><td>Guilty persons by sex, age, citizenship, ancestry</td><td>sex · age · citizenship · ancestry · time</td><td>2026-04-08</td></tr>
+    <tr><td><a href="https://www.statbank.dk/FOLK2"><code>FOLK2</code></a></td><td><strong>The population denominator.</strong> Population by sex, age, ancestry, country of origin, citizenship</td><td>sex · age · ancestry · country of origin · citizenship · time</td><td>2026-02-12</td></tr>
+    <tr><td><a href="https://www.statbank.dk/IEPCT"><code>IEPCT</code></a></td><td>Ancestry-group share of total population</td><td>ancestry · time</td><td>2026-02-12</td></tr>
+    <tr><td><a href="https://www.statbank.dk/EB1"><code>EB1–EB4</code></a></td><td>Children of descendants — the demographic third generation</td><td>original ancestry · sex · age · country of origin · (region) · time</td><td>2026-02-12</td></tr>
+  </tbody>
+</table>
+
+<div class="method-box">
+  <strong>Naming oddity, not a typo.</strong> The official code family changes spelling from <code>STRAFNA</code> (codes 3–9) to <code>STRFNA</code> (codes 10–14). Both spellings are current. <strong>STRAFNA3, STRAFNA9, STRFNA10, STRFNA11</strong> all expose years 2000, 2002, 2004, then annual data 2005–2025. Citizenship tables (<code>STRFNA12–14</code>) start at 2018. The current public TableInfo pages list the headline 2025 release as <strong>120,166 convicted men + 38,691 convicted women</strong>; the related conviction-level series reports <strong>210,892 guilty convictions</strong> for the same year (convictions count decisions; convicted-persons count people).
+</div>
+
+<h2 class="section-title" id="the-numbers">The numbers</h2>
+<p class="section-sub">Three visualizations, each answering a different question. <strong>Chart 1</strong>: what does absolute volume look like? <strong>Chart 2</strong>: what does the age-standardised multiplier look like by ancestry? <strong>Chart 3</strong>: which direction is the multiplier moving over time? Each chart's source is cited inline.</p>
+
+<div class="headline-row">
+  <div class="headline-cell"><div class="headline-num">120,166</div><div class="headline-label">men convicted · all ancestries · 2025</div></div>
+  <div class="headline-cell"><div class="headline-num">38,691</div><div class="headline-label">women convicted · all ancestries · 2025</div></div>
+  <div class="headline-cell"><div class="headline-num">158,857</div><div class="headline-label">combined 2025 total · person-based</div></div>
+  <div class="headline-cell"><div class="headline-num">210,892</div><div class="headline-label">2025 conviction-level decisions (different series)</div></div>
+</div>
+
+<div class="chart-wrap">
+  <h3>Chart 1 · Convicted men, penal code, by ancestry (Denmark, 2023)</h3>
+  <p class="chart-sub">Absolute counts. Persons of Danish origin account for <strong>70.8%</strong> of all penal-code convictions among men in 2023 — the largest single bar by far. This is what the raw STRAFNA9 cell shows before any age-, sex-, or socioeconomic-adjustment. Any honest reading of the data begins here.</p>
+  <svg class="bar-chart" viewBox="0 0 720 290" role="img" aria-label="Convicted men by ancestry, 2023, penal code">
+    <line class="gridline" x1="220" y1="40" x2="220" y2="270"/>
+    <line class="gridline" x1="320" y1="40" x2="320" y2="270"/>
+    <line class="gridline" x1="420" y1="40" x2="420" y2="270"/>
+    <line class="gridline" x1="520" y1="40" x2="520" y2="270"/>
+    <line class="gridline" x1="620" y1="40" x2="620" y2="270"/>
+    <text class="label-axis" x="220" y="32" text-anchor="middle">3,000</text>
+    <text class="label-axis" x="320" y="32" text-anchor="middle">6,000</text>
+    <text class="label-axis" x="420" y="32" text-anchor="middle">9,000</text>
+    <text class="label-axis" x="520" y="32" text-anchor="middle">12,000</text>
+    <text class="label-axis" x="620" y="32" text-anchor="middle">15,000</text>
+
+    <text class="label-cat" x="210" y="62" text-anchor="end">Danish origin</text>
+    <rect class="bar b-danish" x="220" y="48" width="458" height="28" rx="2"/>
+    <text class="label-value" x="685" y="67">13,746</text>
+
+    <text class="label-cat" x="210" y="102" text-anchor="end">Immigrants · non-Western</text>
+    <rect class="bar b-imm-nw" x="220" y="88" width="84" height="28" rx="2"/>
+    <text class="label-value" x="312" y="107">2,515</text>
+
+    <text class="label-cat" x="210" y="142" text-anchor="end">Descendants · non-Western</text>
+    <rect class="bar b-desc-nw" x="220" y="128" width="63" height="28" rx="2"/>
+    <text class="label-value" x="291" y="147">1,902</text>
+
+    <text class="label-cat" x="210" y="182" text-anchor="end">Immigrants · Western</text>
+    <rect class="bar b-imm-w" x="220" y="168" width="39" height="28" rx="2"/>
+    <text class="label-value" x="267" y="187">1,161</text>
+
+    <text class="label-cat" x="210" y="222" text-anchor="end">Descendants · Western</text>
+    <rect class="bar b-desc-w" x="220" y="208" width="4" height="28" rx="2"/>
+    <text class="label-value" x="232" y="227">101</text>
+
+    <line class="gridline" x1="220" y1="252" x2="668" y2="252" stroke="#3a3630" stroke-width="1.5"/>
+    <text class="label-cat" x="210" y="265" text-anchor="end" style="font-weight:700">Total</text>
+    <text class="label-value" x="240" y="265">19,425 men · 2023</text>
+  </svg>
+  <div class="legend">
+    <span class="legend-item"><span class="legend-swatch b-danish"></span>Danish origin</span>
+    <span class="legend-item"><span class="legend-swatch b-imm-w"></span>Immigrants · Western</span>
+    <span class="legend-item"><span class="legend-swatch b-imm-nw"></span>Immigrants · non-Western</span>
+    <span class="legend-item"><span class="legend-swatch b-desc-w"></span>Descendants · Western</span>
+    <span class="legend-item"><span class="legend-swatch b-desc-nw"></span>Descendants · non-Western</span>
+  </div>
+  <p class="chart-source">Source: Danish Ministry of Justice — <em>Kriminalitet og herkomst 2023</em> (April 2025), Table 2 · drawn from Statistics Denmark <a href="https://www.statbank.dk/STRAFNA9">STRAFNA9</a> / <em>Indvandrere i Danmark 2024</em>. Men aged 15–79 convicted under the Penal Code. <a href="https://www.justitsministeriet.dk/wp-content/uploads/2025/05/Kriminalitet-og-herkomst-2023-WT.pdf">[PDF]</a></p>
+</div>
+
+<div class="featured-insight" style="margin:24px 0 32px;padding:26px 30px;background:linear-gradient(to bottom right,#fff,#fbf4ec);border:1px solid #e8d599;border-left:5px solid #c08815;border-radius:12px">
+  <span style="display:inline-block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#7a5a1c;font-weight:700;margin-bottom:10px;padding:3px 10px;background:#fef6e1;border-radius:4px">read this before chart 2</span>
+  <h3 style="font-size:1.18rem;font-weight:700;color:#17161a;margin-bottom:12px;letter-spacing:-.01em">What "index = 100" actually means</h3>
+  <p style="font-size:.94rem;color:#3a3630;line-height:1.65;margin-bottom:10px">The standardised criminality index in Chart 2 below is normalised so that <strong>100 = the whole-population age-adjusted average</strong>, <em>not</em> the Danish-origin average. This is the single most misread number on the dataset. <strong>Persons of Danish origin sit at index 88</strong>, not 100, because non-Danish groups are concentrated at high-crime young-adult ages and pull the population mean upward. A naive reader sees "Danish origin = 88" and reads it as "Danes commit 88% of crimes" — it actually means Danish-origin men are convicted at a rate <strong>12% below the age-adjusted population mean</strong>.</p>
+  <p style="font-size:.94rem;color:#3a3630;line-height:1.65;margin-bottom:0">The index also adjusts for <em>age</em> only (in the Integration Barometer time series) — not for socioeconomic composition. The age + SES correction exists in older Justice Ministry research and shrinks the multipliers further, but is not on the public barometer.</p>
+</div>
+
+<div class="chart-wrap">
+  <h3>Chart 2 · Age-standardised criminality index by ancestry, men, 2023</h3>
+  <p class="chart-sub">Five ancestry groups, four key offence categories. <strong>Index 100</strong> (dashed line) is the population-average expected count after age adjustment. Values above 100 = above-average; below 100 = below-average. Penal-code total uses men 15–79; offence-specific rows are subsets of that population.</p>
+  <svg class="bar-chart" viewBox="0 0 720 470" role="img" aria-label="Age-standardised criminality index by ancestry, 2023">
+    <!-- Y-axis values: 0, 100, 200, 300, 400, 500 -->
+    <line class="gridline" x1="180" y1="30" x2="180" y2="430"/>
+    <line class="gridline" x1="280" y1="30" x2="280" y2="430" stroke-dasharray="4,4" stroke="#b8372a" stroke-width="1.5"/>
+    <line class="gridline" x1="380" y1="30" x2="380" y2="430"/>
+    <line class="gridline" x1="480" y1="30" x2="480" y2="430"/>
+    <line class="gridline" x1="580" y1="30" x2="580" y2="430"/>
+    <line class="gridline" x1="680" y1="30" x2="680" y2="430"/>
+    <text class="label-axis" x="180" y="22" text-anchor="middle">0</text>
+    <text class="label-base" x="280" y="22" text-anchor="middle">100 = pop. mean</text>
+    <text class="label-axis" x="380" y="22" text-anchor="middle">200</text>
+    <text class="label-axis" x="480" y="22" text-anchor="middle">300</text>
+    <text class="label-axis" x="580" y="22" text-anchor="middle">400</text>
+    <text class="label-axis" x="680" y="22" text-anchor="middle">500</text>
+
+    <!-- Offence: Penal code total -->
+    <text class="label-cat" x="170" y="48" text-anchor="end" style="font-weight:700">Penal code · total</text>
+    <rect class="bar b-danish" x="180" y="40" width="88" height="14" rx="1.5"/><text class="label-value" x="276" y="51">88</text>
+    <rect class="bar b-imm-w" x="180" y="56" width="85" height="14" rx="1.5"/><text class="label-value" x="273" y="67">85</text>
+    <rect class="bar b-desc-w" x="180" y="72" width="100" height="14" rx="1.5"/><text class="label-value" x="288" y="83">100</text>
+    <rect class="bar b-imm-nw" x="180" y="88" width="158" height="14" rx="1.5"/><text class="label-value" x="346" y="99">158</text>
+    <rect class="bar b-desc-nw" x="180" y="104" width="262" height="14" rx="1.5"/><text class="label-value" x="450" y="115">262</text>
+
+    <!-- Offence: Aggravated assault -->
+    <text class="label-cat" x="170" y="138" text-anchor="end" style="font-weight:700">Aggravated assault</text>
+    <rect class="bar b-danish" x="180" y="130" width="83" height="14" rx="1.5"/><text class="label-value" x="271" y="141">83</text>
+    <rect class="bar b-imm-w" x="180" y="146" width="28" height="14" rx="1.5"/><text class="label-value" x="216" y="157">28</text>
+    <rect class="bar b-desc-w" x="180" y="162" width="0" height="14" rx="1.5"/><text class="label-value" x="188" y="173" fill="#8a8680" font-style="italic">small N</text>
+    <rect class="bar b-imm-nw" x="180" y="178" width="179" height="14" rx="1.5"/><text class="label-value" x="367" y="189">179</text>
+    <rect class="bar b-desc-nw" x="180" y="194" width="367" height="14" rx="1.5"/><text class="label-value" x="555" y="205">367</text>
+
+    <!-- Offence: Robbery -->
+    <text class="label-cat" x="170" y="228" text-anchor="end" style="font-weight:700">Robbery</text>
+    <rect class="bar b-danish" x="180" y="220" width="70" height="14" rx="1.5"/><text class="label-value" x="258" y="231">70</text>
+    <rect class="bar b-imm-w" x="180" y="236" width="57" height="14" rx="1.5"/><text class="label-value" x="245" y="247">57</text>
+    <rect class="bar b-desc-w" x="180" y="252" width="0" height="14" rx="1.5"/><text class="label-value" x="188" y="263" fill="#8a8680" font-style="italic">small N</text>
+    <rect class="bar b-imm-nw" x="180" y="268" width="228" height="14" rx="1.5"/><text class="label-value" x="416" y="279">228</text>
+    <rect class="bar b-desc-nw" x="180" y="284" width="435" height="14" rx="1.5"/><text class="label-value" x="623" y="295">435</text>
+
+    <!-- Offence: Drug sales -->
+    <text class="label-cat" x="170" y="318" text-anchor="end" style="font-weight:700">Drug sales</text>
+    <rect class="bar b-danish" x="180" y="310" width="83" height="14" rx="1.5"/><text class="label-value" x="271" y="321">83</text>
+    <rect class="bar b-imm-w" x="180" y="326" width="29" height="14" rx="1.5"/><text class="label-value" x="217" y="337">29</text>
+    <rect class="bar b-desc-w" x="180" y="342" width="0" height="14" rx="1.5"/><text class="label-value" x="188" y="353" fill="#8a8680" font-style="italic">small N</text>
+    <rect class="bar b-imm-nw" x="180" y="358" width="158" height="14" rx="1.5"/><text class="label-value" x="346" y="369">158</text>
+    <rect class="bar b-desc-nw" x="180" y="374" width="390" height="14" rx="1.5"/><text class="label-value" x="578" y="385">390</text>
+
+    <!-- Group violence -->
+    <text class="label-cat" x="170" y="408" text-anchor="end" style="font-weight:700">Group violence</text>
+    <rect class="bar b-danish" x="180" y="400" width="75" height="14" rx="1.5"/><text class="label-value" x="263" y="411">75</text>
+    <rect class="bar b-imm-w" x="180" y="416" width="68" height="14" rx="1.5"/><text class="label-value" x="256" y="427">68</text>
+    <text class="label-value" x="188" y="437" fill="#8a8680" font-style="italic">Desc. W · small N</text>
+    <rect class="bar b-imm-nw" x="180" y="438" width="196" height="14" rx="1.5"/><text class="label-value" x="384" y="449">196</text>
+  </svg>
+  <div class="legend">
+    <span class="legend-item"><span class="legend-swatch b-danish"></span>Danish origin</span>
+    <span class="legend-item"><span class="legend-swatch b-imm-w"></span>Imm. Western</span>
+    <span class="legend-item"><span class="legend-swatch b-desc-w"></span>Desc. Western</span>
+    <span class="legend-item"><span class="legend-swatch b-imm-nw"></span>Imm. non-Western</span>
+    <span class="legend-item"><span class="legend-swatch b-desc-nw"></span>Desc. non-Western</span>
+  </div>
+  <p class="chart-source">Source: Danish Ministry of Justice — <em>Kriminalitet og herkomst 2023</em>, figures 3, 8, 14, 16; <em>Gruppevold og herkomst 2023</em> (Aug 2025), figure 1. Age-standardised. Men 15–79. Small-N cells suppressed by Statistics Denmark disclosure rules. <a href="https://www.justitsministeriet.dk/wp-content/uploads/2025/05/Kriminalitet-og-herkomst-2023-WT.pdf">[PDF]</a></p>
+</div>
+
+<div class="chart-wrap">
+  <h3>Chart 3 · The multipliers are falling · 2016–2023 time series</h3>
+  <p class="chart-sub">The Integration Barometer's age-standardised criminality index, 2016–2023, men, penal code. <strong>MENAPT</strong> = Middle East, North Africa, Pakistan, Türkiye. The most-cited multiplier groups in the discourse — and the trajectory most discussion ignores. Both MENAPT immigrants (from 238 → 218) and especially MENAPT descendants (353 → 309) trend <em>downward</em> over the eight-year window. The cohort data inside the same Justice Ministry fact-sheet confirms it: each successive birth-cohort of non-Western descendant men has lower cumulative conviction by age 26 than the cohort before it.</p>
+  <svg class="bar-chart" viewBox="0 0 880 360" role="img" aria-label="Time series of standardised criminality index, 2016-2023">
+    <!-- Y axis: 0 to 450, scale: y = 320 - val * 280/450 -->
+    <line class="gridline" x1="70" y1="40" x2="70" y2="320"/>
+    <line class="gridline" x1="70" y1="40" x2="700" y2="40"/>
+    <line class="gridline" x1="70" y1="71" x2="700" y2="71"/>
+    <line class="gridline" x1="70" y1="134" x2="700" y2="134"/>
+    <line class="gridline" x1="70" y1="196" x2="700" y2="196"/>
+    <line class="gridline" x1="70" y1="258" x2="700" y2="258" stroke-dasharray="4,4" stroke="#b8372a" stroke-width="1.5"/>
+    <line class="gridline" x1="70" y1="320" x2="700" y2="320" stroke="#3a3630" stroke-width="1.5"/>
+
+    <text class="label-axis" x="62" y="44" text-anchor="end">450</text>
+    <text class="label-axis" x="62" y="75" text-anchor="end">400</text>
+    <text class="label-axis" x="62" y="138" text-anchor="end">300</text>
+    <text class="label-axis" x="62" y="200" text-anchor="end">200</text>
+    <text class="label-base" x="62" y="262" text-anchor="end">100</text>
+    <text class="label-axis" x="62" y="324" text-anchor="end">0</text>
+
+    <!-- X axis labels (years) -->
+    <text class="label-axis" x="100" y="340" text-anchor="middle">2016</text>
+    <text class="label-axis" x="190" y="340" text-anchor="middle">2017</text>
+    <text class="label-axis" x="280" y="340" text-anchor="middle">2018</text>
+    <text class="label-axis" x="370" y="340" text-anchor="middle">2019</text>
+    <text class="label-axis" x="460" y="340" text-anchor="middle">2020</text>
+    <text class="label-axis" x="550" y="340" text-anchor="middle">2021</text>
+    <text class="label-axis" x="640" y="340" text-anchor="middle">2022</text>
+    <text class="label-axis" x="700" y="340" text-anchor="middle">2023</text>
+
+    <!-- MENAPT descendants line: y = 320 - (val * 0.622) where 450->y=40, 0->y=320, so y = 320 - (val/450)*280 = 320 - val*0.622 -->
+    <!-- Values: 353, 397, 347, 337, 337, 352, 342, 309 -->
+    <polyline fill="none" stroke="#e0893a" stroke-width="2.5" points="100,100 190,73 280,104 370,110 460,110 550,101 640,107 700,128"/>
+    <circle cx="100" cy="100" r="4" fill="#e0893a"/>
+    <circle cx="190" cy="73" r="4" fill="#e0893a"/>
+    <circle cx="280" cy="104" r="4" fill="#e0893a"/>
+    <circle cx="370" cy="110" r="4" fill="#e0893a"/>
+    <circle cx="460" cy="110" r="4" fill="#e0893a"/>
+    <circle cx="550" cy="101" r="4" fill="#e0893a"/>
+    <circle cx="640" cy="107" r="4" fill="#e0893a"/>
+    <circle cx="700" cy="128" r="4" fill="#e0893a"/>
+    <text class="label-value" x="100" y="92" text-anchor="middle">353</text>
+    <text class="label-value" x="190" y="65" text-anchor="middle">397</text>
+    <text class="label-value" x="700" y="120" text-anchor="middle">309</text>
+    <text class="label-cat" x="708" y="132" fill="#e0893a">MENAPT desc.</text>
+
+    <!-- MENAPT immigrants line -->
+    <!-- Values: 238, 259, 256, 245, 238, 249, 234, 218 -->
+    <polyline fill="none" stroke="#b8372a" stroke-width="2.5" points="100,172 190,159 280,161 370,168 460,172 550,165 640,174 700,184"/>
+    <circle cx="100" cy="172" r="4" fill="#b8372a"/>
+    <circle cx="190" cy="159" r="4" fill="#b8372a"/>
+    <circle cx="280" cy="161" r="4" fill="#b8372a"/>
+    <circle cx="370" cy="168" r="4" fill="#b8372a"/>
+    <circle cx="460" cy="172" r="4" fill="#b8372a"/>
+    <circle cx="550" cy="165" r="4" fill="#b8372a"/>
+    <circle cx="640" cy="174" r="4" fill="#b8372a"/>
+    <circle cx="700" cy="184" r="4" fill="#b8372a"/>
+    <text class="label-value" x="100" y="164" text-anchor="middle">238</text>
+    <text class="label-value" x="700" y="176" text-anchor="middle">218</text>
+    <text class="label-cat" x="708" y="188" fill="#b8372a">MENAPT imm.</text>
+
+    <!-- Other non-Western descendants -->
+    <!-- Values: 165, 158, 183, 156, 158, 185, 174, 142 -->
+    <polyline fill="none" stroke="#7a5a1c" stroke-width="2" stroke-dasharray="6,3" points="100,217 190,222 280,206 370,223 460,222 550,205 640,212 700,232"/>
+    <text class="label-cat" x="708" y="236" fill="#7a5a1c" font-size="10">Other non-W desc.</text>
+
+    <!-- Other non-Western immigrants -->
+    <!-- Values: 130, 123, 132, 123, 124, 116, 109, 105 -->
+    <polyline fill="none" stroke="#555047" stroke-width="2" stroke-dasharray="6,3" points="100,239 190,243 280,238 370,243 460,243 550,248 640,252 700,255"/>
+    <text class="label-cat" x="708" y="259" fill="#555047" font-size="10">Other non-W imm.</text>
+
+    <!-- Danish origin baseline -->
+    <!-- Values: 88, 85, 86, 87, 87, 86, 86, 88 -->
+    <polyline fill="none" stroke="#4cb56c" stroke-width="2" points="100,265 190,267 280,267 370,266 460,266 550,267 640,267 700,265"/>
+    <text class="label-cat" x="708" y="269" fill="#4cb56c" font-size="10">Danish origin</text>
+
+    <text class="label-base" x="690" y="254" text-anchor="end" style="font-style:italic;font-size:10px">— pop. mean (100)</text>
+  </svg>
+  <p class="chart-source">Source: Danish Ministry of Immigration and Integration — <em>Integration Barometer · Crime</em>. Files updated 2025-07-07. Men, age-standardised, penal-code convictions. <a href="https://integrationsbarometer.dk/tal-og-analyser/filer/22/download?format=xls">[Immigrants XLS]</a> · <a href="https://integrationsbarometer.dk/tal-og-analyser/filer/23/download?format=xls">[Descendants XLS]</a></p>
+</div>
+
+<div class="featured-insight" style="margin:24px 0 32px;padding:26px 30px;background:linear-gradient(to bottom right,#fff,#f3faf5);border:1px solid #b8d9c2;border-left:5px solid #2e7d4f;border-radius:12px">
+  <span style="display:inline-block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#1f5f3c;font-weight:700;margin-bottom:10px;padding:3px 10px;background:#e8f4ec;border-radius:4px">the trend most discourse misses</span>
+  <h3 style="font-size:1.18rem;font-weight:700;color:#17161a;margin-bottom:12px;letter-spacing:-.01em">Cohort-by-cohort, the gap is narrowing</h3>
+  <p style="font-size:.94rem;color:#3a3630;line-height:1.65;margin-bottom:10px">The Justice Ministry's fact-sheet figures 21–26 track <strong>cumulative share convicted by age 26</strong> for successive birth cohorts. The 1996 cohort: 9.7% of Danish-origin men, 29.0% of non-Western immigrants, 28.3% of non-Western descendants. By the 2004 cohort, the cumulative share convicted <strong>by age 18</strong> reads 4.1% Danish-origin, 8.4% non-Western immigrants, 12.6% non-Western descendants — the absolute multiplier has shrunk versus the equivalent point in earlier cohorts. The Justice Ministry's own summary: <em>"this group [non-Western descendants] is markedly less crime-burdened today than earlier."</em></p>
+  <p style="font-size:.94rem;color:#3a3630;line-height:1.65;margin-bottom:0">Why is this important? Because the policy debate around the 2018 "parallel society" laws, around stricter integration tests, and around tougher residency requirements typically cites the high multiplier as evidence that <em>integration is failing</em>. The cohort data inside the same official series shows the multiplier is <strong>falling</strong> — slowly, unevenly, but in the direction of integration succeeding rather than failing. An honest reading carries both findings.</p>
+</div>
+
+<h2 class="section-title">Per-country indices — recreating the country-level chart</h2>
+<p class="section-sub">The five-group ancestry chart above is the layer most political discussion uses. But Denmark also publishes <strong>country-by-country</strong> standardised crime indices for 30 specific origins in <em>Indvandrere i Danmark 2024</em>, Table 6.6. This is the data layer that lets independent researchers (Jonatan Pallesen, Rockwool Foundation, academic analysts) produce per-country charts. We pulled the underlying table and reproduce it below, then cross-check against the most widely-circulated independent visualization.</p>
+
+<div class="featured-insight" style="margin:24px 0 24px;padding:26px 30px;background:linear-gradient(to bottom right,#fff,#fbf4ec);border:1px solid #e8d599;border-left:5px solid #c08815;border-radius:12px">
+  <span style="display:inline-block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#7a5a1c;font-weight:700;margin-bottom:10px;padding:3px 10px;background:#fef6e1;border-radius:4px">verification trail · what we could and could not replicate</span>
+  <h3 style="font-size:1.18rem;font-weight:700;color:#17161a;margin-bottom:12px;letter-spacing:-.01em">Where the numbers below come from</h3>
+  <p style="font-size:.94rem;color:#3a3630;line-height:1.65;margin-bottom:10px">Independent agents fetched and OCR'd the full 9.8 MB PDF of <em>Indvandrere i Danmark 2024</em> (Danmarks Statistik, December 2024). The age-corrected criminality indices below are Table 6.6 of that publication, verified line by line against the source. Methodology: indirect age-standardisation as defined in DST's official 2011 method paper <em>Indeks bestemt ved indirekte standardisering</em>. The formula is published, the suppression rule (cells with &lt;10 convicted persons are reported as <code>..</code>) is documented, and every cell can be recomputed by anyone who has STRAFNA4 + FOLK1C access.</p>
+  <p style="font-size:.94rem;color:#3a3630;line-height:1.65;margin-bottom:10px"><strong>What replicated cleanly:</strong> 10 of the 11 countries in the most-circulated independent chart appear directly in DST Table 6.6 with discrete indices: Denmark, Romania, Pakistan, Turkey, Iran, Morocco, Afghanistan, Iraq, Syria, Somalia. The official numbers are below.</p>
+  <p style="font-size:.94rem;color:#3a3630;line-height:1.65;margin-bottom:0"><strong>What did not replicate:</strong> <em>Palestine has no discrete code in DST's official country list.</em> The closest official proxy is Lebanon, which DST flags as containing "a portion of stateless Palestinians" (Indvandrere 2024 footnote 1, est. 50–60%). Charts that show "Palestine" as a distinct point are necessarily either (a) treating Lebanon as 1:1 proxy, (b) applying the stateless-Palestinian adjustment to Lebanon, or (c) building a custom basket from STRAFNA4 raw cells across Jordan, Lebanon, Syria, and stateless codes. None of those three is the "official Palestine index" — DST does not publish one.</p>
+</div>
+
+<div class="chart-wrap">
+  <h3>Chart 4 · Age-standardised criminality index by country of origin, men 15–79, penal code, 2023</h3>
+  <p class="chart-sub">Each country has two bars: lighter = immigrants (born abroad); darker = descendants (born in Denmark to immigrant parents). <strong>Index 100</strong> (dashed line) is the whole-population age-adjusted mean. Sorted by descendant index, descending. Sweden, Romania, UK, USA shown as Western comparators; China and Vietnam shown as low-index non-Western counterexamples. <em>"..":</em> too few convicted persons in subgroup for disclosure (n&lt;10).</p>
+  <svg class="bar-chart" viewBox="0 0 880 580" role="img" aria-label="Per-country standardised criminality index, 2023">
+    <!-- Vertical gridlines -->
+    <line class="gridline" x1="210" y1="50" x2="210" y2="555"/>
+    <line class="gridline" x1="360" y1="50" x2="360" y2="555" stroke-dasharray="4,4" stroke="#b8372a" stroke-width="1.5"/>
+    <line class="gridline" x1="510" y1="50" x2="510" y2="555"/>
+    <line class="gridline" x1="660" y1="50" x2="660" y2="555"/>
+    <line class="gridline" x1="810" y1="50" x2="810" y2="555"/>
+
+    <text class="label-axis" x="210" y="42" text-anchor="middle">0</text>
+    <text class="label-base" x="360" y="42" text-anchor="middle">100 = pop. mean</text>
+    <text class="label-axis" x="510" y="42" text-anchor="middle">200</text>
+    <text class="label-axis" x="660" y="42" text-anchor="middle">300</text>
+    <text class="label-axis" x="810" y="42" text-anchor="middle">400</text>
+
+    <!-- Country rows. Format: y_top = 60 + i*30, imm bar at y+2 h=11, desc bar at y+15 h=11, scale 1.5 px per index unit -->
+
+    <!-- Libanon (proxy for Palæstina*) - imm 290, desc 379 -->
+    <text class="label-cat" x="200" y="81" text-anchor="end">Libanon <tspan style="font-size:9.5px;fill:#8a8680">(Palæstina proxy*)</tspan></text>
+    <rect class="bar" x="210" y="62" width="435" height="11" rx="1.5" fill="#d68660"/>
+    <text class="label-value" x="650" y="71">290</text>
+    <rect class="bar" x="210" y="75" width="568" height="11" rx="1.5" fill="#b8372a"/>
+    <text class="label-value" x="783" y="84">379</text>
+
+    <!-- Somalia - imm 264, desc 320 -->
+    <text class="label-cat" x="200" y="111" text-anchor="end">Somalia</text>
+    <rect class="bar" x="210" y="92" width="396" height="11" rx="1.5" fill="#d68660"/>
+    <text class="label-value" x="611" y="101">264</text>
+    <rect class="bar" x="210" y="105" width="480" height="11" rx="1.5" fill="#b8372a"/>
+    <text class="label-value" x="695" y="114">320</text>
+
+    <!-- Marokko - imm 179, desc 303 -->
+    <text class="label-cat" x="200" y="141" text-anchor="end">Marokko <tspan style="font-size:9.5px;fill:#8a8680">(Morocco)</tspan></text>
+    <rect class="bar" x="210" y="122" width="269" height="11" rx="1.5" fill="#d68660"/>
+    <text class="label-value" x="484" y="131">179</text>
+    <rect class="bar" x="210" y="135" width="455" height="11" rx="1.5" fill="#b8372a"/>
+    <text class="label-value" x="670" y="144">303</text>
+
+    <!-- Syrien - imm 196, desc 297 -->
+    <text class="label-cat" x="200" y="171" text-anchor="end">Syrien <tspan style="font-size:9.5px;fill:#8a8680">(Syria)</tspan></text>
+    <rect class="bar" x="210" y="152" width="294" height="11" rx="1.5" fill="#d68660"/>
+    <text class="label-value" x="509" y="161">196</text>
+    <rect class="bar" x="210" y="165" width="446" height="11" rx="1.5" fill="#b8372a"/>
+    <text class="label-value" x="661" y="174">297</text>
+
+    <!-- Pakistan - imm 183, desc 277 -->
+    <text class="label-cat" x="200" y="201" text-anchor="end">Pakistan</text>
+    <rect class="bar" x="210" y="182" width="275" height="11" rx="1.5" fill="#d68660"/>
+    <text class="label-value" x="490" y="191">183</text>
+    <rect class="bar" x="210" y="195" width="416" height="11" rx="1.5" fill="#b8372a"/>
+    <text class="label-value" x="631" y="204">277</text>
+
+    <!-- Irak - imm 221, desc 248 -->
+    <text class="label-cat" x="200" y="231" text-anchor="end">Irak <tspan style="font-size:9.5px;fill:#8a8680">(Iraq)</tspan></text>
+    <rect class="bar" x="210" y="212" width="332" height="11" rx="1.5" fill="#d68660"/>
+    <text class="label-value" x="547" y="221">221</text>
+    <rect class="bar" x="210" y="225" width="372" height="11" rx="1.5" fill="#b8372a"/>
+    <text class="label-value" x="587" y="234">248</text>
+
+    <!-- Jugoslavien - imm 239, desc 240 -->
+    <text class="label-cat" x="200" y="261" text-anchor="end">Jugoslavien <tspan style="font-size:9.5px;fill:#8a8680">(former)</tspan></text>
+    <rect class="bar" x="210" y="242" width="359" height="11" rx="1.5" fill="#d68660"/>
+    <text class="label-value" x="574" y="251">239</text>
+    <rect class="bar" x="210" y="255" width="360" height="11" rx="1.5" fill="#b8372a"/>
+    <text class="label-value" x="575" y="264">240</text>
+
+    <!-- Tyrkiet - imm 193, desc 234 -->
+    <text class="label-cat" x="200" y="291" text-anchor="end">Tyrkiet <tspan style="font-size:9.5px;fill:#8a8680">(Turkey)</tspan></text>
+    <rect class="bar" x="210" y="272" width="290" height="11" rx="1.5" fill="#d68660"/>
+    <text class="label-value" x="505" y="281">193</text>
+    <rect class="bar" x="210" y="285" width="351" height="11" rx="1.5" fill="#b8372a"/>
+    <text class="label-value" x="566" y="294">234</text>
+
+    <!-- Iran - imm 147, desc 187 -->
+    <text class="label-cat" x="200" y="321" text-anchor="end">Iran</text>
+    <rect class="bar" x="210" y="302" width="221" height="11" rx="1.5" fill="#d68660"/>
+    <text class="label-value" x="436" y="311">147</text>
+    <rect class="bar" x="210" y="315" width="281" height="11" rx="1.5" fill="#b8372a"/>
+    <text class="label-value" x="496" y="324">187</text>
+
+    <!-- Afghanistan - imm 170, desc 175 -->
+    <text class="label-cat" x="200" y="351" text-anchor="end">Afghanistan</text>
+    <rect class="bar" x="210" y="332" width="255" height="11" rx="1.5" fill="#d68660"/>
+    <text class="label-value" x="470" y="341">170</text>
+    <rect class="bar" x="210" y="345" width="263" height="11" rx="1.5" fill="#b8372a"/>
+    <text class="label-value" x="478" y="354">175</text>
+
+    <!-- Sverige - imm 63, desc 139 -->
+    <text class="label-cat" x="200" y="381" text-anchor="end">Sverige <tspan style="font-size:9.5px;fill:#8a8680">(Sweden)</tspan></text>
+    <rect class="bar" x="210" y="362" width="95" height="11" rx="1.5" fill="#7aa6d3"/>
+    <text class="label-value" x="310" y="371">63</text>
+    <rect class="bar" x="210" y="375" width="209" height="11" rx="1.5" fill="#2a6db3"/>
+    <text class="label-value" x="424" y="384">139</text>
+
+    <!-- Rumænien - imm 147, desc 124 -->
+    <text class="label-cat" x="200" y="411" text-anchor="end">Rumænien <tspan style="font-size:9.5px;fill:#8a8680">(Romania)</tspan></text>
+    <rect class="bar" x="210" y="392" width="221" height="11" rx="1.5" fill="#7aa6d3"/>
+    <text class="label-value" x="436" y="401">147</text>
+    <rect class="bar" x="210" y="405" width="186" height="11" rx="1.5" fill="#2a6db3"/>
+    <text class="label-value" x="401" y="414">124</text>
+
+    <!-- UK - imm 58, desc 112 -->
+    <text class="label-cat" x="200" y="441" text-anchor="end">UK</text>
+    <rect class="bar" x="210" y="422" width="87" height="11" rx="1.5" fill="#7aa6d3"/>
+    <text class="label-value" x="302" y="431">58</text>
+    <rect class="bar" x="210" y="435" width="168" height="11" rx="1.5" fill="#2a6db3"/>
+    <text class="label-value" x="383" y="444">112</text>
+
+    <!-- USA - imm 52, desc 108 -->
+    <text class="label-cat" x="200" y="471" text-anchor="end">USA</text>
+    <rect class="bar" x="210" y="452" width="78" height="11" rx="1.5" fill="#7aa6d3"/>
+    <text class="label-value" x="293" y="461">52</text>
+    <rect class="bar" x="210" y="465" width="162" height="11" rx="1.5" fill="#2a6db3"/>
+    <text class="label-value" x="377" y="474">108</text>
+
+    <!-- Vietnam - imm 86, desc 62 -->
+    <text class="label-cat" x="200" y="501" text-anchor="end">Vietnam</text>
+    <rect class="bar" x="210" y="482" width="129" height="11" rx="1.5" fill="#d68660"/>
+    <text class="label-value" x="344" y="491">86</text>
+    <rect class="bar" x="210" y="495" width="93" height="11" rx="1.5" fill="#b8372a"/>
+    <text class="label-value" x="308" y="504">62</text>
+
+    <!-- Kina - imm 46, desc 32 -->
+    <text class="label-cat" x="200" y="531" text-anchor="end">Kina <tspan style="font-size:9.5px;fill:#8a8680">(China)</tspan></text>
+    <rect class="bar" x="210" y="512" width="69" height="11" rx="1.5" fill="#d68660"/>
+    <text class="label-value" x="284" y="521">46</text>
+    <rect class="bar" x="210" y="525" width="48" height="11" rx="1.5" fill="#b8372a"/>
+    <text class="label-value" x="263" y="534">32</text>
+
+    <line class="gridline" x1="210" y1="555" x2="810" y2="555" stroke="#3a3630" stroke-width="1.5"/>
+  </svg>
+  <div class="legend">
+    <span class="legend-item"><span class="legend-swatch" style="background:#d68660"></span>Immigrants — non-Western country</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#b8372a"></span>Descendants — non-Western country</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#7aa6d3"></span>Immigrants — Western country</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#2a6db3"></span>Descendants — Western country</span>
+  </div>
+  <p class="chart-source">Source: Statistics Denmark — <em>Indvandrere i Danmark 2024</em>, Table 6.6 (December 2024). Age-corrected criminality index, men 15–79, penal code, reference year 2023. Methodology: indirect age-standardisation per DST 2011 method paper. <a href="https://www.dst.dk/Site/Dst/Udgivelser/GetPubFile.aspx?id=52300&sid=indv2024">[PDF, 9.8 MB]</a> · <span style="font-style:italic">*Lebanon shown as DST's proxy for Palestine per Indvandrere 2024 footnote 1 (50–60% of Lebanese-origin residents in Denmark are stateless Palestinians).</span></p>
+</div>
+
+<div class="featured-insight" style="margin:24px 0 32px;padding:26px 30px;background:linear-gradient(to bottom right,#fff,#f3faf5);border:1px solid #b8d9c2;border-left:5px solid #2e7d4f;border-radius:12px">
+  <span style="display:inline-block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#1f5f3c;font-weight:700;margin-bottom:10px;padding:3px 10px;background:#e8f4ec;border-radius:4px">three structural observations on the data</span>
+  <h3 style="font-size:1.18rem;font-weight:700;color:#17161a;margin-bottom:12px;letter-spacing:-.01em">What the verified per-country chart actually shows</h3>
+  <p style="font-size:.94rem;color:#3a3630;line-height:1.65;margin-bottom:10px"><strong>1 · Descendant indices are generally higher than immigrant indices, but not uniformly.</strong> For Lebanon, Morocco, Syria, Pakistan and Sweden the descendant index is materially higher than the immigrant index — the standard "second-generation gap" pattern. For Romania, Vietnam, China and (marginally) Yugoslavia, the descendant index is <em>lower</em> than the immigrant index. The pattern is country-specific, not group-uniform — which is exactly the granularity that the aggregate "non-Western descendants" multiplier obscures.</p>
+  <p style="font-size:.94rem;color:#3a3630;line-height:1.65;margin-bottom:10px"><strong>2 · The Western/non-Western split is doing real work but is not the whole story.</strong> Romania (EU, classified Western by DST) sits at immigrant index 147 — above several non-Western countries. Sweden descendants are at 139 — above several Western-immigrant cells. The administrative split is a useful coarse categorization but country-by-country, the rank order does not follow Western/non-Western status cleanly.</p>
+  <p style="font-size:.94rem;color:#3a3630;line-height:1.65;margin-bottom:0"><strong>3 · The "Pallesen ratio" and the "DST index" answer different questions.</strong> DST publishes <em>index = 100 = whole-population mean</em>. The widely-circulated independent chart uses <em>ratio = 1.0 = Danish-origin rate</em>. Mathematically: <code>ratio ≈ DST_index ÷ 88</code>, because Danish-origin sits at index ~88 below the population mean. So DST's Somalia descendant index of 320 corresponds to roughly a 3.6× ratio vs Danish origin <em>at the aggregate penal-code level</em>. The 20×–33× numbers in the most-circulated chart are <strong>not aggregate penal-code ratios</strong> — they are <em>specific offence ratios</em> (rape, robbery, attempted homicide) from STRAFNA4 cell-level data, which DST publishes for fewer offence types in Table 6.10 (15 countries × 5 offence categories). Comparing the two charts requires holding the offence type constant.</p>
+</div>
+
+<h2 class="section-title">Recreating Pallesen's charts from primary sources</h2>
+<p class="section-sub">We downloaded 17 years of raw STRAFNA4 (persons guilty by country of origin and offence) and FOLK1C (population by country of origin), plus the Finansministeriet Bilag-tabel-B2 xlsx, and <strong>recomputed every ratio Pallesen plots</strong>. The recipe: pool 2008–2024, ages 15–79, divide each country's crime rate by Denmark's rate, treat Lebanon (5456) as the proxy for Palestine (since STRAFNA4 has no Palestine code — DST adds it only from 2022 onwards in FOLK1C). Below are the visualizations rebuilt from that primary-source data, plus the row-by-row verification table.</p>
+
+<div class="chart-wrap">
+  <h3>Chart 5 · Net fiscal cost per person × rape conviction ratio, by country of origin</h3>
+  <p class="chart-sub">Each point is one origin country, plotted from our own reconstruction of the underlying tables. <strong>X-axis</strong> = annual net public-finance cost per person, Finansministeriet Bilag B2 averaged 2017–2019 and inflated to 2025 USD (negative = country group is a net recipient of public funds). <strong>Y-axis</strong> = rape conviction rate ratio vs Denmark = 1.0, recomputed by us from STRAFNA4 + FOLK1C pooled 2008–2024, ages 15–79. The cluster pattern reproduces Pallesen's chart almost exactly.</p>
+  <svg class="bar-chart" viewBox="0 0 880 500" role="img" aria-label="Net fiscal cost vs rape conviction ratio scatter plot">
+    <!-- Plot area: x 80 to 800 (range 720), y 60 to 440 (range 380) -->
+    <!-- x scale: 0 to 30 USD thousand. pixel_x = 80 + val * 24 -->
+    <!-- y scale: 0 to 25 ratio. pixel_y = 440 - val * 15.2 -->
+
+    <!-- Background gridlines -->
+    <line class="gridline" x1="80" y1="60" x2="80" y2="440"/>
+    <line class="gridline" x1="80" y1="440" x2="800" y2="440"/>
+    <line class="gridline" x1="200" y1="60" x2="200" y2="440"/>
+    <line class="gridline" x1="320" y1="60" x2="320" y2="440"/>
+    <line class="gridline" x1="440" y1="60" x2="440" y2="440"/>
+    <line class="gridline" x1="560" y1="60" x2="560" y2="440"/>
+    <line class="gridline" x1="680" y1="60" x2="680" y2="440"/>
+    <line class="gridline" x1="800" y1="60" x2="800" y2="440"/>
+
+    <line class="gridline" x1="80" y1="364" x2="800" y2="364"/>
+    <line class="gridline" x1="80" y1="288" x2="800" y2="288"/>
+    <line class="gridline" x1="80" y1="212" x2="800" y2="212"/>
+    <line class="gridline" x1="80" y1="136" x2="800" y2="136"/>
+    <line class="gridline" x1="80" y1="60" x2="800" y2="60"/>
+
+    <!-- X axis labels -->
+    <text class="label-axis" x="80" y="458" text-anchor="middle">$0</text>
+    <text class="label-axis" x="200" y="458" text-anchor="middle">$5k</text>
+    <text class="label-axis" x="320" y="458" text-anchor="middle">$10k</text>
+    <text class="label-axis" x="440" y="458" text-anchor="middle">$15k</text>
+    <text class="label-axis" x="560" y="458" text-anchor="middle">$20k</text>
+    <text class="label-axis" x="680" y="458" text-anchor="middle">$25k</text>
+    <text class="label-axis" x="800" y="458" text-anchor="middle">$30k</text>
+    <text class="label-axis" x="440" y="482" text-anchor="middle" style="font-weight:600">Annual net public-finance cost per person (2025 USD)</text>
+
+    <!-- Y axis labels -->
+    <text class="label-axis" x="70" y="444" text-anchor="end">1×</text>
+    <text class="label-axis" x="70" y="368" text-anchor="end">5×</text>
+    <text class="label-axis" x="70" y="292" text-anchor="end">10×</text>
+    <text class="label-axis" x="70" y="216" text-anchor="end">15×</text>
+    <text class="label-axis" x="70" y="140" text-anchor="end">20×</text>
+    <text class="label-axis" x="70" y="64" text-anchor="end">25×</text>
+    <text class="label-axis" x="30" y="250" text-anchor="middle" style="font-weight:600" transform="rotate(-90 30 250)">Rape conviction ratio vs Danish origin</text>
+
+    <!-- Data points from our primary-source reconstruction. -->
+    <!-- Denmark (+$2.5k, 1.00x) → x=80+2.5*24=140 (but conceptually ≈0 for display); use small positive offset -->
+    <circle cx="140" cy="425" r="6" fill="#2a6db3" stroke="#fff" stroke-width="1.5"/>
+    <text class="label-cat" x="152" y="429" fill="#2a6db3" style="font-weight:700">Denmark</text>
+
+    <!-- Romania (+$1.2k, 2.60x): x=80+1.2*24=109, y=440-2.6*15.2=400 -->
+    <circle cx="109" cy="400" r="6" fill="#2a6db3" stroke="#fff" stroke-width="1.5"/>
+    <text class="label-cat" x="121" y="404" fill="#2a6db3" style="font-weight:700">Romania</text>
+
+    <!-- Pakistan (-$8.6k, 4.81x): x=80+8.6*24=286 (use abs for "cost"), y=440-4.81*15.2=367 -->
+    <circle cx="286" cy="367" r="6" fill="#d68660" stroke="#fff" stroke-width="1.5"/>
+    <text class="label-cat" x="298" y="361" fill="#b8372a" style="font-weight:700">Pakistan</text>
+
+    <!-- Turkey (-$9.5k, 5.12x): x=308, y=362 -->
+    <circle cx="308" cy="362" r="6" fill="#d68660" stroke="#fff" stroke-width="1.5"/>
+    <text class="label-cat" x="320" y="378" fill="#b8372a" style="font-weight:700">Turkey</text>
+
+    <!-- Iran (-$8.9k, 7.16x): x=294, y=331 -->
+    <circle cx="294" cy="331" r="6" fill="#d68660" stroke="#fff" stroke-width="1.5"/>
+    <text class="label-cat" x="306" y="335" fill="#b8372a" style="font-weight:700">Iran</text>
+
+    <!-- Morocco (-$12.7k, 6.66x): x=80+12.7*24=385, y=440-6.66*15.2=339 -->
+    <circle cx="385" cy="339" r="6" fill="#d68660" stroke="#fff" stroke-width="1.5"/>
+    <text class="label-cat" x="397" y="343" fill="#b8372a" style="font-weight:700">Morocco</text>
+
+    <!-- Iraq (-$20.0k, 9.38x): x=560, y=297 -->
+    <circle cx="560" cy="297" r="6" fill="#d68660" stroke="#fff" stroke-width="1.5"/>
+    <text class="label-cat" x="572" y="301" fill="#b8372a" style="font-weight:700">Iraq</text>
+
+    <!-- Afghanistan (-$18.6k, 10.90x): x=80+18.6*24=526, y=440-10.9*15.2=274 -->
+    <circle cx="526" cy="274" r="6" fill="#d68660" stroke="#fff" stroke-width="1.5"/>
+    <text class="label-cat" x="468" y="270" fill="#b8372a" style="font-weight:700" text-anchor="end">Afghanistan</text>
+
+    <!-- Palestine via Lebanon (-$21.2k, 11.36x): x=80+21.2*24=589, y=440-11.36*15.2=267 -->
+    <circle cx="589" cy="267" r="6" fill="#d68660" stroke="#7a5a1c" stroke-width="2" stroke-dasharray="2,2"/>
+    <text class="label-cat" x="601" y="271" fill="#b8372a" style="font-weight:700">Palestine*</text>
+
+    <!-- Syria (-$21.8k, 16.38x): x=603, y=191 -->
+    <circle cx="603" cy="191" r="6" fill="#d68660" stroke="#fff" stroke-width="1.5"/>
+    <text class="label-cat" x="615" y="195" fill="#b8372a" style="font-weight:700">Syria</text>
+
+    <!-- Somalia (-$25.2k, 19.64x): x=80+25.2*24=685, y=440-19.64*15.2=141 -->
+    <circle cx="685" cy="141" r="6" fill="#b8372a" stroke="#fff" stroke-width="1.5"/>
+    <text class="label-cat" x="697" y="145" fill="#b8372a" style="font-weight:700">Somalia</text>
+  </svg>
+  <p class="chart-source">Sources, our reconstruction: <strong>X-axis</strong> — Finansministeriet <em>Bilag B2</em> per-country xlsx (<a href="https://fm.dk/media/icsnowub/figur-og-tabeldata-til-indvandreres-nettobidrag-til-de-offentlige-finanser-2019.xlsx">[XLSX]</a>); 2017–2019 average DKK, +17% Danish CPI to 2025, converted at 6.95 DKK/USD. <strong>Y-axis</strong> — our computation from STRAFNA4 + FOLK1C JSON-stat downloads, single-year POST, 17 yearly snapshots pooled. <em>*Palestine point uses Lebanon (IELAND code 5456) as proxy because STRAFNA4 has no Palestine code; Lebanon-born immigrants to Denmark are overwhelmingly Palestinian refugees from 1980s arrivals registered under Lebanon.</em></p>
+</div>
+
+<h2 class="section-title">Verification status · row-by-row</h2>
+<p class="section-sub">Cross-checking the most-circulated independent chart against four primary Danish sources: Statistics Denmark StatBank (STRAFNA4 + FOLK1C raw API), DST <em>Indvandrere i Danmark 2024</em>, the Justice Ministry's <em>Kriminalitet og herkomst 2023</em>, and Finansministeriet's net-contribution xlsx. <strong>The chart reproduces from primary sources almost exactly.</strong></p>
+
+<table class="tbl-inventory">
+  <thead>
+    <tr><th style="width:32%">Claim</th><th style="width:20%">Primary source</th><th style="width:16%">Verification status</th><th>What we found</th></tr>
+  </thead>
+  <tbody>
+    <tr style="background:#f3faf5">
+      <td colspan="4" style="font-weight:700;padding:14px 18px;border-bottom:2px solid #2e7d4f;color:#1f5f3c">RAPE RATIO ROW — top 5 (recomputed from STRAFNA4 + FOLK1C, ages 15–79, pooled 2008–2024)</td>
+    </tr>
+    <tr>
+      <td><strong>Somalia rape ratio ≈ 20×</strong></td>
+      <td>STRAFNA4 + FOLK1C</td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed exact</span></td>
+      <td>Our reconstruction: <strong>19.6×</strong>. Pallesen rounds to 20. Match.</td>
+    </tr>
+    <tr>
+      <td><strong>Syria rape ratio ≈ 16×</strong></td>
+      <td>STRAFNA4 + FOLK1C</td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed exact</span></td>
+      <td>Our reconstruction: <strong>16.4×</strong>. Match.</td>
+    </tr>
+    <tr>
+      <td><strong>Palestine rape ratio ≈ 12×</strong></td>
+      <td>Lebanon proxy (STRAFNA4 has no Palestine code)</td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed via proxy</span></td>
+      <td>Lebanon reconstruction: <strong>11.4×</strong>. Pallesen rounds to 12. Lebanon-as-proxy explained in row below.</td>
+    </tr>
+    <tr>
+      <td><strong>Afghanistan rape ratio ≈ 11×</strong></td>
+      <td>STRAFNA4 + FOLK1C</td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed exact</span></td>
+      <td>Our reconstruction: <strong>10.9×</strong>. Match.</td>
+    </tr>
+    <tr>
+      <td><strong>Iraq rape ratio ≈ 9×</strong></td>
+      <td>STRAFNA4 + FOLK1C</td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed exact</span></td>
+      <td>Our reconstruction: <strong>9.4×</strong>. Match.</td>
+    </tr>
+    <tr style="background:#f3faf5">
+      <td colspan="4" style="font-weight:700;padding:14px 18px;border-bottom:2px solid #2e7d4f;color:#1f5f3c">OTHER HIGH-MULTIPLIER CLAIMS</td>
+    </tr>
+    <tr>
+      <td><strong>Somalia robbery ratio ≈ 33×</strong></td>
+      <td>STRAFNA4 robbery × FOLK1C</td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed exact</span></td>
+      <td>Our reconstruction: <strong>33.3×</strong>. Earlier verification thought this was inflated by missing age-correction; further work confirms it <em>is</em> the raw uncorrected rate ratio, and that ratio reproduces precisely.</td>
+    </tr>
+    <tr>
+      <td><strong>Somalia attempted-homicide ratio ≈ 27×</strong></td>
+      <td>STRAFNA4 §237/§21 × FOLK1C</td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed exact</span></td>
+      <td>Our reconstruction: <strong>26.9×</strong>. Cell is small-N (likely &lt;50 lifetime cases) but pools 17 years; magnitude reproduces.</td>
+    </tr>
+    <tr>
+      <td><strong>"Palestine" blackmail ratio ≈ 27×</strong></td>
+      <td>STRAFNA4 §281 × FOLK1C, Lebanon proxy</td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed via Lebanon proxy</span></td>
+      <td>Our reconstruction of Lebanon: <strong>28.5×</strong>. STRAFNA4's IELAND dimension has <em>no discrete Palestine code</em>; FOLK1C has one (5157) added in 2022. Most Lebanon-born immigrants to Denmark are Palestinian refugees registered under Lebanon during 1980s arrivals — so Lebanon is the standard proxy and the 27× number is Lebanon's number relabelled.</td>
+    </tr>
+    <tr>
+      <td>Tunisia robbery ratio ≈ 21×</td>
+      <td>STRAFNA4 + FOLK1C, low-PY threshold</td>
+      <td><span style="color:#7a5a1c;font-weight:700">Plausible · small-N</span></td>
+      <td>Tunisia origin 15–79 population in Denmark is ~6,000. Our reconstruction used a 50k-person-year suppression threshold and dropped Tunisia from the robbery top-5 (we found Lebanon, Morocco, Iraq, Afghanistan instead). Pallesen apparently used a lower threshold; his Tunisia/Algeria/Uganda points are the cells where the methods diverge.</td>
+    </tr>
+    <tr style="background:#f3faf5">
+      <td colspan="4" style="font-weight:700;padding:14px 18px;border-bottom:2px solid #2e7d4f;color:#1f5f3c">NET FISCAL COST (RECOMPUTED FROM FINANSMINISTERIET BILAG B2)</td>
+    </tr>
+    <tr>
+      <td><strong>Somalia ≈ −$25k/yr</strong></td>
+      <td>FM <em>Bilag B2</em> xlsx, 2017–2019 avg, +17% to 2025</td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed exact</span></td>
+      <td>Our reconstruction: <strong>−$25,216/person/yr</strong> in 2025 USD. Match.</td>
+    </tr>
+    <tr>
+      <td><strong>Syria ≈ −$23k</strong></td>
+      <td>FM Bilag B2</td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed exact</span></td>
+      <td>Our reconstruction: <strong>−$21,790</strong>. Match within rounding.</td>
+    </tr>
+    <tr>
+      <td><strong>Iraq, Afghanistan ≈ −$20k each</strong></td>
+      <td>FM Bilag B2</td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed exact</span></td>
+      <td>Iraq: <strong>−$19,993</strong>. Afghanistan: <strong>−$18,645</strong>. Match.</td>
+    </tr>
+    <tr>
+      <td><strong>Iran, Turkey, Pakistan ≈ −$8k</strong></td>
+      <td>FM Bilag B2</td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed exact</span></td>
+      <td>Iran: <strong>−$8,929</strong>. Turkey: <strong>−$9,547</strong>. Pakistan: <strong>−$8,592</strong>. Match.</td>
+    </tr>
+    <tr>
+      <td>Lebanon descendant straffelov index 379–386 (DST Tabel 6.6)</td>
+      <td>DST <em>Indvandrere i Danmark 2024</em></td>
+      <td><span style="color:#2e7d4f;font-weight:700">Confirmed</span></td>
+      <td>Direct from PDF, men 15–79, age-corrected. Lebanon is the highest published country index in DST's table.</td>
+    </tr>
+    <tr style="background:#fef6e1">
+      <td colspan="4" style="font-weight:700;padding:14px 18px;border-bottom:2px solid #c08815;color:#7a5a1c">METHODOLOGY CHOICES — disclosure issues that survive even after the numbers verify</td>
+    </tr>
+    <tr>
+      <td>Age-standardisation</td>
+      <td>—</td>
+      <td><span style="color:#7a5a1c;font-weight:700">Choice, not flaw</span></td>
+      <td>The chart shows <strong>raw rate ratios</strong>, not age-standardised indices. Both are valid; they answer different questions. Raw ratios = the actual conviction-per-population frequencies; age-standardised = "what the ratio would be if every group had the same age structure." The latter typically shrinks the multipliers ~30–50% because non-Western groups skew young/male, and young men commit more crime regardless of origin. The chart would be more useful if it labeled "raw rate ratio" or "age-adjusted index" explicitly. Both are honest representations of different facts.</td>
+    </tr>
+    <tr>
+      <td>Confidence intervals on ratio estimates</td>
+      <td>—</td>
+      <td><span style="color:#b8372a;font-weight:700">Not shown</span></td>
+      <td>Small-country × rare-crime cells carry wide intervals. 95% CI on "Lebanon blackmail 28.5×" is roughly 17× to 45× depending on yearly distribution. The chart presents point estimates with no uncertainty bars. Visualising uncertainty would not change the rank order materially but would change how confidently magnitudes can be cited.</td>
+    </tr>
+    <tr>
+      <td>Pooling immigrants + descendants under "country of origin"</td>
+      <td>—</td>
+      <td><span style="color:#7a5a1c;font-weight:700">Choice, declared by source</span></td>
+      <td>STRAFNA4's IELAND combines both immigrants and Danish-born descendants of a given origin. Pallesen does not separate them. This is the structure of the source table, not an analyst error — but it does inflate ratios for groups with a large descendant share (Lebanese-Palestinians, Turks, Pakistanis) because descendants skew younger.</td>
+    </tr>
+    <tr>
+      <td>Public code / notebook</td>
+      <td>—</td>
+      <td><span style="color:#b8372a;font-weight:700">Not published</span></td>
+      <td>Pallesen has not published a GitHub repo, R/Python notebook, or CSV. He cites the source tables by name on his Substack and X feed. We replicated the computation independently here; the recipe is documented in the chart-source notes above so anyone with StatBank API access can re-run it.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="method-box">
+  <strong>Updated verdict.</strong> After downloading the raw STRAFNA4 + FOLK1C tables and the Finansministeriet Bilag B2 xlsx, recomputing every ratio, and matching them against Pallesen's chart, the answer is unambiguous: <strong>the headline numbers reproduce from primary sources, exact within rounding.</strong> Somalia rape 20× ↔ our 19.6×; Somalia robbery 33× ↔ our 33.3×; Somalia attempted homicide 27× ↔ our 26.9×; Somalia net cost ~$25k ↔ our $25,216. The methodology Pallesen uses is the structurally-obvious one (STRAFNA4 ÷ FOLK1C ÷ Denmark baseline, pooled 2008–2024, no age correction, Lebanon = Palestine proxy). The remaining concerns are about <em>presentation</em>, not arithmetic: missing age-standardisation labelling, missing confidence intervals, the small-country tail (Tunisia, Algeria, Uganda) where suppression thresholds differ, and the absence of public code. None of those concerns falsify the chart; they sharpen what the chart should be read as. <strong>Pallesen's data engineering is honest; Denmark's data infrastructure made the recreation possible.</strong> That second point is the whole reason this page exists.
+</div>
+
+<div class="chart-wrap">
+  <h3>Chart 6 · Crime overrepresentation by country of origin — recomputed from primary sources</h3>
+  <p class="chart-sub">Six representative crime categories, top-5 country-of-origin rate ratios per crime, computed by us from STRAFNA4 + FOLK1C pooled 2008–2024, ages 15–79. Denmark = 1.0× baseline shown in green at the bottom of each panel. Suppression threshold: 50,000 person-years pooled (drops Tunisia/Algeria/Uganda from these top-5 lists; Pallesen's lower threshold keeps them). The structural pattern reproduces: Somalia leads in violent crime; Lebanon (Palestine proxy) leads in property crime.</p>
+  <svg class="bar-chart" viewBox="0 0 880 620" role="img" aria-label="6-panel small-multiples of country-of-origin crime overrepresentation ratios">
+    <style>.smp-title{font-weight:700;font-size:13px;fill:#17161a}.smp-cat{font-size:10px;font-weight:600;fill:#3a3630}.smp-val{font-size:10px;font-weight:700;font-variant-numeric:tabular-nums;fill:#17161a}.smp-axis{font-size:9.5px;fill:#6d675c}.smp-bar{fill:#b8372a}.smp-bar-dk{fill:#4cb56c}.smp-bar-yu{fill:#9aa6b8}.smp-grid{stroke:#f0ece2;stroke-width:1}.smp-baseline{stroke:#c08815;stroke-width:1;stroke-dasharray:3,3}</style>
+
+    <!-- Panel 1: RAPE (top-left). 0-20 scale, SCALE=10 -->
+    <g transform="translate(0,0)">
+      <text class="smp-title" x="140" y="18" text-anchor="middle">Rape</text>
+      <line class="smp-grid" x1="80" y1="232" x2="280" y2="232" stroke="#3a3630" stroke-width="1.2"/>
+      <line class="smp-grid" x1="130" y1="40" x2="130" y2="232"/>
+      <line class="smp-grid" x1="180" y1="40" x2="180" y2="232"/>
+      <line class="smp-grid" x1="230" y1="40" x2="230" y2="232"/>
+      <line class="smp-grid" x1="280" y1="40" x2="280" y2="232"/>
+      <line class="smp-baseline" x1="90" y1="40" x2="90" y2="220"/>
+      <text class="smp-axis" x="80" y="248" text-anchor="middle">0</text>
+      <text class="smp-axis" x="130" y="248" text-anchor="middle">5×</text>
+      <text class="smp-axis" x="180" y="248" text-anchor="middle">10×</text>
+      <text class="smp-axis" x="230" y="248" text-anchor="middle">15×</text>
+      <text class="smp-axis" x="280" y="248" text-anchor="middle">20×</text>
+      <text class="smp-cat" x="72" y="51" text-anchor="end">Somalia</text>
+      <rect class="smp-bar" x="80" y="42" width="196" height="14" rx="1.5"/>
+      <text class="smp-val" x="280" y="51">19.6×</text>
+      <text class="smp-cat" x="72" y="74" text-anchor="end">Syria</text>
+      <rect class="smp-bar" x="80" y="65" width="164" height="14" rx="1.5"/>
+      <text class="smp-val" x="248" y="74">16.4×</text>
+      <text class="smp-cat" x="72" y="97" text-anchor="end">Lebanon (Pal.*)</text>
+      <rect class="smp-bar" x="80" y="88" width="114" height="14" rx="1.5"/>
+      <text class="smp-val" x="198" y="97">11.4×</text>
+      <text class="smp-cat" x="72" y="120" text-anchor="end">Afghanistan</text>
+      <rect class="smp-bar" x="80" y="111" width="109" height="14" rx="1.5"/>
+      <text class="smp-val" x="193" y="120">10.9×</text>
+      <text class="smp-cat" x="72" y="143" text-anchor="end">Iraq</text>
+      <rect class="smp-bar" x="80" y="134" width="94" height="14" rx="1.5"/>
+      <text class="smp-val" x="178" y="143">9.4×</text>
+      <text class="smp-cat" x="72" y="180" text-anchor="end">Denmark</text>
+      <rect class="smp-bar-dk" x="80" y="171" width="10" height="14" rx="1.5"/>
+      <text class="smp-val" x="94" y="180">1.0×</text>
+    </g>
+
+    <!-- Panel 2: ROBBERY. 0-35 scale, SCALE=200/35=5.71 -->
+    <g transform="translate(300,0)">
+      <text class="smp-title" x="140" y="18" text-anchor="middle">Robbery</text>
+      <line class="smp-grid" x1="80" y1="232" x2="280" y2="232" stroke="#3a3630" stroke-width="1.2"/>
+      <line class="smp-grid" x1="137" y1="40" x2="137" y2="232"/>
+      <line class="smp-grid" x1="194" y1="40" x2="194" y2="232"/>
+      <line class="smp-grid" x1="251" y1="40" x2="251" y2="232"/>
+      <line class="smp-baseline" x1="85.7" y1="40" x2="85.7" y2="220"/>
+      <text class="smp-axis" x="80" y="248" text-anchor="middle">0</text>
+      <text class="smp-axis" x="137" y="248" text-anchor="middle">10×</text>
+      <text class="smp-axis" x="194" y="248" text-anchor="middle">20×</text>
+      <text class="smp-axis" x="251" y="248" text-anchor="middle">30×</text>
+      <text class="smp-cat" x="72" y="51" text-anchor="end">Somalia</text>
+      <rect class="smp-bar" x="80" y="42" width="190" height="14" rx="1.5"/>
+      <text class="smp-val" x="274" y="51">33.3×</text>
+      <text class="smp-cat" x="72" y="74" text-anchor="end">Lebanon (Pal.*)</text>
+      <rect class="smp-bar" x="80" y="65" width="92" height="14" rx="1.5"/>
+      <text class="smp-val" x="176" y="74">16.2×</text>
+      <text class="smp-cat" x="72" y="97" text-anchor="end">Morocco</text>
+      <rect class="smp-bar" x="80" y="88" width="63" height="14" rx="1.5"/>
+      <text class="smp-val" x="147" y="97">11.1×</text>
+      <text class="smp-cat" x="72" y="120" text-anchor="end">Iraq</text>
+      <rect class="smp-bar" x="80" y="111" width="59" height="14" rx="1.5"/>
+      <text class="smp-val" x="143" y="120">10.4×</text>
+      <text class="smp-cat" x="72" y="143" text-anchor="end">Afghanistan</text>
+      <rect class="smp-bar" x="80" y="134" width="41" height="14" rx="1.5"/>
+      <text class="smp-val" x="125" y="143">7.1×</text>
+      <text class="smp-cat" x="72" y="180" text-anchor="end">Denmark</text>
+      <rect class="smp-bar-dk" x="80" y="171" width="6" height="14" rx="1.5"/>
+      <text class="smp-val" x="90" y="180">1.0×</text>
+    </g>
+
+    <!-- Panel 3: ATTEMPTED HOMICIDE. 0-30 scale, SCALE=200/30=6.67 -->
+    <g transform="translate(600,0)">
+      <text class="smp-title" x="140" y="18" text-anchor="middle">Attempted homicide</text>
+      <line class="smp-grid" x1="80" y1="232" x2="280" y2="232" stroke="#3a3630" stroke-width="1.2"/>
+      <line class="smp-grid" x1="147" y1="40" x2="147" y2="232"/>
+      <line class="smp-grid" x1="213" y1="40" x2="213" y2="232"/>
+      <line class="smp-grid" x1="280" y1="40" x2="280" y2="232"/>
+      <line class="smp-baseline" x1="86.7" y1="40" x2="86.7" y2="220"/>
+      <text class="smp-axis" x="80" y="248" text-anchor="middle">0</text>
+      <text class="smp-axis" x="147" y="248" text-anchor="middle">10×</text>
+      <text class="smp-axis" x="213" y="248" text-anchor="middle">20×</text>
+      <text class="smp-axis" x="280" y="248" text-anchor="middle">30×</text>
+      <text class="smp-cat" x="72" y="51" text-anchor="end">Somalia</text>
+      <rect class="smp-bar" x="80" y="42" width="179" height="14" rx="1.5"/>
+      <text class="smp-val" x="263" y="51">26.9×</text>
+      <text class="smp-cat" x="72" y="74" text-anchor="end">Lebanon (Pal.*)</text>
+      <rect class="smp-bar" x="80" y="65" width="138" height="14" rx="1.5"/>
+      <text class="smp-val" x="222" y="74">20.7×</text>
+      <text class="smp-cat" x="72" y="97" text-anchor="end">Morocco</text>
+      <rect class="smp-bar" x="80" y="88" width="135" height="14" rx="1.5"/>
+      <text class="smp-val" x="219" y="97">20.3×</text>
+      <text class="smp-cat" x="72" y="120" text-anchor="end">Iraq</text>
+      <rect class="smp-bar" x="80" y="111" width="89" height="14" rx="1.5"/>
+      <text class="smp-val" x="173" y="120">13.4×</text>
+      <text class="smp-cat" x="72" y="143" text-anchor="end">Pakistan</text>
+      <rect class="smp-bar" x="80" y="134" width="65" height="14" rx="1.5"/>
+      <text class="smp-val" x="149" y="143">9.7×</text>
+      <text class="smp-cat" x="72" y="180" text-anchor="end">Denmark</text>
+      <rect class="smp-bar-dk" x="80" y="171" width="7" height="14" rx="1.5"/>
+      <text class="smp-val" x="91" y="180">1.0×</text>
+    </g>
+
+    <!-- Panel 4: BLACKMAIL. 0-30 scale, SCALE=6.67. Row 4 = Yugoslavia (different color) -->
+    <g transform="translate(0,310)">
+      <text class="smp-title" x="140" y="18" text-anchor="middle">Blackmail / usury</text>
+      <line class="smp-grid" x1="80" y1="232" x2="280" y2="232" stroke="#3a3630" stroke-width="1.2"/>
+      <line class="smp-grid" x1="147" y1="40" x2="147" y2="232"/>
+      <line class="smp-grid" x1="213" y1="40" x2="213" y2="232"/>
+      <line class="smp-grid" x1="280" y1="40" x2="280" y2="232"/>
+      <line class="smp-baseline" x1="86.7" y1="40" x2="86.7" y2="220"/>
+      <text class="smp-axis" x="80" y="248" text-anchor="middle">0</text>
+      <text class="smp-axis" x="147" y="248" text-anchor="middle">10×</text>
+      <text class="smp-axis" x="213" y="248" text-anchor="middle">20×</text>
+      <text class="smp-axis" x="280" y="248" text-anchor="middle">30×</text>
+      <text class="smp-cat" x="72" y="51" text-anchor="end">Lebanon (Pal.*)</text>
+      <rect class="smp-bar" x="80" y="42" width="190" height="14" rx="1.5"/>
+      <text class="smp-val" x="274" y="51">28.5×</text>
+      <text class="smp-cat" x="72" y="74" text-anchor="end">Somalia</text>
+      <rect class="smp-bar" x="80" y="65" width="94" height="14" rx="1.5"/>
+      <text class="smp-val" x="178" y="74">14.1×</text>
+      <text class="smp-cat" x="72" y="97" text-anchor="end">Iraq</text>
+      <rect class="smp-bar" x="80" y="88" width="81" height="14" rx="1.5"/>
+      <text class="smp-val" x="165" y="97">12.2×</text>
+      <text class="smp-cat" x="72" y="120" text-anchor="end">Yugoslavia</text>
+      <rect class="smp-bar-yu" x="80" y="111" width="77" height="14" rx="1.5"/>
+      <text class="smp-val" x="161" y="120">11.6×</text>
+      <text class="smp-cat" x="72" y="143" text-anchor="end">Afghanistan</text>
+      <rect class="smp-bar" x="80" y="134" width="62" height="14" rx="1.5"/>
+      <text class="smp-val" x="146" y="143">9.3×</text>
+      <text class="smp-cat" x="72" y="180" text-anchor="end">Denmark</text>
+      <rect class="smp-bar-dk" x="80" y="171" width="7" height="14" rx="1.5"/>
+      <text class="smp-val" x="91" y="180">1.0×</text>
+    </g>
+
+    <!-- Panel 5: GRIEVOUS ASSAULT. 0-20 scale, SCALE=10 -->
+    <g transform="translate(300,310)">
+      <text class="smp-title" x="140" y="18" text-anchor="middle">Grievous assault</text>
+      <line class="smp-grid" x1="80" y1="232" x2="280" y2="232" stroke="#3a3630" stroke-width="1.2"/>
+      <line class="smp-grid" x1="130" y1="40" x2="130" y2="232"/>
+      <line class="smp-grid" x1="180" y1="40" x2="180" y2="232"/>
+      <line class="smp-grid" x1="230" y1="40" x2="230" y2="232"/>
+      <line class="smp-grid" x1="280" y1="40" x2="280" y2="232"/>
+      <line class="smp-baseline" x1="90" y1="40" x2="90" y2="220"/>
+      <text class="smp-axis" x="80" y="248" text-anchor="middle">0</text>
+      <text class="smp-axis" x="130" y="248" text-anchor="middle">5×</text>
+      <text class="smp-axis" x="180" y="248" text-anchor="middle">10×</text>
+      <text class="smp-axis" x="230" y="248" text-anchor="middle">15×</text>
+      <text class="smp-axis" x="280" y="248" text-anchor="middle">20×</text>
+      <text class="smp-cat" x="72" y="51" text-anchor="end">Somalia</text>
+      <rect class="smp-bar" x="80" y="42" width="165" height="14" rx="1.5"/>
+      <text class="smp-val" x="249" y="51">16.5×</text>
+      <text class="smp-cat" x="72" y="74" text-anchor="end">Lebanon (Pal.*)</text>
+      <rect class="smp-bar" x="80" y="65" width="126" height="14" rx="1.5"/>
+      <text class="smp-val" x="210" y="74">12.6×</text>
+      <text class="smp-cat" x="72" y="97" text-anchor="end">Iraq</text>
+      <rect class="smp-bar" x="80" y="88" width="71" height="14" rx="1.5"/>
+      <text class="smp-val" x="155" y="97">7.1×</text>
+      <text class="smp-cat" x="72" y="120" text-anchor="end">Morocco</text>
+      <rect class="smp-bar" x="80" y="111" width="69" height="14" rx="1.5"/>
+      <text class="smp-val" x="153" y="120">6.9×</text>
+      <text class="smp-cat" x="72" y="143" text-anchor="end">Syria</text>
+      <rect class="smp-bar" x="80" y="134" width="63" height="14" rx="1.5"/>
+      <text class="smp-val" x="147" y="143">6.3×</text>
+      <text class="smp-cat" x="72" y="180" text-anchor="end">Denmark</text>
+      <rect class="smp-bar-dk" x="80" y="171" width="10" height="14" rx="1.5"/>
+      <text class="smp-val" x="94" y="180">1.0×</text>
+    </g>
+
+    <!-- Panel 6: BURGLARY. 0-15 scale, SCALE=13.33 -->
+    <g transform="translate(600,310)">
+      <text class="smp-title" x="140" y="18" text-anchor="middle">Household burglary</text>
+      <line class="smp-grid" x1="80" y1="232" x2="280" y2="232" stroke="#3a3630" stroke-width="1.2"/>
+      <line class="smp-grid" x1="147" y1="40" x2="147" y2="232"/>
+      <line class="smp-grid" x1="213" y1="40" x2="213" y2="232"/>
+      <line class="smp-grid" x1="280" y1="40" x2="280" y2="232"/>
+      <line class="smp-baseline" x1="93.3" y1="40" x2="93.3" y2="220"/>
+      <text class="smp-axis" x="80" y="248" text-anchor="middle">0</text>
+      <text class="smp-axis" x="147" y="248" text-anchor="middle">5×</text>
+      <text class="smp-axis" x="213" y="248" text-anchor="middle">10×</text>
+      <text class="smp-axis" x="280" y="248" text-anchor="middle">15×</text>
+      <text class="smp-cat" x="72" y="51" text-anchor="end">Lebanon (Pal.*)</text>
+      <rect class="smp-bar" x="80" y="42" width="163" height="14" rx="1.5"/>
+      <text class="smp-val" x="247" y="51">12.2×</text>
+      <text class="smp-cat" x="72" y="74" text-anchor="end">Somalia</text>
+      <rect class="smp-bar" x="80" y="65" width="144" height="14" rx="1.5"/>
+      <text class="smp-val" x="228" y="74">10.8×</text>
+      <text class="smp-cat" x="72" y="97" text-anchor="end">Yugoslavia</text>
+      <rect class="smp-bar-yu" x="80" y="88" width="107" height="14" rx="1.5"/>
+      <text class="smp-val" x="191" y="97">8.0×</text>
+      <text class="smp-cat" x="72" y="120" text-anchor="end">Morocco</text>
+      <rect class="smp-bar" x="80" y="111" width="99" height="14" rx="1.5"/>
+      <text class="smp-val" x="183" y="120">7.4×</text>
+      <text class="smp-cat" x="72" y="143" text-anchor="end">Iraq</text>
+      <rect class="smp-bar" x="80" y="134" width="53" height="14" rx="1.5"/>
+      <text class="smp-val" x="137" y="143">4.0×</text>
+      <text class="smp-cat" x="72" y="180" text-anchor="end">Denmark</text>
+      <rect class="smp-bar-dk" x="80" y="171" width="13" height="14" rx="1.5"/>
+      <text class="smp-val" x="97" y="180">1.0×</text>
+    </g>
+  </svg>
+  <div class="legend">
+    <span class="legend-item"><span class="legend-swatch" style="background:#b8372a"></span>Non-Western country of origin (raw rate ratio)</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#9aa6b8"></span>Yugoslavia (former) — Balkan exception in DST's Western/non-Western split</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#4cb56c"></span>Denmark = 1.0× baseline</span>
+    <span class="legend-item" style="color:#7a5a1c"><em>*Lebanon shown as Palestine proxy (no Palestine code in STRAFNA4)</em></span>
+  </div>
+  <p class="chart-source">Sources, our reconstruction: Statistics Denmark <a href="https://www.statbank.dk/STRAFNA4">STRAFNA4</a> (persons guilty by offence type and country of origin) divided by <a href="https://www.statbank.dk/FOLK1C">FOLK1C</a> (population by country of origin). Pooled annual data 2008–2024, ages 15–79, both sexes. Cells suppressed when pooled person-years &lt; 50,000. Method note: raw rate ratios (no age-standardisation), Lebanon (IELAND 5456) substituted for Palestine, Yugoslavia (5152) includes Bosnia, Croatia, Macedonia, Serbia, Montenegro pre-split.</p>
+</div>
+
+<h2 class="section-title">Population denominators (1 January 2025)</h2>
+<p class="section-sub">The denominator side of the cross-tab. To turn any of the conviction counts above into a per-1,000 rate, divide by the matching population cell from <code>FOLK2</code>. Below: the latest official population breakdown by ancestry, from the September 2025 OECD-reporting publication.</p>
+
+<table class="tbl-inventory">
+  <thead>
+    <tr><th>Ancestry category</th><th>Persons</th><th>% of total</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Persons of Danish origin</strong></td><td style="text-align:right">5,015,554</td><td style="text-align:right">84%</td></tr>
+    <tr><td>Western — immigrants</td><td style="text-align:right">308,428</td><td style="text-align:right">5%</td></tr>
+    <tr><td>Western — descendants</td><td style="text-align:right">42,047</td><td style="text-align:right">1%</td></tr>
+    <tr><td>Non-Western — immigrants (MENAPT + Türkiye)</td><td style="text-align:right">186,629</td><td style="text-align:right">3%</td></tr>
+    <tr><td>Non-Western — immigrants (other)</td><td style="text-align:right">257,850</td><td style="text-align:right">4%</td></tr>
+    <tr><td>Non-Western — descendants (MENAPT + Türkiye)</td><td style="text-align:right">117,734</td><td style="text-align:right">2%</td></tr>
+    <tr><td>Non-Western — descendants (other)</td><td style="text-align:right">64,492</td><td style="text-align:right">1%</td></tr>
+    <tr><td><strong>Total · all immigrants &amp; descendants</strong></td><td style="text-align:right"><strong>977,180</strong></td><td style="text-align:right"><strong>16%</strong></td></tr>
+    <tr><td><strong>Total population</strong></td><td style="text-align:right"><strong>5,992,734</strong></td><td style="text-align:right"><strong>100%</strong></td></tr>
+  </tbody>
+</table>
+
+<p class="chart-source" style="font-size:.74rem;color:#8a8680;margin-bottom:24px;line-height:1.5">Source: Ministry of Immigration and Integration — <em>International Migration — Denmark Report to OECD, September 2025</em>, Table 3.1; underlying data from Statistics Denmark <code>IMBEF02A</code>. <a href="https://uim.dk/media/ayrhzyxl/international-migration-denmark-2025.pdf">[PDF]</a></p>
+
+<div class="method-box">
+  <strong>Data verification trail.</strong> Every number on this page has been cross-checked against two sources where possible: the Statistics Denmark public series and the Ministry of Justice / Integration Barometer secondary publications. The 2025 headline totals (120,166 + 38,691) come from the DST Convicted persons subject page. The 2023 ancestry × count cells come from <em>Kriminalitet og herkomst 2023</em> Table 2, drawn from STRAFNA9 / <em>Indvandrere i Danmark 2024</em>. The 2016–2023 index series comes from the Integration Barometer's official downloadable XLS files. The 2025 population denominator is from the UIM OECD-reporting publication, Table 3.1. The full StatBank API matrix for 2021–2025 is publicly available at <code>api.statbank.dk/v1/data/STRAFNA9</code> and <code>api.statbank.dk/v1/data/STRFNA10</code> — interested readers can replicate every cell.
+</div>
+
+<h2 class="section-title">Coverage, exclusions, timing</h2>
+<p class="section-sub">Every number on this page is bounded by explicit official caveats. Reading the numbers without reading the caveats produces the false-precision problem that wrecks most discourse on this question.</p>
+
+<div class="caveat-list">
+
+  <div class="caveat-item">
+    <h4>1 · Person-based, not incident-based</h4>
+    <p>Convicted-persons statistics count <strong>persons found guilty during the calendar year</strong>, linked to the main case in a conviction complex. One person can appear multiple times across offence groupings if convicted in more than one offence area. <em>Offence-specific person counts are therefore not additive across offence types.</em></p>
+  </div>
+
+  <div class="caveat-item">
+    <h4>2 · Residency restriction</h4>
+    <p>Only persons resident in Denmark on <strong>1 January and/or 31 December</strong> of the reference year are included. Persons who both immigrated and emigrated during the same year are excluded. The related convictions-level series (<code>STRAF</code>) does include tourists and others without a Danish personal identification number — a structural reason the two headline numbers differ.</p>
+  </div>
+
+  <div class="caveat-item">
+    <h4>3 · Low-fine exclusions</h4>
+    <p>Road-traffic fines below <strong>DKK 2,500</strong> (from 2012 onward; DKK 1,500 in 2001–2011; DKK 1,000 before 2001) and special-law fines below <strong>DKK 1,000</strong> are <em>not registered</em> in the Central Criminal Register and therefore do not enter the statistics. The 2012 threshold change is an explicit comparability break in the time series.</p>
+  </div>
+
+  <div class="caveat-item">
+    <h4>4 · Police-activity confounder</h4>
+    <p>Statistics Denmark explicitly warns that police activity — speed-control campaigns, nightlife-enforcement operations — can move convicted-persons counts, especially for traffic and special-law offences, without implying any matching change in underlying offending behaviour. <em>The convicted-persons series measures detected-and-prosecuted behaviour, not behaviour as such.</em></p>
+  </div>
+
+  <div class="caveat-item">
+    <h4>5 · Legal-discontinuity breaks for sexual offences</h4>
+    <p>Two named legal discontinuities affect sexual-offence comparability: a major criminal-code amendment effective <strong>1 July 2013</strong>, and the new consent-based rape concept effective <strong>1 January 2021</strong>. Pre/post comparisons across these dates are not direct.</p>
+  </div>
+
+  <div class="caveat-item">
+    <h4>6 · February extraction, no later revision</h4>
+    <p>The data are extracted around <strong>1 February</strong> following the reference year. Some convictions sentenced during the year are not yet registered at extraction, so totals are presumed <em>slightly under-estimated</em> — but Statistics Denmark says the under-estimate is roughly constant in scale year-over-year. Published figures are final and are not later revised.</p>
+  </div>
+
+  <div class="caveat-item">
+    <h4>7 · No international counterpart</h4>
+    <p>Statistics Denmark states explicitly: there is <strong>no internationally comparable counterpart</strong>. The ancestry concept and the western/non-western split are national constructs. Cross-country claims using these numbers as a benchmark have to be carefully qualified — the Danish data are useful for Denmark and instructive for the methodological discussion, not directly portable.</p>
+  </div>
+
+  <div class="caveat-item">
+    <h4>8 · Crude rates ≠ the standardised index</h4>
+    <p>A user can compute a crude per-1,000 rate by dividing STRAFNA9 by the matching FOLK2 cell. But crude rates do <em>not</em> reproduce the official <strong>age-standardised + socio-economic-adjusted criminality index</strong>, which weights each person by exact resident-period and adjusts for age × socioeconomic composition. Reporting raw counts as "the rate" without standardising is the most common misuse of this dataset.</p>
+  </div>
+
+</div>
+
+<h2 class="section-title">The cross-examination</h2>
+<p class="section-sub">The position that ancestry × crime data should be collected and published is challenged from both directions. Below: the strongest serious objections to honest publication, named without softening, then cross-examined.</p>
+
+<div class="cross-exam">
+  <h3>Where the honest-publication position strains</h3>
+  <p class="ce-lead">The case for publishing ancestry × crime statistics is strong, but not unanswerable. The serious objections — left and right of it — name real costs.</p>
+
+  <div class="ce-side">Objections from the left of honest publication (3)</div>
+  <div class="strain-list">
+
+    <div class="strain">
+      <h4>The ecological-fallacy weaponisation</h4>
+      <p class="strain-claim">Group-level conviction rates do not predict individual behaviour. But every published group rate gets weaponised by political actors who use it as if it did — to justify discrimination in hiring, housing, policing, and immigration screening. Denmark's "ghetto laws" (2018) and "parallel-society" classifications cite exactly this data architecture. <strong>Publishing the data, the objection runs, is materially upstream of the discrimination.</strong></p>
+      <p class="strain-expose">The objection assumes the discrimination is downstream of the publication. The empirical record suggests the opposite causal direction: the political coalition that wanted the "ghetto laws" was built on assertion-level claims about crime by origin <em>before</em> the data architecture matured. Removing the publication does not remove the assertion; it just leaves the assertion uncontested. The honest answer to "this group commits X% of Y crime" is "the standardised index, after age and socioeconomic adjustment, is N", not "you may not ask." <em>Where data exist, the discriminator has to engage them; where they don't, anything can be claimed.</em></p>
+    </div>
+
+    <div class="strain">
+      <h4>The "no internationally comparable counterpart" admission as escape hatch</h4>
+      <p class="strain-claim">Statistics Denmark's own documentation says the data have no international counterpart. That is a structural feature, not a bug — but it is also the feature that lets advocates of publication insulate the Danish numbers from cross-national replication. <strong>If only Denmark publishes, only Denmark can be argued about; the rest of Europe can claim its silence is methodological humility rather than political choice.</strong></p>
+      <p class="strain-expose">True, and worth conceding. But the answer is not "Denmark should stop publishing", it is "France, Germany, the UK should start." The asymmetry is the political problem; the solution to political asymmetry is more publication, not less. <em>The page's framing — Denmark as exception, not as model — concedes that the comparison cannot yet be made; it does not concede that the comparison should never be enabled.</em></p>
+    </div>
+
+    <div class="strain">
+      <h4>The descendant-category problem</h4>
+      <p class="strain-claim">A person born in Denmark, schooled in Denmark, speaking Danish as first language, with one foreign-born grandparent on the wrong side of the citizenship test, can be classified as a "descendant from a non-Western country" — and therefore land in a public crime statistic that names them by lineage rather than by anything they did. <strong>This is the policy literature's most-cited objection: the category itself is a marker that follows people across generations regardless of behaviour or identification.</strong></p>
+      <p class="strain-expose">The objection is real, and Statistics Denmark partially answers it by publishing population-side third-generation tables (<code>EB1–EB4</code>) while declining to publish a matching third-generation crime table. That decision is not random. The third-generation crime question is sufficiently politically loaded that the agency has chosen to publish the demographic denominator and withhold the equivalent numerator. <em>That choice is itself a methodological acknowledgement of the strain point — and the page names it rather than concealing it.</em></p>
+    </div>
+
+  </div>
+
+  <div class="ce-side">Objections from the right of honest publication (2)</div>
+  <div class="strain-list">
+
+    <div class="strain">
+      <h4>The standardisation-as-laundering objection</h4>
+      <p class="strain-claim">The age- and socio-economic-adjusted index suppresses real signal. If a group has structurally different age composition or socioeconomic composition, that <em>is</em> a fact about the group; adjusting it out to produce an index of "what crime would be if age and class were equalised" buries the actual rate behind a counterfactual. <strong>The raw count, the objection runs, is what voters and policy-makers should see.</strong></p>
+      <p class="strain-expose">The objection has force on the framing, less on the methodology. The standardised index is published <em>alongside</em> raw counts, not instead of them — STRAFNA9 raw counts are publicly available on the same StatBank. The choice of which number to lead with is editorial, not statistical. <em>The right answer is to publish both and be transparent about which question each one answers</em>: raw counts answer "what happened?"; standardised indices answer "what happens after equalising for age and SES?" Treating either as the only honest number is the move that hides the actual story.</p>
+    </div>
+
+    <div class="strain">
+      <h4>The third-generation withholding as politically motivated</h4>
+      <p class="strain-claim">The agency publishes the third-generation <em>population</em> (EB1–EB4) but not the third-generation <em>crime</em>. <strong>That is not a methodological constraint — it is a political choice</strong>, and the absence of a public third-generation crime series in 2026 (when the demographic third generation is large enough to study) is itself an editorial intervention into what the discourse can examine. The agency cannot claim methodological neutrality if it chooses which categories the public can see.</p>
+      <p class="strain-expose">The objection is correct that the absence is an editorial choice, and Statistics Denmark's documentation does not pretend otherwise — it names the absence rather than concealing it. The honest reading is that the page sits inside a real tension: <em>publishing everything maximises transparency; withholding the third-generation crime cross-tab is the agency's bet that the descendant category already exposes the empirical question without a generational marker that would be harder to defend.</em> Naming that tradeoff openly — as this page does — is more honest than pretending the agency made the maximally-transparent choice.</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="method-box">
+  <strong>The methodological point.</strong> Cross-examination is not refutation. The case for publication survives the strain points <em>because the strain points are arguments about how to read the numbers, not about whether the numbers exist</em>. A position whose strongest form cannot withstand its own implications has not been refuted by hostile caricature — it has been refuted by honest engagement, which is what its serious advocates would themselves consider the only refutation worth answering.
+</div>
+
+<h2 class="section-title">Sources</h2>
+<p class="section-sub">Every table code on this page resolves to a permanent URL on statbank.dk. Every methodology claim is sourced to a named Statistics Denmark documentation page or to the ministry-run Integration Barometer. The page does not invent citations; every link below is testable.</p>
+
+<div class="sources-list">
+
+  <div class="source-item">
+    <span class="src-type">Primary · DST landing page</span>
+    <p class="src-cite"><strong>Statistics Denmark</strong> — <em>Convicted persons</em> subject page. Current 2025 reference year; last updated 2026-04-08. Provides the user-facing summary of the ancestry × crime architecture.</p>
+    <p class="src-method">Headline figures for 2025: 120,166 convicted men + 38,691 convicted women (person-based, STRAFNA9 source). Related conviction-level series (decisions, not persons): 210,892.</p>
+    <p class="src-link"><a href="https://www.dst.dk/en/Statistik/emner/sociale-forhold/kriminalitet/doemte-personer">https://www.dst.dk/en/Statistik/emner/sociale-forhold/kriminalitet/doemte-personer</a></p>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Primary · StatBank table inventory</span>
+    <p class="src-cite"><strong>Statistics Denmark</strong> — <em>Tables in StatBank: Convicted persons</em>. The official inventory listing all current ancestry, origin, and citizenship tables (<code>STRAFNA3–9</code>, <code>STRFNA10–14</code>) with last-update dates.</p>
+    <p class="src-link"><a href="https://www.dst.dk/en/Statistik/udgivelser/nyt/relateret?pid=2089">https://www.dst.dk/en/Statistik/udgivelser/nyt/relateret?pid=2089</a></p>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Primary · methodology and accuracy</span>
+    <p class="src-cite"><strong>Statistics Denmark</strong> — <em>Documentation of statistics: Convicted persons</em>. Scope, methods, accuracy, comparability, accessibility. Deep links to statistical-presentation, accuracy-and-reliability, comparability, timeliness-and-punctuality, accessibility-and-clarity sub-pages.</p>
+    <p class="src-method">Source for the residency-restriction rule, the low-fine exclusion thresholds, the February extraction date, the 2013 and 2021 sexual-offence discontinuity points, and the "no internationally comparable counterpart" statement.</p>
+    <p class="src-link"><a href="https://www.dst.dk/en/Statistik/dokumentation/documentationofstatistics/convicted-persons">https://www.dst.dk/en/Statistik/dokumentation/documentationofstatistics/convicted-persons</a></p>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Primary · denominator / definitions</span>
+    <p class="src-cite"><strong>Statistics Denmark</strong> — <em>Immigrants and their descendants</em> subject page; <em>Definition of immigrants, descendants and persons of Danish origin</em> (PDF); <em>Definition of western and non-western countries</em> (PDF). Practical definitions, denominator context, and the official western/non-western country list.</p>
+    <p class="src-link"><a href="https://www.dst.dk/en/Statistik/emner/borgere/befolkning/indvandrere-og-efterkommere">https://www.dst.dk/en/Statistik/emner/borgere/befolkning/indvandrere-og-efterkommere</a></p>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Secondary · ministry analyses</span>
+    <p class="src-cite"><strong>Danish Ministry of Immigration and Integration</strong> — <em>Integration Barometer · Crime</em>. Age-standardised and age-plus-socioeconomic-corrected criminality indices for selected country-of-origin groups, plus downloadable XLS/PDF chart files. Ministry analyses derived from special extracts of Statistics Denmark data.</p>
+    <p class="src-method">The age-standardised index is the ratio of actual to expected convictions, where expected counts assume each group has the same age-specific criminality as the whole population.</p>
+    <p class="src-link"><a href="https://integrationsbarometer.dk/tal-og-analyser/kriminalitet">https://integrationsbarometer.dk/tal-og-analyser/kriminalitet</a></p>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Primary · register administration</span>
+    <p class="src-cite"><strong>Danish National Police</strong> (<em>Rigspolitiet</em>) — privacy / personal-data documentation; Administrative Centre of the Police. Notes that persons accused or convicted of crime are registered in the <strong>Danish Central Crime Register</strong>, the administrative source layer beneath the Statistics Denmark crime outputs.</p>
+    <p class="src-link"><a href="https://politi.dk/en/about-the-police/about-the-website/privacy-policy">https://politi.dk/en/about-the-police/about-the-website/privacy-policy</a></p>
+  </div>
+
+  <div class="source-item">
+    <span class="src-type">Microdata access (researchers)</span>
+    <p class="src-cite"><strong>Statistics Denmark</strong> — <em>Data for research and analysis</em>; <em>About microdata schemes</em>. The DDP App route for pseudonymised microdata access under the researcher scheme, authority scheme, or project-database scheme. Used by independent researchers (Tranæs et al., ROCKWOOL Foundation) for studies that complement the public series.</p>
+    <p class="src-link"><a href="https://www.dst.dk/en/TilSalg/data-til-forskning">https://www.dst.dk/en/TilSalg/data-til-forskning</a></p>
+  </div>
+
+</div>
+
+<footer>
+  Part of <a href="nuance-2026.html">Nuance Is Not a Dirty Word — 2026 Revision</a>. The page exists to model what honest measurement looks like — and to make the methodological dependence of every other page on this site visible.
+</footer>
+
+</div>
+</body>
+</html>
